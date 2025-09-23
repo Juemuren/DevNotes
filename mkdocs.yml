@@ -1,0 +1,66 @@
+site_name: 编程笔记
+site_description: 开发经验分享
+site_author: YuFeng
+site_url: https://juemuren.github.io/DevNotes/
+repo_name: DevNotes
+repo_url: https://github.com/Juemuren/DevNotes
+copyright: Copyright &copy; 2025-present <a href="https://github.com/Juemuren">YuFeng</a>
+
+markdown_extensions:
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+theme:
+  name: material
+  language: zh
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换为深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换为浅色模式
+
+plugins: 
+  - search
+  - callouts
+  - git-revision-date
+  - open-in-new-tab
+  - minify:
+      minify_html: true
+
+nav:
+  - 首页: "index.md"
+  - YOLO: "markdown/YOLO.md"
+  - Conda: "markdown/Conda.md"
+  - MSYS: "markdown/MSYS.md"
+  - Vcpkg: "markdown/Vcpkg.md"
+  - VSCode: "markdown/VSCode.md"
+  - CLI: "markdown/CLI.md"
+  - Cpp: "markdown/Cpp.md"
+  - Python: "markdown/Python.md"
