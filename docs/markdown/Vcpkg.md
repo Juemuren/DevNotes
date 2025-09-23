@@ -1,14 +1,5 @@
 # Vcpkg
 
-- [Vcpkg](#vcpkg)
-  - [对比](#对比)
-  - [安装](#安装)
-  - [使用](#使用)
-    - [新建清单](#新建清单)
-    - [添加依赖](#添加依赖)
-    - [安装依赖](#安装依赖)
-    - [构建项目](#构建项目)
-
 ## 对比
 [vcpkg 与其他包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 

@@ -1,12 +1,5 @@
 # Conda
 
-- [Conda](#conda)
-  - [对比](#对比)
-  - [安装](#安装)
-  - [初始化](#初始化)
-  - [修改设置](#修改设置)
-  - [配置编辑器](#配置编辑器)
-
 ## 对比
 
 [Miniforge3 对比其它项目](https://conda-forge.org/docs/user/introduction/)

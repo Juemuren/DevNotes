@@ -1,19 +1,5 @@
 # MSYS
 
-- [MSYS](#msys)
-  - [对比](#对比)
-  - [安装](#安装)
-  - [更改设置](#更改设置)
-    - [修改 HOME](#修改-home)
-    - [安装 ZSH](#安装-zsh)
-  - [启动环境](#启动环境)
-    - [使用脚本](#使用脚本)
-    - [使用命令](#使用命令)
-  - [配置终端](#配置终端)
-    - [VSCode Terminal](#vscode-terminal)
-    - [Windows Terminal](#windows-terminal)
-
-
 ## 对比
 
 可以使用系统包管理器安装 C/C++ 包，方便小型项目的开发。

@@ -1,22 +1,6 @@
 <!-- TODO CLI-->
 # CLI
 
-- [CLI](#cli)
-  - [基本概念](#基本概念)
-  - [Shell](#shell)
-    - [zsh](#zsh)
-    - [bash](#bash)
-    - [pwsh](#pwsh)
-  - [Package Manager](#package-manager)
-    - [windows](#windows)
-    - [linux](#linux)
-  - [CLI Tools](#cli-tools)
-    - [必备](#必备)
-    - [集成在 shell 里的](#集成在-shell-里的)
-    - [替代传统 gnu 工具的](#替代传统-gnu-工具的)
-    - [小玩具](#小玩具)
-    - [语言解释器](#语言解释器)
-
 ## 基本概念
 
 **命令行界面**（CLI），是一个和**图形用户界面**（GUI）相对的概念：
