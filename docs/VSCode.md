@@ -1,7 +1,8 @@
-# VSCode 配置手册
+# VSCode
 
-- [VSCode 配置手册](#vscode-配置手册)
-  - [C/C++ 基础配置](#cc-基础配置)
+- [VSCode](#vscode)
+  - [插件推荐](#插件推荐)
+  - [Cpp](#cpp)
     - [安装工具链](#安装工具链)
       - [安装编译器和调试器](#安装编译器和调试器)
       - [添加环境变量](#添加环境变量)
@@ -9,7 +10,7 @@
     - [编辑器集成](#编辑器集成)
       - [配置智能感知](#配置智能感知)
       - [配置调试任务](#配置调试任务)
-  - [Python 基础配置](#python-基础配置)
+  - [Python](#python)
     - [安装工具链](#安装工具链-1)
       - [安装解释器和第三方库](#安装解释器和第三方库)
       - [安装编辑器插件](#安装编辑器插件-1)
@@ -17,26 +18,12 @@
       - [使用解释器](#使用解释器)
       - [使用调试器](#使用调试器)
       - [使用编程笔记本](#使用编程笔记本)
-  - [C/C++ 高级配置](#cc-高级配置)
-    - [包管理器](#包管理器)
-    - [构建工具](#构建工具)
-    - [文档生成](#文档生成)
-    - [内存分析](#内存分析)
-    - [测试框架](#测试框架)
-    - [开发框架](#开发框架)
-    - [Clang 工具链](#clang-工具链)
-    - [玩具](#玩具)
-  - [Python 高级配置](#python-高级配置)
-    - [性能分析](#性能分析)
-    - [科学计算](#科学计算)
-    - [绘图](#绘图)
-    - [数据分析](#数据分析)
-    - [信号与系统](#信号与系统)
-    - [机器学习](#机器学习)
-    - [编程笔记本](#编程笔记本)
+
+<!-- TODO 插件推荐 -->
+## 插件推荐
 
 
-## C/C++ 基础配置
+## Cpp
 [VSCode 官方文档](https://code.visualstudio.com/docs/cpp/config-mingw)
 
 ### 安装工具链
@@ -165,7 +152,9 @@ gcc --version
 
 现在可以直接点击按钮来编译、运行和调试了。
 
-## Python 基础配置
+有关 C/C++ 开发的更多技巧可以参考 [Cpp](Cpp.md)
+
+## Python
 [VSCode 官方文档](https://code.visualstudio.com/docs/python/python-quick-start)
 
 ### 安装工具链
@@ -225,86 +214,4 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 现在可以使用编程笔记本了。
 
-<!-- TODO C/C++ 高级配置 -->
-## C/C++ 高级配置
-
-### 包管理器
-vcpkg
-
-conan
-
-### 构建工具
-make
-
-cmake
-
-### 文档生成
-doxygen
-
-### 内存分析
-drmemory --windows
-
-valgrind --linux
-
-### 测试框架
-benchmark 基准测试框架
-
-gtest 单元测试框架
-
-### 开发框架
-qt 图形界面框架
-
-boost 标准库增强
-
-### Clang 工具链
-clang clang++ 新一代编译器
-
-lldb 新一代调试器
-
-clang-tidy 静态检查
-
-clang-format 格式化
-
-### 玩具
-cling 解释器
-
-xeus-cling 编程笔记本（Windows 无法使用）
-
-
-<!-- TODO Python 高级配置 -->
-## Python 高级配置
-
-### 性能分析
-snakeviz
-
-### 科学计算
-numpy
-
-sympy
-
-scipy
-
-### 绘图
-matplotlib
-
-### 数据分析
-networkx
-
-pandas
-
-### 信号与系统
-control
-
-### 机器学习
-scikit-learn
-
-tensorflow
-
-pytorch
-
-### 编程笔记本
-ipykernel 内核
-
-jupyterlab 界面
-
-nbconvert 导出
+有关 Python 开发的更多技巧可以参考 [Python](Python.md)

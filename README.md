@@ -7,20 +7,19 @@
 ## 目录
 
 目前已完成的教程有
-  - [YOLO](./markdown/YOLO.md)
-  - [MSYS](./markdown/MSYS.md)
-  - [Vcpkg](./markdown/Vcpkg.md)
-  - [Conda](./markdown/Conda.md)
+  - [YOLO](./docs/YOLO.md)
+  - [MSYS](./docs/MSYS.md)
+  - [Vcpkg](./docs/Vcpkg.md)
+  - [Conda](./docs/Conda.md)
 
 部分完成的教程有
-  - [VSCode](./markdown/VSCode.md)
+  - [VSCode](./docs/VSCode.md)
+  - [CLI](./docs/CLI.md)
 
 未来计划写的教程有
-  - Scoop
   - WSL
-  - Homebrew
-  - Shell
-  - CLI Tools
+  - Python
+  - Cpp
 
 ## 导出 PDF
 

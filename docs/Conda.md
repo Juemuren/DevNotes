@@ -1,6 +1,6 @@
-# Conda 配置手册
+# Conda
 
-- [Conda 配置手册](#conda-配置手册)
+- [Conda](#conda)
   - [对比](#对比)
   - [安装](#安装)
   - [初始化](#初始化)
@@ -79,6 +79,6 @@ mamba config set show_channel_urls true
 
 ```json
 {
-    "python.condaPath": "C:\\miniforge3\\Scripts\\conda.exe"
+    "python.condaPath": "C:\\miniforge3\\condabin\\conda.bat"
 }
 ```

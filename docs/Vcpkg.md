@@ -1,24 +1,18 @@
-# Vcpkg 使用手册
+# Vcpkg
 
-- [Vcpkg 使用手册](#vcpkg-使用手册)
-  - [安装](#安装)
+- [Vcpkg](#vcpkg)
   - [对比](#对比)
+  - [安装](#安装)
   - [使用](#使用)
     - [新建清单](#新建清单)
-    - [添加包](#添加包)
-    - [下载包](#下载包)
+    - [添加依赖](#添加依赖)
+    - [安装依赖](#安装依赖)
     - [构建项目](#构建项目)
 
-
-## 安装
-
-```sh
-scoop install vcpkg
-```
-
 ## 对比
+[vcpkg 与其他包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 
-相比系统包管理器（比如 `apt`、`pacman`），有一些区别。
+`vcpkg` 相比系统包管理器（比如 `apt`、`pacman`），有一些区别。
 建议与系统包管理器配合使用，两者**优势区间**不同。
 
   - 优势
@@ -28,7 +22,26 @@ scoop install vcpkg
   - 劣势
     - 要写 `CMakePresets.json`，小型项目和个人项目不如系统包管理器方便
 
+## 安装
+
+[官方的安装方式](https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started#1---set-up-vcpkg)
+
+```sh
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg && ./bootstrap-vcpkg.sh
+export VCPKG_ROOT=/path/to/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
+```
+
+或者使用 scoop 安装
+
+```sh
+scoop install vcpkg
+```
+
 ## 使用
+
+[官方入门手册](https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started#3---add-dependencies-and-project-files)
 
 ### 新建清单
 
@@ -36,13 +49,15 @@ scoop install vcpkg
 vcpkg new --application
 ```
 
-### 添加包
+### 添加依赖
 
 ```sh
 vcpkg add port <package-name>
 ```
 
-### 下载包
+该步骤仅仅将依赖添加到清单文件中，并没有安装依赖
+
+### 安装依赖
 
 ```sh
 vcpkg install --triplet=<target-triplet> --host-triplet=<host-triplet>
@@ -96,7 +111,7 @@ vcpkg install
 因此 `vcpkg` 会重新完整地编译一遍依赖。
 此时文件会存放在 `build/vcpkg_installed` 中。
 
-如果要和别人协作，一些与环境有关的变量最好写到 `CMakeUserPresets.json` 里。
+如果要和别人协作，一些与具体环境有关的配置最好写到 `CMakeUserPresets.json` 里。
 该文件里的配置可以继承 `CMakePresets.json` 里的预设并修改。
 
 ```json
@@ -123,6 +138,15 @@ vcpkg install
 这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。
 如果找不到自己写的预设，可能需要重启一下 VSCode。
 
-如果不使用 VSCode 插件而是使用纯命令行，那么似乎有点麻烦。
-除了 **configurePresets** 外还要写 **buildPresets**, 否则无法构建项目。
-具体信息请查阅官方文档[cmake-presets](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html)
+如果不使用 VSCode 插件而只使用命令行，那么应该运行如下命令
+
+```sh
+# 使用预设
+cmake --preset=default
+# 构建项目
+cmake --build build
+```
+
+之后可执行文件会保存在 `build` 目录里。
+
+更多信息请查阅官方文档 [cmake-presets](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html)。
