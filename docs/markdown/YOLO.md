@@ -1,16 +1,16 @@
 # YOLO
 
-> [!TIP]
+> [!TIP] 多看文档
 > 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。官方文档一般来说都是相对最正确的。因此本文档附上了所有的官网链接。学会去官网阅读文档是个应该掌握的技能。
 
 ## 环境配置
 
-> [!IMPORTANT]
+> [!ABSTRACT] 侧重 Windows 平台
 > 本部分只介绍关于 Windows 平台的配置方法。不过其它平台方法差不太多，可以参考部分内容。
 
 ### Shell
 
-> [!NOTE]
+> [!NOTE] 补充命令行的知识
 > 有关命令行界面（CLI）的概念，可参考之前的教程 [CLI](CLI.md#基本概念)
 
 Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 `win` 后输入 `cmd` 或 `powershell` 并按回车即可运行 shell。
@@ -19,15 +19,15 @@ Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 
 
 ### Miniforge
 
-> [!NOTE]
-> 官网链接 https://github.com/conda-forge/miniforge
+> [!NOTE] 官网链接
+> https://github.com/conda-forge/miniforge
 
-> [!IMPORTANT]
+> [!ABSTRACT] 不必重复安装 Conda
 > 已经安装了 Anaconda 的可跳过此步骤。两者用处、用法都是一样的。
 
 #### 对比
 
-> [!NOTE]
+> [!NOTE] 你应该选哪个 Conda 发行版
 > 有关 Miniforge 与 Anaconda 的对比，可以参考前面的教程 [Conda](Conda.md#对比)
 
 #### 安装
@@ -46,7 +46,7 @@ conda --version
 
 正确显示了版本信息就代表着成功了。
 
-> [!TIP]
+> [!TIP] 如果要用 mamba
 > 这里以及后续都以 `conda` 命令作为示例。如果你想使用 `mamba`，在命令中简单地用后者替换前者即可。两者混用没有任何问题。
 
 #### 新建环境
@@ -67,13 +67,13 @@ conda activate pytorch
 
 后续所有命令都在该环境中运行，请确保你激活了正确的环境。
 
-> [!TIP]
+> [!TIP] 忘了环境名字
 > 如果忘记了刚创建的环境的名字，可以使用 `conda env list` 列出所有环境。
 
 ### Pytorch
 
->[!NOTE]
-> 官网 https://pytorch.org/
+>[!NOTE] 官网
+> https://pytorch.org/
 
 官方安装手册 https://pytorch.org/get-started/locally/
 
@@ -81,7 +81,7 @@ conda activate pytorch
 
 打开官方安装手册链接后，网站会检测操作系统和显卡，并推荐下载的版本。
 
-> [!TIP]
+> [!TIP] 检查 CUDA 版本
 > 如果使用的是 N 卡，可以运行命令如下查看 CUDA 版本。
 > 
 > ```sh
@@ -96,10 +96,10 @@ conda activate pytorch
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu129
 ```
 
-> [!CAUTION]
+> [!FAILURE] 注意环境
 > 运行安装命令前请确保你激活了正确的环境。
 
-> [!WARNING]
+> [!WARNING] 确保网络通畅
 > 需下载的总文件大约 4G 左右（因版本而异），时间可能有点长。
 
 下载完成后，可通过如下方式测试是否可用
@@ -122,8 +122,8 @@ exit()
 
 ### YOLO
 
-> [!NOTE]
-> 官网 https://docs.ultralytics.com/zh/
+> [!NOTE] 官网
+> https://docs.ultralytics.com/zh/
 
 官方快速入门手册 https://docs.ultralytics.com/zh/quickstart/
 
@@ -133,7 +133,7 @@ exit()
 pip install ultralytics
 ```
 
-> [!CAUTION]
+> [!FAILURE] 注意环境
 > 运行安装命令前请确保你激活了正确的环境。
 
 下载完成后，可通过如下方式测试是否可用
@@ -168,7 +168,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 ![](../images/bus.jpg)
 
-> [!TIP]
+> [!TIP] 网络问题
 > 如果因网络问题无法下载图片的话，你可以用自己的图片，只需修改 source 参数即可。如果无法下载模型，你可能不得不先解决网络问题。
 > ```sh
 > # 使用官方预训练模型预测当前工作目录下的 example.jpg 图片。
@@ -178,8 +178,8 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 ### cuDNN（可选）
 
-> [!NOTE]
-> 官网 https://developer.nvidia.com/cudnn
+> [!NOTE] 官网
+> https://developer.nvidia.com/cudnn
 
 目前我没用到这个库，因此暂时作为可选项
 
@@ -197,7 +197,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 pip install nvidia-cudnn-cu1x
 ```
 
-> [!CAUTION]
+> [!FAILURE] 注意环境
 > 运行安装命令前请确保你激活了正确的环境。
 
 同样地，下载完成后，可通过如下方式测试是否可用
@@ -232,7 +232,7 @@ exit()
 
 然后随便打开一个 python 文件，按下 `ctrl + shift + P`，然后输入 `Python: Select Interpreter` 并点击该命令。VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器。
 
-> [!TIP]
+> [!TIP] 无法识别 Conda 环境
 > 如果 VSCode 没有识别到 conda 环境的话，你可能需要设置 conda 路径。按下 `ctrl + ,`，然后输入 `conda` 会看到一个叫 `Python: Conda Path` 的设置，在里面填写 conda 可执行文件的路径。你可以在激活了 `base` 环境的 shell 里运行 `where.exe conda` 来获取路径。
 
 之后就可以在 `.py` 文件的右上角找到运行按钮，此时 VSCode 会调用刚选择的解释器。
@@ -243,8 +243,8 @@ YOLO 有两种用法，分别是 `Python` 和  `CLI`
 
 ### Python
 
-> [!NOTE]
-> 官方文档 https://docs.ultralytics.com/zh/usage/python/
+> [!NOTE] 官方文档
+> https://docs.ultralytics.com/zh/usage/python/
 > 
 > 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
 
@@ -254,8 +254,8 @@ YOLO 有两种用法，分别是 `Python` 和  `CLI`
 
 ### CLI
 
-> [!NOTE]
-> 官方文档 https://docs.ultralytics.com/zh/usage/cli/
+> [!NOTE] 官方文档
+> https://docs.ultralytics.com/zh/usage/cli/
 > 
 > 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
 
@@ -299,7 +299,7 @@ YOLO
 yolo settings datasets_dir="datasets"
 ```
 
-> [!TIP]
+> [!TIP] 无法激活环境
 > 如果无法在 VSCode 的集成终端中激活环境，你可能需要初始化 shell。用快捷方式打开已激活了 `base` 环境的 shell，然后运行以下命令
 > 
 > ```sh
@@ -314,7 +314,7 @@ yolo settings datasets_dir="datasets"
 
 #### 具体任务
 
-> [!NOTE]
+> [!NOTE] 官网内容更详细
 > 仅展示使用 CLI 进行训练和预测的示例。使用 Python 方法差不多，可以参考部分内容。
 >
 > 更详细的示例请阅读官方文档，包括 [CLI 示例](https://docs.ultralytics.com/zh/usage/cli/) 和 [Python 示例](https://docs.ultralytics.com/zh/usage/python/)

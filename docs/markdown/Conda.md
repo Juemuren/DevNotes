@@ -44,7 +44,7 @@ conda --version
 mamba --version
 ```
 
-> [!TIP]
+> [!TIP] 找不到快捷方式
 > 如果你没有这个快捷方式，可以输入如下命令初始化 shell
 >
 > ```cmd
