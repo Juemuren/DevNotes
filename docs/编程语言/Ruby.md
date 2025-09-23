@@ -1,0 +1,16 @@
+# Ruby
+
+## 环境搭建
+
+我使用 Mise + VSCode 搭建开发环境
+
+### 获取工具链
+
+```sh
+# 使用最新版的 ruby
+mise use -g ruby@latest
+```
+
+### 编辑器集成
+
+安装插件 [Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp)

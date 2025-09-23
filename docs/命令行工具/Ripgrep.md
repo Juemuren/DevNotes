@@ -1,0 +1,58 @@
+# Ripgrep
+
+## 简介
+
+ripgrep 是个类似 grep 的查找器，会递归地搜索目录以查找匹配正则表达式的文本
+
+## 对比
+
+ripgrep 的最大宣传点就是快。但其和 grep 的不同点并不止这一个。个人感觉下来有以下不同
+
+- 速度更快
+- 用法更简单
+- 默认输出样式更美观
+- 以单一二进制文件分发，安装非常方便
+
+## 安装
+
+```sh
+# Windows 上使用 Scoop 安装
+scoop install ripgrep
+# Linux 上使用 Homebrew 安装
+brew install ripgrep
+```
+
+## 使用
+
+ripgrep 功能非常强大，用法很多，还有自己的配置文件，这里只列出我常用的命令。可参考[官方文档](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md)获取更多信息
+
+### 正则查找
+
+```sh
+# 递归在当前目录下的所有文件中查找匹配 pattern 正则表达式的文本
+rg pattern
+# 只查找 example.md 文件
+rg pattern example.md
+```
+
+ripgrep 会自动忽略部分文件，比如隐藏文件、`.gitignore` 中的文件等，你可以添加一些参数来搜索这些隐藏的文件
+
+```sh
+# 搜索 .gitignore 等文件中的文件
+rg pattern --no-ignore
+# 搜索隐藏文件
+rg pattern --hidden
+# 搜索二进制文件
+rg pattern --text
+# 搜索符号链接文件
+rg pattern --follow
+```
+
+### 配置文件
+
+ripgrep 的配置文件通常为 `~/.ripgreprc`，这可以让你在不创建别名的情况下，自动为每个 `rg` 命令添加参数
+
+```sh
+# 自动为每个 rg 命令添加参数
+--smart-case
+```

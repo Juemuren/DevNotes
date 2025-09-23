@@ -1,0 +1,251 @@
+# Docker
+
+## 简介
+
+Docker 代表了容器技术。所谓容器，就是个把应用程序及其运行环境打包在一起的东西。你可以把容器给别人使用，也可以使用别人的容器。现在似乎还留行直接在容器里进行开发，省去了所有配置开发环境的麻烦。
+
+## 对比
+
+我个人目前推荐使用 Podman 作为容器工具。就算不考虑架构更先进、安全性更好等原因，单从命令行易用性的角度来说，podman 也比 docker 更好。不过 Docker Desktop 有图形界面，也许部分人更喜欢，但我不是很喜欢。
+
+如果不使用 Docker Desktop，只使用 Docker CLI，那么启动一个容器会非常麻烦。下面是在 Windows 系统里使用 Docker 运行一个容器需要的步骤
+
+```sh
+# 安装 Docker CLI
+scoop install docker
+# 然后以管理员权限启动新的终端，因为后面的命令需要管理员权限
+# 将守护进程注册为服务
+dockerd --register-service
+# 启动守护进程
+sasv docker
+# 运行容器
+docker run hello-world
+```
+
+并且，这时候你大概率会得到报错，因为在 Windows 上 `dockerd` 只支持运行 Windows 容器。一个可能正确的做法应该是这样的
+
+1. 在 WSL 里安装 Docker 并启动守护进程 `dockerd`。当然，这个过程是需要 root 权限的
+2. 然后在 Windows 里安装 Docker，并通过配置让 `docker` 连接到 WSL 里的 `dockerd`
+
+好吧这太复杂了。让我们看看在 Windows 里 podman 要怎么只使用 CLI 运行容器吧
+
+```sh
+# 安装 Podman CLI
+scoop install podman
+# 初始化一个 WSL 虚拟机
+podman machine init
+# 启动并连接到虚拟机
+podman machine start
+# 运行容器
+podman run hello
+```
+
+不需要新打开一个管理员权限的终端，不需要复杂的配置，除了可能的网络问题外即使是第一次使用也基本上不会遇到报错
+
+## 安装
+
+### Windows
+
+[podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
+
+如果要直接在 Windows 的文件系统里安装 podman，可以使用 Scoop
+
+```sh
+scoop install podman
+```
+
+然后初始化 WSL 后端虚拟机
+
+```sh
+podman machine init
+```
+
+### WSL
+
+也可以直接在 WSL 里安装 podman
+
+如果使用 Ubuntu，那么可以使用系统包管理器
+
+```sh
+apt install podman
+```
+
+## 使用
+
+如果 podman 在 Windows 的文件系统里安装，那么在运行别的命令前记得先启动虚拟机
+
+```sh
+podman machine start
+```
+
+### 基本使用
+
+```sh
+# 在 ubi8-micro 容器里运行 date 命令
+podman run ubi8-micro date
+# 与 ubi8-micro 容器交互
+podman run -it ubi8-micro
+```
+
+不过 `ubi8-micro` 这个镜像非常小，只有 **25.8 MB**，因此功能有限。你可以拉取一个更大的镜像来玩
+
+```sh
+# 拉取 ubuntu 镜像并运行 bash
+podman run -it ubuntu bash
+# 可以为这个容器实例取个名字
+podman run -it --name hello-ubuntu ubuntu bash
+```
+
+### 构建镜像
+
+> [!Note]+ 镜像和容器
+> 镜像和容器是两个很容易混淆的概念，两者之间的关系大概就是
+>
+> - 镜像是不变的，而容器是可变的
+> - 每次运行镜像，比如 `podman run -it ubuntu bash`，实际上都创建了一个新的容器实例
+> - 可以通过命令，比如 `podman commit container-id new-image-name`，将一个修改过的容器保存为新的镜像
+>
+> 这是一些常用的查看容器和镜像的命令，你可以自己对比一下有什么区别
+>
+> ```sh
+> # 列出存储的镜像
+> podman images
+> # 列出所有镜像，包括中间镜像
+> podman images -a
+> # 列出正在运行的容器
+> podman ps
+> # 列出所有容器，包括已停止的容器
+> podman ps -a
+> ```
+>
+> 本文不会纠结这两个概念的细致区别，因此可能存在不准确的地方
+
+#### 手动构建镜像
+
+`start` 和 `stop` 子命令可以启动容器实例和停止容器实例，其中 `CONTAINER-ID` 和 `CONTAINER-NAME` 可以通过 `podman ps -a` 查看
+
+```sh
+# 启动容器实例
+podman start -ai CONTAINER-ID/CONTAINER-NAME
+# 停止容器实例
+podman stop CONTAINER-ID/CONTAINER-NAME
+```
+
+> [!Note]+ kill 和 stop
+> 还有一条子命令 `kill` 可以用来停止正在运行的容器实例。从名字上也能看出，`kill` 相比 `stop` 更强硬一点，它默认发送 **SIGKILL** 信号。如果使用 `stop` 失败了，可以尝试使用 `kill`
+>
+> ```sh
+> podman kill CONTAINER-ID/CONTAINER-NAME
+> ```
+
+`exec` 子命令可以让一个正在运行的容器实例执行命令。如果遇到问题，我们可以使用它来进行容器的调试
+
+```sh
+podman exec -it CONTAINER-ID/CONTAINER-NAME bash
+```
+
+当你对容器做出了一些修改后，可以通过 `commit` 进行保存
+
+```sh
+podman commit CONTAINER-ID/CONTAINER-NAME NEW-IMAGE-NAME
+```
+
+这会本地生成一个新的镜像，然后你可以基于这个镜像再创建新的容器实例
+
+#### 自动构建镜像
+
+除了通过 `podman run -it ubuntu bash` 这种方式在交互式 shell 会话中对容器进行操作外，还有别的修改容器的方式，比如 `podman container cp index.js hello-node:/usr/src/app/index.js` 可以把本地文件 `index.js` 复制到 `hello-node` 容器的 `/usr/src/app/index.js` 位置
+
+不过，以上这些自己手动修改容器，再保存为新镜像的做法不是创建容器镜像的最佳方法。一个更好的方法是使用 `Dockerfile`，这通过一个配置文件来让创建镜像的过程自动化
+
+```dockerfile
+FROM node:20
+
+WORKDIR /usr/src/app
+
+COPY ./index.js ./index.js
+
+CMD node index.js
+```
+
+以上示例非常简单，你可以在 [Docker 官方文档](https://docs.docker.com/reference/dockerfile/)里获得更详细的参考。有了 `Dockerfile` 后修改容器构建新镜像就变得非常简单了
+
+```sh
+# 根据配置文件自动构建镜像
+podman build -t node-hello-world .
+```
+
+然后可以照常使用这个容器
+
+```sh
+# 运行容器
+podman run node-hello-world
+# 可以覆盖默认的命令
+podman run -it node-hello-world bash
+# 还可以把主机端口映射到容器端口
+podman run -p 3000:3000 express-server
+```
+
+### 编排容器
+
+显然像 `podman run -p 3000:3000 express-server` 这样的命令有点长，不仅需要我们记住端口的映射，还需要记住镜像的名字。如果我们的应用要启动非常多个容器，这会很麻烦。因此就有了 `docker compose` 这种工具帮我们管理容器
+
+podman 可以直接使用 `docker-compose`，这也是默认的行为。而 `podman-compose` 在 Windows 环境里好像有点问题
+
+安装 docker-compose 可以直接使用 Scoop，似乎不用先安装 `docker`，不过建议还是把后者一起装了
+
+```sh
+scoop install docker docker-compose
+```
+
+一个简单的 `docker-compose.yml` 示例如下，更详细的内容请参考 [Docker 官方文档](https://docs.docker.com/reference/compose-file/)
+
+```yaml
+services:
+  app:
+    image: express-server
+    build: .
+    ports:
+      - 3000:3000
+```
+
+有了 `docker-compose.yml` 管理容器就会变得非常轻松
+
+```sh
+# 启动服务
+podman compose up
+# 关闭服务
+podman compose down
+# 重新构建镜像并启动服务
+podman compose up --build
+# 后台运行服务
+podman compose up -d
+# -f 参数可以指定文件
+podman compose -f docker-compose.dev.yml up -d
+```
+
+### 存储管理
+
+以下命令可以用来管理存储空间
+
+```sh
+# 列出存储概览
+podman system df
+# 列出存储详情
+podman system df -v
+# 一键清理
+podman system prune
+```
+
+或者你也可以手动删除指定的容器或镜像
+
+```sh
+# 删除指定容器
+podman container rm CONTAINER-ID/CONTAINER-NAME
+# 删除所有容器
+podman container rm --all
+# 删除指定镜像
+podman image rm IMAGE-ID/IMAGE-NAME
+# 删除所有镜像
+podman image rm --all
+```

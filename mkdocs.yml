@@ -1,0 +1,153 @@
+site_name: 开发笔记
+site_description: 个人开发经验分享
+site_author: YuFeng
+site_url: https://juemuren.github.io/DevNotes/
+repo_name: DevNotes
+repo_url: https://github.com/Juemuren/DevNotes
+copyright: Copyright &copy; 2025-present <a href="https://github.com/Juemuren">YuFeng</a>
+
+markdown_extensions:
+  - nl2br
+  - admonition
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+theme:
+  name: material
+  language: zh
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.top
+    - navigation.instant
+    - navigation.indexes
+    - search.highlight
+    - content.code.annotate
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换为深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换为浅色模式
+
+plugins: 
+  - search
+  - callouts
+  - git-revision-date
+  - open-in-new-tab
+  - minify:
+      minify_html: true
+
+nav:
+  - 首页: index.md
+  - 命令行工具:
+    - 命令行工具: 命令行工具/index.md
+    - Shell: 命令行工具/Shell.md
+    - Just: 命令行工具/Just.md
+    - Zoxide: 命令行工具/Zoxide.md
+    - Tldr: 命令行工具/Tldr.md
+    - Fzf: 命令行工具/Fzf.md
+    - Ripgrep: 命令行工具/Ripgrep.md
+    - Fd: 命令行工具/Fd.md
+    - Starship: 命令行工具/Starship.md
+    - Fastfetch: 命令行工具/Fastfetch.md
+    - Bat: 命令行工具/Bat.md
+    - Delta: 命令行工具/Delta.md
+    - Eza: 命令行工具/Eza.md
+    - Cloc: 命令行工具/Cloc.md
+    - Dotter: 命令行工具/Dotter.md
+    - Ollama: 命令行工具/Ollama.md
+  - 文档工具:
+    - 文档工具: 文档工具/index.md
+    - Pandoc: 文档工具/Pandoc.md
+    - Marp: 文档工具/Marp.md
+    - Mermaid: 文档工具/Mermaid.md
+    - Quarto: 文档工具/Quarto.md
+    - Doxygen: 文档工具/Doxygen.md
+    - MkDocs: 文档工具/MkDocs.md
+    - Hugo: 文档工具/Hugo.md
+    - ImageMagick: 文档工具/ImageMagick.md
+    - PDFcpu: 文档工具/PDFcpu.md
+  - 环境管理器: 
+    - 环境管理器: 环境管理器/index.md
+    - Conda: 环境管理器/Conda.md
+    - Mise: 环境管理器/Mise.md
+    - MSYS: 环境管理器/MSYS.md
+    - WSL: 环境管理器/WSL.md
+    - Docker: 环境管理器/Docker.md
+  - 包管理器:
+    - 包管理器: 包管理器/index.md
+    - Scoop: 包管理器/Scoop.md
+    - Homebrew: 包管理器/Homebrew.md
+    - Xmake: 包管理器/Xmake.md
+    - Vcpkg: 包管理器/Vcpkg.md
+    - Uv: 包管理器/Uv.md
+  - 编辑器:
+    - 编辑器: 编辑器/index.md
+    - VSCode: 编辑器/VSCode.md
+    - Neovim: 编辑器/Neovim.md
+    - Jupyter: 编辑器/Jupyter.md
+  - 编程语言:
+    - 编程语言: 编程语言/index.md
+    - Cpp: 编程语言/Cpp.md
+    - Python: 编程语言/Python.md
+    - JavaScript: 编程语言/JavaScript.md
+    - Rust: 编程语言/Rust.md
+    - Go: 编程语言/Go.md
+    - Julia: 编程语言/Julia.md
+    - R: 编程语言/R.md
+    - CUDA: 编程语言/CUDA.md
+    - CSharp: 编程语言/CSharp.md
+    - Java: 编程语言/Java.md
+    - Ruby: 编程语言/Ruby.md
+    - Lisp: 编程语言/Lisp.md
+  - 库和框架:
+    - 库和框架: 库和框架/index.md
+    - PyTorch: 库和框架/PyTorch.md
+    - YOLO: 库和框架/YOLO.md
+    - React: 库和框架/React.md
+    - Expo: 库和框架/Expo.md
+  - 应用开发:
+    - 应用开发: 应用开发/index.md
+    - Web: 应用开发/Web.md
+    - GUI: 应用开发/GUI.md
+    - CLI: 应用开发/CLI.md
+    - API: 应用开发/API.md
+  - 嵌入式开发:
+    - 嵌入式开发: 嵌入式开发/index.md
+  - 人工智能开发:
+    - 人工智能开发: 人工智能开发/index.md
+
+extra:
+  generator: false
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css

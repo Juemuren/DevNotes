@@ -1,0 +1,12 @@
+# CSharp
+
+## 环境搭建
+
+我使用 VSCode 来搭建开发环境
+
+首先下载 [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) 插件，然后会自动打开一个引导界面，跟着提示一步步完成就可以了
+
+详细过程可参考 [VSCode C# 官方文档](https://code.visualstudio.com/docs/csharp/get-started)
+
+> [!Note]- 解释器
+> C# 有个解释器叫 scriptcs，可以通过 `scoop install scriptcs` 安装
