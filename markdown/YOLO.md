@@ -133,7 +133,7 @@ conda activate pytorch
 
 官方安装手册 https://pytorch.org/get-started/locally/
 
-![](./images/pytorch.png)
+![](../images/pytorch.png)
 
 打开官方安装手册链接后，网站会检测操作系统和显卡，并推荐下载的版本。
 
@@ -224,7 +224,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 该命令会下载官方预训练的模型 `yolo11n.pt`，并下载 https://ultralytics.com/images/bus.jpg 这张图片进行预测。模型和图片会下载到当前工作目录（就是 shell 的命令提示符前显示的目录），而运行的结果默认保存在当前工作目录的 **runs** 目录下。你可以运行 `explorer .\runs\detect\predict\` 打开文件夹，看看图片是否被正确预测。
 
-![](./images/bus.jpg)
+![](../images/bus.jpg)
 
 > [!TIP]
 > 如果因网络问题无法下载图片的话，你可以用自己的图片，只需修改 source 参数即可。如果无法下载模型，你可能不得不先解决网络问题。
@@ -244,8 +244,8 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 不过英伟达非常逆天地在 PyPI 上注册了多个假包来告诉你没有安装正确的版本，并且更逆天的是官网上的安装命令下载的就是假包。
 
-![](./images/cuDNN.png)
-![](./images/PyPI.png)
+![](../images/cuDNN.png)
+![](../images/PyPI.png)
 
 目前 [PyPI](https://pypi.org/search/?q=cudnn) 上这么多的版本中只有 `nvidia-cudnn-cu11`、`nvidia-cudnn-cu12`、`nvidia-cudnn-cu13` 这几个不是假包。请根据显卡的 CUDA 版本下载正确的包。查看 CUDA 版本的方式可参考前面关于 [Pytorch](#pytorch) 的部分。
 
