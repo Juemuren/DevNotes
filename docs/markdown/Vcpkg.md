@@ -3,14 +3,13 @@
 ## 对比
 [vcpkg 与其他包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 
-`vcpkg` 相比系统包管理器（比如 `apt`、`pacman`），有一些区别。
-建议与系统包管理器配合使用，两者**优势区间**不同。
+`vcpkg` 相比系统包管理器（比如 `apt`、`pacman`）有一些区别。建议与系统包管理器配合使用，因为二者**优势区间**不同。
 
-  - 优势
+  1. 优势
     - 项目级别的环境隔离，不影响系统环境，减少了环境冲突的问题
     - 清单文件 `vcpkg.json` 让依赖项更清晰，且可以 `vcpkg install` 一步完成所有依赖的安装
     - 方便了跨平台的协作，减少了 `在我的机器上可以运行` 这类问题
-  - 劣势
+  2. 劣势
     - 要写 `CMakePresets.json`，小型项目和个人项目不如系统包管理器方便
 
 ## 安装
@@ -98,12 +97,9 @@ vcpkg install
 }
 ```
 
-构建项目时的 `TARGET`、`HOST` 可以和安装依赖时的不同。
-因此 `vcpkg` 会重新完整地编译一遍依赖。
-此时文件会存放在 `build/vcpkg_installed` 中。
+构建项目时的 `TARGET`、`HOST` 可以和安装依赖时的不同。因此 `vcpkg` 会重新完整地编译一遍依赖。此时文件会存放在 `build/vcpkg_installed` 中。
 
-如果要和别人协作，一些与具体环境有关的配置最好写到 `CMakeUserPresets.json` 里。
-该文件里的配置可以继承 `CMakePresets.json` 里的预设并修改。
+如果要和别人协作，一些与具体环境有关的配置最好写到 `CMakeUserPresets.json` 里。该文件里的配置可以继承 `CMakePresets.json` 里的预设并修改。
 
 ```json
 {
@@ -121,13 +117,9 @@ vcpkg install
 }
 ```
 
-在版本管理系统中，通常要把 `CMakeUserPresets.json` 文件忽略。
-因为每个人环境不同，可能需要编写自己的预设来覆盖一些默认值。
-将该文件从版本管理中排除可以方便协作。
+在版本管理系统中，通常要把 `CMakeUserPresets.json` 文件忽略。因为每个人环境不同，可能需要编写自己的预设来覆盖一些默认值。将该文件从版本管理中排除可以方便协作。
 
-如果使用 VSCode，那么可以下载 [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) 插件。
-这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。
-如果找不到自己写的预设，可能需要重启一下 VSCode。
+如果使用 VSCode，那么可以下载 [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) 插件。这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。如果找不到自己写的预设，可能需要重启一下 VSCode。
 
 如果不使用 VSCode 插件而只使用命令行，那么应该运行如下命令
 

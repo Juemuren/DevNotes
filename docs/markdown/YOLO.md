@@ -1,32 +1,21 @@
 # YOLO
 
 > [!TIP]
-> 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。
-> 官方文档一般来说都是相对最正确的。
-> 因此本文档附上了所有的官网链接。
-> 学会去官网阅读文档是个应该掌握的技能。
+> 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。官方文档一般来说都是相对最正确的。因此本文档附上了所有的官网链接。学会去官网阅读文档是个应该掌握的技能。
 
 ## 环境配置
 
 > [!IMPORTANT]
-> 本部分只介绍关于 Windows 平台的配置方法。
-> 不过其它平台方法差不太多，可以参考部分内容。
+> 本部分只介绍关于 Windows 平台的配置方法。不过其它平台方法差不太多，可以参考部分内容。
 
 ### Shell
 
 > [!NOTE]
-> 命令行界面（CLI），是一个和图形用户界面（GUI）相对的概念。
-> 在命令行界面里，用户输入文本命令来执行操作。
-> 
-> 终端（Terminal）提供了一个命令行界面，并且运行着 shell。
-> shell 是一类程序，会调用操作系统内核来执行命令。
-> 因此终端让你可以输入文本命令来和操作系统交互。
+> 有关命令行界面（CLI）的概念，可参考之前的教程 [CLI](CLI.md#基本概念)
 
-Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。
-按下 `win` 后输入 `cmd` 或 `powershell` 并按回车即可运行 shell。
+Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 `win` 后输入 `cmd` 或 `powershell` 并按回车即可运行 shell。
 
-本教程之后将默认命令运行在 *PowerShell* 里（因为我用的是 *PowerShell*）。
-当然 *CMD* 应该也不会遇到问题的。
+本教程之后将默认命令运行在 *PowerShell* 里（因为我用的是 *PowerShell*）。当然 *CMD* 应该也不会遇到问题的。
 
 ### Miniforge
 
@@ -39,24 +28,15 @@ Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。
 #### 对比
 
 > [!NOTE]
-> *Miniforge* 相比 *Anaconda* 有一些区别。个人更推荐使用前者。
-> 
-> - 优势
->   - 默认提供了更快速的包管理器 `mamba`，兼容所有常用的 `conda` 命令。当然 `conda` 在 *Miniforge* 里也是可用的。
->   - 默认使用 `conda-forge` 渠道下载，这是社区维护的包渠道，包数量更多、包更新更及时、平台支持更丰富，且完全不用担心许可协议的问题
->   - `base` 环境非常干净，只有包管理程序运行所需的组件
-> - 劣势
->   - 默认不安装 `Anaconda Navigator`，无法以可视化的方式使用包管理器
+> 有关 Miniforge 与 Anaconda 的对比，可以参考前面的教程 [Conda](Conda.md#对比)
 
 #### 安装
 
 下载链接 https://conda-forge.org/download
 
-Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。
-可以修改安装路径，其余选项使用默认的就行。
+Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行。
 
-使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。
-打开该快捷方式会启动一个激活了 `base` 环境的 shell。
+使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。打开该快捷方式会启动一个激活了 `base` 环境的 shell。
 
 可以输入以下命令测试 `conda` 是否可用
 
@@ -67,9 +47,7 @@ conda --version
 正确显示了版本信息就代表着成功了。
 
 > [!TIP]
-> 这里以及后续都以 `conda` 命令作为示例。
-> 如果你想使用 `mamba`，在命令中简单地用后者替换前者即可。
-> 两者混用没有任何问题。
+> 这里以及后续都以 `conda` 命令作为示例。如果你想使用 `mamba`，在命令中简单地用后者替换前者即可。两者混用没有任何问题。
 
 #### 新建环境
 
@@ -105,12 +83,11 @@ conda activate pytorch
 
 > [!TIP]
 > 如果使用的是 N 卡，可以运行命令如下查看 CUDA 版本。
+> 
 > ```sh
 > nvidia-smi
 > ```
-> CUDA 版本显示在输出结果的右上角。
-> 确保你的 CUDA 版本不低于你选的那个。
-> 如果版本过低，你可能要升级显卡驱动。
+> CUDA 版本显示在输出结果的右上角。确保你的 CUDA 版本不低于你选的那个。如果版本过低，你可能要升级显卡驱动。
 
 确认版本无误后，复制表格最下方显示的命令并在激活的环境中运行。
 
@@ -144,6 +121,7 @@ exit()
 ```
 
 ### YOLO
+
 > [!NOTE]
 > 官网 https://docs.ultralytics.com/zh/
 
@@ -178,9 +156,7 @@ exit()
 yolo checks
 ```
 
-该命令会打印出非常详细的安装信息。
-可以简单检查下有没有问题
-（其中 `CUDA:0` 意思是第 *0* 号显卡有可用的 CUDA，并不意味着有问题）。
+该命令会打印出非常详细的安装信息。可以简单检查下有没有问题（其中 `CUDA:0` 意思是第 *0* 号显卡有可用的 CUDA，并不意味着有问题）。
 
 最后你实际运行个示例来测试功能是否正常
 
@@ -201,6 +177,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 >
 
 ### cuDNN（可选）
+
 > [!NOTE]
 > 官网 https://developer.nvidia.com/cudnn
 
@@ -243,8 +220,7 @@ exit()
 
 推荐使用 *VSCode* 来编写 Python 代码，因为~~我喜欢~~官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
 
-可以在 VSCode 的拓展面板中搜索 `Ultralytics Snippets` 来安装此拓展。
-顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
+可以在 VSCode 的拓展面板中搜索 `Ultralytics Snippets` 来安装此拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
 
 #### 使用解释器
 
@@ -324,8 +300,7 @@ yolo settings datasets_dir="datasets"
 ```
 
 > [!TIP]
-> 如果无法在 VSCode 的集成终端中激活环境，你可能需要初始化 shell。
-> 用快捷方式打开已激活了 `base` 环境的 shell，然后运行以下命令
+> 如果无法在 VSCode 的集成终端中激活环境，你可能需要初始化 shell。用快捷方式打开已激活了 `base` 环境的 shell，然后运行以下命令
 > 
 > ```sh
 > conda init powershell

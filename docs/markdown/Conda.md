@@ -4,20 +4,18 @@
 
 [Miniforge3 对比其它项目](https://conda-forge.org/docs/user/introduction/)
 
-Miniforge 相比 Anaconda 有一些区别。个人更推荐使用前者。
+*Miniforge* 相比 *Anaconda* 有一些区别。个人更推荐使用前者。
 
-优势：
-  - 默认提供了更快速的包管理器 `mamba`，兼容所有常用的 `conda` 命令
-  - 默认使用 `conda-forge` 渠道下载，这是社区维护的包渠道，包数量更多、包更新更及时、平台支持更丰富，且完全不用担心许可协议的问题
-  - `base` 环境非常干净，只有包管理程序运行所需的包
-
-劣势：
-  - 默认不安装 `Anaconda Navigator`，无法以可视化的方式使用包管理器
+  1. 优势
+    - 默认提供了更快速的包管理器 `mamba`，兼容所有常用的 `conda` 命令。当然 `conda` 在 *Miniforge* 里也是可用的。
+    - 默认使用 `conda-forge` 渠道下载，这是社区维护的包渠道，包数量更多、包更新更及时、平台支持更丰富，且完全不用担心许可协议的问题
+    - `base` 环境非常干净，只有包管理程序运行所需的组件
+  2. 劣势
+    - 默认不安装 `Anaconda Navigator`，无法以可视化的方式使用包管理器
 
 ## 安装
 
-不建议用 scoop 安装。
-推荐使用官方的安装脚本。
+不建议用 scoop 安装。推荐使用官方的安装脚本。
 
 [Miniforge3 官方下载链接](https://conda-forge.org/download/)
 

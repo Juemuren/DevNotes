@@ -1,13 +1,15 @@
 # VSCode
 
-<!-- TODO 插件推荐 -->
 ## 插件推荐
 
+<!-- TODO 插件推荐 -->
 
 ## Cpp
+
 [VSCode 官方文档](https://code.visualstudio.com/docs/cpp/config-mingw)
 
 ### 安装工具链
+
 请确保已完成 [MSYS 的配置](MSYS.md)
 
 #### 安装编译器和调试器
@@ -30,15 +32,19 @@ gcc --version
 ```
 
 #### 安装编辑器插件
+
 安装以下插件
-- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+  - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
 ### 编辑器集成
 
 #### 配置智能感知
+
 输入 VSCode 命令 ```C/C++: Edit Configurations```，调整需要的设置。
 
 配置出来的 ```c_cpp_properties.json``` 文件大概长这样
+
 ```json
 {
     "configurations": [
@@ -65,11 +71,13 @@ gcc --version
 现在代码可以智能感知了。
 
 #### 配置调试任务
+
 新建一个 ```test.c``` 或 ```test.cpp``` 文件
 
 输入 VSCode 命令 ```C/C++: Add Debug Configuration```，选择 ```C/C++``` 插件自动生成的配置。
 
 自动生成的 ```tasks.json``` 和 ```launch.json``` 文件大概分别长这样
+
 ```json
 {
     "tasks": [
@@ -97,6 +105,7 @@ gcc --version
     "version": "2.0.0"
 }
 ```
+
 ```json
 {
     "version": "2.0.0",
@@ -136,9 +145,11 @@ gcc --version
 有关 C/C++ 开发的更多技巧可以参考 [Cpp](Cpp.md)
 
 ## Python
+
 [VSCode 官方文档](https://code.visualstudio.com/docs/python/python-quick-start)
 
 ### 安装工具链
+
 请确保已完成 [Conda 的配置](Conda.md)
 
 #### 安装解释器和第三方库
@@ -151,14 +162,17 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 ```
 
 #### 安装编辑器插件
+
 安装以下插件
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+  - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+  - [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+  - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 ### 编辑器集成
 
 #### 使用解释器
+
 新建一个 ```test.py``` 文件
 
 输入 VSCode 命令 ```Python: Select Interpreter```，选择一个合适的解释器。
@@ -189,6 +203,7 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 现在可以直接点击按钮来调试了。
 
 #### 使用编程笔记本
+
 新建一个 ```test.ipynb``` 文件
 
 输入 VSCode 命令  ```Jupyter: Select Interpreter to Start Jupyter Server```，选择一个合适的内核。
