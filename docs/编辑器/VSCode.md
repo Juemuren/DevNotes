@@ -10,7 +10,7 @@
 
 ### 安装工具链
 
-请确保已完成 [MSYS 的配置](MSYS.md)
+请确保已完成 [MSYS 的配置](../环境管理/MSYS.md)
 
 #### 安装编译器和调试器
 
@@ -142,7 +142,7 @@ gcc --version
 
 现在可以直接点击按钮来编译、运行和调试了。
 
-有关 C/C++ 开发的更多技巧可以参考 [Cpp](Cpp.md)
+有关 C/C++ 开发的更多技巧可以参考 [Cpp](../编程语言/Cpp.md)
 
 ## Python
 
@@ -150,7 +150,7 @@ gcc --version
 
 ### 安装工具链
 
-请确保已完成 [Conda 的配置](Conda.md)
+请确保已完成 [Conda 的配置](../环境管理/Conda.md)
 
 #### 安装解释器和第三方库
 
@@ -210,4 +210,4 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 现在可以使用编程笔记本了。
 
-有关 Python 开发的更多技巧可以参考 [Python](Python.md)
+有关 Python 开发的更多技巧可以参考 [Python](../编程语言/Python.md)

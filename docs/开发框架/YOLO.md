@@ -11,7 +11,7 @@
 ### Shell
 
 > [!NOTE] 补充命令行的知识
-> 有关命令行界面（CLI）的概念，可参考之前的教程 [CLI](CLI.md#基本概念)
+> 有关命令行界面（CLI）的概念，可参考之前的教程 [CLI](../命令行工具/index.md#基本概念)
 
 Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 `win` 后输入 `cmd` 或 `powershell` 并按回车即可运行 shell。
 
@@ -28,7 +28,7 @@ Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 
 #### 对比
 
 > [!NOTE] 你应该选哪个 Conda 发行版
-> 有关 Miniforge 与 Anaconda 的对比，可以参考前面的教程 [Conda](Conda.md#对比)
+> 有关 Miniforge 与 Anaconda 的对比，可以参考前面的教程 [Conda](../环境管理/Conda.md#对比)
 
 #### 安装
 
