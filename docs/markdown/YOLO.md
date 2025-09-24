@@ -218,7 +218,7 @@ exit()
 
 #### 拓展
 
-推荐使用 *VSCode* 来编写 Python 代码，因为~~我喜欢~~官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
+推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
 
 可以在 VSCode 的拓展面板中搜索 `Ultralytics Snippets` 来安装此拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
 
