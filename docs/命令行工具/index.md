@@ -1,5 +1,4 @@
-<!-- TODO CLI-->
-# CLI
+# 命令行工具
 
 ## 基本概念
 
@@ -8,94 +7,66 @@
   - 在命令行界面里，用户输入文本命令来执行操作
   - 在图形用户界面里，用户使用按钮或类似的元素来执行操作
 
-**终端**（Terminal）提供了一个命令行界面，并且运行着 `shell`。shell 是一类程序，会接收输入、执行命令并输出结果。因此终端让你可以输入文本命令来和操作系统交互。
+**终端**（Terminal）提供了一个命令行界面，并且运行着 `shell`。shell 是一类程序，会接收输入、执行命令并输出结果。因此你可以在终端里输入文本命令来和操作系统交互。
 
-可以认为 shell 就是一个 CLI 程序。所有的系统都会自带 shell。在 Linux 发行版里，这通常是 `bash`。在 Windows 里，这通常是 `cmd` 和 `powershell`。
+## 分类
 
-除了 shell 外，包管理器也是一类很重要的 CLI 程序。同样的，大多数系统都会自带包管理器。在 Linux 发行版里，可能是 `apt`、`pacman`、`yum` 等。在较新的 Windows 里，这是 `winget`。
+如前所述，可以认为 **shell** 就是一个 CLI 程序。所有的系统都会自带 shell。在 Linux 发行版里，这通常是 `bash`。在 Windows 里，这通常是 `cmd` 和 `powershell`。
 
-此外还有一类被称为 `coreutils` 的程序，它们是系统的核心程序。提供了文件操作、文本处理、获取信息等基本功能。比如 GNU 的 `ls`、`cp`、`mv`、`rm`、`cat`、`echo`、`pwd`、`env`、`ps`、`uname` 等。它们通常会被预装在 Linux 发行版上。而 Windows 系统似乎并没有预装这些 CLI 程序，可能是由于用户更习惯使用 GUI。不过 `powershell` 似乎以内置命令的方式实现了部分核心程序。
+除 shell 外，包管理器也是一类重要的 CLI 程序。同样的，大多数系统都会自带包管理器，我称其为**系统包管理器**。在 Linux 发行版里，这可能是 `apt`、`pacman`、`yum` 等；而在较新的 Windows 里，这一般是 `winget`。
 
-然而以上仅仅是 CLI 程序的冰山一角。CLI 程序非常多，可能比你所知道的、有图形界面的软件还多。它们之中虽然大多都不会预装在系统里，但有时可以显著提高开发效率。作为开发者，简要了解一下这些 CLI 工具还是很有用的。
+此外还有一类被称为 **coreutils** 的 CLI 程序，它们是类 *UNIX* 系统的核心命令行工具，提供了文件操作、文本处理、信息获取等实用功能。它们通常会被预装在所有的 Linux 发行版里。Windows 系统并没有预装这些程序，不过 powershell 似乎以*内置命令*的方式实现了部分功能。
 
-当然，本教程不会介绍哪些预装在大多数系统里的 CLI 程序。因为那样教程就会变得很无趣。我会分享一些我认为很有趣的或很好用的工具。这些工具简要分成了三类：`shell`、`package manager`、`cli tools`
+然而以上仅仅是 CLI 工具的冰山一角。CLI 程序非常多，可能比你所知道的、有图形界面的软件还多。一些 CLI 程序尽管不会预装在系统里，但却可以显著提高开发效率。因此作为开发者，简要了解一下这部分 CLI 工具也是有用的。
 
-## Shell
+本教程不会介绍那些预装在大多数系统里的 CLI 程序，因为这样教程会变得很无趣。我会分享一些我认为有趣的或好用的工具，并部分参考了 [awesome-shell](https://github.com/alebcay/awesome-shell)
 
-Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。当然 Windows 也可以使用别的 Shell，比如 *Bash*、*Zsh* 等，但需要额外下载。
+我把这些工具简要分成了以下几类
 
-目前有两种主流的方法，当然后者应该更主流一点
+  - [Shell](Shell.md)
+  - [系统包管理器](../包管理/index.md#系统包管理器)（放到了专门的章节里，和语言包管理器混在一起）
+  - [版本管理](#版本管理)
+  - [文档处理](#文档处理)
+  - [脚本增强](#脚本增强)
+  - [shell 集成](#shell-集成)
+  - [coreutils 替代](#coreutils-替代)
+  - [小玩具](#小玩具)
 
-  - 通过 MSYS 下载移植的 Shell
-  - 通过 WSL，在一个 Linux 子系统里使用别的 Shell
+与特定编程语言有关的 CLI 工具，比如编译器、解释器、调试器、语言包管理器、构建工具、格式化工具、静态检查工具、性能分析工具、内存分析工具等就不列举在这里了，可以去[编程语言](../编程语言/index.md)章节查阅有关特定语言的部分
 
-### zsh
+### 版本管理
 
-wsl-zsh 系统包管理器可以直接下
+git 我觉得开发者已经离不开 git 了，想象不出来没有 git 世界会变成怎样
 
-msys-zsh 同上（系统包管理器是 pacman）
+### 文档处理
 
+graphviz 代码生成图片
 
-一些插件推荐
+pandoc 文档格式转换
 
-  - oh-my-zsh 插件框架。非常好用，建议先[安装此框架](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)再去安装下面的插件。
-  - zsh-autosuggestions 自动建议。建议[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
-  - zsh-syntax-highlight 语法高亮。建议[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
-  - zsh-completions 额外的命令补全。一般来说没必要装，因为 zsh 自带的补全已经够用了。想装的话建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
+LaTeX 文字排版工具，最喜欢 miktex
 
-### bash
+typst 新一代文字排版工具，没用过，但语法确实比 LaTeX 简单多了
 
-git-bash 安装 git 附赠的，不过这个 bash 其实来自于 msys 项目
+weasyprint HTML 转 PDF 工具，不过可能更习惯使用浏览器的打印功能，但命令行好处就是能够自动化
 
-msys-bash MSYS 环境默认的 shell
+mkdocs 静态网站生成器，其实是 python 的一个库，提供了 python 的接口，但说是命令行工具也没问题
 
-wsl-bash WSL 系统默认的 shell
+### 脚本增强
 
-一些插件或工具推荐
+just 语法类似 make 但不是构建系统，而是专门用来写脚本的工具，因此可以为此进行优化让其更易用，比如省了很多 `.PHONY`。其实把 make 当作脚本工具是种对 make 的滥用，毕竟 make 本意其实是一个构建系统（从名字就能看出来），而 just 则专门为脚本设计，适合仅想写脚本而不关注构建的人（从名字也能看出来）。并且 just 可以选择执行脚本的 shell，是一种很方便的跨平台脚本工具，没有 just 可能每个 shell 都要准备一个脚本文件，现在写一起让用户选择 shell 就行了。
 
-  - blesh 行编辑器。有语法高亮和自动建议等功能，但在 Windows 上（不管是 MSYS 还是 WSL）性能问题有点严重。想要这些功能建议用 zsh，安装 zsh-autosuggestions 和 zsh-syntax-highlight 两个插件即可（建议用 oh-my-zsh 管理插件）。
-  - shellcheck 脚本静态检查。
+shellcheck 脚本静态检查
 
-### pwsh
+### shell 集成
 
-如果喜欢用 powershell，那么 powershell 7 最好安装一个。这比自带的旧的 powershell 好用很多。
+fzf 如果想集成到 powershell 里需要额外插件 
 
-目前我感觉最主要的好处有以下几个
+zoxide 快速工作目录跳转
 
-  - 更精确的错误提示
-  - 常用的内置命令输出有高亮
+starship 自定义 prompt，美化就是生产力 `:)`
 
-另外 pwsh 也能安装插件（官方说法是模块），以下是推荐的部分模块
-
-  - PSReadLine 改善使用体验的模块。有语法高亮、命令补全（似乎只支持内置命令）、自动建议等功能，体验上不如 zsh 的类似插件，但也算够用。
-  - PSFzf 集成 fzf 的模块，需要先安装 fzf。
-  - PSCompletions 命令补全模块，提供了常用命令的补全，并且可以管理这些补全。
-
-## Package Manager
-
-### windows
-scoop
-
-### linux
-homebrew
-
-## CLI Tools
-
-### 必备
-
-git
-
-vim 也许 neovim 现在更流行，不过我不怎么用 vim 不太清楚
-
-### 集成在 shell 里的
-
-fzf
-
-starship
-
-zoxide
-
-### 替代传统 gnu 工具的
+### coreutils 替代
 
 eza 替代 ls
 
@@ -103,13 +74,11 @@ bat 替代 cat
 
 delta 替代 diff
 
-rg 替代 grep
+ripgrep 替代 grep
 
-tldr 替代 man
+tldr 替代 man，tldr 就是*太长不看*的意思，懒人福音，没有 man 那样详细的文档，只给出具体的示例，你选择一种用法后会指导你替换掉其中的参数
 
 fd 替代 find
-
-just 替代 make
 
 ### 小玩具
 
@@ -118,21 +87,3 @@ cloc 统计代码行数
 fastfetch 获取系统信息，很酷，有种极客的感觉
 
 gh GitHub 的 CLI 工具，没用过，感觉像玩具
-
-graphviz 代码生成图片
-
-pandoc 文档格式转换（好吧这个我偶尔会用，也许不是玩具）
-
-### 语言解释器
-
-<!-- TODO 这个不应该出现在这里，过段时间删了 -->
-
-julia
-
-nodejs
-
-sbcl
-
-scriptcs
-
-iverilog + gtkwave 该软件有 dll 依赖，可能污染系统环境，建议在 MSYS 里用 pacman 装（不过说实话，随着安装的工具变多，MSYS 环境早晚会和系统环境冲突，要编译程序最好还是先进入 MSYS 环境，而不是在系统环境里编译）
