@@ -10,9 +10,13 @@ markdown_extensions:
   - nl2br
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.magiclink
   - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
@@ -56,21 +60,29 @@ plugins:
       minify_html: true
 
 nav:
-  - 首页: "index.md"
+  - 首页: index.md
   - 环境管理: 
-    - MSYS: "环境管理/MSYS.md"
-    - Conda: "环境管理/Conda.md"
+    - 环境管理: 环境管理/index.md
+    - MSYS: 环境管理/MSYS.md
+    - Conda: 环境管理/Conda.md
   - 包管理:
-    - Vcpkg: "包管理/Vcpkg.md"
+    - 包管理: 包管理/index.md
+    - Vcpkg: 包管理/Vcpkg.md
   - 编程语言:
-    - Cpp: "编程语言/Cpp.md"
-    - Python: "编程语言/Python.md"
+    - 编程语言: 编程语言/index.md
+    - Cpp: 编程语言/Cpp.md
+    - Python: 编程语言/Python.md
   - 命令行工具:
-    - CLI: "命令行工具/index.md"
+    - 命令行工具: 命令行工具/index.md
+    - Shell: 命令行工具/Shell.md
   - 编辑器:
-    - VSCode: "编辑器/VSCode.md"
+    - 编辑器: 编辑器/index.md
+    - VSCode: 编辑器/VSCode.md
   - 开发框架:
-    - YOLO: "开发框架/YOLO.md"
+    - 开发框架: 开发框架/index.md
+    - YOLO: 开发框架/YOLO.md
+  - 嵌入式:
+    - 嵌入式: 嵌入式/index.md
 
 extra:
   generator: false

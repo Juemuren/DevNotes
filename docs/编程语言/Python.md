@@ -7,42 +7,40 @@
 
 ## 性能分析
 
-snakeviz
+  - snakeviz
 
 ## 科学计算
 
-numpy
-
-sympy
-
-scipy
+  - numpy
+  - sympy
+  - scipy
 
 ## 绘图
 
-matplotlib
+  - matplotlib
 
 ## 数据分析
 
-networkx
-
-pandas
+  - networkx
+  - pandas
 
 ## 信号与系统
 
-control
+  - control
 
 ## 机器学习
 
-scikit-learn
-
-tensorflow
-
-pytorch
+  - scikit-learn
+  - tensorflow
+  - pytorch
+  - [YOLO](../开发框架/YOLO.md)
 
 ## 编程笔记本
 
-ipykernel 内核
+  - ipykernel 内核
+  - jupyterlab 界面
+  - nbconvert 导出
 
-jupyterlab 界面
+## 后端框架
 
-nbconvert 导出
+  - FastAPI

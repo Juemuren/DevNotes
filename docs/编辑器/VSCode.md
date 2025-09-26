@@ -2,23 +2,74 @@
 
 ## 插件推荐
 
-<!-- TODO 插件推荐 -->
+### 本地化
+
+  - Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code 中文本地化插件
+
+### 实用
+
+  - EditorConfig for VS Code 可以在不同的编辑器间使用相同的配置（包括缩进格式、编码方式、行尾序列等），如果参与协作通常都要这个东西。
+  - Project Manager 为 VSCode 提供了一个项目管理面版
+  - Todo Tree 识别代码中的所有 TODO、FIXME 等特殊注释，并在一个面板中显示出来
+  - Bookmarks 代码书签，没怎么用过
+  - Code Spell Checker 拼写检查，没怎么用过，因为代码里出现的英文单词一般都不是很规范，比如各种奇怪的缩写，还要一个个排除掉，有点麻烦
+  - Vim 提供类似 Vim 的无鼠标编辑体验
+  - WSL 支持连接到本地的 WSL 虚拟机
+  - GitHub Repositories 远程浏览和编辑 GitHub 仓库，如果某些仓库特别大不适合 clone 到本地的话，这个插件非常方便
+
+### 美化
+
+美化就是生产力！
+
+  - CodeSnap 生成好看的代码截图
+  - Error Lens 把错误/警告/信息等直接显示在该行，而不是要打开面版才能查看
+  - ident-rainbow 给缩进高亮，让你能够清楚地看出缩进层数
+  - Material Icon Theme 美化插件，好看的图标。
+  - One Dark Pro 我很喜欢的一个主题。
+  - Output Colorizer 为 VSCode 的输出面板着色
+
+### 版本管理
+
+我主要还是用 VSCode 自带的 Git 拓展，结合命令行操作，比较少用插件
+
+  - Git Graph 增强 Git，以图形的方式显示 git 历史，并支持丰富的操作。
+  - Gitlens 会把 git 历史信息直接显示在该行，另外还有其它功能，有点臃肿。
+
+### 文件支持
+
+  - Office Viewer 支持在 VSCode 里查看非常多种的格式，包括 docx、xlsx、pdf、ttf、zip 等
+  - Mermaid Chart 支持 mermaid 预览和导出
+  - PlantUML 和前者差不多，不过是另一种语法的 UML
+  - YAML 语言服务
+  - Even Better TOML 格式了 TOML 的语言服务
+
+### 编程笔记本
+
+  - Jupyter
+  - Polyglot Notebooks
 
 ## Cpp
 
 [VSCode 官方文档](https://code.visualstudio.com/docs/cpp/config-mingw)
 
-### 安装工具链
+### 环境搭建
 
 请确保已完成 [MSYS 的配置](../环境管理/MSYS.md)
 
-#### 安装编译器和调试器
+#### 安装工具链
 
 ```sh
 pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 ```
 
+如此一来环境其实已经搭建完成了。你现在可以直接在终端里进入 MSYS 环境，然后编译文件、调试程序。
+
+只不过，如果你想要使用 VSCode 的语言服务，那么需要配置智能感知。如果你想要 GUI 操作支持，那么需要配置调试任务。
+
 #### 添加环境变量
+
+> [!WARNING]
+> 修改 *PATH* 变量可能不是最好的做法。虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入环境](../环境管理/MSYS.md)后再使用编译器。你可以[配置自定义任务](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)来使用 VSCode 的 GUI。
 
 假设 MSYS2 安装在 ```C:\msys64``` 中
 
@@ -26,24 +77,23 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 setx PATH "C:\msys64\ucrt64\bin;%PATH%"
 ```
 
-测试是否成功
+测试是否成功（在 VSCode 中打开集成终端，不进入 MSYS 环境）
+
 ```sh
 gcc --version
 ```
 
-#### 安装编辑器插件
+### 编辑器集成
 
-安装以下插件
+需要安装以下插件
 
   - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
-### 编辑器集成
-
 #### 配置智能感知
 
-输入 VSCode 命令 ```C/C++: Edit Configurations```，调整需要的设置。
+输入 VSCode 命令 `C/C++: Edit Configurations`，调整需要的设置。会自动在 `.vscode/c_cpp_properties.json` 中生成配置文件，当然你也可以手动修改该文件
 
-配置出来的 ```c_cpp_properties.json``` 文件大概长这样
+配置出来的 `c_cpp_properties.json` 文件大概长这样
 
 ```json
 {
@@ -68,15 +118,13 @@ gcc --version
 }
 ```
 
-现在代码可以智能感知了。
+现在代码可以使用语言服务了。
 
 #### 配置调试任务
 
-新建一个 ```test.c``` 或 ```test.cpp``` 文件
+新建一个 `test.c` 或 `test.cpp` 文件，然后输入 VSCode 命令 `C/C++: Add Debug Configuration`，选择 `C/C++` 插件的默认配置模板。然后会在 `.vscode` 目录下自动生成配置文件。
 
-输入 VSCode 命令 ```C/C++: Add Debug Configuration```，选择 ```C/C++``` 插件自动生成的配置。
-
-自动生成的 ```tasks.json``` 和 ```launch.json``` 文件大概分别长这样
+自动生成的 `tasks.json` 和 `launch.json` 文件大概分别长这样
 
 ```json
 {
@@ -142,7 +190,11 @@ gcc --version
 
 现在可以直接点击按钮来编译、运行和调试了。
 
-有关 C/C++ 开发的更多技巧可以参考 [Cpp](../编程语言/Cpp.md)
+有关这些配置文件的更多信息，请参考
+
+  - [任务配置](https://code.visualstudio.com/docs/debugtest/tasks)
+
+  - [调试配置](https://code.visualstudio.com/docs/debugtest/debugging-configuration)
 
 ## Python
 

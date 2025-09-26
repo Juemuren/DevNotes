@@ -36,54 +36,39 @@
 
 ### 版本管理
 
-git 我觉得开发者已经离不开 git 了，想象不出来没有 git 世界会变成怎样
+  - git 我觉得开发者已经离不开 git 了，想象不出来没有 git 世界会变成怎样
 
 ### 文档处理
 
-graphviz 代码生成图片
-
-pandoc 文档格式转换
-
-LaTeX 文字排版工具，最喜欢 miktex
-
-typst 新一代文字排版工具，没用过，但语法确实比 LaTeX 简单多了
-
-weasyprint HTML 转 PDF 工具，不过可能更习惯使用浏览器的打印功能，但命令行好处就是能够自动化
-
-mkdocs 静态网站生成器，其实是 python 的一个库，提供了 python 的接口，但说是命令行工具也没问题
+  - graphviz 代码生成图片
+  - pandoc 文档格式转换
+  - LaTeX 文字排版工具，最喜欢 miktex
+  - typst 新一代文字排版工具，没用过，但语法确实比 LaTeX 简单多了
+  - weasyprint HTML 转 PDF 工具，不过可能更习惯使用浏览器的打印功能，但命令行好处就是能够自动化
+  - mkdocs 静态网站生成器，其实是 python 的一个库，提供了 python 的接口，但说是命令行工具也没问题
 
 ### 脚本增强
 
-just 语法类似 make 但不是构建系统，而是专门用来写脚本的工具，因此可以为此进行优化让其更易用，比如省了很多 `.PHONY`。其实把 make 当作脚本工具是种对 make 的滥用，毕竟 make 本意其实是一个构建系统（从名字就能看出来），而 just 则专门为脚本设计，适合仅想写脚本而不关注构建的人（从名字也能看出来）。并且 just 可以选择执行脚本的 shell，是一种很方便的跨平台脚本工具，没有 just 可能每个 shell 都要准备一个脚本文件，现在写一起让用户选择 shell 就行了。
-
-shellcheck 脚本静态检查
+  - just 语法类似 make 但不是构建系统，而是专门用来写脚本的工具，因此可以为此进行优化让其更易用，比如省了很多 `.PHONY`。其实把 make 当作脚本工具是种对 make 的滥用，毕竟 make 本意其实是一个构建系统（从名字就能看出来），而 just 则专门为脚本设计，适合仅想写脚本而不关注构建的人（从名字也能看出来）。并且 just 可以选择执行脚本的 shell，是一种很方便的跨平台脚本工具，没有 just 可能每个 shell 都要准备一个脚本文件，现在写一起让用户选择 shell 就行了。
+  - shellcheck 脚本静态检查
 
 ### shell 集成
 
-fzf 如果想集成到 powershell 里需要额外插件 
-
-zoxide 快速工作目录跳转
-
-starship 自定义 prompt，美化就是生产力 `:)`
+  - fzf 如果想集成到 powershell 里需要额外插件 
+  - zoxide 快速工作目录跳转
+  - starship 自定义 prompt，美化就是生产力 `:)`
 
 ### coreutils 替代
 
-eza 替代 ls
-
-bat 替代 cat
-
-delta 替代 diff
-
-ripgrep 替代 grep
-
-tldr 替代 man，tldr 就是*太长不看*的意思，懒人福音，没有 man 那样详细的文档，只给出具体的示例，你选择一种用法后会指导你替换掉其中的参数
-
-fd 替代 find
+  - eza 替代 ls
+  - bat 替代 cat
+  - delta 替代 diff
+  - ripgrep 替代 grep
+  - tldr 替代 man，tldr 就是*太长不看*的意思，懒人福音，没有 man 那样详细的文档，只给出具体的示例，你选择一种用法后会指导你替换掉其中的参数
+  - fd 替代 find
 
 ### 小玩具
 
-cloc 统计代码行数
-
-fastfetch 获取系统信息，很酷，有种极客的感觉
-
-gh GitHub 的 CLI 工具，没用过，感觉像玩具
+  - cloc 统计代码行数
+  - fastfetch 获取系统信息，很酷，有种极客的感觉
+  - gh GitHub 的 CLI 工具，没用过，感觉像玩具

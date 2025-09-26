@@ -33,7 +33,7 @@ db_home: windows cygwin desc
 pacman -S zsh
 ```
 
-## 启动环境
+## 进入环境
 
 [MSYS2 官方文档](https://www.msys2.org/wiki/Launchers/)
 
@@ -70,9 +70,9 @@ msys -ucrt64
 msys -mingw64
 ```
 
-当然你也可以自己配置你的脚本
+当然你也可以使用别的方式配置、管理你自己的脚本
 
-现在我们可以随地启动 MSYS 环境了
+现在我们可以随时随地非常方便地启动 MSYS 环境了
 
 ### 使用命令
 
@@ -101,7 +101,7 @@ C:\\msys64\\usr\\bin\\env CHERE_INVOKING=1 MSYS2_PATH_TYPE=inherit MSYSTEM=UCRT6
 
 这很麻烦。好在大多数编辑器/终端都可以配置启动命令。
 
-启动命令可以参考[启动环境](#启动环境)这节
+启动命令可以参考[进入环境](#进入环境)这节
 
 ### VSCode Terminal
 [MSYS2 官方文档](https://www.msys2.org/docs/ides-editors/)
