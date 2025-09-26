@@ -79,9 +79,10 @@ nav:
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
-  - 开发框架:
-    - 开发框架: 开发框架/index.md
-    - YOLO: 开发框架/YOLO.md
+  - 库和框架:
+    - 库和框架: 库和框架/index.md
+    - Pytorch: 库和框架/Pytorch.md
+    - YOLO: 库和框架/YOLO.md
   - 嵌入式:
     - 嵌入式: 嵌入式/index.md
 

@@ -6,7 +6,7 @@
 
 ### 安装工具链
 
-请先完成 [Conda 的配置](../环境管理/Conda.md)
+请先完成 [Miniforge 的安装](../环境管理/Conda.md)
 
 通过如下命令安装解释器和第三方库
 
@@ -31,9 +31,12 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 新建一个 `test.py` 文件
 
-输入 VSCode 命令 `Python: Select Interpreter`，选择一个合适的解释器。
+输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器
 
-现在可以直接点击按钮来运行了。
+> [!TIP] 无法识别 Conda 环境
+> 如果 VSCode 没有识别到 conda 环境的话，你可能需要设置 conda 路径。按下 `ctrl + ,`，然后输入 `conda` 会看到一个叫 `Python: Conda Path` 的设置，在里面填写 conda 可执行文件的路径。你可以在激活了 `base` 环境的 shell 里运行 `where.exe conda` 来获取路径。
+
+之后就可以在 `.py` 文件的右上角找到运行按钮，此时 VSCode 会调用刚选择的解释器
 
 #### 使用调试器
 
@@ -107,7 +110,7 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 - scikit-learn
 - tensorflow
 - pytorch
-- [YOLO](../开发框架/YOLO.md)
+- [YOLO](../库和框架/YOLO.md)
 
 ### 编程笔记本
 

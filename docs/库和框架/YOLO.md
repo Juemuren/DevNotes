@@ -8,20 +8,11 @@
 > [!ABSTRACT] 侧重 Windows 平台
 > 本部分只介绍关于 Windows 平台的配置方法。不过其它平台方法差不太多，可以参考部分内容。
 
-### Shell
+### 先决条件
 
-> [!NOTE] 补充命令行的知识
-> 有关命令行界面（CLI）的概念，可参考之前的教程 [CLI](../命令行工具/index.md#基本概念)
+#### Miniforge
 
-Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 `win` 后输入 `cmd` 或 `powershell` 并按回车即可运行 shell。
-
-本教程之后将默认命令运行在 *PowerShell* 里（因为我用的是 *PowerShell*）。当然 *CMD* 应该也不会遇到问题的。
-
-### Miniforge
-
-参考 [Miniforge 安装](../环境管理/Conda.md#安装)
-
-#### 新建环境
+请先完成 [Miniforge 安装](../环境管理/Conda.md#安装)
 
 输入以下命令创建一个 `python 3.12` 的环境（*3.12* 是目前 [ultralytics](https://pypi.org/project/ultralytics/) 已验证兼容性的最高版本，不过我用 *3.13* 还没遇到过问题）
 
@@ -42,9 +33,9 @@ conda activate pytorch
 > [!TIP] 忘了环境名字
 > 如果忘记了刚创建的环境的名字，可以使用 `conda env list` 列出所有环境。
 
-### Pytorch
+#### Pytorch
 
-参考 [Pytorch 安装](Pytorch.md)，记得在刚激活的环境里安装
+在刚激活的环境里完成 [Pytorch 安装](Pytorch.md)
 
 ### 安装
 
@@ -103,12 +94,14 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 > ```
 >
 
-### cuDNN（可选）
+### 可选项
+
+#### cuDNN
 
 > [!NOTE] 官网
 > <https://developer.nvidia.com/cudnn>
 
-目前我没用到这个库，因此暂时作为可选项
+目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 Pytorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
 
 进入官网后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
 
@@ -142,28 +135,11 @@ import cudnn
 exit()
 ```
 
-### VSCode（可选）
-
-#### 拓展
+#### VSCode
 
 推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
 
 可以在 VSCode 的拓展面板中搜索 `Ultralytics Snippets` 来安装此拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
-
-#### 使用解释器
-
-虽然理论上可以通过在终端运行 `python filename.py` 来使用解释器，但大多数人可能还是习惯使用 GUI。
-
-如果要通过 VSCode 的 GUI 运行 python 解释器，需要安装以下拓展：
-
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-
-然后随便打开一个 python 文件，按下 `ctrl + shift + P`，然后输入 `Python: Select Interpreter` 并点击该命令。VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器。
-
-> [!TIP] 无法识别 Conda 环境
-> 如果 VSCode 没有识别到 conda 环境的话，你可能需要设置 conda 路径。按下 `ctrl + ,`，然后输入 `conda` 会看到一个叫 `Python: Conda Path` 的设置，在里面填写 conda 可执行文件的路径。你可以在激活了 `base` 环境的 shell 里运行 `where.exe conda` 来获取路径。
-
-之后就可以在 `.py` 文件的右上角找到运行按钮，此时 VSCode 会调用刚选择的解释器。
 
 ## 使用方法
 
