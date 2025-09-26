@@ -18,9 +18,9 @@ flowchart TD
 
 VSCode + PlatformIO IDE + SimulIDE
 
-  - VSCode 写代码
-  - PlatformIO IDE 生成 hex 文件
-  - SimulIDE 绘制电路图，将模拟芯片和模拟输出设备连接，加载 hex 文件并运行，可视化地查看结果
+- VSCode 写代码
+- PlatformIO IDE 生成 hex 文件
+- SimulIDE 绘制电路图，将模拟芯片和模拟输出设备连接，加载 hex 文件并运行，可视化地查看结果
 
 全流程开源且无需实际硬件
 

@@ -19,35 +19,7 @@ Windows 通常自带了 2 个 shell，分别是 *CMD* 和 *PowerShell*。按下 
 
 ### Miniforge
 
-> [!NOTE] 官网链接
-> https://github.com/conda-forge/miniforge
-
-> [!ABSTRACT] 不必重复安装 Conda
-> 已经安装了 Anaconda 的可跳过此步骤。两者用处、用法都是一样的。
-
-#### 对比
-
-> [!NOTE] 你应该选哪个 Conda 发行版
-> 有关 Miniforge 与 Anaconda 的对比，可以参考前面的教程 [Conda](../环境管理/Conda.md#对比)
-
-#### 安装
-
-下载链接 https://conda-forge.org/download
-
-Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行。
-
-使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。打开该快捷方式会启动一个激活了 `base` 环境的 shell。
-
-可以输入以下命令测试 `conda` 是否可用
-
-```sh
-conda --version
-```
-
-正确显示了版本信息就代表着成功了。
-
-> [!TIP] 如果要用 mamba
-> 这里以及后续都以 `conda` 命令作为示例。如果你想使用 `mamba`，在命令中简单地用后者替换前者即可。两者混用没有任何问题。
+参考 [Miniforge 安装](../环境管理/Conda.md#安装)
 
 #### 新建环境
 
@@ -72,60 +44,14 @@ conda activate pytorch
 
 ### Pytorch
 
->[!NOTE] 官网
-> https://pytorch.org/
+参考 [Pytorch 安装](Pytorch.md)，记得在刚激活的环境里安装
 
-官方安装手册 https://pytorch.org/get-started/locally/
-
-![](../images/pytorch.png)
-
-打开官方安装手册链接后，网站会检测操作系统和显卡，并推荐下载的版本。
-
-> [!TIP] 检查 CUDA 版本
-> 如果使用的是 N 卡，可以运行命令如下查看 CUDA 版本。
-> 
-> ```sh
-> nvidia-smi
-> ```
-> CUDA 版本显示在输出结果的右上角。确保你的 CUDA 版本不低于你选的那个。如果版本过低，你可能要升级显卡驱动。
-
-确认版本无误后，复制表格最下方显示的命令并在激活的环境中运行。
-
-```sh
-# 这是我的安装命令，你应该去复制网站上的那个而不是下面这个
-pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu129
-```
-
-> [!FAILURE] 注意环境
-> 运行安装命令前请确保你激活了正确的环境。
-
-> [!WARNING] 确保网络通畅
-> 需下载的总文件大约 4G 左右（因版本而异），时间可能有点长。
-
-下载完成后，可通过如下方式测试是否可用
-
-```sh
-# 运行下行命令以 REPL 模式启动解释器
-python
-```
-
-```python
-# 解释器启动后，输入下行代码
-import torch
-# 如果没有报错，那就是正确安装了。
-# 如果下载的是 CUDA 的版本，可以输入下行代码检查 CUDA 是否可用
-torch.cuda.is_available()     # 应该返回 True
-torch.cuda.get_device_name(0) # 应该返回显卡名称
-# 最后可输入下行代码关闭解释器
-exit()
-```
-
-### YOLO
+### 安装
 
 > [!NOTE] 官网
-> https://docs.ultralytics.com/zh/
+> <https://docs.ultralytics.com/zh/>
 
-官方快速入门手册 https://docs.ultralytics.com/zh/quickstart/
+官方快速入门手册 <https://docs.ultralytics.com/zh/quickstart/>
 
 官方快速入门手册推荐使用 pip 安装，因此使用如下命令安装
 
@@ -164,12 +90,13 @@ yolo checks
 yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
-该命令会下载官方预训练的模型 `yolo11n.pt`，并下载 https://ultralytics.com/images/bus.jpg 这张图片进行预测。模型和图片会下载到当前工作目录（就是 shell 的命令提示符前显示的目录），而运行的结果默认保存在当前工作目录的 **runs** 目录下。你可以运行 `explorer .\runs\detect\predict\` 打开文件夹，看看图片是否被正确预测。
+该命令会下载官方预训练的模型 `yolo11n.pt`，并下载 <https://ultralytics.com/images/bus.jpg> 这张图片进行预测。模型和图片会下载到当前工作目录（就是 shell 的命令提示符前显示的目录），而运行的结果默认保存在当前工作目录的 **runs** 目录下。你可以运行 `explorer .\runs\detect\predict\` 打开文件夹，看看图片是否被正确预测。
 
-![](../images/bus.jpg)
+![Yolo test](../images/bus.jpg)
 
 > [!TIP] 网络问题
 > 如果因网络问题无法下载图片的话，你可以用自己的图片，只需修改 source 参数即可。如果无法下载模型，你可能不得不先解决网络问题。
+>
 > ```sh
 > # 使用官方预训练模型预测当前工作目录下的 example.jpg 图片。
 > yolo predict model=yolo11n.pt source='example.jpg'
@@ -179,7 +106,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 ### cuDNN（可选）
 
 > [!NOTE] 官网
-> https://developer.nvidia.com/cudnn
+> <https://developer.nvidia.com/cudnn>
 
 目前我没用到这个库，因此暂时作为可选项
 
@@ -187,8 +114,9 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 不过英伟达非常逆天地在 PyPI 上注册了多个假包来告诉你没有安装正确的版本，并且更逆天的是官网上的安装命令下载的就是假包。
 
-![](../images/cuDNN.png)
-![](../images/PyPI.png)
+![cuDNN](../images/cuDNN.png)
+
+![cuDNN PyPI](../images/PyPI.png)
 
 目前 [PyPI](https://pypi.org/search/?q=cudnn) 上这么多的版本中只有 `nvidia-cudnn-cu11`、`nvidia-cudnn-cu12`、`nvidia-cudnn-cu13` 这几个不是假包。请根据显卡的 CUDA 版本下载正确的包。查看 CUDA 版本的方式可参考前面关于 [Pytorch](#pytorch) 的部分。
 
@@ -239,13 +167,13 @@ exit()
 
 ## 使用方法
 
-YOLO 有两种用法，分别是 `Python` 和  `CLI` 
+YOLO 有两种用法，分别是 `Python` 和  `CLI`
 
 ### Python
 
 > [!NOTE] 官方文档
-> https://docs.ultralytics.com/zh/usage/python/
-> 
+> <https://docs.ultralytics.com/zh/usage/python/>
+>
 > 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
 
 通过 `from ultralytics import YOLO` 来导入 YOLO 库。
@@ -255,8 +183,8 @@ YOLO 有两种用法，分别是 `Python` 和  `CLI`
 ### CLI
 
 > [!NOTE] 官方文档
-> https://docs.ultralytics.com/zh/usage/cli/
-> 
+> <https://docs.ultralytics.com/zh/usage/cli/>
+>
 > 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
 
 YOLO CLI 的基本语法如下
@@ -267,9 +195,9 @@ yolo TASK MODE ARGS
 
 其中
 
-  - **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。对于本次作业，`detect` 是目标检测，`segmentt` 是语义分割，其余用不到。
-  - **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。对于本次作业，`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试（包括速度和精度），剩下那个大概率用不到。
-  - **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 imgsz=320，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
+- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。对于本次作业，`detect` 是目标检测，`segmentt` 是语义分割，其余用不到。
+- **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。对于本次作业，`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试（包括速度和精度），剩下那个大概率用不到。
+- **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 imgsz=320，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
 
 ### 示例
 
@@ -301,13 +229,13 @@ yolo settings datasets_dir="datasets"
 
 > [!TIP] 无法激活环境
 > 如果无法在 VSCode 的集成终端中激活环境，你可能需要初始化 shell。用快捷方式打开已激活了 `base` 环境的 shell，然后运行以下命令
-> 
+>
 > ```sh
 > conda init powershell
 > # 如果使用 mamba，初始化命令略有不同 
 > mamba shell init
 > ```
-> 
+>
 > 然后重新在 VSCode 中再次新建个终端，就可以正常使用 `mamba` 或 `conda` 了。
 
 之后 YOLO CLI 就会从 `datasets` 中去寻找数据集，从网上下载的示例数据集也会保存在这个目录里。
