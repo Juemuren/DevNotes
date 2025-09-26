@@ -71,7 +71,7 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 > [!WARNING]
 > 修改 *PATH* 变量可能不是最好的做法。虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入环境](../环境管理/MSYS.md)后再使用编译器。你可以[配置自定义任务](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)来使用 VSCode 的 GUI。
 
-假设 MSYS2 安装在 ```C:\msys64``` 中
+假设 MSYS2 安装在 `C:\msys64` 中
 
 ```bat
 setx PATH "C:\msys64\ucrt64\bin;%PATH%"
@@ -225,17 +225,17 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 #### 使用解释器
 
-新建一个 ```test.py``` 文件
+新建一个 `test.py` 文件
 
-输入 VSCode 命令 ```Python: Select Interpreter```，选择一个合适的解释器。
+输入 VSCode 命令 `Python: Select Interpreter`，选择一个合适的解释器。
 
 现在可以直接点击按钮来运行了。
 
 #### 使用调试器
 
-输入 VSCode 命令 ```Debug: Add Configuration```，选择 ```Python Debugger``` 插件自动生成的配置。
+输入 VSCode 命令 `Debug: Add Configuration`，选择 `Python Debugger` 插件自动生成的配置。
 
-自动生成的 ```launch.json``` 文件大概长这样
+自动生成的 `launch.json` 文件大概长这样
 
 ```json
 {
@@ -256,9 +256,9 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 #### 使用编程笔记本
 
-新建一个 ```test.ipynb``` 文件
+新建一个 `test.ipynb` 文件
 
-输入 VSCode 命令  ```Jupyter: Select Interpreter to Start Jupyter Server```，选择一个合适的内核。
+输入 VSCode 命令  `Jupyter: Select Interpreter to Start Jupyter Server`，选择一个合适的内核。
 
 现在可以使用编程笔记本了。
 

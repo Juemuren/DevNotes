@@ -18,7 +18,7 @@
 
 没找到官方文档，不过有 [Linux 手册](https://www.man7.org/linux/man-pages/man5/nsswitch.conf.5.html)可以勉强参考一下。
 
-修改 MSYS2 的 ```/etc/nsswitch.conf``` 文件
+修改 MSYS2 的 `/etc/nsswitch.conf` 文件
 
 ```yaml
 # 默认
@@ -37,7 +37,7 @@ pacman -S zsh
 
 [MSYS2 官方文档](https://www.msys2.org/wiki/Launchers/)
 
-假设 MSYS2 安装在 ```C:\msys64``` 中
+假设 MSYS2 安装在 `C:\msys64` 中
 
 ### 使用脚本
 

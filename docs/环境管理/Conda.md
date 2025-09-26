@@ -64,9 +64,9 @@ mamba config set show_channel_urls true
 ```
 
 ## 配置编辑器
-假设 Miniforge3 安装在 ```C:\miniforge3``` 中
+假设 Miniforge3 安装在 `C:\miniforge3` 中
 
-修改 VSCode 的 ```settings.json``` 文件
+修改 VSCode 的 `settings.json` 文件
 
 ```json
 {
