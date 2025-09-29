@@ -78,13 +78,23 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 - pip 官方标准
 - conda 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
 
-## 库和框架
+### 文档处理
 
-一些我使用过的库和框架
+- markitdown 微软官方的做的一个把各种格式的文件转为 markdown 的工具，甚至可以处理 YouTube 连接（当然，实际上只是把字幕文件转化为 markdown 文件，不要以为能够一帧一帧的转换视频内容）
 
 ### 性能分析
 
 - snakeviz
+
+### 编程笔记本
+
+- ipykernel 笔记本内核
+- jupyterlab 笔记本界面，会打开一个本地服务器
+- nbconvert 将 .ipynb 文件导出为别的格式
+
+## 库和框架
+
+一些我使用过的库和框架
 
 ### 科学计算
 
@@ -112,12 +122,6 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 - pytorch
 - [YOLO](../库和框架/YOLO.md)
 
-### 编程笔记本
-
-- ipykernel 内核
-- jupyterlab 界面
-- nbconvert 导出
-
-### Web 后端
+### Web
 
 - FastAPI

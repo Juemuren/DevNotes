@@ -24,6 +24,28 @@ VSCode + PlatformIO IDE + SimulIDE
 
 全流程开源且无需实际硬件
 
+### mcs51
+
+由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
+
+可以手动修改 `.vscode\c_cpp_properties.json` 让编辑器识别这种拓展类型。
+
+```json
+{
+    "configurations": [
+        {
+            "defines": [
+                // others
+                "__sfr=unsigned char",
+                "__sbit=int",
+                "__at(a)= ",
+                ""
+            ],
+        }
+    ]
+}
+```
+
 ## FPGA 开发
 
 前端，描述数字电路设计，最基本的单元是逻辑门，输出门级网表；后端，布局布线，将门级网表变成比特流烧录进芯片中
