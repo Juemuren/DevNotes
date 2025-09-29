@@ -42,10 +42,9 @@
 
 - graphviz 代码生成图片
 - pandoc 文档格式转换
-- LaTeX 文字排版工具，最喜欢 miktex
+- miktex 一种 LaTeX 的发行版，这是一个文字排版工具，我认为比 texlive 更好
 - typst 新一代文字排版工具，没用过，但语法确实比 LaTeX 简单多了
 - weasyprint HTML 转 PDF 工具，不过可能更习惯使用浏览器的打印功能，但命令行好处就是能够自动化
-- mkdocs 静态网站生成器，其实是 python 的一个库，提供了 python 的接口，但说是命令行工具也没问题
 
 ### 脚本增强
 

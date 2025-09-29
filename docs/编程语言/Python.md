@@ -92,6 +92,10 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 - jupyterlab 笔记本界面，会打开一个本地服务器
 - nbconvert 将 .ipynb 文件导出为别的格式
 
+### 静态网站生成器
+
+- mkdocs 静态网站生成器，其实是 python 的一个库，提供了 python 的接口，但说是命令行工具也没问题
+
 ## 库和框架
 
 一些我使用过的库和框架
