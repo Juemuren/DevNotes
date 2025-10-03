@@ -46,6 +46,10 @@ scoop install nodejs
 - react-query 管理异步查询的前端状态的库
 - react-redux React 应用使用 redux 状态管理的方法
 
+### UI
+
+- MUI 一个挺好看的 UI 库，不过用法和传统的 css 不一样。这个库提供了 React 组件，和使用 html 元素一样使用这个 UI 组件就行
+
 ### 接口设计
 
 - Apollo 目前最先进的、用来设计 graphql 接口（一种旨在取代 RESTful 的新的接口设计方法）的框架，有服务端 `@apollo/server` 和客户端 `@apollo/client`
