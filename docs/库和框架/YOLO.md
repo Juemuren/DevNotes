@@ -171,9 +171,9 @@ yolo TASK MODE ARGS
 
 其中
 
-- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。对于本次作业，`detect` 是目标检测，`segmentt` 是语义分割，其余用不到。
+- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。对于本次作业，`detect` 是目标检测，`segment` 是语义分割，其余用不到。
 - **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。对于本次作业，`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试（包括速度和精度），剩下那个大概率用不到。
-- **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 imgsz=320，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
+- **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
 
 ### 示例
 
@@ -197,7 +197,7 @@ YOLO
 
 然后在 VSCode 中按 `ctrl + k, ctrl + o`，并选择此文件夹打开。
 
-打开文件夹后在 VSCode 中按 `crtl + shift + ~` 新建终端，激活正确的环境并运行
+打开文件夹后在 VSCode 中按 `ctrl + shift + ~` 新建终端，激活正确的环境并运行
 
 ```sh
 yolo settings datasets_dir="datasets"

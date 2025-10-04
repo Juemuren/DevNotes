@@ -58,7 +58,7 @@ vcpkg install --triplet=<target-triplet> --host-triplet=<host-triplet>
 
 ```sh
 # 设置默认主机 triplet
-setx VCPKG_DEFAULT_HOST_TAIRLET "x64-mingw-dynamic"
+setx VCPKG_DEFAULT_HOST_TRIPLET "x64-mingw-dynamic"
 # 设置默认目标 triplet
 setx VCPKG_DEFAULT_TRIPLET "x64-mingw-dynamic"
 ```

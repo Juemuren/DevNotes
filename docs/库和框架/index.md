@@ -11,7 +11,7 @@
 
 ## 机器学习
 
-- [Pythrch](Pytorch.md)
+- [Pytorch](Pytorch.md)
 - [YOLO](YOLO.md)
 
 ## Web
