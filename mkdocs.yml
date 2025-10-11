@@ -63,19 +63,31 @@ nav:
   - 首页: index.md
   - 环境管理: 
     - 环境管理: 环境管理/index.md
-    - MSYS: 环境管理/MSYS.md
     - Conda: 环境管理/Conda.md
+    - Mise: 环境管理/Mise.md
+    - MSYS: 环境管理/MSYS.md
+    - WSL: 环境管理/WSL.md
+    - Docker: 环境管理/Docker.md
   - 包管理:
     - 包管理: 包管理/index.md
     - Vcpkg: 包管理/Vcpkg.md
+    - Scoop: 包管理/Scoop.md
   - 编程语言:
     - 编程语言: 编程语言/index.md
     - Cpp: 编程语言/Cpp.md
     - Python: 编程语言/Python.md
-    - JS: 编程语言/JS.md
+    - JavaScript: 编程语言/JavaScript.md
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
+    - Fzf: 命令行工具/Fzf.md
+    - Just: 命令行工具/Just.md
+    - Starship: 命令行工具/Starship.md
+    - Zoxide: 命令行工具/Zoxide.md
+  - 文档处理:
+    - 文档处理: 文档处理/index.md
+    - Pandoc: 文档处理/Pandoc.md
+    - Doxygen: 文档处理/Doxygen.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md

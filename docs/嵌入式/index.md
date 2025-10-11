@@ -16,17 +16,17 @@ flowchart TD
     G --显示--> H[模拟结果]
 ```
 
-VSCode + PlatformIO IDE + SimulIDE
+我目前使用的方案是 VSCode + PlatformIO IDE + SimulIDE
 
 - VSCode 写代码
 - PlatformIO IDE 生成 hex 文件
 - SimulIDE 绘制电路图，将模拟芯片和模拟输出设备连接，加载 hex 文件并运行，可视化地查看结果
 
-全流程开源且无需实际硬件
+全工具链开源且无需实际硬件
 
-### mcs51
+### MCS-51
 
-由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
+由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
 
 可以手动修改 `.vscode\c_cpp_properties.json` 让编辑器识别这种拓展类型。
 
@@ -45,6 +45,10 @@ VSCode + PlatformIO IDE + SimulIDE
     ]
 }
 ```
+
+还有的时候 C/C++ 插件甚至直接无法解析 `compilerPath` 字段，直接连编译器的头文件都找不到。我遇到过这个 BUG，并且至今没找到优雅的解决方法。
+
+这些问题的真正解决也许只有等待 C/C++ 插件正式支持 SDCC 了。
 
 ## FPGA 开发
 

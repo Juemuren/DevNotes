@@ -157,7 +157,7 @@ gcc --version
 
 系统包管理器也能管理 C/C++ 的包。不过现代项目不推荐使用系统包管理器，没法跨平台，难协作
 
-- [vcpkg](../包管理/Vcpkg.md)
+- [Vcpkg](../包管理/Vcpkg.md)
 - conan
 - xrepo
 
@@ -176,7 +176,7 @@ gcc --version
 
 ### 文档生成
 
-- doxygen
+- [Doxygen](../文档处理/Doxygen.md)
 
 ### 内存分析
 

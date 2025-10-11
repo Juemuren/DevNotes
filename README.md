@@ -4,7 +4,7 @@
 
 ## 网站
 
-可以在 https://juemuren.github.io/DevNotes/ 上查看所有笔记
+可以在 <https://juemuren.github.io/DevNotes> 上查看所有笔记
 
 如果需要导出为 **PDF** ，可以使用浏览器的 **打印** 功能。
 本人使用 *Edge* 测试过，导出效果很不错。

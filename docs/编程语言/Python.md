@@ -123,7 +123,7 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 - scikit-learn
 - tensorflow
-- pytorch
+- [Pytorch](../库和框架/Pytorch.md)
 - [YOLO](../库和框架/YOLO.md)
 
 ### Web
