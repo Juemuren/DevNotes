@@ -36,13 +36,13 @@ Invoke-Expression (&starship init powershell)
 
 使用 `starship config` 可以打开配置文件。
 
-官网上有很多的[预设](https://starship.rs/zh-cn/presets/)，还有详细的[配置说明](https://starship.rs/zh-CN/config/)。建议看看有没有喜欢的预设，复制配置文件后再对着配置说明自行修改。
+官网上有很多的[预设](https://starship.rs/zh-cn/presets/)，还有详细的[配置说明](https://starship.rs/zh-CN/config/)。建议先去看看有没有喜欢的预设，复制过来后再对着配置说明自行修改。
 
 下面分享下我用的配置文件，是在 [Catppuccin Powerline Preset](https://starship.rs/zh-cn/presets/catppuccin-powerline) 这个预设的基础上修改的，效果如下
 
 ![Starship](../images/starship.png)
 
-这个预设非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示。
+这个预设非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示。你可以复制下来在一个有 NF 字体的编辑器里查看。
 
 ```toml
 "$schema" = 'https://starship.rs/config-schema.json'

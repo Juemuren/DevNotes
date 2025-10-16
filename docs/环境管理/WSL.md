@@ -1,5 +1,13 @@
 # WSL
 
+## 简介
+
+WSL 是 Windows 下的 Linux 子系统，提供了原生而非移植的 Linux 环境。
+
+WSL 的原理就是在虚拟机里运行 Linux 内核，因此理论上所有 Linux 能运行的软件 WSL 都能运行。
+
+WSL 可以安装多种 Linux 发行版。目前能直接安装的就有 19 种。
+
 ## 安装
 
 [官方安装教程](https://learn.microsoft.com/zh-cn/windows/wsl/install)

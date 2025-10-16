@@ -92,10 +92,12 @@ nav:
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
+    - Jupyter: 编辑器/Jupyter.md
   - 库和框架:
     - 库和框架: 库和框架/index.md
     - Pytorch: 库和框架/Pytorch.md
     - YOLO: 库和框架/YOLO.md
+    - Expo: 库和框架/Expo.md
   - 嵌入式:
     - 嵌入式: 嵌入式/index.md
 

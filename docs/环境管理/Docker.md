@@ -1,8 +1,14 @@
 # Docker
 
+## 简介
+
+Docker 代表了容器技术。所谓容器，就是个把应用程序及其运行环境打包在一起的东西。你可以把容器给别人使用，也可以使用别人的容器。现在似乎还留行直接在容器里进行开发，省去了所有配置开发环境的麻烦。
+
 ## 对比
 
-推荐使用 podman 作为容器工具。就算不考虑架构更先进、安全性更好等原因，但从命令行易用性的角度来说，podman 也比 docker 更好。不过 Docker Desktop 有图形界面，也许部分人更喜欢，但我不是很喜欢。如果不使用 Docker Desktop，只使用 Docker CLI，那么启动一个容器会非常麻烦。下面是在 Windows 系统里运行一个容器需要的步骤
+我个人目前推荐使用 Podman 作为容器工具。就算不考虑架构更先进、安全性更好等原因，单从命令行易用性的角度来说，podman 也比 docker 更好。不过 Docker Desktop 有图形界面，也许部分人更喜欢，但我不是很喜欢。
+
+如果不使用 Docker Desktop，只使用 Docker CLI，那么启动一个容器会非常麻烦。下面是在 Windows 系统里使用 Docker 运行一个容器需要的步骤
 
 ```sh
 # 安装 Docker CLI
@@ -33,9 +39,11 @@ podman run ubi8-micro date
 
 不需要新打开一个管理员权限的终端，而且没有报错，此后都只需要运行后两个命令就能运行容器实例了
 
+## 安装
+
 [podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
 
-## 安装
+我使用 Scoop 安装
 
 ```sh
 scoop install podman
@@ -86,6 +94,8 @@ networkingMode=Mirrored
 [experimental]
 hostAddressLoopback=true
 ```
+
+不过，这种方法偶尔还是会出现问题。目前我找不到完美的解决方案，改善网络环境（没有暗指墙）应该是个最好的选择。
 
 ### 容器编排
 
