@@ -174,10 +174,6 @@ gcc --version
 - clang-tidy 静态检查
 - clang-format 格式化
 
-### 文档生成
-
-- [Doxygen](../文档处理/Doxygen.md)
-
 ### 内存分析
 
 - drmemory 只有 windows 可用

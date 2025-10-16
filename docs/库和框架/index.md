@@ -9,7 +9,7 @@
 
 这里列出我用过的、比较大的库/框架。这些库和框架按照功能来分类。如果想要按语言分类，或者想看一些语言的小库/框架，可以去[编程语言](../编程语言/index.md)章节查看
 
-## 机器学习
+## AI
 
 - [Pytorch](Pytorch.md)
 - [YOLO](YOLO.md)
@@ -19,3 +19,7 @@
 - React
 - FastAPI
 - Express
+
+## Native
+
+- Expo 用 React Native 开发可以跑在安卓和苹果系统里的原生应用

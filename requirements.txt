@@ -1,6 +1,7 @@
 mkdocs
 mkdocs-material
 mkdocs-callouts
+mkdocs-roamlinks-plugin
 mkdocs-minify-plugin
 mkdocs-open-in-new-tab
 mkdocs-git-revision-date-plugin

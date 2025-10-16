@@ -75,7 +75,7 @@ yolo checks
 
 该命令会打印出非常详细的安装信息。可以简单检查下有没有问题（其中 `CUDA:0` 意思是第 *0* 号显卡有可用的 CUDA，并不意味着有问题）。
 
-最后你实际运行个示例来测试功能是否正常
+最后你还可以实际运行个示例来测试功能是否正常
 
 ```sh
 yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
@@ -105,11 +105,13 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 进入官网后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
 
-不过英伟达非常逆天地在 PyPI 上注册了多个假包来告诉你没有安装正确的版本，并且更逆天的是官网上的安装命令下载的就是假包。
-
-![cuDNN](../images/cuDNN.png)
+不过英伟达非常逆天地在 [PyPI](https://pypi.org/search/?q=cudnn) 上注册了多个假包来告诉你没有安装正确的版本
 
 ![cuDNN PyPI](../images/PyPI.png)
+
+而更逆天的是官网的安装命令下载的就是假包。
+
+![cuDNN](../images/cuDNN.png)
 
 目前 [PyPI](https://pypi.org/search/?q=cudnn) 上这么多的版本中只有 `nvidia-cudnn-cu11`、`nvidia-cudnn-cu12`、`nvidia-cudnn-cu13` 这几个不是假包。请根据显卡的 CUDA 版本下载正确的包。查看 CUDA 版本的方式可参考前面关于 [Pytorch](#pytorch) 的部分。
 
@@ -171,8 +173,8 @@ yolo TASK MODE ARGS
 
 其中
 
-- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。对于本次作业，`detect` 是目标检测，`segment` 是语义分割，其余用不到。
-- **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。对于本次作业，`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试（包括速度和精度），剩下那个大概率用不到。
+- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。`detect` 是目标检测，`segment` 是语义分割，其余的我没用过。
+- **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试，剩下的那个我没用过。
 - **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
 
 ### 示例
@@ -185,7 +187,6 @@ yolo TASK MODE ARGS
 
 ```txt
 YOLO
-├── report    存放要提交的报告
 ├── bin       存放二进制文件
 ├── data      存放原始数据
 ├── datasets  存放标注后的数据集
@@ -247,7 +248,10 @@ path: example
 train: images/train
 val: images/val
 
-# 其余的参数，和具体的 TASK 有关
+names: 
+  0: low
+  1: medium
+  # 省略剩余的标签
 ```
 
 接着运行如下命令

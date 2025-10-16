@@ -20,18 +20,12 @@ MSYS 全称为 Minimal SYStem，即最小系统，不过这和一般认知中的
 
 由于 MSYS 有包管理器 Pacman，所以可能部分人用 MSYS 来安装在原生 Windows 环境里使用的软件。
 
-虽然确实可以这么做，但由于是软件其实是在模拟里运行，因此会有一点性能损失。并且由于移植方式比较简单，部分工具使用起来会有点麻烦，比如 Git。而 Git for Windows 这个项目则专门针对 Windows 平台移植了 Git，实际体验会更好一点。
+虽然确实可以这么做，但由于是软件其实是在模拟里运行，因此会有一点性能损失。并且由于移植方式比较简单，部分工具使用起来会有点麻烦，比如 [Git](https://www.msys2.org/docs/git/)。而 Git for Windows 这个项目则专门针对 Windows 平台移植了 Git，实际体验会更好一点。
 
-我目前的做法是
+我只有一些特殊情况才会使用 MSYS 安装软件
 
-  1. 使用 MSYS 安装
-    - 软件只发布源代码，且 Scoop 事实上也是直接从 MSYS 仓库里下载软件包的。这时使用 MSYS 可以省一点硬盘空间
-    - Scoop 通过修改 *PATH* 而不是创建 *shim* 来提供可执行文件路径，且软件有 DLL 依赖。这时使用 Scoop 安装会污染系统环境。
-  2. 使用 Scoop 安装
-    - 软件有专门针对 Windows 做了移植的版本，或者有官方发布的 Windows 版本
-    - 其余情况
-
-所以基本上我只有特殊情况才会使用 MSYS 安装软件，而这些软件大多都来自 GNU 项目，或与之强相关。
+- 软件只发布源代码，没有专门针对 Windows 移植的版本，且别的安装方式事实上也是直接从 MSYS 仓库里下载预构建的软件包。这时使用 MSYS 可以省一点硬盘空间，不用下载重复的文件。
+- 别的安装方法要通过修改 *PATH* 来提供可执行文件路径，且该路径里有 DLL 文件。这时别的安装方法可能会污染系统环境，导致自己编译的程序链接到错误的库。不过说实话，随着安装的工具变多，系统环境迟早要被污染，要编译程序最好还是进入 MSYS 环境并使用静态链接
 
 ### 开发环境
 
@@ -45,7 +39,7 @@ MSYS 全称为 Minimal SYStem，即最小系统，不过这和一般认知中的
 
 ## 安装
 
-不建议用 scoop 安装。推荐使用官方的安装程序。
+不建议用 Scoop 安装。推荐使用官方的安装程序。
 
 [MSYS2 官方下载链接](https://www.msys2.org/)
 
@@ -74,24 +68,16 @@ pacman -S zsh
 
 [MSYS2 官方文档](https://www.msys2.org/wiki/Launchers/)
 
-假设 MSYS2 安装在 `C:\msys64` 中
+可以使用官方写的脚本，或者自己写命令。
+
+个人认为使用脚本可能更好，毕竟官方已经写好了脚本的启动命令，考虑到了更多的情况。你可以去查看 `msys2_shell.cmd` 这个脚本文件的具体内容，里面告诉了你一些本文没提到的东西。比如，有很多代码可以通过注释掉或取消注释掉来改变启动行为。像[启用符号链接](https://www.msys2.org/docs/symlinks)这个功能就可以通过 `set MSYS=winsymlinks:nativestrict` 来启用。不过 *cmd* 文件真的很难阅读，语法太丑陋了。
 
 ### 使用脚本
 
 ```sh
 # 获取帮助
 C:\msys64\msys2_shell.cmd -help
-# 基本的启动方式
-C:\msys64\msys2_shell.cmd -defterm -no-start
-# 在当前目录启动
-C:\msys64\msys2_shell.cmd -defterm -no-start -here
-# 保留原来的 PATH
-C:\msys64\msys2_shell.cmd -defterm -no-start -full-path
-# 环境选择 UCRT64
-C:\msys64\msys2_shell.cmd -defterm -no-start -ucrt64
-# 使用 ZSH
-C:\msys64\msys2_shell.cmd -defterm -no-start -shell zsh
-# 全部结合起来
+# 使用默认终端、不启动新窗口、在当前目录、保留原 PATH、使用 Zsh、进入 UCRT64 环境
 C:\msys64\msys2_shell.cmd -defterm -no-start -here -full-path -ucrt64 -shell zsh
 ```
 
@@ -116,23 +102,11 @@ msys -mingw64
 当然也可以不使用官方的脚本，自己写命令。
 
 ```sh
-# 基本的启动方式
-C:\\msys64\\usr\\bin\\env /usr/bin/bash -li
-# 在当前目录启动
-C:\\msys64\\usr\\bin\\env CHERE_INVOKING=1 /usr/bin/bash -li
-# 保留原来的 PATH
-C:\\msys64\\usr\\bin\\env MSYS2_PATH_TYPE=inherit /usr/bin/bash -li
-# 环境选择 UCRT64
-C:\\msys64\\usr\\bin\\env MSYSTEM=UCRT64 /usr/bin/bash -li
-# 使用 ZSH
-C:\\msys64\\usr\\bin\\env /usr/bin/zsh -li
-# 全部结合起来
+# 在当前目录、保留原 PATH、使用 Zsh、进入 UCRT64 环境
 C:\\msys64\\usr\\bin\\env CHERE_INVOKING=1 MSYS2_PATH_TYPE=inherit MSYSTEM=UCRT64 /usr/bin/zsh -li
 ```
 
 命令同样很长，也可以用 Scoop 管理。
-
-个人认为使用脚本可能更好，毕竟官方已经写好了脚本的启动命令，用就行了
 
 ## 配置终端
 

@@ -41,15 +41,44 @@ pandoc example.docx -o example.pdf --pdf-engine=lualatex -V CJKmainfont="Microso
 
 不过，由于 markdown 本身没有排版和样式的支持，因此，如有相关需求，需要指定模板，通常是 css、latex 或别的格式。你可以在 [Pandoc templates](https://pandoc-templates.org/) 上搜寻别人分享的模板。如果你不知道该用哪个模板，也许可以试试这个覆盖了几乎所有的导出格式[学术模板](https://github.com/maehr/academic-pandoc-template)。
 
+#### 转 HTML
+
+markdown 转 html 特别方便，速度也很快，毕竟大多数使用 markdown 的场景都和 html 有关。
+
+通过指定 css 参数，可以有更好看的样式。
+
 ```sh
-# markdown 转 html，指定了 css 就可以有自定义的样式了
 pandoc example.md -o example.html --css="github-markdown.css"
-# markdown 转 pdf，不仅要指定中文字体、pdf 引擎，还要指定模板
-pandoc example.md -o example.pdf --template="eisvogel.latex" --pdf-engine=lualatex -V CJKmainfont="Microsoft YaHei UI"
+```
+
+#### 转 PDF
+
+markdown 转 pdf 略微麻烦，因为 markdown 是个没有排版功能的格式。
+
+pandoc 通过将 markdown 转为另一种格式，再使用 pdf 引擎生成 pdf。因此 markdown 转 pdf 需要指定引擎。
+
+引擎有很多种，会决定使用哪种中间格式。中间格式一般就是 LaTeX、Typst 或 HTML
+
+- LaTeX 推荐使用 *lualatex* 引擎，对中文、数学公式的支持最好。不过 LaTeX 坑有点多，比如编译慢、安装环境很复杂，且使用时必须要指定模板，不然效果很差。
+- Typst 引擎指定 typst 就行，默认的排版和样式就很不错，中文支持也是原生的，不需要额外指定字体。
+- HTML 引擎一般为 weasyprint。最大的优势是样式很丰富（毕竟 css 太强大了），但排版效果不太好。我尝试了 pandoc 支持所有的 html 转 pdf 引擎，效果都不是很完美。如果要通过 HTML 转 PDF，建议先转为 HTML，再使用浏览器的打印功能生成 pdf。除了不能够使用脚本自动化以外，比其他的引擎效果都更好。
+
+```sh
+# markdown 通过 LaTeX 转 pdf，不仅要指定中文字体、pdf 引擎，还要指定模板
+pandoc example.md -o example.pdf --pdf-engine=lualatex --template="eisvogel.latex" -V CJKmainfont="Microsoft YaHei UI"
+# markdown 通过 Typst 转 pdf，不需要指定什么模板、样式，默认的效果就很好
+pandoc example.md -o example.pdf --pdf-engine=typst
+# markdown 通过 HTML 转 pdf，一样可以使用 css 样式
+pandoc example.md -o example.pdf --pdf-engine=weasyprint --css="github-markdown.css"
+```
+
+#### 转 PPTX
+
+```sh
 # markdown 转 pptx
 pandoc example.md -o example.pptx
 ```
 
 markdown 转 pptx 默认按照 *二级标题* 分页。因此，每个二级标题后的内容不应太长，否则会显示不下。不过其实用 Microsoft PowerPoint 的时候分页也是个很烦人的问题。
 
-另外，markdown 不仅可以通过 LaTeX 转成 PDF，还可以通过 HTML 转成 PDF。虽然后者样式更丰富（毕竟 css 太强大了），但排版效果不太好，你可以自行取舍。如果需要从 HTML 转 PDF，你可能需要安装额外的工具，比如 weasyprint；或者可以使用浏览器的打印功能，但这样就不能够使用脚本自动化
+markdown 转 pptx 也可以用样式美化，不过我没怎么研究。可以去看官方文档。

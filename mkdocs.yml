@@ -81,13 +81,14 @@ nav:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Fzf: 命令行工具/Fzf.md
+    - fd: 命令行工具/fd.md
     - Just: 命令行工具/Just.md
     - Starship: 命令行工具/Starship.md
     - Zoxide: 命令行工具/Zoxide.md
-  - 文档处理:
-    - 文档处理: 文档处理/index.md
-    - Pandoc: 文档处理/Pandoc.md
-    - Doxygen: 文档处理/Doxygen.md
+  - 文档:
+    - 文档: 文档/index.md
+    - Pandoc: 文档/Pandoc.md
+    - Doxygen: 文档/Doxygen.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
