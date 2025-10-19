@@ -12,6 +12,17 @@ scoop install nodejs
 
 另外还有一个叫 `nvm` 的工具可以用来管理不同版本的 `nodejs`。不过我个人更喜欢 [mise](../环境管理/Mise.md)，这是一个可以管理多种运行时版本的工具
 
+使用 mise 安装
+
+```sh
+# 使用 latest 版本
+mise use -g node
+# 使用 lts 版本
+mise use -g node@lts
+# 使用特定版本
+mise use -g node@20
+```
+
 ## 命令行工具
 
 ### 包管理器

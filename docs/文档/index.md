@@ -14,11 +14,11 @@
 
 我本人非常讨厌 docx 格式，原因非常多，我只列举部分好了
 
-- 不通用，兼容性差。由于 docx 将数据以特殊的二进制形式存储，导致文件必须使用特定的软件来才能进行编辑和查看。我相信大部分人都遇到过自己的保存的 docx 文件在别人的电脑里打不开的情况
+- 不通用，兼容性差。由于 docx 将数据以特殊的二进制形式（本质是个 zip 压缩包，内含 XML 等文件，标准是开放的）存储，导致文件必须使用特定的软件来才能进行编辑和查看。我相信大部分人都遇到过自己的保存的 docx 文件在别人的电脑里打不开的情况
 - 版本控制不友好。这又是因为 docx 以二进制存储数据。在 git 里，你没有办法通过 diff 查看每次提交间的差异；且 git 对于二进制文件的更改，不是只记录差异，而是记录整个文件，这会让 git 的提交记录变得非常庞大
 - 没有强制的规范。这条比较主观，也许没有强制规范不是缺点，但因为太多人根本就不会使用 docx，所以我认为这成了缺点。比如，对于样式的更改，很多人只是选中几个字然后手动调整，不懂得应该先创建一个新的样式，然后再将选中的文字改成自定义样式。Microsoft Word 极低的使用门槛、过于灵活的样式导致市面上存在大量的低质文档，修改、维护都非常麻烦。我已经被学校发来的劣质文档恶心过无数次了
 
-因此，我拿到 docx 文件后通常会将其[转为 markdown 或 pdf 格式](Pandoc.md#docx)
+因此，我拿到 docx 文件后通常会将其转为别的格式
 
 ### Markdown
 
@@ -38,9 +38,57 @@
 
 当然了，使用 markdown 还是有点门槛的，这也是为什么本文要介绍这么多的文档处理工具。
 
+### LaTeX
+
+LaTeX 是非常古老的排版系统，和 markdown 一样以文本形式存储数据，但相比 markdown 有一些区别
+
+- 语法更复杂
+- 排版功能更好。markdown 事实上并没有排版功能，而 LaTeX 则是排版领域的顶点
+- 生态不如 markdown。比如大多数静态网站生成器都只支持 markdown 格式的内容，比如 LLM 输出的内容并不是 LaTeX，Github 的自述文件也不支持 LaTeX
+
+LaTeX 最大的贡献也许就是完整定义了一套数学符号的语法。数学公式算是排版中最大的难题，而 LaTeX 则几乎完美地解决了。这种语法在一些别的格式中也得到了支持，比如 Markdown。当然 Markdown 的标准是不统一的，有些支持有些不支持。下面就是我用 Markdown 内嵌 TeX 写的 *麦克斯韦方程组微分形式*，而这被静态网站生成器转为 **HTML** 后由 `MathJax` 进行了渲染
+
+源代码
+
+```tex
+\begin{aligned}
+\nabla \times \vec{\mathbf{B}} - \frac1c \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}} + \frac1c \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} & = 0
+\end{aligned}
+```
+
+渲染效果
+
+$$
+\begin{aligned}
+\nabla \times \vec{\mathbf{B}} - \frac1c \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}} + \frac1c \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} & = 0
+\end{aligned}
+$$
+
+LaTeX 有很多的发行版，比如 Texlive 和 MikTeX。我个人更喜欢 MikTeX。另外还有一个更现代的选择，即 Tectonic。它不会下载完整的 TeX 系统，而是在编译时自动下载宏包，初次使用 TeX 的话非常推荐先试试这个。
+
+不过我现在已经能不写 LaTeX 就不写 LaTeX 了，我更喜欢写 Markdown，然后利用转换工具转成 LaTeX 再编译成 PDF。这样既有了 Markdown 的语法简单，又有了 LaTeX 的强大排版。
+
+### Typst
+
+Typst 的出现是为了解决 LaTeX 的一些问题。LaTeX 非常古老，而 Typst 则是最近才出现的，针对 LaTeX 的许多问题进行了重新设计，并用 Rust 编写代码。个人体验下来，和 LaTeX 的主要差别大概有
+
+- 编译速度更快。Typst 生成 PDF 的速度比 LaTeX 快非常多
+- 语法更简单。但还是比 Markdown 更复杂一点
+- 中文支持更友好。LaTeX 要编译中文文档会比较麻烦，而 Typst 则根本不需要额外设置，原生就支持 UTF-8 字符集
+
+当然，Typst 也有一些缺点，这些缺点主要是因为 Typst 太年轻。LaTeX 有丰富的模板，到处都是教程和报错解决指南，渲染引擎更稳定，出版社、期刊等接受度更高。不过我还是希望 Typst 能够成功，让写作排版多一个选择，我真的不太喜欢 LaTeX。
+
 ### PDF
 
 这是一个适合用来展示的格式，对于排版有严格需求的时候常会使用这个格式，比如书籍出版、论文打印等。
+
+Docx、LaTeX、Typst 直接就可以将文档转为 PDF 格式，而 Markdown、HTML 借助工具也可以做到。
 
 ### HTML
 
@@ -52,18 +100,15 @@
 
 这又是一个适合用来展示的格式。不过我不太喜欢这种格式。
 
+LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。当然更常见的是用 Microsoft PowerPoint 制作 PPT。
+
 ## 工具
 
 ### 格式转换
 
 - [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、HTML、PDF、Word、PPTX 等。
-- Marp 一种专门将 Markdown 转换为演示格式（**PDF**、**HTML**、**PPTX**）的工具，相比 **Pandoc** 功能更专一，因此对于该特定需求可能使用更方便、效果更好。
+- Marp 一种专门将 Markdown 转换为演示格式（**PDF**、**HTML**、**PPTX**）的工具，相比 **Pandoc** 功能更专一，因此对于该特定需求可能使用更方便、效果更好。不过，即使能够导出 PDF，那也是按照 PPTX 的样式风格的，且不能够自动分页。因此不太适合书籍、论文等刚需排版的场景。
 - markitdown 微软官方的做的一个把各种格式的文件转为 markdown 的工具，甚至可以处理 YouTube 链接（当然，实际上只是把字幕文件转化为 markdown 文件，不要以为能够一帧一帧地转换视频内容）。这个工具也提供了 Python 接口，不过只能将文件转为 markdown 格式，不能反向转换。在 LLM 盛行的时代，非常适合炒作这个工具 `:)`，把所有东西都转换成 Markdown 然后全部喂给 AI。
-
-### 写作排版
-
-- LaTeX 一种写作排版工具，有很多的发行版，主要是 Texlive 和 MikTeX。我个人更喜欢 MikTeX。另外，还有一个更现代的选择，即 Tectonic。它不会下载完整的 TeX 系统，而是在编译时自动下载宏包，初次使用 TeX 的话非常推荐先试试这个。
-- Typst 新一代写作排版工具，简单使用过，语法确实比 LaTeX 简单
 
 ### 内嵌代码
 

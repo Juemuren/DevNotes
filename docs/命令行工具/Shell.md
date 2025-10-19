@@ -1,40 +1,40 @@
 # Shell
 
-## 关于 Windows
+## 简介
 
-Windows 通常自带了 *2* 个 shell，分别是 *CMD* 和 *PowerShell*。当然 Windows 也可以使用别的 shell，比如 *bash*、*zsh* 等，但需要额外下载。目前有两种主流的方法，当然后者应该更主流一点
+Shell，或者偶尔翻译为外壳，是一种 CLI 工具。
 
-- 通过 MSYS 使用移植的 Shell
-- 通过 WSL，在一个 Linux 子系统里使用别的 Shell
+Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 就会让一个 Shell 去执行 `echo hello` 这条命令，而 `sh -c test.sh` 就会让 Shell 去执行 `test.sh` 这个脚本
 
-## zsh
+> [!Note] 系统相关
+> Linux 系统通常都会自带 Bash，这是事实上的标准，因此其兼容性也是最好的。
+>
+> Windows 通常自带了 *2* 个 shell，分别是 *CMD* 和 *PowerShell*，不推荐日常使用前者。Windows 如果要使用别的 Shell，比如 *Bash*、*Zsh* 等，需要配置环境，比较麻烦。目前有两种主流的方法，当然后者应该更主流一点
+>
+> - 通过 [MSYS](../环境管理/MSYS.md) 在一个模拟的 UNIX 环境中使用移植的 Shell
+> - 通过 [WSL](../环境管理/WSL.md) 在一个 Linux 子系统里使用 Shell
 
-wsl-zsh 系统包管理器可以直接下
+## Zsh
 
-msys-zsh 同上（系统包管理器是 pacman）
+Zsh 可以通过系统包管理器安装。在 Ubuntu 上，一般是 `apt`，而 MSYS 的系统包管理器是 `pacman`
 
-一些插件推荐
+Zsh 可以按照插件，个人建议先安装 oh-my-zsh 再安装别的插件。oh-my-zsh 是个插件框架，同时也自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
 
-- oh-my-zsh 插件框架。非常好用，建议先[安装此框架](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)再去安装下面的插件。
-- zsh-autosuggestions 自动建议。建议[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-syntax-highlight 语法高亮。建议[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-completions 额外的命令补全。一般来说没必要装，因为 zsh 自带的补全已经够用了。想装的话建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
+- zsh-autosuggestions 自动建议。oh-my-zsh 没有自带这个插件，但可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-syntax-highlight 语法高亮。oh-my-zsh 同样没有自带这个插件，可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-completions 额外的命令补全。一般来说没必要装这个插件，因为 zsh 自带的补全已经够多了。想装的话建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
 
-## bash
+## Bash
 
-git-bash 安装 git 附赠的，不过这个 bash 其实来自于 msys 项目
+Bash 一般来说不需要自己去安装，不管 Linux、WSL 还是 MSYS，甚至在 Windows 上下载 Git for Windows，都会自带了一个 Bash。
 
-msys-bash MSYS 环境默认的 shell
+Bash 也可以安装插件，不过生态似乎没有 Zsh 好。我试了几个插件框架，但能管理的插件都很少。因此就不推荐插件框架了，只介绍一些好用的插件
 
-wsl-bash WSL 系统默认的 shell
+- blesh 行编辑器，有语法高亮和自动建议等功能，非常强大。但在 Windows 上（不管是 MSYS、WSL 还是 git-bash）性能问题有点严重，建议用 Zsh 并安装 zsh-autosuggestions 和 zsh-syntax-highlight 这两个插件作为替代。
 
-一个用过的插件介绍
+## Pwsh
 
-- blesh 行编辑器。有语法高亮和自动建议等功能，但在 Windows 上（不管是 MSYS 还是 WSL）性能问题有点严重。想要这些功能建议用 zsh，安装 zsh-autosuggestions 和 zsh-syntax-highlight 两个插件即可（建议用 oh-my-zsh 管理插件）。
-
-## pwsh
-
-如果喜欢用 powershell，那么 `powershell 7` 最好安装一个。这比自带的旧的 powershell 好用很多。
+如果喜欢用 powershell，那么 `powershell 7`，或者叫它 pwsh，最好还是安装一个。这比自带的旧的 powershell 好用很多。
 
 目前我感觉最主要的好处有以下几个
 
@@ -43,6 +43,6 @@ wsl-bash WSL 系统默认的 shell
 
 另外 pwsh 也能安装插件（官方说法是模块），以下是推荐的部分模块
 
-- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（似乎只支持内置命令）、自动建议等功能，体验上不如 zsh 的类似插件，但也算够用。
+- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（只支持 `powershell` 内置命令）、自动建议等功能，体验上不如 Zsh 的类似插件，但也算够用。这个插件在 `powershell 7` 中应该是预先安装了的。
 - PSFzf 集成 fzf 的模块，需要先安装 fzf。
-- PSCompletions 命令补全模块，提供了常用命令的补全，并且可以管理这些补全。
+- PSCompletions 命令补全模块，提供了常用命令（包括 git、npm、scoop 等）的补全，并且可以管理这些补全。非常好用，缺点就是加载速度略慢。

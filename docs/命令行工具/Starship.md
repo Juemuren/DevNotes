@@ -42,7 +42,7 @@ Invoke-Expression (&starship init powershell)
 
 ![Starship](../images/starship.png)
 
-这个预设非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示。你可以复制下来在一个有 NF 字体的编辑器里查看。
+我的这个配置非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示（本来想先放到 github 上的，没想到 github 的网页也无法渲染 NF 字符）。你可以复制下来在一个有 NF 字体的编辑器里查看。
 
 ```toml
 "$schema" = 'https://starship.rs/config-schema.json'
