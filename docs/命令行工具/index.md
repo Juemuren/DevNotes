@@ -40,23 +40,23 @@
 
 ### 脚本
 
-- [Just](Just.md) 任务运行器，语法类似 Make 但更简单。
+- [just](Just.md) 任务运行器，语法类似 Make 但更简单。
 - shellcheck 脚本静态检查工具。这东西有点严格的，我用它去检查 Python venv 激活虚拟环境的脚本，还能挑出两处有问题的地方
 
 ### 效率
 
-- [Fzf](Fzf.md) 模糊查找器，可以对提供的输入进行模糊查找，某种程度上可以看作一个交互式的 grep
+- [fzf](Fzf.md) 模糊查找器，可以对提供的输入进行模糊查找，某种程度上可以看作一个交互式的 grep
 - ripgrep 查找器，类似 grep，但更好用
-- [fd](fd.md) 文件查找器，比 find 更友好
+- [fd](Fd.md) 文件查找器，比 find 更友好
 - delta 差异比较器，类似 diff，但更好用一点
 - bat 显示文件内容，类似 cat，但也更现代，支持语法高亮、显示行号等功能
 - eza 列出当前工作目录下的文件和目录，类似 ls，但更现代
 - tldr 英文全称 *Too Long Don't Read*，就是 *太长不看* 的意思。不会给出 man 那样详细的文档，只给出具体的示例，你选择一种用法后会指导你替换掉其中的参数
-- [Zoxide](Zoxide.md) 快速工作目录跳转
+- [zoxide](Zoxide.md) 快速工作目录跳转
 
 ### 美化
 
-- [Starship](Starship.md) 自定义 prompt，美化就是生产力 `:)`
+- [starship](Starship.md) 自定义 prompt，美化就是生产力 `:)`
 
 ### 小玩具
 

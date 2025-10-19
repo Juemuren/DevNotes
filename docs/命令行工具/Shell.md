@@ -4,7 +4,7 @@
 
 Shell，或者偶尔翻译为外壳，是一种 CLI 工具。
 
-Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 就会让一个 Shell 去执行 `echo hello` 这条命令，而 `sh -c test.sh` 就会让 Shell 去执行 `test.sh` 这个脚本
+Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 让一个 Shell 去执行 `echo hello` 这条命令，而 `sh test.sh` 则让 Shell 去执行 `test.sh` 这个脚本
 
 > [!Note] 系统相关
 > Linux 系统通常都会自带 Bash，这是事实上的标准，因此其兼容性也是最好的。
@@ -18,15 +18,15 @@ Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在
 
 Zsh 可以通过系统包管理器安装。在 Ubuntu 上，一般是 `apt`，而 MSYS 的系统包管理器是 `pacman`
 
-Zsh 可以按照插件，个人建议先安装 oh-my-zsh 再安装别的插件。oh-my-zsh 是个插件框架，同时也自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
+Zsh 可以安装插件，个人建议先安装 oh-my-zsh 再安装别的插件。oh-my-zsh 是个插件框架，可以很方便地管理插件，同时也自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
 
-- zsh-autosuggestions 自动建议。oh-my-zsh 没有自带这个插件，但可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-syntax-highlight 语法高亮。oh-my-zsh 同样没有自带这个插件，可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-autosuggestions 自动建议。oh-my-zsh 没有自带，可以用系统包管理器安装，也可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-syntax-highlight 语法高亮。oh-my-zsh 同样没有自带，可以用系统包管理器安装，也可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
 - zsh-completions 额外的命令补全。一般来说没必要装这个插件，因为 zsh 自带的补全已经够多了。想装的话建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
 
 ## Bash
 
-Bash 一般来说不需要自己去安装，不管 Linux、WSL 还是 MSYS，甚至在 Windows 上下载 Git for Windows，都会自带了一个 Bash。
+Bash 一般来说不需要自己去安装，不管 Linux、WSL 还是 MSYS，甚至在 Windows 上下载 Git for Windows，都会自带一个 Bash。
 
 Bash 也可以安装插件，不过生态似乎没有 Zsh 好。我试了几个插件框架，但能管理的插件都很少。因此就不推荐插件框架了，只介绍一些好用的插件
 

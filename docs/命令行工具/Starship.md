@@ -42,6 +42,8 @@ Invoke-Expression (&starship init powershell)
 
 ![Starship](../images/starship.png)
 
+<!-- TODO 把文件放到一个新的 github 仓库上，名字就叫 dotfiles 好了，到时候 vscode、neovim、vim、bash、zsh 这些的配置文件都可以放上去 -->
+
 我的这个配置非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示（本来想先放到 github 上的，没想到 github 的网页也无法渲染 NF 字符）。你可以复制下来在一个有 NF 字体的编辑器里查看。
 
 ```toml
@@ -65,6 +67,7 @@ $rust\
 $golang\
 $java\
 $lua\
+$ruby\
 $julia\
 $nodejs\
 $python\
@@ -73,6 +76,7 @@ $docker_context\
 $conda\
 $mise\
 ${env_var.MSYSTEM}\
+${env_var.VisualStudioVersion}\
 [](fg:cyan bg:blue)\
 $time\
 [](fg:blue bg:purple)\
@@ -164,6 +168,11 @@ symbol = ""
 style = "bg:green fg:crust"
 format = '[ $symbol ($version )]($style)'
 
+[ruby]
+symbol = ""
+style = "bg:green fg:crust"
+format = '[ $symbol ($version )]($style)'
+
 [julia]
 symbol = ""
 style = "bg:green fg:crust"
@@ -198,8 +207,15 @@ format = "[ $symbol $health ]($style)"
 
 [env_var.MSYSTEM]
 disabled = false
-description = "The current msys environment"
+description = "The current MSYS environment"
 symbol = "󰫺"
+style = "bg:cyan fg:crust"
+format = '[ $symbol ($env_value )]($style)'
+
+[env_var.VisualStudioVersion]
+disabled = false
+description = "The current VS version"
+symbol = ""
 style = "bg:cyan fg:crust"
 format = '[ $symbol ($env_value )]($style)'
 

@@ -83,7 +83,7 @@ nav:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Fzf: 命令行工具/Fzf.md
-    - fd: 命令行工具/fd.md
+    - Fd: 命令行工具/Fd.md
     - Just: 命令行工具/Just.md
     - Starship: 命令行工具/Starship.md
     - Zoxide: 命令行工具/Zoxide.md

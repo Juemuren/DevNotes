@@ -31,17 +31,20 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 
 很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp，最主要的原因就是 MSVC 和 GCC 的 ABI 不兼容，处理起来非常麻烦。但我个人并不喜欢 VS 庞大的开发环境，不过目前情况稍微好了一点，有官方支持的方式可以只安装构建工具（虽然还是很庞大）
 
-在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，下载界面勾 `使用 C++ 的桌面开发`，然后右侧可选项只保留一个 `MSVC`。
+在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，下载界面勾选 `使用 C++ 的桌面开发`。如果硬盘告急，则右侧可选项先只保留一个 `MSVC`，到时候缺什么再补什么就行。
 
-VS 为了不污染 PATH，需要进入编译环境后才修改 PATH 以及别的环境变量。就像 MSYS 那样，不太推荐去修改系统 PATH 变量，而且官方同样提供了一个脚本，可以方便地进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。
+VS 为了不污染 PATH，需要进入编译环境后才修改 PATH 以及别的环境变量。和 MSYS 一样，我不推荐去修改系统 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并且配置好了 `Windows Terminal`。不过我个人不太喜欢这些东西
 
 可以使用 Scoop 让脚本更易用。命令大概是这样
 
 ```sh
+# 创建脚本别名
 scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1'
+# 或者添加一些默认的参数
+scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Arch amd64 -HostArch amd64
 ```
 
-之后就可以使用 `vs` 来进入编译环境了。你也可以输入 `vs -?` 来查看有关这个脚本地更多信息。
+之后就可以使用 `vs` 来进入编译环境了。如果你没有在脚本中添加默认参数的话，启动时记得指定 `-Arch` 和 `-HostArch`，因为默认值是 *x86* 而非 *amd64*。你可以输入 `vs -?` 来查看有关这个脚本的更多信息。
 
 ### 编辑器集成
 
