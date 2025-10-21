@@ -81,6 +81,17 @@ podman ps
 podman ps -a
 ```
 
+管理存储空间的
+
+```sh
+# 列出存储概览
+podman system df
+# 列出存储详情
+podman system df -v
+# 一键清理
+podman system prune
+```
+
 ### 网络代理
 
 WSL 本质上是个虚拟机，而虚拟机的网络连接方式略微有点复杂，尤其是在宿主机使用了网络代理工具的情况下。

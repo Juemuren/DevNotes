@@ -75,6 +75,18 @@ scoop list
 
 Scoop 可以通过 `scoop search xxx` 来搜索应用，用 `scoop info git` 来查看应用的详细信息。不过我个人更喜欢在 [Scoop 官网](https://scoop.sh/#/apps)上搜索和查看这些东西
 
+### 管理脚本
+
+Scoop 的 *shim* 机制不仅是一种防止 *PATH* 膨胀的好东西，还能方便脚本的管理。
+
+你可以通过以下命令在 Scoop 的 `shims` 目录下新建一个名为 `example` 的脚本，并填上一些默认的参数
+
+```sh
+scoop shim add example 'path\to\script' '--' -arg1 val1 -arg2 val2
+```
+
+你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有 `exe` 后缀的 *shim* 才会被列出来。
+
 ### 创建自己的桶
 
 有些时候你可能觉得官方桶里某些程序的安装方式不合心意。这时你要么去手动安装软件，但这样很不优雅；要么去提 *Issues* 或 *PR*，但官方对 PR 的要求很严格，而且审核非常慢。最好的方式就是创建一个自己的桶，用自己的满意的方式来安装。

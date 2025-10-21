@@ -19,13 +19,7 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 > [!WARNING] 修改 PATH 变量
 > 修改 *PATH* 变量可能不是最好的做法。虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入编译环境](../环境管理/MSYS.md#进入环境)后再使用编译器。不过这样使用 GUI 会比较麻烦，你可能需要参考[配置自定义任务指南](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)。
 >
-> 因此这是一种取舍，选择方便还是选择稳健。如果选择前者，可以运行如下命令把编译器所在目录添加到系统 *PATH* 变量中
->
-> ```bat
-> setx PATH "path\to\msys2\ucrt64\bin;%PATH%"
-> ```
->
-> 然后输入 `gcc --version` 测试是否成功。如果在 VSCode 的集成终端中找不到命令，你可能需要重启一下 VSCode，这样编辑器就会重新读取环境变量。
+> 然而[官方文档](https://code.visualstudio.com/docs/cpp/config-mingw#_installing-the-mingww64-toolchain)就是这么干的，这会让后续的集成步骤更加简单。把编译器所在的目录 `path\to\msys2\ucrt64\bin` 添加到系统 *PATH* 变量后，可以输入 `gcc --version` 测试是否成功。如果在 VSCode 的集成终端中找不到命令，你可能需要重启一下 VSCode，这样编辑器就会重新读取环境变量。
 
 #### VSBuild
 
@@ -49,7 +43,7 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 ### 编辑器集成
 
 > [!Note]- 官方文档
-> 后面是以 GCC 为例的。MSVC 与 VSCode 集成的方法应该也差不多。虽然如此，还是建议参考官方文档。
+> 后面的教程以 **GCC** 为例，并且已经修改了系统的 *PATH*。MSVC 与 VSCode 集成的方法应该也差不多。虽然如此，还是建议参考官方文档。
 >
 > - [VSCode + GCC](https://code.visualstudio.com/docs/cpp/config-mingw)
 > - [VSCode + MSVC](https://code.visualstudio.com/docs/cpp/config-msvc)
