@@ -60,6 +60,7 @@ mise use -g node@20
 ### UI
 
 - MUI 一个挺好看的 UI 库，不过用法和传统的 css 不一样。这个库提供了 React 组件，和使用 html 元素一样使用这个 UI 组件就行
+- Tailwind CSS 最近非常流行的 CSS 库，使用时只需在 class 中指定名字即可，不会破坏原有代码
 
 ### 接口设计
 

@@ -104,6 +104,11 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 ## 工具
 
+### 图表制作
+
+- mermaid 一个基于 JavaScript 的图表绘制工具，可以通过简单的代码绘制图表。这个工具流行的主要原因就是可以把代码嵌入 MD 文档中，并在客户端进行渲染。毕竟大多数时候 MD 都是通过转为 HTML 进行渲染的。比如 Github 的 MD 就支持渲染内嵌的 mermaid 代码。mermaid 还有个 CLI 工具，可以把一个 md 文档里的所有内嵌 mermaid 代码转为 svg 或 png 图片，然后新输出的 md 文件里引用这些图片。配合 pandoc 的格式转换功能可以轻松的让 LLM 生成一个图文并茂的 docx 文档。
+- plantUML 另一种绘制 UML 图表的工具，同样通过代码生成图表。图的种类比 mermaid 更丰富，但由于是用 Java 实现的，所以体验和生态都没有前者好。一般用于本地生成图片，然后再把图片插入文档，也就是在服务端完成渲染，别人收到的是图片而非代码。
+
 ### 格式转换
 
 - [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、HTML、PDF、Word、PPTX 等。
