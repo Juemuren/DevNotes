@@ -2,7 +2,7 @@
 
 ## 简介
 
-MSYS 为 Windows 平台提供了一个模拟类 UNIX 环境，并移植了很多软件到这个模拟环境中，让开发者可以有到类 UNIX 系统的开发体验。
+MSYS 为 Windows 平台提供了一个模拟的编程环境，并移植了很多软件到这个环境中，让 Windows 开发者可以有类似 **UNIX** 系统的开发体验。
 
 除去 arm 架构和 32 位的环境，MSYS 里能选的环境有 3 种，分别是 CLANG、UCRT、MINGW。你可以去[官网](https://www.msys2.org/docs/environments/)查看这些环境之间的区别
 

@@ -74,6 +74,7 @@ nav:
     - 包管理: 包管理/index.md
     - Vcpkg: 包管理/Vcpkg.md
     - Scoop: 包管理/Scoop.md
+    - Homebrew: 包管理/Homebrew.md
   - 编程语言:
     - 编程语言: 编程语言/index.md
     - Cpp: 编程语言/Cpp.md
@@ -90,6 +91,7 @@ nav:
   - 文档:
     - 文档: 文档/index.md
     - Pandoc: 文档/Pandoc.md
+    - Mermaid: 文档/Mermaid.md
     - Doxygen: 文档/Doxygen.md
   - 编辑器:
     - 编辑器: 编辑器/index.md

@@ -8,7 +8,7 @@
 
 - [Conda](Conda.md) 管理多种语言的运行环境，可以激活、修改、创建、删除环境
 - [Mise](Mise.md) 管理开发环境的工具，包括管理工具链版本、切换环境、运行任务等功能。
-- [MSYS](MSYS.md) 提供了模拟的类 UNIX 环境。
+- [MSYS](MSYS.md) 提供了符合 POSIX 标准的环境。
 - [WSL](WSL.md) 提供了原生而非移植的 Linux 环境。
 - [Docker](Docker.md) 容器也提供了环境，可以直接在容器中开发，省去了所有配置开发环境的麻烦。
 
