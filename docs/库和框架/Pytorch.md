@@ -27,9 +27,6 @@
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu129
 ```
 
-> [!FAILURE] 注意环境
-> 运行安装命令前请确保你激活了正确的环境。
-
 需下载的总文件大约 4G 左右（因版本而异），时间可能有点长，请确保网络通畅
 
 下载完成后，可通过如下方式测试是否可用

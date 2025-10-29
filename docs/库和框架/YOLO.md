@@ -50,9 +50,6 @@ conda activate pytorch
 pip install ultralytics
 ```
 
-> [!FAILURE] 注意环境
-> 运行安装命令前请确保你激活了正确的环境。
-
 下载完成后，可通过如下方式测试是否可用
 
 ```sh
@@ -119,9 +116,6 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 # 将 nvidia-cudnn-cu1x 替换为与 CUDA 对应的版本
 pip install nvidia-cudnn-cu1x
 ```
-
-> [!FAILURE] 注意环境
-> 运行安装命令前请确保你激活了正确的环境。
 
 同样地，下载完成后，可通过如下方式测试是否可用
 

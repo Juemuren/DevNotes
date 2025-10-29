@@ -51,4 +51,4 @@
 
 #### Linux
 
-- Homebrew 支持 MacOS 和 Linux 平台，是系统包管理器的良好补充，提升了用户体验
+- [Homebrew](Homebrew.md) 支持 MacOS 和 Linux 平台，是系统包管理器的良好补充，提升了用户体验

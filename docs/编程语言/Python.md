@@ -2,11 +2,13 @@
 
 ## 环境搭建
 
-目前我使用 Miniforge + VSCode 搭建开发环境
+目前我使用 Miniforge + VSCode 搭建开发环境。当然也可以使用别的方法，比如 mise/uv +  VSCode。不是很推荐直接安装 Python，因为没办法管理运行时的版本。
 
 ### 安装工具链
 
-请先完成 [Miniforge 的安装](../环境管理/Conda.md)，然后通过如下命令安装解释器和第三方库
+#### Miniforge
+
+如果使用 Miniforge 获取工具链，请先完成 [Miniforge 的安装](../环境管理/Conda.md)，然后通过如下命令安装解释器和第三方库
 
 ```sh
 # 选一个解释器的版本
@@ -15,17 +17,44 @@ mamba create -n ml python=3.13
 mamba install ipykernel numpy matplotlib scikit-learn pandas
 ```
 
+#### mise/uv
+
+如果使用 mise/uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具。
+
+- [安装 Mise](../环境管理/Mise.md#安装)
+- 安装 uv
+
+对于 mise + uv 这一组合，你还应该进行一些设置使二者配合起来更舒适
+
+```sh
+# 让 mise 能够支持 .python-version 等文件
+mise settings add idiomatic_version_file_enable_tools python
+# 让 mise 自动激活 uv 创建的虚拟环境
+mise add settings python.uv_venv_auto true
+```
+
+然后，可以运行如下命令，新建目录并安装相应的依赖
+
+```sh
+# 新建一个使用 python 3.13 的项目
+uv init example --python 3.13
+# 进入目录
+cd example
+# 此时如果 mise 有警告，则手动安装该版本的 python
+mise install python@3.13
+# 运行测试代码，同时会自动创建虚拟环境和锁文件
+uv run main.py
+# 为项目添加依赖
+uv add numpy
+```
+
 ### 编辑器集成
 
 [VSCode 官方文档](https://code.visualstudio.com/docs/python/python-quick-start)
 
-需要安装以下插件
-
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-
 #### 使用解释器
+
+需要安装插件 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器
 
@@ -36,11 +65,15 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 #### 使用调试器
 
+需要安装插件 [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+
 输入 VSCode 命令 `Debug: Add Configuration`，选择 `Python Debugger` 插件自动生成的配置。
 
 自动生成了 `launch.json` 文件后，就可以直接点击按钮来调试了。
 
 #### 使用编程笔记本
+
+需要安装插件 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 如果需要使用编程笔记本，请确保已经安装了 `ipykernel`。你可以通过 `mamba list` 或 `pip list` 查看是否已经安装。
 
@@ -51,7 +84,7 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 ### 包管理器
 
 - pip 官方标准
-- uv 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
+- [uv](../包管理/Uv.md) 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
 - conda 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
 
 ### 性能分析
@@ -71,6 +104,7 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 ### 绘图
 
 - matplotlib
+- manim
 
 ### 数据分析
 

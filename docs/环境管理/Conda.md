@@ -28,7 +28,16 @@ Windows 版本的安装程序会提供一个图形界面，按照指示安装即
 
 使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。
 
-打开该快捷方式会启动一个激活了 `base` 环境的 shell，输入以下命令可以初始化 shell，让其可以在正常启动的 shell 里执行 `conda` 或 `mamba` 命令
+打开该快捷方式会启动一个激活了 `base` 环境的 shell，输入以下命令可以初始化 shell，让其能在正常启动的 shell 里执行 `conda` 或 `mamba` 命令
+
+> [!Tip]- 找不到快捷方式
+> 如果你没有这个快捷方式，可以输入如下命令初始化 shell，效果是一样的
+>
+> ```pwsh
+> # 将 path\to\miniforge3 替换为你的安装路径
+> path\to\miniforge3\condabin\conda.bat init powershell
+> path\to\miniforge3\condabin\mamba.bat shell init
+> ```
 
 ```sh
 # conda 初始化 powershell
@@ -39,21 +48,17 @@ conda init bash
 mamba shell init
 ```
 
+> [!Warning]- 启动速度
+> 所谓初始化 shell，其实就是在 shell 的启动文件中添加了一些命令。
+>
+> 如前所述，`conda` 由于使用 **Python** 实现，速度非常慢，执行初始化命令要很长时间，会严重拖慢 shell 的启动速度。我在自己的机器上测试，conda 初始化后每次启动 shell 大概要多花费 *2* 秒左右；而 `mamba` 由于用 **C++** 实现，会快很多，大概只花了 *0.2* 秒。因此 `conda` 和 `mamba` 二者只需初始化一个即可，并且最好选择后者，能节省一点时间。
+
 重启 shell 并测试是否成功
 
 ```sh
 conda --version
 mamba --version
 ```
-
-> [!TIP] 找不到快捷方式
-> 如果你没有这个快捷方式，可以输入如下命令初始化 shell
->
-> ```cmd
-> # 将 path\to\miniforge3 替换为你的安装路径
-> path\to\miniforge3\condabin\conda.bat init powershell
-> path\to\miniforge3\condabin\mamba.bat shell init
-> ```
 
 ## 修改设置
 

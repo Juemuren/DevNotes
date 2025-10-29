@@ -49,11 +49,11 @@ mise activate pwsh | Out-String | Invoke-Expression
 更改全局使用的运行时版本
 
 ```sh
-# 全局使用 python 的 latest 版本
+# 全局使用 python latest
 mise use -g python
-# 全局使用 nodejs 的 lts 版本
+# 全局使用 nodejs lts
 mise use -g node@lts
-# 全局使用 java 的 17 版本
+# 全局使用 java 17
 mise use -g java@17
 ```
 
@@ -69,7 +69,7 @@ python = "latest"
 更改当前项目使用的运行时版本
 
 ```sh
-# 当前项目使用 nodejs 的 20 版本
+# 当前项目使用 nodejs 20
 mise use node@20
 ```
 
@@ -97,5 +97,5 @@ mise settings add idiomatic_version_file_enable_tools node
 
 ```sh
 # 让 mise 自动激活 uv 创建的虚拟环境
-python.uv_venv_auto
+mise add settings python.uv_venv_auto true
 ```
