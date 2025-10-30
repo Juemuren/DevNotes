@@ -1,7 +1,10 @@
+# Editor config
 .vscode
 
-html
-pdf
-
-venv
+# Build output
 site
+*.html
+*.pdf
+
+# Virtual environment
+venv

@@ -19,10 +19,10 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 #### mise/uv
 
-如果使用 mise/uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具。
+如果使用 mise/uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具
 
 - [安装 Mise](../环境管理/Mise.md#安装)
-- 安装 uv
+- [安装 uv](../包管理/Uv.md#安装)
 
 对于 mise + uv 这一组合，你还应该进行一些设置使二者配合起来更舒适
 
@@ -31,6 +31,8 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 mise settings add idiomatic_version_file_enable_tools python
 # 让 mise 自动激活 uv 创建的虚拟环境
 mise add settings python.uv_venv_auto true
+# 禁用 uv 自动下载 python 的功能
+echo 'python-downloads = "never"' >> "$env:APPDATA\uv\uv.toml"
 ```
 
 然后，可以运行如下命令，新建目录并安装相应的依赖
@@ -38,9 +40,9 @@ mise add settings python.uv_venv_auto true
 ```sh
 # 新建一个使用 python 3.13 的项目
 uv init example --python 3.13
-# 进入目录
+# 进入项目
 cd example
-# 此时如果 mise 有警告，则手动安装该版本的 python
+# 此时如果 mise 警告缺失版本，则手动安装对应的 python
 mise install python@3.13
 # 运行测试代码，同时会自动创建虚拟环境和锁文件
 uv run main.py
@@ -87,19 +89,22 @@ uv add numpy
 - [uv](../包管理/Uv.md) 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
 - conda 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
 
+### 格式化
+
+- ruff
+
 ### 性能分析
 
 - snakeviz
 
 ## 库和框架
 
-一些我使用过的库和框架
-
 ### 科学计算
 
 - numpy
 - sympy
 - scipy
+- control
 
 ### 绘图
 
@@ -110,10 +115,6 @@ uv add numpy
 
 - networkx
 - pandas
-
-### 信号与系统
-
-- control
 
 ### 机器学习
 

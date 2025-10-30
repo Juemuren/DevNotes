@@ -52,5 +52,6 @@ flowchart LR
 目前所谓**好的**编辑器主要有以下几个选择
 
 - [VSCode](VSCode.md) 免费开源，轻量灵活，支持非常高程度的自定义，并且可以通过插件做到类似 IDE 的效果（即丰富的语言服务和 GUI 操作支持），以及拥有 IDE 没有的功能（多语言项目的支持，冷门语言的支持，WSL 的支持等）。我现在所有的项目都是在 vscode 里写的，不管什么语言（包括 c/c++、python、js、julia、md、tex、iverilog 甚至 godot）
+- [Jupyter](Jupyter.md) 某种程度上也算是编辑器，不过支持的语言有限
 - neovim Vim 的现代版本，更易用且可拓展性更强。只简单使用过，暂不评价
 - zed 类似 VSCode，没用过，不评价

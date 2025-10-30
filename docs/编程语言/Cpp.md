@@ -7,7 +7,9 @@ C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG
 > [!Note] 解释器
 > C++ 其实还有个解释器 Cling，不过这个纯玩具，没见人用过，所以不推荐拿来搭建环境，也许初学时可以用一用
 
-我使用 MSYS + VSCode 搭建开发环境，该方案支持 GCC/CLANG 编译器，当然也可以使用别的方式搭建开发环境，比如 VSBuild + VSCode，这个方案使用 MSVC 编译器
+我使用 MSYS + VSCode 搭建开发环境，该方案支持使用 GCC/CLANG 编译器
+
+也可以使用 VSBuild + VSCode 搭建环境，这个方案支持使用 MSVC/CLANG 编译器
 
 ### 安装工具链
 
@@ -32,18 +34,11 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 > pacman -S mingw-w64-ucrt-x86_64-clang mingw-w64-ucrt-x86_64-lldb
 > ```
 
-如此一来环境其实已经搭建完成了。你现在可以直接在终端里进入 MSYS 环境，然后编译文件、调试程序。只不过，如果你想要使用 VSCode 的语言服务，那么需要配置智能感知。如果你想要 GUI 操作支持，那么需要配置调试任务。
-
-> [!WARNING] 修改 PATH 变量
-> 修改 *PATH* 变量可能不是最好的做法。虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入编译环境](../环境管理/MSYS.md#进入环境)后再进行编译。不过这样使用 GUI 会比较麻烦，你可能需要参考[配置自定义任务指南](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)。
->
-> 虽然说这可能不是最好的实际，但[官方文档](https://code.visualstudio.com/docs/cpp/config-mingw#_installing-the-mingww64-toolchain)就是这么干的，因为这会让后续的集成步骤更加简单。把编译器所在的目录，比如 `path\to\msys2\ucrt64\bin` 添加到系统 *PATH* 变量后，可以输入 `gcc --version` 测试是否成功。如果在 VSCode 的集成终端中找不到命令，你可能需要重启一下 VSCode，这样编辑器就会重新读取环境变量。
-
 #### VSBuild
 
-很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp，最主要的原因可能是 MSVC 和 GCC 的 ABI 不兼容，导致处理起来非常麻烦，为了省事就只支持 MSVC 了~~不过也许还有商业因素在里面~~。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
+很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp，最主要的原因可能是 MSVC 和 GCC 的 ABI 不兼容，导致处理起来非常麻烦，为了省事就只支持 MSVC 了 ~~不过也许还有商业因素在里面~~ 。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
 
-如果需要安装 VS 的话，建议只安装构建工具~~虽然安装体积还是很大~~。在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。如果硬盘告急，则右侧可选项先只保留一个 `MSVC`，到时候缺什么再补什么就行。
+如果需要安装 VS 的话，建议只安装构建工具 ~~虽然安装体积还是很大~~ ，然后使用 VSCode 作为编辑器。在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。如果硬盘告急，则右侧可选项先只保留一个 `MSVC`，到时候缺什么再补什么就行。
 
 VS 为了不污染 PATH，需要进入编译环境后才修改 PATH 以及别的环境变量。和 MSYS 一样，我不推荐去修改系统 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并且配置好了 `Windows Terminal`。不过我个人不太喜欢这些东西
 
@@ -64,10 +59,31 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 ### 编辑器集成
 
 > [!Note]- 官方文档
-> 后面的教程以 **GCC** 为例，并且已经修改了系统的 *PATH*。MSVC 与 VSCode 集成的方法应该也差不多。虽然如此，还是建议参考官方文档。
+> 后面的教程以 **GCC** 为例。MSVC 与 VSCode 集成的方法应该也差不多。虽然如此，还是建议参考官方文档。
 >
 > - [VSCode + GCC](https://code.visualstudio.com/docs/cpp/config-mingw)
 > - [VSCode + MSVC](https://code.visualstudio.com/docs/cpp/config-msvc)
+
+#### 修改环境变量
+
+> [!WARNING] 环境冲突
+> 尽管[官方文档](https://code.visualstudio.com/docs/cpp/config-mingw#_installing-the-mingww64-toolchain)这么干了，但我仍然认为修改 *PATH* 变量可能不是最好的做法。
+>
+> 虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入编译环境](../环境管理/MSYS.md#进入环境)后再进行编译。不过这样配置任务会比较麻烦，你可能需要参考[配置自定义任务指南](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)，或者不使用任务，而是在 VSCode 的集成终端里进入 MSYS 环境，然后手动执行命令。
+>
+> 如果你不在意这些，只希望怎么简单怎么来，那么可以继续参考之后的步骤。
+
+把编译器所在的目录添加到系统 *PATH* 变量中
+
+- 对于 **UCRT64** 中的编译器，路径为 `path\to\msys2\ucrt64\bin`
+- 对于 **CLANG64** 中的编译器，路径为 `path\to\msys2\clang64\bin`
+
+然后输入 `gcc --version` 或 `clang --version` 测试是否成功。
+
+> [!Tip]- 环境变量未更新
+> 如果你在 VSCode 的集成终端中输入以上命令时报错，这可能是因为 *PATH* 变量并没有及时更新。你可以输入 `echo $env:PATH` 看看是不是这样。
+>
+> 如果确实如此，你可能需要重启一下 VSCode 而不仅仅是重启终端，从而让编辑器重新读取环境变量。
 
 #### 配置智能感知
 
@@ -94,9 +110,9 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 
 ### 包管理器
 
-包管理生态非常乱，没有官方标准，有各种第三方包管理器
+C++ 的包管理生态非常乱，没有官方标准，取而代之的是各种第三方包管理器
 
-系统包管理器也能管理 C/C++ 的包。不过现代项目不推荐使用系统包管理器，没法跨平台，难协作
+系统包管理器也能管理 C/C++ 的包。不过现代项目不推荐使用系统包管理器，因为很难跨平台协作
 
 - [Vcpkg](../包管理/Vcpkg.md)
 - conan
@@ -108,10 +124,8 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 - cmake
 - xmake
 
-### Clang 工具链
+### 静态检查和格式化
 
-- clang clang++ 新一代编译器
-- lldb 新一代调试器
 - clang-tidy 静态检查
 - clang-format 格式化
 

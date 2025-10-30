@@ -102,6 +102,7 @@ nav:
     - 库和框架: 库和框架/index.md
     - Pytorch: 库和框架/Pytorch.md
     - YOLO: 库和框架/YOLO.md
+    - React: 库和框架/React.md
     - Expo: 库和框架/Expo.md
   - 嵌入式:
     - 嵌入式: 嵌入式/index.md
