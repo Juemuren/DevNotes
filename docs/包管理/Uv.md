@@ -2,9 +2,11 @@
 
 ## 简介
 
-uv 是一个 python 的包管理和项目管理器。功能类似 npm，感觉应该从中汲取了不少灵感
+uv 是一个 python 的 *包管理* 和 *项目管理器*。然而这只是官方说法，实际上 uv 的功能更多，比如 *工具管理*、*运行时管理* 等功能 uv 也是有的
 
-由于 uv 使用 Rust 实现，所以速度很快，最近非常流行。
+uv 自称是可以替代 `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv` 以及更多的工具的单一工具。这回倒是不谦虚了，不过这确实是对的。
+
+并且由于 uv 使用 Rust 实现，所以速度很快。
 
 ## 安装
 
@@ -55,7 +57,9 @@ uv remove mkdocs
 uv tree
 ```
 
-此外 uv 还可以安装和运行工具
+### 工具管理
+
+uv 还可以安装和运行工具
 
 ```sh
 uvx ruff
@@ -65,12 +69,22 @@ uv tool run ruff
 
 uvx 会把工具安装到临时的隔离环境中。如果需要把工具添加为项目依赖，应该使用 `uv run`
 
-## 设置
+### 运行时管理
 
-默认情况下，uv 会在缺失 python 版本时自动尝试下载。我个人更喜欢使用专门的**运行时版本管理器**来做这件事。可以往配置文件中添加如下内容禁用这个特性
+uv 还有管理运行时版本的功能
+
+```sh
+# 下载 python 3.12
+uv python install 3.12
+# 固定项目使用的版本为 3.12
+uv python pin 3.12
+```
+
+默认情况下，uv 会在缺失 python 版本时自动尝试下载。我个人更喜欢使用专门的**运行时版本管理器**来做这件事，比如 [mise](../环境管理/Mise.md)。可以往配置文件中添加如下内容禁用这个特性
 
 ```toml
-python-downloads = "never"
+python-downloads = "never" # 永远不会下载
+python-downloads = "manual" # 只能通过 uv python install 来下载
 ```
 
 在 Windows 上，这个配置文件的位置比较诡异，放在了 `$env:APPDATA\uv\uv.toml`；而 macOS 和 Linux 一般都是 `~/.config/uv/uv.toml`

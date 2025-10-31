@@ -2,7 +2,11 @@
 
 ## 环境搭建
 
-目前我使用 Miniforge + VSCode 搭建开发环境。当然也可以使用别的方法，比如 mise/uv +  VSCode。不是很推荐直接安装 Python，因为没办法管理运行时的版本。
+目前我使用 Miniforge + VSCode 搭建开发环境，Miniforge 用于获取工具，而 VSCode 用于编辑代码。
+
+我有时也使用别的方法获取工具，比如 mise/uv。
+
+不是很推荐直接安装 Python，因为这样没办法管理运行时的版本。
 
 ### 安装工具链
 
@@ -52,7 +56,10 @@ uv add numpy
 
 ### 编辑器集成
 
-[VSCode 官方文档](https://code.visualstudio.com/docs/python/python-quick-start)
+> [!Note] 官方文档
+> 后面的示例以 *Miniforge* 为例，使用 **mise**/**uv** 获取工具的话，集成方法应该是差不多的。
+>
+> [VSCode Python](https://code.visualstudio.com/docs/python/python-quick-start)
 
 #### 使用解释器
 
