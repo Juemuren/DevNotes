@@ -33,7 +33,7 @@
 
 > [!Note] 语言相关的工具
 > 与特定编程语言有关的 CLI 工具，比如编译器、解释器、调试器、语言包管理器、构建工具、格式化工具、静态检查工具、性能分析工具、内存分析工具等就不列举在这里了，可以去[编程语言](../编程语言/index.md)章节查阅有关特定语言的部分
-<!-- TODO 完成 ripgrep、tldr、delta、bat、eza、cloc、fastfetch、ollama -->
+<!-- TODO 完成 ripgrep、tldr、delta、bat、eza、cloc、ollama -->
 ### 脚本
 
 用来管理脚本的工具
@@ -57,7 +57,7 @@
 虽说为美化工具，但其实还是有用的，因为可以提供一些信息，间接提高了效率
 
 - [starship](Starship.md) 自定义 prompt，美化就是生产力 `:)`
-- fastfetch 获取系统信息，能够高度定制。很酷，有种极客的感觉
+- [fastfetch](Fastfetch.md) 能够高度定制的系统信息获取工具
 
 ### 实用
 

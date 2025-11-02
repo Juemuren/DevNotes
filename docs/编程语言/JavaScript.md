@@ -30,7 +30,7 @@ mise use deno
 mise use bun
 ```
 
-我个人使用 Mise + NodeJS + VSCode 搭建开发环境。对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
+我使用 VSCode 来编写代码。对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
 
 ## 命令行工具
 
@@ -47,7 +47,7 @@ mise use bun
 
 ### 调试
 
-- nodemon 监视文件
+- nodemon 监视文件，并在更改后重新运行，让开发更方便
 - json-server 快速启动一个简易的本地 json 服务器，可以处理 RESTful 请求，一般都是本地调试用的
 
 ### 构建系统

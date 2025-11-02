@@ -26,8 +26,6 @@ Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独
 > 所谓的 *shim*，其实就是为一个可执行文件的代理，这个代理放在能够被 shell 找到的位置。代理本身也可执行，执行时会调用实际的文件来处理命令。
 >
 > Scoop 使用 *shim* 替代 *PATH* 是有例外的。比如，若可执行文件过多，Scoop 还是会添加一条 *PATH*，毕竟在清单文件里给几百个可执行文件（比如 miktex）分别创建 *shim* 不太现实；另外，如果软件的后续版本会不断增加可执行文件，或者使用过程中会产生或下载一些可执行文件，Scoop 也只能添加 *PATH*。*PATH* 膨胀在 Windows 平台是个难以解决的问题，Scoop 只能缓解，也许 *环境管理器* 可以根治，但目前还没有这样的工具。好在 *PATH* 上限够大（据说 Windows 上是 **8192** 个字符），在触及上限之前，环境都是暂时安全的。
->
-> 可以通过 `scoop config use_isolated_path $true` 让 Scoop 添加 *PATH* 与系统自带的 *PATH* 分离，但本质上只是将这些 *PATH* 保存在了 *SCOOP_PATH* 里，Shell 启动时会自动把 *SCOOP_PATH* 里的路径加到 *PATH* 中。
 
 根据 Scoop 的原理，有一些软件很适合用 Scoop 安装
 
@@ -49,6 +47,29 @@ irm get.scoop.sh -outfile 'install.ps1'
 # 安装在指定的目录
 .\install.ps1 -ScoopDir 'D:\Applications\Scoop'
 ```
+
+## 初始化和设置
+
+Scoop 自身会使用一些工具，缺失某些工具会导致 Scoop 功能不全。你可以运行 `scoop checkup` 看看缺少什么
+
+- `scoop install git` Scoop 中的桶使用 Git 进行管理, 如果要更新或添加其他桶则必须安装 Git。部分工具安装时也要使用 Git，比如 `vcpkg`
+- `scoop install 7zip dark innounp` Scoop 安装一些软件时要用到这些工具
+- `scoop install sudo` Scoop 添加服务等操作则需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 ->  开发者选项 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/)
+
+另外还有一些能增强 Scoop 的工具，比如 `aria2`，这是一个下载工具，运行 `scoop install aria2` 后 Scoop 就会自动使用它进行下载。Scoop 还有很多与此相关的设置，运行 `scoop config --help`，在最下面就是相关的设置
+
+- `aria2-enabled` 是否启用，默认 **true**
+- `aria2-warning-enabled` 是否显示警告，默认 **true**
+- `aria2-retry-wait` 重试间隔秒数，默认 **2**
+- `aria2-split` 下载的连接数，默认 **5**
+- `aria2-max-connection-per-server` 对单个服务器的最大连接数，默认 **5**
+- `aria2-min-split-size` 单个连接分到最小的下载量，默认为 **5M**
+- `aria2-options` 更多的设置，默认值为空
+
+最后是一些建议修改的设置
+
+- `scoop config use_sqlite_cache true` 使用 **SQLite** 缓存，这会让 `scoop search` 和 `scoop shim` 命令变快
+- `scoop config use_isolated_path true` 让 Scoop 添加的 *PATH* 与系统自带的 *PATH* 分离，前者将会保存在 *SCOOP_PATH* 里，Shell 启动时会自动把 *SCOOP_PATH* 里的路径加到 *PATH* 中
 
 ## 使用
 

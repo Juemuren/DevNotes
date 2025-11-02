@@ -72,22 +72,25 @@ nav:
     - Docker: 环境管理/Docker.md
   - 包管理:
     - 包管理: 包管理/index.md
-    - Vcpkg: 包管理/Vcpkg.md
-    - Uv: 包管理/Uv.md
     - Scoop: 包管理/Scoop.md
     - Homebrew: 包管理/Homebrew.md
+    - Xmake: 包管理/Xmake.md
+    - Vcpkg: 包管理/Vcpkg.md
+    - Uv: 包管理/Uv.md
   - 编程语言:
     - 编程语言: 编程语言/index.md
     - Cpp: 编程语言/Cpp.md
     - Python: 编程语言/Python.md
     - JavaScript: 编程语言/JavaScript.md
+    - Lisp: 编程语言/Lisp.md
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
+    - Starship: 命令行工具/Starship.md
+    - Fastfetch: 命令行工具/Fastfetch.md
     - Fzf: 命令行工具/Fzf.md
     - Fd: 命令行工具/Fd.md
     - Just: 命令行工具/Just.md
-    - Starship: 命令行工具/Starship.md
     - Zoxide: 命令行工具/Zoxide.md
   - 文档:
     - 文档: 文档/index.md

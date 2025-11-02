@@ -59,7 +59,7 @@ uv add numpy
 > [!Note] 官方文档
 > 后面的示例以 *Miniforge* 为例，使用 **mise**/**uv** 获取工具的话，集成方法应该是差不多的。
 >
-> [VSCode Python](https://code.visualstudio.com/docs/python/python-quick-start)
+> 你也可以参考官方文档 [VSCode Python](https://code.visualstudio.com/docs/python/python-quick-start)
 
 #### 使用解释器
 

@@ -44,7 +44,9 @@ Invoke-Expression (&starship init powershell)
 
 <!-- TODO 把文件放到一个新的 github 仓库上，名字就叫 dotfiles 好了，到时候 vscode、neovim、vim、bash、zsh 这些的配置文件都可以放上去 -->
 
-我的这个配置非常的花哨和臃肿，建议按需开启功能。由于没给网站配置 Nerd-Fonts 字体，所以部分符号可能不会正确显示（本来想先放到 github 上的，没想到 github 的网页也无法渲染 NF 字符）。你可以复制下来在一个有 NF 字体的编辑器里查看。
+我的这个配置非常的花哨和臃肿，建议按需开启功能。`starship explain` 这个命令可以查看当前每个模块所消耗的时间，当感觉速度无法忍受时，可以把耗时比较久的模块禁用掉
+
+> 由于没给网站配置 `Nerd-Fonts` 字体，所以部分符号可能不会正确显示 ~~本来想先放到 github 上的，没想到 github 也无法渲染 NF 字符~~ 。你可以复制下来在一个有 NF 字体的编辑器里查看。
 
 ```toml
 "$schema" = 'https://starship.rs/config-schema.json'

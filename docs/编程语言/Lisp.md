@@ -1,0 +1,38 @@
+# Lisp
+
+## 环境搭建
+
+Lisp 的实现非常多。目前我使用的是 `SBCL` 这个解释器，可以通过 `scoop install sbcl` 安装
+
+另外 Lisp 还有一个包管理器 `quicklisp`，可以通过如下方式安装
+
+```sh
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp
+```
+
+启动解释器后，运行如下命令
+
+```lisp
+; 安装包管理器，默认安装到 ~/quicklisp
+(quicklisp-quickstart:install)
+; 可以安装到别的路径，但我使用时总是不成功
+(quicklisp-quickstart:install :path "path/to/quicklisp")
+; 自动加载 quicklisp
+(ql:add-to-init-file)
+; 退出解释器
+(quit)
+```
+
+这个包管理器本身使用起来也并不麻烦
+
+```lisp
+; 添加包
+(ql:quickload "vecto")
+; 删除包
+(ql:uninstall "vecto")
+; 查找包
+(ql:system-apropos "xml")
+```
+
+更多用法请参考 [Quicklisp 官方文档](https://www.quicklisp.org/beta/)
