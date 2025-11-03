@@ -33,11 +33,11 @@ scoop install podman
 podman machine init
 # 启动并连接到虚拟机
 podman machine start
-# 运行容器
+# 在容器里运行 date 命令
 podman run ubi8-micro date
 ```
 
-不需要新打开一个管理员权限的终端，而且没有报错，此后都只需要运行后两个命令就能运行容器实例了
+不需要新打开一个管理员权限的终端，而且没有报错
 
 ## 安装
 
@@ -59,14 +59,18 @@ podman machine init
 
 ## 使用
 
-运行容器非常简单
+使用容器非常简单
 
 ```sh
 # 启动并连接到虚拟机
 podman machine start
-# 运行容器
+# 在容器里运行 date 命令
 podman run ubi8-micro date
+# 进入容器
+podman run -it ubi8-micro
 ```
+
+不过 `ubi8-micro` 这个镜像非常小，只有 **25.8 MB**，因此功能有限。你可以拉取一个更大的镜像来玩。
 
 一些常用的查看容器和镜像的命令
 

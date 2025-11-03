@@ -103,7 +103,7 @@ Docx、LaTeX、Typst 直接就可以将文档转为 PDF 格式，而 Markdown、
 LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。当然更常见的是用 Microsoft PowerPoint 制作 PPT。
 
 ## 工具
-<!-- TODO chafa、marp、qpdf、quarto -->
+<!-- TODO chafa、qpdf、quarto、marp、vhs、MkDocs -->
 ### 综合处理
 
 可以用来对一些格式的文件进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
@@ -115,8 +115,7 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 可以用来生成表格、静态图片、动态图片，或者演示视频的工具
 
-- [mermaid](Mermaid.md) 一个基于 JavaScript 的图表绘制工具，可以通过简单的代码绘制图表。
-- plantUML 另一种绘制 UML 图表的工具，基于 Java，同样通过代码生成图表。
+- [mermaid](Mermaid.md) 一个基于 JavaScript 的图表绘制工具，可以通过简单的代码绘制图表。类似的工具还有 `plantUML`，不过后者基于 Java，生态不如前者好
 - vhs 终端录像生成工具。和传统的工具不同，vhs 会根据你提供的要求，比如输入的内容、打字速度、画面大小等自动生成录像。非常适合用来演示，毕竟自己手打命令的话，不小心操作失误会很麻烦。
 - asciinema 命令录制工具。类似于 `script`，会记录输入的命令、执行时间、输出结果等信息，并且可以根据这些信息进行回放。
 

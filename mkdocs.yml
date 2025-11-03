@@ -90,15 +90,18 @@ nav:
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
-    - Starship: 命令行工具/Starship.md
-    - Fastfetch: 命令行工具/Fastfetch.md
-    - Tldr: 命令行工具/Tldr.md
-    - Eza: 命令行工具/Eza.md
-    - Ripgrep: 命令行工具/Ripgrep.md
-    - Fzf: 命令行工具/Fzf.md
-    - Fd: 命令行工具/Fd.md
     - Just: 命令行工具/Just.md
     - Zoxide: 命令行工具/Zoxide.md
+    - Tldr: 命令行工具/Tldr.md
+    - Fzf: 命令行工具/Fzf.md
+    - Ripgrep: 命令行工具/Ripgrep.md
+    - Fd: 命令行工具/Fd.md
+    - Starship: 命令行工具/Starship.md
+    - Fastfetch: 命令行工具/Fastfetch.md
+    - Bat: 命令行工具/Bat.md
+    - Delta: 命令行工具/Delta.md
+    - Eza: 命令行工具/Eza.md
+    - Cloc: 命令行工具/Cloc.md
   - 文档:
     - 文档: 文档/index.md
     - Pandoc: 文档/Pandoc.md
