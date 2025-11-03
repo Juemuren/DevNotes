@@ -2,6 +2,8 @@
 
 ## 环境搭建
 
+### 获取工具链
+
 JavaScript 的运行时一般选择 *nodejs*，不过 *deno*、*bun* 也是不错的。浏览器的控制台里也可以运行 JavaScript 代码，如果只是想写点浏览器脚本发到 GreasyFork，甚至都没必要本地搭建环境
 
 如果不需要管理运行时版本，那么通过 scoop 直接安装即可，这默认会下载最新版
@@ -30,6 +32,8 @@ mise use deno
 mise use bun
 ```
 
+### 编辑器集成
+
 我使用 VSCode 来编写代码。对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
 
 ## 命令行工具
@@ -44,6 +48,10 @@ mise use bun
 
 - eslint 代码静态检查
 - prettier 格式化
+
+### 编译器
+
+- typescript 其实叫转译器更合适。它可以对 TS 代码进行类型擦除，从而得到干净的 JS 代码，并且会在编译期进行类型等相关的检查。这事实上就是 typescript 的实现。
 
 ### 调试
 

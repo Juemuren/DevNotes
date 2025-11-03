@@ -82,12 +82,19 @@ nav:
     - Cpp: 编程语言/Cpp.md
     - Python: 编程语言/Python.md
     - JavaScript: 编程语言/JavaScript.md
+    - Rust: 编程语言/Rust.md
+    - Julia: 编程语言/Julia.md
+    - CSharp: 编程语言/CSharp.md
+    - CUDA: 编程语言/CUDA.md
     - Lisp: 编程语言/Lisp.md
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Starship: 命令行工具/Starship.md
     - Fastfetch: 命令行工具/Fastfetch.md
+    - Tldr: 命令行工具/Tldr.md
+    - Eza: 命令行工具/Eza.md
+    - Ripgrep: 命令行工具/Ripgrep.md
     - Fzf: 命令行工具/Fzf.md
     - Fd: 命令行工具/Fd.md
     - Just: 命令行工具/Just.md

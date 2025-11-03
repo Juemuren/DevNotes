@@ -5,7 +5,7 @@
 C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG 在 Windows 上需要配合另外两者使用；而 MSVC 我觉得太重了，即使只安装 *BuildTools* 也占用了很大的空间。
 
 > [!Note] 解释器
-> C++ 其实还有个解释器 Cling，不过这个纯玩具，没见人用过，所以不推荐拿来搭建环境，也许初学时可以用一用
+> C++ 其实还有个解释器 Cling，不过不推荐拿这个来搭建环境，也许初学时可以用一用。在 Windows 上该工具可通过 Conda 获取，但似乎不太稳定；建议在 Linux 系统里尝试。
 
 我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。
 

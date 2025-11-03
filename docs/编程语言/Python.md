@@ -15,9 +15,11 @@
 如果使用 Miniforge 获取工具链，请先完成 [Miniforge 的安装](../环境管理/Conda.md)，然后通过如下命令安装解释器和第三方库
 
 ```sh
-# 选一个解释器的版本
+# 选定一个解释器的版本
 mamba create -n ml python=3.13
-# 选一些第三方库
+# 激活环境
+mamba activate ml
+# 安装一些第三方库
 mamba install ipykernel numpy matplotlib scikit-learn pandas
 ```
 
