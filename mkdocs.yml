@@ -1,5 +1,5 @@
-site_name: 编程笔记
-site_description: 开发经验分享
+site_name: 开发笔记
+site_description: 个人开发经验分享
 site_author: YuFeng
 site_url: https://juemuren.github.io/DevNotes/
 repo_name: DevNotes
@@ -63,14 +63,14 @@ plugins:
 
 nav:
   - 首页: index.md
-  - 环境管理: 
+  - 环境管理器: 
     - 环境管理: 环境管理/index.md
     - Conda: 环境管理/Conda.md
     - Mise: 环境管理/Mise.md
     - MSYS: 环境管理/MSYS.md
     - WSL: 环境管理/WSL.md
     - Docker: 环境管理/Docker.md
-  - 包管理:
+  - 包管理器:
     - 包管理: 包管理/index.md
     - Scoop: 包管理/Scoop.md
     - Homebrew: 包管理/Homebrew.md
@@ -102,11 +102,16 @@ nav:
     - Delta: 命令行工具/Delta.md
     - Eza: 命令行工具/Eza.md
     - Cloc: 命令行工具/Cloc.md
-  - 文档:
+    - Dotter: 命令行工具/Dotter.md
+    - Ollama: 命令行工具/Ollama.md
+  - 文档工具:
     - 文档: 文档/index.md
     - Pandoc: 文档/Pandoc.md
+    - Marp: 文档/Marp.md
     - Mermaid: 文档/Mermaid.md
+    - Quarto: 文档/Quarto.md
     - Doxygen: 文档/Doxygen.md
+    - MkDocs: 文档/MkDocs.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md

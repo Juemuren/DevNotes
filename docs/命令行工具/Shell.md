@@ -4,7 +4,7 @@
 
 Shell，或者偶尔翻译为外壳，是一种 CLI 工具。
 
-Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 让一个 Shell 去执行 `echo hello` 这条命令，而 `sh test.sh` 则让 Shell 去执行 `test.sh` 这个脚本
+Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 让 Shell 执行 `echo hello` 单条命令，而 `sh test.sh` 则让 Shell 执行 `test.sh` 这个脚本
 
 > [!Note] 系统相关
 > Linux 系统通常都会自带 Bash，这是事实上的标准，因此其兼容性也是最好的。

@@ -1,4 +1,4 @@
-# 文档
+# 文档工具
 
 ## 基本概念
 
@@ -103,7 +103,7 @@ Docx、LaTeX、Typst 直接就可以将文档转为 PDF 格式，而 Markdown、
 LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。当然更常见的是用 Microsoft PowerPoint 制作 PPT。
 
 ## 工具
-<!-- TODO chafa、qpdf、quarto、marp、vhs、MkDocs -->
+<!-- TODO chafa qpdf vhs -->
 ### 综合处理
 
 可以用来对一些格式的文件进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
@@ -124,7 +124,7 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 用来在不同格式之间进行转换的工具
 
 - [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、HTML、PDF、Word、PPTX 等。
-- Marp 一种专门将 Markdown 转换为演示格式（**PDF**、**HTML**、**PPTX**）的工具，相比 **Pandoc** 功能更专一，因此对于该特定需求可能使用更方便、效果更好。不过，即使能够导出 PDF，那也是按照 PPTX 的样式风格的，且不能够自动分页。因此不太适合书籍、论文等刚需排版的场景。
+- [Marp](Marp.md) 一种专门将 Markdown 转换为幻灯片的工具
 - markitdown 微软官方的做的一个把各种格式的文件转为 markdown 的工具，甚至可以处理 YouTube 链接（当然，实际上只是把字幕文件转化为 markdown 文件，不要以为能够一帧一帧地转换视频内容）。这个工具也提供了 Python 接口，不过只能将文件转为 markdown 格式，不能反向转换。在 LLM 盛行的时代，非常适合炒作这个工具 `:)`，把所有东西都转换成 Markdown 然后全部喂给 AI。
 
 ### 代码内嵌
@@ -133,7 +133,7 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 - Noweb 编写时可在文档里嵌入代码，导出时文档中会插入代码运行的结果。文档基于 LaTeX，代码支持多种语言，比如 Julia、Python、R。不是很推荐，因为有个全方面优于此工具的替代品：`Jupyter`
 - [Jupyter](../编辑器/Jupyter.md) 交互式编程笔记本，功能非常强大。我把它放入了 *编辑器* 这一章节。
-- Quarto 基于 Pandoc 和 Jupyter 构建的开源科技出版系统。简单地说，当要求渲染时，它会把文档中的代码交给 Jupyter 运行，然后把得到的结果嵌入在文档内；当要求导出时，它会用 pandoc 进行格式转换。这是一个站在巨人肩膀上的新一代工具。
+- [Quarto](Quarto.md) 基于 Pandoc 和 Jupyter 构建的开源科技出版系统。
 - MDX 可以在 markdown 中嵌入 jsx 组件，然后整个文件会被编译成 JavaScript。作为静态网站生成器的插件效果应该不错，能够让网站更 *动态* 一点。
 
 ### 文档生成
@@ -150,5 +150,5 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 这类工具非常多，似乎每种语言都有类似的工具。但这种工具用哪种语言编写其实不重要，因为它们做的事情都是把 Markdown 转为 HTML 而已。重要的是主题、样式是否丰富，配置是否省心，有没有拓展功能，构建速度快不快等。
 
-- MkDocs 一个用 Python 写的静态网站生成器，本网站就是使用这个制作的
+- [MkDocs](MkDocs.md) 一个用 Python 写的静态网站生成器，本网站就是使用这个制作的
 - VitePress 通过 Vite 和 Vue 驱动，算是 Vue 生态的一部分，是 VuePress 的更现代的版本
