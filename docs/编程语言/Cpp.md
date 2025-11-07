@@ -57,7 +57,7 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 
 ### 编辑器集成
 
-> [!Note]- 官方文档
+> [!Note]+ 官方文档
 > 后面的教程以 **GCC** 为例。MSVC 与 VSCode 集成的方法应该也差不多。虽然如此，还是建议参考官方文档。
 >
 > - [VSCode + GCC](https://code.visualstudio.com/docs/cpp/config-mingw)

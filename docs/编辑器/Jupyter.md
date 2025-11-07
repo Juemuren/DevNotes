@@ -67,9 +67,20 @@ jupyter notebook
 jupyter lab
 ```
 
+## 导出
+
+导出可以使用 `nbconvert` 或 `pandoc`。更推荐使用前者，可以通过 `pip install nbconvert` 来安装。*VSCode* 的导出实际上就使用了 `nbconvert`
+
+```sh
+# 将 learn.ipynb 导出为 export.html
+jupyter nbconvert learn.ipynb --to html --output export
+```
+
+`nbconvert` 支持导出为 *PDF* 和 *HTML*。不过对于 *PDF*，建议先导出为 *HTML*，再使用浏览器的 *打印* 功能。如果想直接转换为 *PDF*，不管是 `nbconvert` 还是 `pandoc` 都会尝试使用 $\LaTeX$ 进行编译，因此需要安装 $\TeX$ 环境；不仅如此，对于中文字体还需要额外的设置，比较麻烦。
+
 ## 命令行
 
-Jupyter 的命令行工具除了可以启动后端服务器外，还有别的功能。
+Jupyter 的命令行工具除了可以启动后端服务器、进行导出外，还有别的功能。
 
 比如 `jupyter kernelspec list` 可以列出当前能用的所有内核。
 

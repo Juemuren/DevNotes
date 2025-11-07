@@ -22,22 +22,25 @@ sasv docker
 docker run hello-world
 ```
 
-并且，这时候你大概率会得到报错，因为没有配置 WSL 作为后端。而我翻了半天官方文档也没找到使用 CLI 配置 WSL 为后端的方法，因为这个功能似乎只能使用 Docker Desktop 实现。
+并且，这时候你大概率会得到报错，因为在 Windows 上 `dockerd` 只支持运行 Windows 容器。一个可能正确的做法应该是这样的
 
-而在 Windows 里， podman 却可以只使用 CLI 简单地运行容器
+1. 在 WSL 里安装 Docker 并启动守护进程 `dockerd`。当然，这个过程是需要 root 权限的
+2. 然后在 Windows 里安装 Docker，并通过配置让 `docker` 连接到 WSL 里的 `dockerd`
+
+好吧这太复杂了。让我们看看在 Windows 里 podman 要怎么只使用 CLI 运行容器吧
 
 ```sh
-# 安装
+# 安装 Podman CLI
 scoop install podman
-# 初始化 WSL 后端虚拟机
+# 初始化一个 WSL 虚拟机
 podman machine init
 # 启动并连接到虚拟机
 podman machine start
-# 在容器里运行 date 命令
-podman run ubi8-micro date
+# 运行容器
+podman run hello
 ```
 
-不需要新打开一个管理员权限的终端，而且没有报错
+不需要新打开一个管理员权限的终端，不需要复杂的配置，除了可能的网络问题外即使是第一次使用也基本上不会遇到报错
 
 ## 安装
 
@@ -59,33 +62,106 @@ podman machine init
 
 ## 使用
 
-使用容器非常简单
+用 podman 运行别的命令前，记得先启动虚拟机
 
 ```sh
-# 启动并连接到虚拟机
 podman machine start
-# 在容器里运行 date 命令
+```
+
+### 基本使用
+
+```sh
+# 在 ubi8-micro 容器里运行 date 命令
 podman run ubi8-micro date
-# 进入容器
+# 与 ubi8-micro 容器交互
 podman run -it ubi8-micro
 ```
 
-不过 `ubi8-micro` 这个镜像非常小，只有 **25.8 MB**，因此功能有限。你可以拉取一个更大的镜像来玩。
-
-一些常用的查看容器和镜像的命令
+不过 `ubi8-micro` 这个镜像非常小，只有 **25.8 MB**，因此功能有限。你可以拉取一个更大的镜像来玩
 
 ```sh
-# 列出本地存储的镜像
-podman images
-# 列出所有镜像，包括中间镜像
-podman images -a
-# 列出正在运行的容器
-podman ps
-# 列出所有容器
-podman ps -a
+# 拉取 ubuntu 镜像并运行 bash
+podman run -it ubuntu bash
+# 可以为这个容器实例取个名字
+podman run -it --name hello-ubuntu ubuntu bash
 ```
 
-管理存储空间的
+### 保存镜像
+
+> [!Note] 镜像和容器
+> 镜像和容器是两个很容易混淆的概念，两者之间的关系大概就是
+>
+> - 镜像是不变的，而容器是可变的
+> - 每次运行镜像，比如 `podman run -it ubuntu bash`，实际上都创建了一个新的容器实例
+> - 可以通过命令，比如 `podman commit container-id new-image-name`，将一个修改过的容器保存为新的镜像
+>
+> 这是一些常用的查看容器和镜像的命令，你可以自己对比一下有什么区别
+>
+> ```sh
+> # 列出存储的镜像
+> podman images
+> # 列出所有镜像，包括中间镜像
+> podman images -a
+> # 列出正在运行的容器
+> podman ps
+> # 列出所有容器，包括已停止的容器
+> podman ps -a
+> ```
+>
+> 本文不会纠结这两个概念的细致区别，因此可能存在不准确的地方
+
+可以通过以下命令启动容器实例和停止容器实例，其中 `CONTAINER-ID` 和 `CONTAINER-NAME` 可以通过 `podman ps -a` 查看
+
+```sh
+# 启动容器实例
+podman start -ai CONTAINER-ID/CONTAINER-NAME
+# 停止容器实例
+podman kill CONTAINER-ID/CONTAINER-NAME
+```
+
+当你对容器做出了一些修改后，可以通过 `commit` 进行保存
+
+```sh
+podman commit CONTAINER-ID/CONTAINER-NAME NEW-IMAGE-NAME
+```
+
+这会本地生成一个新的镜像，然后你可以基于这个镜像再创建新的容器实例
+
+### 修改容器
+
+除了通过 `podman run -it ubuntu bash` 这种方式在交互式 shell 会话中对容器进行操作外，还有别的修改容器的方式
+
+```sh
+# 把本地文件复制到容器中
+podman container cp index.js hello-node:/usr/src/app/index.js
+```
+
+不过，以上这些自己手动修改容器再保存为新镜像的做法不是创建容器镜像的最佳方法。一个更好的方法是使用 `Dockerfile`，这通过一个配置文件来让创建镜像的过程自动化
+
+```dockerfile
+FROM node:20
+
+WORKDIR /usr/src/app
+
+COPY ./index.js ./index.js
+
+CMD node index.js
+```
+
+```sh
+# 根据配置文件自动构建镜像
+podman build -t node-hello-world .
+# 运行容器
+podman run node-hello-world
+# 可以覆盖默认的命令
+podman run -it node-hello-world bash
+# 还可以重新映射端口
+podman run -p 3123:3000 express-server
+```
+
+### 管理存储空间
+
+一些用来管理存储空间的命令
 
 ```sh
 # 列出存储概览
@@ -95,22 +171,6 @@ podman system df -v
 # 一键清理
 podman system prune
 ```
-
-### 网络代理
-
-WSL 本质上是个虚拟机，而虚拟机的网络连接方式略微有点复杂，尤其是在宿主机使用了网络代理工具的情况下。
-
-我目前的解决方案是：网络代理使用 TUN 模式；WSL Settings 里网络模式选择 Mirrored，并开启主机地址回环，或者你可以直接修改 Windows 系统里的 `~/.wslconfig` 文件
-
-```ini
-[wsl2]
-networkingMode=Mirrored
-
-[experimental]
-hostAddressLoopback=true
-```
-
-不过，这种方法偶尔还是会出现问题。目前我找不到完美的解决方案，改善网络环境（没有暗指墙）应该是个最好的选择。
 
 ### 容器编排
 

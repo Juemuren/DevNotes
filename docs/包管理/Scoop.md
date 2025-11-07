@@ -14,7 +14,7 @@ Scoop 用一个 *JSON* 文件指定了软件从哪里下载、如何安装、如
 
 [和 Chocolatey、Winget 的对比](https://github.com/ScoopInstaller/Scoop/wiki/Chocolatey-and-Winget-Comparison)
 
-Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独在一个目录里安装，附带了所有的运行时。而 Linux 系统为了节省空间，程序都是动态链接的，不会单独在一个目录里安装，而是散布在系统的各个角落，并疯狂地复用系统的运行时。所有说 Windows 系统是可以手动安装软件的，但 Linux 基本上不可能不使用包管理器。
+Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独在一个目录里安装，附带了所有的运行时。而 Linux 系统为了节省空间，程序都是动态链接的，不会单独在一个目录里安装，而是散布在系统的各个角落，并疯狂地复用系统的运行时。所以 Windows 系统是可以手动安装软件的，但 Linux 基本上不可能不使用包管理器。
 
 虽然说 Windows 平台不是那么需要包管理器，但 Scoop 确实提供了一些好处，具体地说
 
@@ -41,7 +41,7 @@ Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独
 
 [官方文档](https://github.com/ScoopInstaller/Install#readme)
 
-```sh
+```pwsh
 # 获取安装脚本
 irm get.scoop.sh -outfile 'install.ps1'
 # 安装在指定的目录
@@ -118,7 +118,7 @@ scoop shim add example 'path\to\script' '--' -arg1 val1 -arg2 val2
 
 我已经创建了一个自己的桶，你可以通过以下方式来使用
 
-```sh
+```pwsh
 # 添加桶，可以随便取个名字
 scoop bucket add <bucket-name> https://github.com/Juemuren/ScoopBucket
 # 安装这个桶里的软件

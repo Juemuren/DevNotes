@@ -6,7 +6,7 @@ Mise 是个用来管理工具链版本和切换环境的工具，也可以充当
 
 ## 对比
 
-作为工具链管理器，Mise 可以替代许多工具，比如 `nvm`、`pyenv` 等。这些程序通常只用来管理一个工具的版本，而 Mise 可以管理多种工具的版本。你可以在 [Mise Registry](https://mise.jdx.dev/registry.html#tools) 上查看 Mise 能够管理的所有工具。如果你正在使用多个不同工具的版本管理程序，那么 Mise 可能非常适合你。你不再需要记忆每种工具的用法，只需知道 Mise 怎么用就行了。
+作为工具链管理器，Mise 可以替代许多工具，比如 `nvm`、`pyenv` 等。这些程序通常只用来管理一个工具的版本，而 Mise 可以管理多种工具的版本。你可以在 [Mise Registry](https://mise.jdx.dev/registry.html#tools) 上查看 Mise 能够管理的所有工具。如果你正在使用多个不同工具的版本管理攻击，那么 Mise 可能非常适合你，它让你不再需要记忆每种工具的用法，只需知道 Mise 怎么用就行了。
 
 作为环境切换工具，Mise 是 `direnv` 的替代品。功能很简单，就是修改 *环境变量* 而已。对于部分工具，比如 Python，Mise 还能自动激活虚拟环境。
 
@@ -35,7 +35,7 @@ Mise 一些功能需要与 Shell 集成才能做到，比如通过修改 *PATH* 
 
 对于 pwsh，需要往 `$PROFILE` 文件中添加如下命令
 
-```sh
+```pwsh
 mise activate pwsh | Out-String | Invoke-Expression
 ```
 
@@ -43,9 +43,9 @@ mise activate pwsh | Out-String | Invoke-Expression
 
 对于开发工具这个功能，我主要用来管理语言运行时的不同版本。Mise 也可以下载别的[工具](https://mise.jdx.dev/registry.html#tools)，但需要插件，而且我认为这件事情让系统包管理器去做会更好。
 
-你可以在[官方文档](https://mise.jdx.dev/core-tools.html#core-tools)里看到目前 Mise 能够管理的语言运行时。我使用 Mise 主要是管理 Python、NodeJS、Go、Java 的运行时版本。Rust 的支持是实验性的，并且实际上就是给 rustup 包装了一下；而 Julia 目前不支持。因此对于后两者，我分别使用 rustup 和 juliaup 来管理版本
+你可以在[官方文档](https://mise.jdx.dev/core-tools.html#core-tools)里看到目前 Mise 能够管理的语言运行时。我使用 Mise 主要是管理 Python、NodeJS、Go、Java 的运行时版本。Rust 的支持是实验性的，并且实际上就是给 rustup 包装了一下；而 Julia 目前不支持。因此对于后两者，我分别使用 rustup 和 juliaup 来管理版本。
 
-Mise 会自动更新 *PATH* 以确保你使用了正确的版本，不过该功能需要激活。Mise 还有另一种切换运行时版本的方式，就是 *Shims*，它和修改 *PATH* 的方法略有不同，你可以参考[这些内容](https://mise.jdx.dev/dev-tools/shims.html#mise-activate-shims)。一般来说，*PATH* 是更推荐的选择。
+Mise 会自动更新 *PATH* 以确保你使用了正确的版本，不过该功能需要激活。Mise 还有另一种切换运行时版本的方式，就是 *Shims*，它和修改 *PATH* 的方法略有不同，详细的比对你可以参考[这些内容](https://mise.jdx.dev/dev-tools/shims.html#mise-activate-shims)。一般来说，*PATH* 是更推荐的选择。
 
 #### 基本使用
 

@@ -77,7 +77,7 @@
 
 这个配置文件不仅支持为不同的项目配置不同的插件，还可以配置不同的设置、键盘快捷方式、任务、代码片段等，功能非常强大
 
-具体如何使用取决于个人习惯，而且目前功能似乎不太完善，比如目前[配置文件是不能继承](https://code.visualstudio.com/docs/configure/profiles#_can-i-inherit-settings-from-another-profile)的。有需求的话建议去阅读[官方文档](https://code.visualstudio.com/docs/configure/profiles)
+具体如何使用取决于个人习惯，而且目前功能似乎不太完善，比如[配置文件不能继承](https://code.visualstudio.com/docs/configure/profiles#_can-i-inherit-settings-from-another-profile)。有需求的话建议去阅读[官方文档](https://code.visualstudio.com/docs/configure/profiles)
 
 ## 命令行
 
