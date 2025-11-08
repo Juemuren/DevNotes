@@ -86,7 +86,7 @@ podman run -it ubuntu bash
 podman run -it --name hello-ubuntu ubuntu bash
 ```
 
-### 保存镜像
+### 构建镜像
 
 > [!Note] 镜像和容器
 > 镜像和容器是两个很容易混淆的概念，两者之间的关系大概就是
@@ -110,13 +110,28 @@ podman run -it --name hello-ubuntu ubuntu bash
 >
 > 本文不会纠结这两个概念的细致区别，因此可能存在不准确的地方
 
-可以通过以下命令启动容器实例和停止容器实例，其中 `CONTAINER-ID` 和 `CONTAINER-NAME` 可以通过 `podman ps -a` 查看
+#### 手动构建镜像
+
+`start` 和 `stop` 子命令可以启动容器实例和停止容器实例，其中 `CONTAINER-ID` 和 `CONTAINER-NAME` 可以通过 `podman ps -a` 查看
 
 ```sh
 # 启动容器实例
 podman start -ai CONTAINER-ID/CONTAINER-NAME
 # 停止容器实例
-podman kill CONTAINER-ID/CONTAINER-NAME
+podman stop CONTAINER-ID/CONTAINER-NAME
+```
+
+> [!Note] kill 和 stop
+> 还有一条子命令 `kill` 可以用来停止正在运行的容器实例。从名字上也能看出，`kill` 相比 `stop` 更强硬一点，它默认发送 **SIGKILL** 信号。如果使用 `stop` 失败了，可以尝试使用 `kill`
+>
+> ```sh
+> podman kill CONTAINER-ID/CONTAINER-NAME
+> ```
+
+`exec` 子命令可以让一个正在运行的容器实例执行命令。如果遇到问题，我们可以使用它来进行容器的调试
+
+```sh
+podman exec -it CONTAINER-ID/CONTAINER-NAME bash
 ```
 
 当你对容器做出了一些修改后，可以通过 `commit` 进行保存
@@ -127,16 +142,11 @@ podman commit CONTAINER-ID/CONTAINER-NAME NEW-IMAGE-NAME
 
 这会本地生成一个新的镜像，然后你可以基于这个镜像再创建新的容器实例
 
-### 修改容器
+#### 自动构建镜像
 
-除了通过 `podman run -it ubuntu bash` 这种方式在交互式 shell 会话中对容器进行操作外，还有别的修改容器的方式
+除了通过 `podman run -it ubuntu bash` 这种方式在交互式 shell 会话中对容器进行操作外，还有别的修改容器的方式，比如 `podman container cp index.js hello-node:/usr/src/app/index.js` 可以把本地文件 `index.js` 复制到 `hello-node` 容器的 `/usr/src/app/index.js` 位置
 
-```sh
-# 把本地文件复制到容器中
-podman container cp index.js hello-node:/usr/src/app/index.js
-```
-
-不过，以上这些自己手动修改容器再保存为新镜像的做法不是创建容器镜像的最佳方法。一个更好的方法是使用 `Dockerfile`，这通过一个配置文件来让创建镜像的过程自动化
+不过，以上这些自己手动修改容器，再保存为新镜像的做法不是创建容器镜像的最佳方法。一个更好的方法是使用 `Dockerfile`，这通过一个配置文件来让创建镜像的过程自动化
 
 ```dockerfile
 FROM node:20
@@ -148,20 +158,65 @@ COPY ./index.js ./index.js
 CMD node index.js
 ```
 
+以上示例非常简单，你可以在 [Docker 官方文档](https://docs.docker.com/reference/dockerfile/)里获得更详细的参考。有了 `Dockerfile` 后修改容器构建新镜像就变得非常简单了
+
 ```sh
 # 根据配置文件自动构建镜像
 podman build -t node-hello-world .
+```
+
+然后可以照常使用这个容器
+
+```sh
 # 运行容器
 podman run node-hello-world
 # 可以覆盖默认的命令
 podman run -it node-hello-world bash
-# 还可以重新映射端口
-podman run -p 3123:3000 express-server
+# 还可以把主机端口映射到容器端口
+podman run -p 3000:3000 express-server
 ```
 
-### 管理存储空间
+### 容器编排
 
-一些用来管理存储空间的命令
+显然像 `podman run -p 3000:3000 express-server` 这样的命令有点长，不仅需要我们记住端口的映射，还需要记住镜像的名字。如果我们的应用要启动非常多个容器，这会很麻烦。因此就有了 `docker compose` 这种工具帮我们管理容器
+
+podman 可以直接使用 `docker-compose`，这也是默认的行为。而 `podman-compose` 在 Windows 环境里好像有点问题
+
+安装 docker-compose 可以直接使用 Scoop，似乎不用先安装 `docker`，不过建议还是把后者一起装了
+
+```sh
+scoop install docker docker-compose
+```
+
+一个简单的 `docker-compose.yml` 示例如下，更详细的参考请阅读[Docker 官方文档](https://docs.docker.com/reference/compose-file/)
+
+```yaml
+services:
+  app:
+    image: express-server
+    build: .
+    ports:
+      - 3000:3000
+```
+
+有了 `docker-compose.yml` 管理容器就会变得非常轻松
+
+```sh
+# 启动服务
+podman compose up
+# 关闭服务
+podman compose down
+# 重新构建镜像
+podman compose up --build
+# 后台运行服务
+podman compose up -d
+# -f 参数可以指定文件
+podman compose -f docker-compose.dev.yml up -d
+```
+
+### 存储管理
+
+以下命令可以用来管理存储空间
 
 ```sh
 # 列出存储概览
@@ -172,12 +227,15 @@ podman system df -v
 podman system prune
 ```
 
-### 容器编排
-
-podman 可以直接使用 `docker-compose`，这似乎也是默认的行为。而 `podman-compose` 在 Windows 环境里好像有点问题
-
-安装 docker-compose 也是直接使用 Scoop 就行了，可以不用先安装 `docker`
+或者你也可以手动删除指定的容器或镜像
 
 ```sh
-scoop install docker-compose
+# 删除指定容器
+podman container rm CONTAINER-ID/CONTAINER-NAME
+# 删除所有容器
+podman container rm --all
+# 删除指定镜像
+podman image rm IMAGE-ID/IMAGE-NAME
+# 删除所有镜像
+podman image rm --all
 ```
