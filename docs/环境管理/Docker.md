@@ -44,9 +44,11 @@ podman run hello
 
 ## 安装
 
+### Windows
+
 [podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
 
-我使用 Scoop 安装
+如果要直接在 Windows 的文件系统里安装 podman，可以使用 Scoop
 
 ```sh
 scoop install podman
@@ -58,11 +60,19 @@ scoop install podman
 podman machine init
 ```
 
-这个虚拟机本体不是特别大（大约 2 G），但存储的镜像多了的话文件会变得很大。这个虚拟机默认存储在 `~\.local\share\containers\podman\machine\wsl` 目录下，如果需要更改位置的话请查阅官方文档。
+### WSL
+
+也可以直接在 WSL 里安装 podman
+
+如果使用 Ubuntu，那么可以使用系统包管理器
+
+```sh
+apt install podman
+```
 
 ## 使用
 
-用 podman 运行别的命令前，记得先启动虚拟机
+如果 podman 在 Windows 的文件系统里安装，那么在运行别的命令前记得先启动虚拟机
 
 ```sh
 podman machine start
@@ -176,7 +186,7 @@ podman run -it node-hello-world bash
 podman run -p 3000:3000 express-server
 ```
 
-### 容器编排
+### 编排容器
 
 显然像 `podman run -p 3000:3000 express-server` 这样的命令有点长，不仅需要我们记住端口的映射，还需要记住镜像的名字。如果我们的应用要启动非常多个容器，这会很麻烦。因此就有了 `docker compose` 这种工具帮我们管理容器
 
@@ -188,7 +198,7 @@ podman 可以直接使用 `docker-compose`，这也是默认的行为。而 `pod
 scoop install docker docker-compose
 ```
 
-一个简单的 `docker-compose.yml` 示例如下，更详细的参考请阅读[Docker 官方文档](https://docs.docker.com/reference/compose-file/)
+一个简单的 `docker-compose.yml` 示例如下，更详细的内容请参考 [Docker 官方文档](https://docs.docker.com/reference/compose-file/)
 
 ```yaml
 services:
@@ -206,7 +216,7 @@ services:
 podman compose up
 # 关闭服务
 podman compose down
-# 重新构建镜像
+# 重新构建镜像并启动服务
 podman compose up --build
 # 后台运行服务
 podman compose up -d

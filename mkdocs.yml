@@ -112,6 +112,7 @@ nav:
     - Quarto: 文档/Quarto.md
     - Doxygen: 文档/Doxygen.md
     - MkDocs: 文档/MkDocs.md
+    - Hugo: 文档/Hugo.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md

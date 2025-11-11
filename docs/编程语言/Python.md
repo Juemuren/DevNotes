@@ -96,7 +96,7 @@ uv add numpy
 
 - pip 官方标准
 - [uv](../包管理/Uv.md) 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
-- conda 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
+- [conda](../环境管理/Conda.md) 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
 
 ### 格式化
 

@@ -152,3 +152,4 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 - [MkDocs](MkDocs.md) 一个用 Python 写的静态网站生成器，本网站就是使用这个制作的
 - VitePress 通过 Vite 和 Vue 驱动，算是 Vue 生态的一部分，是 VuePress 的更现代的版本
+- [Hugo](Hugo.md) 一个构建速度很快的静态网站生成器，配置麻烦但更灵活
