@@ -83,9 +83,12 @@ nav:
     - Python: 编程语言/Python.md
     - JavaScript: 编程语言/JavaScript.md
     - Rust: 编程语言/Rust.md
+    - Go: 编程语言/Go.md
     - Julia: 编程语言/Julia.md
     - CSharp: 编程语言/CSharp.md
+    - Java: 编程语言/Java.md
     - CUDA: 编程语言/CUDA.md
+    - Ruby: 编程语言/Ruby.md
     - Lisp: 编程语言/Lisp.md
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md

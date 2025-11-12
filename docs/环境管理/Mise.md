@@ -31,7 +31,7 @@ scoop install mise
 
 ### 激活
 
-Mise 一些功能需要与 Shell 集成才能做到，比如通过修改 *PATH* 切换运行时版本。不过这个 *集成* 的官方说法是激活。你可以阅读[官方文档](https://mise.jdx.dev/getting-started.html#activate-mise)了解如何激活 Mise。
+Mise 的一些功能需要与 Shell 集成（官方说法是激活）后才能使用。你可以阅读[官方文档](https://mise.jdx.dev/getting-started.html#activate-mise)了解如何激活 Mise。
 
 对于 pwsh，需要往 `$PROFILE` 文件中添加如下命令
 
@@ -39,13 +39,15 @@ Mise 一些功能需要与 Shell 集成才能做到，比如通过修改 *PATH* 
 mise activate pwsh | Out-String | Invoke-Expression
 ```
 
+Mise 默认通过修改 *PATH* 切换运行时版本。Mise 还有另一种切换运行时版本的方式，就是 *Shims*，它和修改 *PATH* 的方法略有不同，详细的比对你可以参考[这些内容](https://mise.jdx.dev/dev-tools/shims.html#mise-activate-shims)。一般来说，*PATH* 是更推荐的选择。
+
 ### 开发工具
 
 对于开发工具这个功能，我主要用来管理语言运行时的不同版本。Mise 也可以下载别的[工具](https://mise.jdx.dev/registry.html#tools)，但需要插件，而且我认为这件事情让系统包管理器去做会更好。
 
 你可以在[官方文档](https://mise.jdx.dev/core-tools.html#core-tools)里看到目前 Mise 能够管理的语言运行时。我使用 Mise 主要是管理 Python、NodeJS、Go、Java 的运行时版本。Rust 的支持是实验性的，并且实际上就是给 rustup 包装了一下；而 Julia 目前不支持。因此对于后两者，我分别使用 rustup 和 juliaup 来管理版本。
 
-Mise 会自动更新 *PATH* 以确保你使用了正确的版本，不过该功能需要激活。Mise 还有另一种切换运行时版本的方式，就是 *Shims*，它和修改 *PATH* 的方法略有不同，详细的比对你可以参考[这些内容](https://mise.jdx.dev/dev-tools/shims.html#mise-activate-shims)。一般来说，*PATH* 是更推荐的选择。
+Mise 会自动更新 *PATH* 或 *Shims* 以确保你使用了正确的版本，不过该功能需要激活。
 
 #### 基本使用
 

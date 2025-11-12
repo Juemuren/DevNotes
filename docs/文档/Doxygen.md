@@ -16,13 +16,13 @@ scoop install doxygen
 
 ## 使用
 
-Doxygen 的原理很简单，它会读取你提供的源代码文件，获取每个函数、类的相关信息，并且按照约定好的注释块格式获取各参数的含义、返回值的含义、类的成员的含义等，然后生成文档。生成的文档包括 HTML、PDF 等格式，也可以自动生成类图、调用图，但需要额外安装 Graphviz。
+Doxygen 会读取你提供的源代码文件，获取每个函数、类的相关信息，并且按照约定好的注释块格式获取接口的额外信息，然后生成文档。生成的文档包括 HTML、PDF 等格式，也可以自动生成类图、调用图，但需要已安装 Graphviz。
 
-Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。虽然如此，但别的语言大多都有官方工具来实现这个功能，大概率体验更好。而且各语言社区早已习惯遵守官方文档生成工具的注释风格，Doxygen 的格式约定可能在别的语言看来有点奇怪。因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给其他语言做适配了，所有人都默认 Doxygen 就是用于  C/C++ 项目的。
+Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。但别的语言大多都有官方工具来实现这个功能，且各语言社区基本上都更习惯遵守官方文档生成工具的注释风格。因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给其他语言做适配了，所有人都默认 Doxygen 就是用于  C/C++ 项目的。
 
 ### 注释约定
 
-如果使用 VSCode，我建议可以下载插件 [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)。这个插件可以快速生成 Doxygen 支持的注释块。不过，如前所述，只支持 C/C++。
+如果使用 VSCode，建议下载插件 [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)。这个插件可以快速生成 Doxygen 支持的注释块。不过，如前所述，只支持 C/C++。
 
 Doxygen 支持多种风格的注释块，你可以去[官方文档](https://doxygen.cn/manual/docblocks.html#specialblock)中查看更多示例。我这里只列出我个人比较喜欢的注释块风格
 
@@ -138,6 +138,14 @@ make
 
 #### HTML
 
-通常直接浏览器打开 `index.html` 就行。
+HTML 通常不需要额外处理，直接浏览器打开 `html/index.html` 就行。
 
-如果遇到 CORS 导致的样式错误，可以运行 `python -m http.server` 启动本地的 http 服务器，或者先 `npm install -g http-server` 然后运行 `http-server` 来启动本地服务器。
+不过更推荐的方式是运行本地 http 服务器，这可以防止出现 CORS 导致的样式错误
+
+```sh
+cd html
+# 使用 Python 自带的 http 服务器
+python -m http.server
+# 或者使用 NodeJs 环境的 http 服务器
+npx http-server
+```

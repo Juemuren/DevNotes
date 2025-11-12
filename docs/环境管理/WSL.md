@@ -4,9 +4,9 @@
 
 WSL 是 Windows 下的 Linux 子系统，提供了原生而非移植的 Linux 环境。
 
-WSL 的原理就是在虚拟机里运行 Linux 内核，因此理论上所有 Linux 能运行的软件 WSL 都能运行。
+WSL 在虚拟机里运行 Linux 内核，因此理论上所有 Linux 能运行的软件 WSL 都能运行。
 
-WSL 可以安装多种 Linux 发行版。目前能直接安装的就有 19 种。
+WSL 提供了多种 Linux 发行版，目前能直接安装的就有 19 种，可以通过 `wsl -l -o` 查看。
 
 ## 安装
 
@@ -41,6 +41,15 @@ wsl -d Ubuntu-24.04
 wsl --set-default Ubuntu-24.04
 # 终止所有正在运行的虚拟机
 wsl --shutdown
+```
+
+WSL 还有更高级的用法，比如可以像 `sh` 一样执行单条命令
+
+```sh
+# 用 WSL 的默认发行版执行 date 命令
+wsl date
+# 执行 uname -a 命令
+wsl uname -a
 ```
 
 ## 设置

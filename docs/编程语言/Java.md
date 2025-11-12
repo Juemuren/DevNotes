@@ -1,0 +1,18 @@
+# Java
+
+## 环境搭建
+
+我使用 Mise + VSCode 搭建开发环境
+
+### 获取工具链
+
+```sh
+# 使用最新版的 java
+mise use -g java@latest
+```
+
+### 编辑器集成
+
+Java 集成需要安装的插件非常多，VSCode 里有一个整合包 [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)，可以一键安装所有插件
+
+如果只需要编辑器提供基本的语言服务，其余操作更喜欢自己写脚本或在命令行运行，那么可以只安装 [Language Support for Java(TM) by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java) 这个插件
