@@ -12,7 +12,7 @@
 
 #### Miniforge
 
-如果使用 Miniforge 获取工具链，请先完成 [Miniforge 的安装](../环境管理/Conda.md)，然后通过如下命令安装解释器和第三方库
+如果使用 Miniforge 获取工具链，请先完成 [Miniforge 的安装](../环境管理器/Conda.md)，然后通过如下命令安装解释器和第三方库
 
 ```sh
 # 选定一个解释器的版本
@@ -27,8 +27,8 @@ mamba install ipykernel numpy matplotlib scikit-learn pandas
 
 如果使用 mise/uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具
 
-- [安装 Mise](../环境管理/Mise.md#安装)
-- [安装 uv](../包管理/Uv.md#安装)
+- [安装 Mise](../环境管理器/Mise.md#安装)
+- [安装 uv](../包管理器/Uv.md#安装)
 
 对于 mise + uv 这一组合，你还应该进行一些设置使二者配合起来更舒适
 
@@ -95,8 +95,8 @@ uv add numpy
 ### 包管理器
 
 - pip 官方标准
-- [uv](../包管理/Uv.md) 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
-- [conda](../环境管理/Conda.md) 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了[环境管理](../环境管理/index.md)章节中。
+- [uv](../包管理器/Uv.md) 用 Rust 写的，目前应该是最快的包管理器，但功能不只包管理，还包括了运行时管理等功能。
+- [conda](../环境管理器/Conda.md) 我认为其职能已经超越了传统的包管理器。[官网](https://anaconda.org/anaconda/conda)的介绍是**包管理系统和环境管理系统**，因此我把它放在了 *环境管理* 章节中。
 
 ### 格式化
 

@@ -15,7 +15,7 @@ scoop install deno
 scoop install bun
 ```
 
-如果有管理运行时版本的需要，则可以安装专门的工具，比如 `nvm` 可以用来管理不同版本的 `nodejs`。不过我个人更喜欢 [mise](../环境管理/Mise.md)，这是一个可以管理多种语言运行时版本的工具。对于 **JavaScript**，它支持管理 `nodejs`、`deno`、`bun` 的运行时版本
+如果有管理运行时版本的需要，则可以安装专门的工具，比如 `nvm` 可以用来管理不同版本的 `nodejs`。不过我个人更喜欢 [mise](../环境管理器/Mise.md)，这是一个可以管理多种语言运行时版本的工具。对于 **JavaScript**，它支持管理 `nodejs`、`deno`、`bun` 的运行时版本
 
 如果选择 mise，则可以如下安装并使用不同版本的运行时
 

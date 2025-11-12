@@ -11,8 +11,8 @@ Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在
 >
 > Windows 通常自带了 *2* 个 shell，分别是 *CMD* 和 *PowerShell*，不推荐日常使用前者。Windows 如果要使用别的 Shell，比如 *Bash*、*Zsh* 等，需要配置环境，比较麻烦。目前有两种主流的方法，当然后者应该更主流一点
 >
-> - 通过 [MSYS](../环境管理/MSYS.md) 在一个模拟的 UNIX 环境中使用移植的 Shell
-> - 通过 [WSL](../环境管理/WSL.md) 在一个 Linux 子系统里使用 Shell
+> - 通过 [MSYS](../环境管理器/MSYS.md) 在一个模拟的 UNIX 环境中使用移植的 Shell
+> - 通过 [WSL](../环境管理器/WSL.md) 在一个 Linux 子系统里使用 Shell
 
 ## Zsh
 

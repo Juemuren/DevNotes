@@ -126,8 +126,8 @@ nav:
     - YOLO: 库和框架/YOLO.md
     - React: 库和框架/React.md
     - Expo: 库和框架/Expo.md
-  - 嵌入式:
-    - 嵌入式: 嵌入式/index.md
+  - 嵌入式开发:
+    - 嵌入式开发: 嵌入式开发/index.md
 
 extra:
   generator: false

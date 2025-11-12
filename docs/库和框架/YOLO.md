@@ -12,7 +12,7 @@
 
 #### Miniforge
 
-请先完成 [Miniforge 安装](../环境管理/Conda.md#安装)
+请先完成 [Miniforge 安装](../环境管理器/Conda.md#安装)
 
 输入以下命令创建一个 `python 3.12` 的环境（*3.12* 是目前 [ultralytics](https://pypi.org/project/ultralytics/) 已验证兼容性的最高版本，不过我用 *3.13* 还没遇到过问题）
 

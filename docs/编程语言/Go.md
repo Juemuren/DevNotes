@@ -19,6 +19,6 @@ VSCode 里有官方插件 [Go](https://marketplace.visualstudio.com/items?itemNa
 
 由于使用 mise 安装 go 时不会直接修改本机的 **PATH** 环境变量，因此插件可能找不到 go 编译器。解决方案大概有这几种
 
-- 在 shell 中[激活 Mise](../环境管理/Mise.md#激活)，然后通过 `code .` 打开项目
-- Mise [改为 *Shims* 模式](../环境管理/Mise.md#激活)
+- 在 shell 中[激活 Mise](../环境管理器/Mise.md#激活)，然后通过 `code .` 打开项目
+- Mise [改为 *Shims* 模式](../环境管理器/Mise.md#激活)
 - 换别的方式安装 go 编译器
