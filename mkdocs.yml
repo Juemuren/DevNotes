@@ -64,19 +64,19 @@ plugins:
 nav:
   - 首页: index.md
   - 环境管理器: 
-    - 环境管理: 环境管理/index.md
-    - Conda: 环境管理/Conda.md
-    - Mise: 环境管理/Mise.md
-    - MSYS: 环境管理/MSYS.md
-    - WSL: 环境管理/WSL.md
-    - Docker: 环境管理/Docker.md
+    - 环境管理器: 环境管理器/index.md
+    - Conda: 环境管理器/Conda.md
+    - Mise: 环境管理器/Mise.md
+    - MSYS: 环境管理器/MSYS.md
+    - WSL: 环境管理器/WSL.md
+    - Docker: 环境管理器/Docker.md
   - 包管理器:
-    - 包管理: 包管理/index.md
-    - Scoop: 包管理/Scoop.md
-    - Homebrew: 包管理/Homebrew.md
-    - Xmake: 包管理/Xmake.md
-    - Vcpkg: 包管理/Vcpkg.md
-    - Uv: 包管理/Uv.md
+    - 包管理器: 包管理器/index.md
+    - Scoop: 包管理器/Scoop.md
+    - Homebrew: 包管理器/Homebrew.md
+    - Xmake: 包管理器/Xmake.md
+    - Vcpkg: 包管理器/Vcpkg.md
+    - Uv: 包管理器/Uv.md
   - 编程语言:
     - 编程语言: 编程语言/index.md
     - Cpp: 编程语言/Cpp.md
@@ -108,14 +108,14 @@ nav:
     - Dotter: 命令行工具/Dotter.md
     - Ollama: 命令行工具/Ollama.md
   - 文档工具:
-    - 文档: 文档/index.md
-    - Pandoc: 文档/Pandoc.md
-    - Marp: 文档/Marp.md
-    - Mermaid: 文档/Mermaid.md
-    - Quarto: 文档/Quarto.md
-    - Doxygen: 文档/Doxygen.md
-    - MkDocs: 文档/MkDocs.md
-    - Hugo: 文档/Hugo.md
+    - 文档工具: 文档工具/index.md
+    - Pandoc: 文档工具/Pandoc.md
+    - Marp: 文档工具/Marp.md
+    - Mermaid: 文档工具/Mermaid.md
+    - Quarto: 文档工具/Quarto.md
+    - Doxygen: 文档工具/Doxygen.md
+    - MkDocs: 文档工具/MkDocs.md
+    - Hugo: 文档工具/Hugo.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md

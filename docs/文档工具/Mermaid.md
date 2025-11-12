@@ -34,7 +34,7 @@ sequenceDiagram
     B ->> B: 把 HTML 中的 mermaid 代码渲染为 SVG 并进行替换
 ```
 
-如果你会基本的浏览器调试方法的话，你会发现你并没有接收到上面这张图片，而是接收到了下面的代码，然后在本地完成了渲染
+如果你掌握了基本的浏览器调试方法，你会发现你并没有接收到上面这张图片，而是接收到了下面的代码，然后在本地完成了渲染
 
 > [!Tip]- 浏览器调试
 > 在 DevTools 的**源代码**栏，你能在 `top/juemuren.github.io/DevNotes/文档工具/Mermaid` 里找到本页面的原始 HTML，你会看到里面只有 `code` 标签而没有 `svg` 标签。你应该还能在 `unpkg.com/mermaid@xx/dist` 里找到 mermaid 的 JavaScript 实现，它把 `code` 标签里的代码渲染为 `svg` 图片并进行了替换
