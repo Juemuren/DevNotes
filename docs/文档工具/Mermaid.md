@@ -19,27 +19,27 @@ sequenceDiagram
     participant RDS as 资源分发服务器
     
     Note over DM, SSG: 开发阶段
-    DM ->> DM: 编写内嵌 mermaid 代码的 Markdown
+    DM ->> DM: 编写内嵌 mermaid 代码的 MD
     
     Note over SSG, DS: 构建和部署阶段
-    SSG ->> DM: 读取 Markdown
-    SSG ->> SSG: 生成 HTML，保留 mermaid 代码块
-    SSG ->> DS: 部署 HTML 到服务器
+    SSG ->> DM: 读取 MD
+    SSG ->> SSG: 生成保留 mermaid 代码块的 HTML 
+    SSG ->> DS: 上传 HTML
     
     Note over DS, RDS: 访问阶段
     B ->> DS: 发起请求
     DS ->> B: 返回包含 mermaid 代码块的 HTML
     B ->> RDS: 发起请求
-    RDS ->> B: 返回 mermaid 的 JS 实现
-    B ->> B: 把 HTML 中的 mermaid 代码渲染为 SVG 并进行替换
+    RDS ->> B: 返回 mermaid 的实现
+    B ->> B: 把 HTML 中的 mermaid 渲染为 SVG
 ```
 
 如果你掌握了基本的浏览器调试方法，你会发现你并没有接收到上面这张图片，而是接收到了下面的代码，然后在本地完成了渲染
 
 > [!Tip]- 浏览器调试
-> 在 DevTools 的**源代码**栏，你能在 `top/juemuren.github.io/DevNotes/文档工具/Mermaid` 里找到本页面的原始 HTML，你会看到里面只有 `code` 标签而没有 `svg` 标签。你应该还能在 `unpkg.com/mermaid@xx/dist` 里找到 mermaid 的 JavaScript 实现，它把 `code` 标签里的代码渲染为 `svg` 图片并进行了替换
+> 打开 DevTools 的**源代码**栏，你能在 `top/juemuren.github.io/DevNotes/文档工具/Mermaid` 里找到本页面的原始 HTML，你会看到里面只有 `code` 标签而没有 `svg` 标签；你应该还能在 `unpkg.com/mermaid@xx/dist` 里找到 mermaid 的 JavaScript 实现，它把原始 HTML 中 `code` 标签里的代码渲染为 `svg` 图片并进行了替换
 >
-> 在 DevTools 的**元素**栏，你会发现上面这张图里已经没有 `code` 标签了，而是被替换为了 `svg` 标签
+> 打开 DevTools 的**元素**栏，你会发现上面这张图里已经没有 `code` 标签了，而是被替换为了 `svg` 标签
 
 ```mmd
 sequenceDiagram
@@ -50,24 +50,24 @@ sequenceDiagram
     participant RDS as 资源分发服务器
     
     Note over DM, SSG: 开发阶段
-    DM ->> DM: 编写内嵌 mermaid 代码的 Markdown
+    DM ->> DM: 编写内嵌 mermaid 代码的 MD
     
     Note over SSG, DS: 构建和部署阶段
-    SSG ->> DM: 读取 Markdown
-    SSG ->> SSG: 生成 HTML，保留 mermaid 代码块
-    SSG ->> DS: 部署 HTML 到服务器
+    SSG ->> DM: 读取 MD
+    SSG ->> SSG: 生成保留 mermaid 代码块的 HTML 
+    SSG ->> DS: 上传 HTML
     
     Note over DS, RDS: 访问阶段
     B ->> DS: 发起请求
     DS ->> B: 返回包含 mermaid 代码块的 HTML
     B ->> RDS: 发起请求
-    RDS ->> B: 返回 mermaid 的 JS 实现
-    B ->> B: 把 HTML 中的 mermaid 代码渲染为 SVG 并进行替换
+    RDS ->> B: 返回 mermaid 的实现
+    B ->> B: 把 HTML 中的 mermaid 渲染为 SVG
 ```
 
 `mermaid` 还有个 CLI 工具，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
 
-`plantUML` 是另一种绘制 UML 图表的工具，同样通过代码生成图表。plantUML 图的种类似乎比 mermaid 更丰富一点，但由于是用 Java 实现的，所以体验和生态都没有Mermaid 好。plantUML 一般用来本地生成图片，然后再把图片插入文档，Mermaid 更适合直接提供代码，让接收者自行渲染。
+`plantUML` 是另一种绘制 UML 图表的工具，同样通过代码生成图表。plantUML 图的种类似乎比 mermaid 更丰富一点，但由于是用 Java 实现的，所以体验和生态都没有 Mermaid 好。plantUML 一般用来本地生成图片，然后再把图片插入文档；Mermaid 更适合直接提供代码，让接收者自行渲染，但它也能直接在本地生成图片
 
 后面只介绍 mermaid-cli 的安装和使用。而对于客户端渲染的需要，大多数 *静态网站生成器* 和 *前端框架* 应该都支持与 mermaid 集成，你可以自行研究。
 

@@ -39,7 +39,7 @@
 用来管理脚本的工具
 
 - [just](Just.md) 任务运行器，语法类似 Make 但更简单。
-- shellcheck 脚本静态检查工具。这东西有点严格的，我用它去检查 Python venv 激活虚拟环境的脚本，还能挑出两处有问题的地方
+- shellcheck 脚本静态检查工具
 
 ### 效率
 
@@ -49,7 +49,7 @@
 - [ripgrep](Ripgrep.md) 文本查找器，类似 grep 但更现代
 - [fd](Fd.md) 文件查找器，类似 find 但更现代
 - [tldr](Tldr.md) 命令手册，懒人福音
-- thefuck 纠正命令错误。这个工具因为名字特殊而广为人知
+- thefuck 尝试纠正上一个命令的错误。这个工具因为名字特殊而广为人知，不过在 **Windows** 平台不可用
 - [zoxide](Zoxide.md) 快速工作目录跳转
 
 ### 美化

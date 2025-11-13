@@ -116,6 +116,8 @@ nav:
     - Doxygen: 文档工具/Doxygen.md
     - MkDocs: 文档工具/MkDocs.md
     - Hugo: 文档工具/Hugo.md
+    - ImageMagick: 文档工具/ImageMagick.md
+    - PDFcpu: 文档工具/PDFcpu.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
