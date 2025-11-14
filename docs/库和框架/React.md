@@ -24,7 +24,7 @@ npx create-react-app my-app
 
 ### 组件和 JSX
 
-React 开创了组件的概念，并拓展了 `js` 的语法。这个新的语法特性使得可以在代码中直接编写 HTML 代码
+React 使用组件作为基本的代码复用模块，并拓展了 *JavaScript* 的语法。这个新的语法特性使得我们可以直接在 *JavaScript* 中编写类似 *HTML* 的元素
 
 ```jsx
 // JSX 拓展语法
@@ -44,19 +44,17 @@ const App = () => {
 
 这种语法浏览器是无法理解的。因此一般会把用到新特性的文件后缀改为 `jsx`，已表明该文件需要特殊处理。
 
-`React` 的这种想法影响到了后来一些的框架，比如 `Vue`，后者也支持使用组件和 `jsx`
-
 ### 虚拟 DOM
 
-React 还有一个重要概念，就是**虚拟 DOM**。这个概念似乎并非起源于 React，但现在提起这个首先想到的就是 React
+React 还有一个重要概念，就是**虚拟 DOM**
 
-真实 DOM 可能很庞大，React 使用更轻量的虚拟 DOM 去模拟，这使得在 React 中操作 DOM 更加快速。当然了，虚拟 DOM 最终还是要映射回真实 DOM 的，因此其实很难比纯 JavaScript 更快。
+真实 DOM 可能很庞大，React 使用更轻量的虚拟 DOM 去模拟，这使得在 React 中操作 DOM 更加快速。当然了，虚拟 DOM 最终还是要映射回真实 DOM 的，因此使用 React 很难比纯 JavaScript 更快。
 
-不过也正是因为虚拟 DOM，后来才又有了 **React Native** 这种开发 Android/iOS 原生应用的框架。原理就是把虚拟 DOM 映射到原生的 Android/iOS UI，如同映射到 HTML DOM。
+不过也正是因为虚拟 DOM，后来才又有了 **React Native** 这种开发 Android/iOS 原生应用的框架。其原理就是把虚拟 DOM 映射到原生的 Android/iOS UI，和映射到 HTML DOM 是类似的。
 
 ## 使用
 
-React 本身发展很快，接口也一直在变，最佳实践也一直在变。早些时候 React 使用类组件，现在最佳实践已经变成函数组件了
+React 本身发展很快，接口一直在变，最佳实践也一直在变。早些时候 React 使用类组件，现在最佳实践已经变成函数组件了
 
 React 主要用于渲染界面，同时也提供了状态管理功能，以便辅助渲染。这些状态管理主要是通过 *hook* 和 *context* 实现的。
 
