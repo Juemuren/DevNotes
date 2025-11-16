@@ -132,6 +132,6 @@ uv add numpy
 - [PyTorch](../库和框架/PyTorch.md)
 - [YOLO](../库和框架/YOLO.md)
 
-### Web
+### 后端框架
 
 - FastAPI

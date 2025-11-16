@@ -27,9 +27,9 @@ mise use -g node@lts
 # 使用 node 20
 mise use -g node@20
 # 使用 deno latest
-mise use deno
+mise use -g deno
 # 使用 bun latest
-mise use bun
+mise use -g bun
 ```
 
 ### 编辑器集成
