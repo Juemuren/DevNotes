@@ -1,7 +1,6 @@
 # Conda
 
-> [!NOTE] Miniforge 官网
-> <https://github.com/conda-forge/miniforge>
+[Miniforge 仓库](https://github.com/conda-forge/miniforge)
 
 ## 对比
 
@@ -18,13 +17,15 @@
 
 ## 安装
 
+### 下载
+
 不建议用 scoop 安装。推荐使用官方的安装脚本方式
 
 [Miniforge3 官方下载链接](https://conda-forge.org/download/)
 
 Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行
 
-## 初始化
+### 初始化
 
 使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。
 
@@ -60,7 +61,7 @@ conda --version
 mamba --version
 ```
 
-## 修改设置
+### 修改设置
 
 ```sh
 # 禁止自动激活 base
@@ -71,12 +72,37 @@ mamba config set changeps1 false
 mamba config set show_channel_urls true
 ```
 
-## 配置编辑器
+### 编辑器集成
 
-修改 VSCode 的 `settings.json` 文件
+为了让 VSCode 识别到 Conda 环境，可能需要修改一些编辑器的设置。
+
+打开 VSCode，按下 `ctrl + ,`，然后输入 `conda` 会看到一个叫 `Python: Conda Path` 的设置，在里面填写 conda 可执行文件的路径。你可以在激活了 `base` 环境的 shell 里运行 `where.exe conda` 来获取路径。
+
+或者可以直接修改 VSCode 的 `settings.json` 文件，如果你知道怎么修改的话
 
 ```json
 {
   "python.condaPath": "path\\to\\miniforge3\\condabin\\conda.bat"
 }
+```
+
+## 使用
+
+后文统一使用 `mamba`。对于常用的命令，`conda` 和 `mamba` 用法几乎完全相同
+
+### 基本使用
+
+```sh
+# 列出创建的环境
+mamba env list
+# 创建名为 example 的新环境，并带有 python 3.12 运行时
+mamba create -n example python=3.12
+# 激活 example 环境
+mamba activate example
+# 在激活的环境中安装包
+mamba install ipykernel numpy matplotlib pandas
+# 在激活的环境中移除包
+mamba remove pandas
+# 升级 mamba 自身
+mamba update -n base -c conda-forge mamba
 ```

@@ -63,33 +63,6 @@ plugins:
 
 nav:
   - 首页: index.md
-  - 环境管理器: 
-    - 环境管理器: 环境管理器/index.md
-    - Conda: 环境管理器/Conda.md
-    - Mise: 环境管理器/Mise.md
-    - MSYS: 环境管理器/MSYS.md
-    - WSL: 环境管理器/WSL.md
-    - Docker: 环境管理器/Docker.md
-  - 包管理器:
-    - 包管理器: 包管理器/index.md
-    - Scoop: 包管理器/Scoop.md
-    - Homebrew: 包管理器/Homebrew.md
-    - Xmake: 包管理器/Xmake.md
-    - Vcpkg: 包管理器/Vcpkg.md
-    - Uv: 包管理器/Uv.md
-  - 编程语言:
-    - 编程语言: 编程语言/index.md
-    - Cpp: 编程语言/Cpp.md
-    - Python: 编程语言/Python.md
-    - JavaScript: 编程语言/JavaScript.md
-    - Rust: 编程语言/Rust.md
-    - Go: 编程语言/Go.md
-    - Julia: 编程语言/Julia.md
-    - CSharp: 编程语言/CSharp.md
-    - Java: 编程语言/Java.md
-    - CUDA: 编程语言/CUDA.md
-    - Ruby: 编程语言/Ruby.md
-    - Lisp: 编程语言/Lisp.md
   - 命令行工具:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
@@ -118,10 +91,37 @@ nav:
     - Hugo: 文档工具/Hugo.md
     - ImageMagick: 文档工具/ImageMagick.md
     - PDFcpu: 文档工具/PDFcpu.md
+  - 环境管理器: 
+    - 环境管理器: 环境管理器/index.md
+    - Conda: 环境管理器/Conda.md
+    - Mise: 环境管理器/Mise.md
+    - MSYS: 环境管理器/MSYS.md
+    - WSL: 环境管理器/WSL.md
+    - Docker: 环境管理器/Docker.md
+  - 包管理器:
+    - 包管理器: 包管理器/index.md
+    - Scoop: 包管理器/Scoop.md
+    - Homebrew: 包管理器/Homebrew.md
+    - Xmake: 包管理器/Xmake.md
+    - Vcpkg: 包管理器/Vcpkg.md
+    - Uv: 包管理器/Uv.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
     - Jupyter: 编辑器/Jupyter.md
+  - 编程语言:
+    - 编程语言: 编程语言/index.md
+    - Cpp: 编程语言/Cpp.md
+    - Python: 编程语言/Python.md
+    - JavaScript: 编程语言/JavaScript.md
+    - Rust: 编程语言/Rust.md
+    - Go: 编程语言/Go.md
+    - Julia: 编程语言/Julia.md
+    - CSharp: 编程语言/CSharp.md
+    - Java: 编程语言/Java.md
+    - CUDA: 编程语言/CUDA.md
+    - Ruby: 编程语言/Ruby.md
+    - Lisp: 编程语言/Lisp.md
   - 库和框架:
     - 库和框架: 库和框架/index.md
     - Pytorch: 库和框架/Pytorch.md

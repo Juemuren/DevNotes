@@ -1,7 +1,7 @@
 # YOLO
 
 > [!TIP] 多看文档
-> 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。官方文档一般来说都是相对最正确的。因此本文档附上了所有的官网链接。学会去官网阅读文档是个应该掌握的技能。
+> 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。官方文档一般来说都是相对最正确的，学会去官网阅读文档是个应该掌握的技能。
 
 ## 环境配置
 
@@ -12,39 +12,30 @@
 
 #### Miniforge
 
-请先完成 [Miniforge 安装](../环境管理器/Conda.md#安装)
+请先完成 [Miniforge 的安装](../环境管理器/Conda.md#安装)
 
-输入以下命令创建一个 `python 3.12` 的环境（*3.12* 是目前 [ultralytics](https://pypi.org/project/ultralytics/) 已验证兼容性的最高版本，不过我用 *3.13* 还没遇到过问题）
+然后创建一个 `python 3.12` 的环境（*3.12* 是目前 [ultralytics](https://pypi.org/project/ultralytics/) 已验证兼容性的最高版本，不过我用 *3.13* 还没遇到过问题）并激活
 
 ```sh
 # pytorch 可以换成别的名字
-conda create -n pytorch python=3.12
-```
-
-输入以下命令激活刚创建的环境
-
-```sh
-# 将 pytorch 换成刚才输入的名字
-conda activate pytorch
+mamba create -n pytorch python=3.12
+mamba activate pytorch
 ```
 
 后续所有命令都在该环境中运行，请确保你激活了正确的环境。
 
 > [!TIP] 忘了环境名字
-> 如果忘记了刚创建的环境的名字，可以使用 `conda env list` 列出所有环境。
+> 如果忘记了刚创建的环境的名字，可以使用 `mamba env list` 列出所有环境。
 
 #### Pytorch
 
-在刚激活的环境里完成 [Pytorch 安装](Pytorch.md)
+在刚激活的环境里完成 [Pytorch 的安装](Pytorch.md)
 
 ### 安装
 
-> [!NOTE] 官网
-> <https://docs.ultralytics.com/zh/>
+[官网](https://docs.ultralytics.com/zh/)
 
-官方快速入门手册 <https://docs.ultralytics.com/zh/quickstart/>
-
-官方快速入门手册推荐使用 pip 安装，因此使用如下命令安装
+[官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/)推荐使用 pip 安装，因此使用如下命令安装
 
 ```sh
 pip install ultralytics
@@ -95,8 +86,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 #### cuDNN
 
-> [!NOTE] 官网
-> <https://developer.nvidia.com/cudnn>
+[官网](https://developer.nvidia.com/cudnn)
 
 目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 Pytorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
 
@@ -143,21 +133,11 @@ YOLO 有两种用法，分别是 `Python` 和  `CLI`
 
 ### Python
 
-> [!NOTE] 官方文档
-> <https://docs.ultralytics.com/zh/usage/python/>
->
-> 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
-
 通过 `from ultralytics import YOLO` 来导入 YOLO 库。
 
-该库的接口很多很杂，建议阅读[官方文档](https://docs.ultralytics.com/zh/usage/python/)。
+该库的接口很多，建议阅读[官方文档](https://docs.ultralytics.com/zh/usage/python/)。
 
 ### CLI
-
-> [!NOTE] 官方文档
-> <https://docs.ultralytics.com/zh/usage/cli/>
->
-> 本文大部分内容都来自官方文档。本文可能过时，但官方文档大概率更新及时。
 
 YOLO CLI 的基本语法如下
 
@@ -170,6 +150,8 @@ yolo TASK MODE ARGS
 - **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。`detect` 是目标检测，`segment` 是语义分割，其余的我没用过。
 - **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试，剩下的那个我没用过。
 - **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
+
+更详细的参考请阅读[官方文档](https://docs.ultralytics.com/zh/usage/cli/)
 
 ### 示例
 
@@ -199,15 +181,10 @@ yolo settings datasets_dir="datasets"
 ```
 
 > [!TIP] 无法激活环境
-> 如果无法在 VSCode 的集成终端中激活环境，你可能需要初始化 shell。用快捷方式打开已激活了 `base` 环境的 shell，然后运行以下命令
+> 如果无法在 VSCode 的集成终端中激活环境，可能有如下原因
 >
-> ```sh
-> conda init powershell
-> # 如果使用 mamba，初始化命令略有不同 
-> mamba shell init
-> ```
->
-> 然后重新在 VSCode 中再次新建个终端，就可以正常使用 `mamba` 或 `conda` 了。
+> - 未初始化 shell。可参考 [Conda 初始化](../环境管理器/Conda.md#初始化) 来解决
+> - VSCode 无法识别 Conda 环境。可参考 [Conda 编辑器集成](../环境管理器/Conda.md#编辑器集成) 来解决
 
 之后 YOLO CLI 就会从 `datasets` 中去寻找数据集，从网上下载的示例数据集也会保存在这个目录里。
 

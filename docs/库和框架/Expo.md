@@ -41,7 +41,7 @@ npx expo install react-dom react-native-web
 
 另外还有别的方法，就是使用其它模拟器，会更方便些，但相比 Android Studio 集成度就不是很好
 
-- 玩游戏用的安卓模拟器。性能比 Android Studio 的更好，还有键位映射（毕竟是玩用来游戏的）。不过需要上官网下载 Expo Go 然后侧载进模拟器里。调试时，需要手动复制 URL 到 Expo Go 中才能连接，且无法通过 *摇一摇* 在模拟器里启动开发者面版（如果模拟器支持摇一摇应该是能用这个面版的）。
+- 玩游戏用的安卓模拟器。性能比 Android Studio 的更好，还有键位映射（毕竟是玩用来游戏的）。不过需要上[官网下载 Expo Go](https://expo.dev/go) 然后侧载进模拟器里。调试时，需要手动复制 URL 到 Expo Go 中才能连接，且无法通过 *摇一摇* 在模拟器里启动开发者面版（如果模拟器支持摇一摇应该是能用这个面版的）。
 - WSA。与 Windows 集成最好，但微软已经停止支持，不过社区仍然在维护。可以参照指南[安装 WSA](https://github.com/MustardChef/WSABuilds) 并[侧载应用](https://github.com/MustardChef/WSABuilds/blob/master/Documentation/Usage%20Guides/Sideloading%20Guides/WSAFiles.md)。缺点同上。
 
 ### iOS

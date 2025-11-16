@@ -11,20 +11,20 @@
 
 ## Plot
 
-- Manim 一个用来生成数学动画的 Python 库，最初是由 3blue1brown 制作的，现在更推荐使用社区维护的版本
+- Manim 用来生成数学动画的 Python 库，最初是由 3blue1brown 制作的，现在更推荐使用社区维护的版本
 
 ## AI
 
-- [Pytorch](Pytorch.md) 一个机器学习框架
-- [YOLO](YOLO.md) 一个基于 Pytorch 的图像识别库，支持很多模型和功能
+- [Pytorch](Pytorch.md) 机器学习框架
+- [YOLO](YOLO.md) 基于 Pytorch 的图像识别库，支持很多模型和功能
 
 ## Web
 
-- React
+- [React](React.md) 构建 Web 和原生交互界面的库
 - FastAPI
 - Express
 - Apollo
 
 ## Native
 
-- [Expo](Expo.md) 一个让 React Native 开发 Android 和 iOS 的原生应用更舒服的框架
+- [Expo](Expo.md) 让 React Native 开发 Android 和 iOS 的原生应用更舒服的框架
