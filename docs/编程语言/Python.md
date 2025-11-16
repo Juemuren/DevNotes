@@ -58,7 +58,7 @@ uv add numpy
 
 ### 编辑器集成
 
-> [!Note] 官方文档
+> [!Note]+ 官方文档
 > 后面的示例以 *Miniforge* 为例，使用 **mise**/**uv** 获取工具的话，集成方法应该是差不多的。
 >
 > 你也可以参考官方文档 [VSCode Python](https://code.visualstudio.com/docs/python/python-quick-start)
@@ -69,7 +69,7 @@ uv add numpy
 
 新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器
 
-> [!TIP] 无法识别 Conda 环境
+> [!TIP]- 无法识别 Conda 环境
 > 如果 VSCode 没有识别到 conda 环境的话，你可以参考 [Conda 编辑器集成](../环境管理器/Conda.md#编辑器集成) 来解决
 
 之后就可以在 `.py` 文件的右上角找到运行按钮，此时 VSCode 会调用刚选择的解释器
@@ -129,7 +129,7 @@ uv add numpy
 
 - scikit-learn
 - tensorflow
-- [Pytorch](../库和框架/Pytorch.md)
+- [PyTorch](../库和框架/PyTorch.md)
 - [YOLO](../库和框架/YOLO.md)
 
 ### Web

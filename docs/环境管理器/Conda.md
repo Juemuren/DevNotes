@@ -19,9 +19,7 @@
 
 ### 下载
 
-不建议用 scoop 安装。推荐使用官方的安装脚本方式
-
-[Miniforge3 官方下载链接](https://conda-forge.org/download/)
+不建议用 scoop 安装。推荐使用[官方的安装脚本/程序](https://conda-forge.org/download/)。
 
 Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行
 
@@ -66,7 +64,7 @@ mamba --version
 ```sh
 # 禁止自动激活 base
 mamba config set auto_activate_base false
-# 禁止修改 prompt
+# 如果使用了别的 prompt 美化工具，可以禁止 conda 修改 prompt
 mamba config set changeps1 false
 # 列出包时显示 url
 mamba config set show_channel_urls true

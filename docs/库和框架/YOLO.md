@@ -1,12 +1,12 @@
 # YOLO
 
-> [!TIP] 多看文档
-> 机器学习相关的技术发展很快，各种工具、框架一直迭代，本文档随时可能过时。官方文档一般来说都是相对最正确的，学会去官网阅读文档是个应该掌握的技能。
+## 简介
+
+YOLO 全称为 *You Only Look Once*，是一类流行的物体检测和图像分割模型
+
+YOLO 本身是指一类模型，但有时也会把官方推出的 Python 库 Ultralytics 称为 YOLO。在这种语境下，YOLO 完全可以算是一个深度学习框架。它本身是基于 PyTorch 实现的，提供了很多模型和功能，接口非常简单
 
 ## 环境配置
-
-> [!ABSTRACT] 侧重 Windows 平台
-> 本部分只介绍关于 Windows 平台的配置方法。不过其它平台方法差不太多，可以参考部分内容。
 
 ### 先决条件
 
@@ -24,16 +24,14 @@ mamba activate pytorch
 
 后续所有命令都在该环境中运行，请确保你激活了正确的环境。
 
-> [!TIP] 忘了环境名字
+> [!TIP]- 忘了环境名字
 > 如果忘记了刚创建的环境的名字，可以使用 `mamba env list` 列出所有环境。
 
-#### Pytorch
+#### PyTorch
 
-在刚激活的环境里完成 [Pytorch 的安装](Pytorch.md)
+在刚激活的环境里完成 [PyTorch 的安装](PyTorch.md)
 
 ### 安装
-
-[官网](https://docs.ultralytics.com/zh/)
 
 [官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/)推荐使用 pip 安装，因此使用如下命令安装
 
@@ -69,15 +67,15 @@ yolo checks
 yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
-该命令会下载官方预训练的模型 `yolo11n.pt`，并下载 <https://ultralytics.com/images/bus.jpg> 这张图片进行预测。模型和图片会下载到当前工作目录（就是 shell 的命令提示符前显示的目录），而运行的结果默认保存在当前工作目录的 **runs** 目录下。你可以运行 `explorer .\runs\detect\predict\` 打开文件夹，看看图片是否被正确预测。
+该命令会使用官方预训练的模型 `yolo11n.pt` 对 <https://ultralytics.com/images/bus.jpg> 这张图片进行预测。模型和图片会下载到当前工作目录，而运行的结果默认保存在当前工作目录的 `runs` 里。你可以检查下图片是否被正确预测。
 
 ![Yolo test](../images/bus.jpg)
 
-> [!TIP] 网络问题
+> [!TIP]- 网络问题
 > 如果因网络问题无法下载图片的话，你可以用自己的图片，只需修改 source 参数即可。如果无法下载模型，你可能不得不先解决网络问题。
 >
 > ```sh
-> # 使用官方预训练模型预测当前工作目录下的 example.jpg 图片。
+> # 使用模型 yolo11n.pt 预测当前工作目录下的 example.jpg 图片。
 > yolo predict model=yolo11n.pt source='example.jpg'
 > ```
 >
@@ -88,7 +86,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 [官网](https://developer.nvidia.com/cudnn)
 
-目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 Pytorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
+目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 PyTorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
 
 进入官网后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
 
@@ -100,7 +98,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 ![cuDNN](../images/cuDNN.png)
 
-目前 [PyPI](https://pypi.org/search/?q=cudnn) 上这么多的版本中只有 `nvidia-cudnn-cu11`、`nvidia-cudnn-cu12`、`nvidia-cudnn-cu13` 这几个不是假包。请根据显卡的 CUDA 版本下载正确的包。查看 CUDA 版本的方式可参考前面关于 [Pytorch](#pytorch) 的部分。
+目前 [PyPI](https://pypi.org/search/?q=cudnn) 上这么多的版本中只有 `nvidia-cudnn-cu11`、`nvidia-cudnn-cu12`、`nvidia-cudnn-cu13` 这几个不是假包。请根据显卡的 CUDA 版本下载正确的包。查看 CUDA 版本的方式可参考 [PyTorch 的安装](PyTorch.md#安装) 这部分。
 
 ```sh
 # 将 nvidia-cudnn-cu1x 替换为与 CUDA 对应的版本
@@ -125,7 +123,7 @@ exit()
 
 推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
 
-可以在 VSCode 的拓展面板中搜索 `Ultralytics Snippets` 来安装此拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
+可以在 VSCode 中安装 [Ultralytics Snippets](https://marketplace.visualstudio.com/items?itemName=Ultralytics.ultralytics-snippets) 这个拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
 
 ## 使用方法
 
@@ -157,8 +155,6 @@ yolo TASK MODE ARGS
 
 #### 项目结构
 
-鉴于部分人可能没有做过项目，这里简单分享些经验。
-
 建议新建一个文件夹，并以如下方式命名和使用子文件夹
 
 ```txt
@@ -180,7 +176,7 @@ YOLO
 yolo settings datasets_dir="datasets"
 ```
 
-> [!TIP] 无法激活环境
+> [!TIP]- 无法激活环境
 > 如果无法在 VSCode 的集成终端中激活环境，可能有如下原因
 >
 > - 未初始化 shell。可参考 [Conda 初始化](../环境管理器/Conda.md#初始化) 来解决
@@ -190,7 +186,7 @@ yolo settings datasets_dir="datasets"
 
 #### 具体任务
 
-> [!NOTE] 官网内容更详细
+> [!NOTE]- 阅读官方文档
 > 仅展示使用 CLI 进行训练和预测的示例。使用 Python 方法差不多，可以参考部分内容。
 >
 > 更详细的示例请阅读官方文档，包括 [CLI 示例](https://docs.ultralytics.com/zh/usage/cli/) 和 [Python 示例](https://docs.ultralytics.com/zh/usage/python/)
@@ -201,12 +197,12 @@ YOLO 的训练数据集建议按如下方式组织结构
 
 ```txt
 example
-  ├── images
-  │   ├── train
-  │   └── val
-  └── labels
-      ├── train
-      └── val
+├── images
+│   ├── train
+│   └── val
+└── labels
+    ├── train
+    └── val
 ```
 
 分别把训练集的图片和标签放入 `images/train` 和 `labels/train` 里，验证集则是 `images/val` 和 `labels/val`。注意图片和标签的文件名必须相同。

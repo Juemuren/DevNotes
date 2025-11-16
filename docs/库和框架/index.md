@@ -15,8 +15,8 @@
 
 ## AI
 
-- [Pytorch](Pytorch.md) 机器学习框架
-- [YOLO](YOLO.md) 基于 Pytorch 的图像识别库，支持很多模型和功能
+- [PyTorch](PyTorch.md) 机器学习框架
+- [YOLO](YOLO.md) 基于 PyTorch 的深度学习框架，提供了很多模型和功能
 
 ## Web
 

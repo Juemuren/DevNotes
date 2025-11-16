@@ -4,7 +4,7 @@
 
 C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG 在 Windows 上需要配合另外两者使用；而 MSVC 我觉得太重了，即使只安装 *BuildTools* 也占用了很大的空间。
 
-> [!Note] 解释器
+> [!Note]- 解释器
 > C++ 其实还有个解释器 Cling，不过不推荐拿这个来搭建环境，也许初学时可以用一用。在 Windows 上该工具可通过 Conda 获取，但似乎不太稳定；建议在 Linux 系统里尝试。
 
 我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。
@@ -21,7 +21,7 @@ C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG
 pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 ```
 
-> [!Tip] MSYS 的 CLANG
+> [!Tip]+ MSYS 的 CLANG
 > 如果想使用 CLANG 编译器，那么建议在 CLANG64 环境中获取工具链，这样全套工具链都是 CLANG 的。而如果在 UCRT64/MINGW64 环境中安装 CLANG，那么实际上编译的程序还要链接到 GCC 的 C++ 库
 >
 > ```sh
@@ -52,7 +52,7 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 
 之后就可以使用 `vs` 来进入编译环境了。如果你没有在脚本中添加默认参数的话，启动时记得指定 `-Arch` 和 `-HostArch`，因为默认值是 *x86* 而非 *amd64*。你可以输入 `vs -?` 来查看有关这个脚本的更多信息。
 
-> [!Tip] MSVC 与 CLANG
+> [!Tip]+ MSVC 与 CLANG
 > 如果想使用 CLANG 编译器，那么首先应该确定已经安装了 MSVC 编译器，然后可以通过 `scoop install llvm` 获取 CLANG 编译器。编译程序时可以不进入 VS 的编译环境，CLANG 编译器会处理这些繁琐的事情。
 
 ### 编辑器集成
@@ -65,7 +65,7 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 
 #### 修改环境变量
 
-> [!WARNING] 环境冲突
+> [!WARNING]+ 环境冲突
 > 尽管[官方文档](https://code.visualstudio.com/docs/cpp/config-mingw#_installing-the-mingww64-toolchain)这么干了，但我仍然认为修改 *PATH* 变量可能不是最好的做法。
 >
 > 虽然这让我们能够不进入 MSYS 环境就使用编译器，但有潜在的环境的冲突的可能。最好还是[进入编译环境](../环境管理器/MSYS.md#进入环境)后再进行编译。不过这样配置任务会比较麻烦，你可能需要参考[配置自定义任务指南](https://code.visualstudio.com/docs/debugtest/tasks#_custom-tasks)，或者不使用任务，而是在 VSCode 的集成终端里进入 MSYS 环境，然后手动执行命令。

@@ -98,7 +98,7 @@ podman run -it --name hello-ubuntu ubuntu bash
 
 ### 构建镜像
 
-> [!Note] 镜像和容器
+> [!Note]+ 镜像和容器
 > 镜像和容器是两个很容易混淆的概念，两者之间的关系大概就是
 >
 > - 镜像是不变的，而容器是可变的
@@ -131,7 +131,7 @@ podman start -ai CONTAINER-ID/CONTAINER-NAME
 podman stop CONTAINER-ID/CONTAINER-NAME
 ```
 
-> [!Note] kill 和 stop
+> [!Note]+ kill 和 stop
 > 还有一条子命令 `kill` 可以用来停止正在运行的容器实例。从名字上也能看出，`kill` 相比 `stop` 更强硬一点，它默认发送 **SIGKILL** 信号。如果使用 `stop` 失败了，可以尝试使用 `kill`
 >
 > ```sh

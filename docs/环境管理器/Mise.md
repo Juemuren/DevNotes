@@ -22,7 +22,7 @@ scoop install mise
 
 ## 使用
 
-> [!Note] 官方文档
+> [!Note]- 官方文档
 > Mise 的功能很多，这里无法全面介绍，你可以阅读对应的文档来详细了解。
 >
 > - [开发工具](https://mise.jdx.dev/dev-tools/)

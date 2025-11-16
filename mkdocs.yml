@@ -124,7 +124,7 @@ nav:
     - Lisp: 编程语言/Lisp.md
   - 库和框架:
     - 库和框架: 库和框架/index.md
-    - Pytorch: 库和框架/Pytorch.md
+    - PyTorch: 库和框架/PyTorch.md
     - YOLO: 库和框架/YOLO.md
     - React: 库和框架/React.md
     - Expo: 库和框架/Expo.md
