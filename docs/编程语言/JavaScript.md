@@ -79,6 +79,10 @@ mise use -g bun
 
 - Axios 一个语法简单的网络请求库
 
+### 状态管理
+
+- Redux 一个用于全局状态管理的库
+
 ### 后端框架
 
 - Express 用来实现 RESTful 接口
