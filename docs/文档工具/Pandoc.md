@@ -52,7 +52,7 @@ markdown 也支持双向转换
 
 #### markdown 转 HTML
 
-markdown 转 html 特别方便，速度也很快，毕竟大多数使用 markdown 的场景都和 html 有关。
+markdown 转 **HTML** 特别方便，速度也很快，毕竟大多数使用 markdown 的场景都和 html 有关。
 
 通过指定 css 参数，可以自定义样式。
 
@@ -63,20 +63,20 @@ pandoc example.md -o example.html --css="github-markdown.css"
 
 #### markdown 转 PDF
 
-markdown 转 pdf 有点麻烦，因为 markdown 是个没有排版功能的格式。
+markdown 转 **PDF** 有点麻烦，因为 markdown 是个没有排版功能的格式。
 
 事实上，无论源格式是什么，pandoc 都会将文档转为中间格式，然后再借助 pdf 引擎完成转换。因此关于 pdf 的转换放到了[单独的部分](#pdf)。
 
 #### markdown 转 PPTX
+
+markdown 转 **PPTX** 默认按照 *二级标题* 分页。因此，每个二级标题后的内容不应太长，否则会显示不下。不过其实用 *Microsoft PowerPoint* 的时候分页也是个很烦人的问题。
 
 ```sh
 # markdown 转 pptx
 pandoc example.md -o example.pptx
 ```
 
-markdown 转 **PPTX** 默认按照 *二级标题* 分页。因此，每个二级标题后的内容不应太长，否则会显示不下。不过其实用 *Microsoft PowerPoint* 的时候分页也是个很烦人的问题。
-
-另一个工具 [Marp](Marp.md) 专门用来把 markdown 转为幻灯片，其中也包括了 **PPTX** 格式的幻灯片，有兴趣的话可以尝试一下。
+另一个工具 [Marp](Marp.md) 专门用来把 markdown 转为幻灯片，其中也包括了 **PPTX** 格式的幻灯片。在这个特定功能上可能 Marp 更好用一点。
 
 ### pdf
 
@@ -99,7 +99,7 @@ pandoc -s example.md -o example.pdf --pdf-engine=weasyprint --css="github-markdo
 
 部分参数说明
 
-- `-V` 参数向 pandoc 传递了模板变量，也可以通过 `front-matter` 传递。你可以在[官方文档](https://pandoc.org/MANUAL.html#variables)里找到更多的可使用变量。
+- `-V` 参数向 pandoc 传递了模板变量.模板变量也可以通过 `front-matter` 传递。你可以在[官方文档](https://pandoc.org/MANUAL.html#variables)里找到更多的可使用变量。
 - `-s` 参数生成带有页眉、页脚的输出。对于 pdf 格式这个参数会自动设置，因此可省略。
 - `--template` 用于指定模板，和 `--css` 一样，一般是文件的相对路径。
 
