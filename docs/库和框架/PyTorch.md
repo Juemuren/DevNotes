@@ -44,7 +44,7 @@ python
 import torch
 # 如果没有报错，那就是正确安装了。
 # 如果下载的是 CUDA 的版本，可以输入下行代码检查 CUDA 是否可用
-torch.cuda.is_available()     # 应该返回 True
+torch.cuda.is_available() # 应该返回 True
 torch.cuda.get_device_name(0) # 应该返回显卡名称
 # 最后可输入下行代码关闭解释器
 exit()

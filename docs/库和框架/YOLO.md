@@ -159,13 +159,13 @@ yolo TASK MODE ARGS
 
 ```txt
 YOLO
-├── bin       存放二进制文件
-├── data      存放原始数据
-├── datasets  存放标注后的数据集
-├── docs      存放文档
-├── runs      存放运行结果
-├── scripts   存放脚本代码
-└── weights   存放权重模型
+├── bin       # 二进制文件
+├── data      # 原始数据
+├── datasets  # 标注后的数据集
+├── docs      # 文档
+├── runs      # 运行结果
+├── scripts   # 脚本代码
+└── weights   # 权重模型
 ```
 
 然后在 VSCode 中按 `ctrl + k, ctrl + o`，并选择此文件夹打开。
