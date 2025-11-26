@@ -24,10 +24,10 @@ nvidia-smi
 mamba create -n cuda
 # 激活环境
 mamba activate cuda
-# 安装最新版的工具链
+# 安装最新版的工具链，conda-forge 渠道的更新没有 nvidia 官方渠道及时
 mamba install nvidia::cuda-toolkit
 # 安装指定版本的工具链
-mamba install nvidia/label/cuda-12.9.1::cuda-toolkit
+mamba install nvidia::cuda-toolkit==12.9.1
 ```
 
 ### 编辑器集成

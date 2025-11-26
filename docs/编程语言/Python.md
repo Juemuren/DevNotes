@@ -131,7 +131,3 @@ uv add numpy
 - tensorflow
 - [PyTorch](../库和框架/PyTorch.md)
 - [YOLO](../库和框架/YOLO.md)
-
-### 后端框架
-
-- FastAPI

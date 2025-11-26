@@ -117,9 +117,10 @@ nav:
     - Rust: 编程语言/Rust.md
     - Go: 编程语言/Go.md
     - Julia: 编程语言/Julia.md
+    - R: 编程语言/R.md
+    - CUDA: 编程语言/CUDA.md
     - CSharp: 编程语言/CSharp.md
     - Java: 编程语言/Java.md
-    - CUDA: 编程语言/CUDA.md
     - Ruby: 编程语言/Ruby.md
     - Lisp: 编程语言/Lisp.md
   - 库和框架:
@@ -130,6 +131,8 @@ nav:
     - Expo: 库和框架/Expo.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md
+  - 网站开发:
+    - 网站开发: 网站开发/index.md
 
 extra:
   generator: false
