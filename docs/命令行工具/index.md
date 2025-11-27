@@ -36,10 +36,11 @@
 
 ### 脚本
 
-用来管理脚本的工具
+和脚本相关的工具
 
 - [just](Just.md) 任务运行器，语法类似 Make 但更简单。
 - shellcheck 脚本静态检查工具
+- gum 一个让你的脚本拥有 TUI，从而更加炫酷华丽的工具
 
 ### 效率
 
@@ -49,6 +50,7 @@
 - [ripgrep](Ripgrep.md) 文本查找器，类似 grep 但更现代
 - [fd](Fd.md) 文件查找器，类似 find 但更现代
 - [tldr](Tldr.md) 命令手册，懒人福音
+- watchexec 可以监视文件，在其更改后自动重新运行命令
 - thefuck 尝试纠正上一个命令的错误。这个工具因为名字特殊而广为人知，不过在 **Windows** 平台不可用
 - [zoxide](Zoxide.md) 快速工作目录跳转
 

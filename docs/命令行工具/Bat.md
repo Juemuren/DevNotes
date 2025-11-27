@@ -33,6 +33,8 @@ bat example.md
 bat src/*.rs
 # 显示并突出非打印字符
 bat -A example.md
+# 禁止自动分页
+bat -P example.md
 ```
 
 以及与其它工具的集成

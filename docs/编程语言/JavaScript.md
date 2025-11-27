@@ -46,8 +46,9 @@ mise use -g bun
 
 ### 静态检查和格式化
 
-- eslint 代码静态检查
-- prettier 格式化
+- ESLint 代码静态检查
+- Prettier 格式化
+- Biome ESLint 和 Prettier 的结合体，由于使用 Rust 编写所以速度非常快
 
 ### 调试
 

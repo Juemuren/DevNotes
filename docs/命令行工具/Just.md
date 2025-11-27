@@ -8,21 +8,13 @@ Just 是一个任务运行器，语法类似 `Make` 但更简单。
 
 由于 Just 不是构建系统，所以并不能取代 Make。但对于那些把 Make 当任务运行器用的人，显然换 Just 更合适。毕竟把 Make 当作任务运行器其实是对 Make 的滥用。
 
-Just 是专门用来写脚本任务的工具，因此可以为此进行优化让其更易用，比如不需要 Make 里的 `.PHONY`。Just 还可以选择执行脚本的 Shell，因此某种程度上还算是个可以让脚本跨平台运行的工具，当然了，你还是得写出每个 Shell 的脚本。
+Just 是专门用来写脚本任务的工具，因此可以为此进行优化让其更易用。
 
-## 安装
+以下是两个简单的比较，来自我自己的真实使用情况。
 
-非常适合使用 Scoop 安装
+### 构建任务
 
-```sh
-scoop install just
-```
-
-## 使用
-
-我平常经常需要使用一些命令行工具，当命令有点长，但我又不想写 *bash*、*powershell* 那样的脚本时，我就会使用 Just。
-
-比如说我想用 Pandoc + Typst 把 Markdown 转为 PDF，我希望可以只输文件的名字，而不用打很长的命令。
+我想用 Pandoc + Typst 把 Markdown 转为 PDF，我希望可以只输文件的名字，而不用打很长的命令。
 
 使用 Make 可以这样写，然后使用 `make example.pdf` 生成文件
 
@@ -30,7 +22,8 @@ scoop install just
 %.pdf: %.md
 	pandoc -s $< -o $@ \
 		--from markdown \
-		--pdf-engine=typst
+		--pdf-engine=typst \
+		-V mainfont="Microsoft YaHei UI"
 ```
 
 而 Just 只用这样写，然后使用 `just typst example` 生成文件
@@ -39,16 +32,19 @@ scoop install just
 typst name:
     pandoc -s {{name}}.md -o {{name}}.pdf \
         --from markdown \
-        --pdf-engine=typst
+        --pdf-engine=typst \
+        -V mainfont="Microsoft YaHei UI"
 ```
 
-可以看到，Just 明显可读性更好，而且不一定要使用 `tab` 键，比如前面的代码里就是用`空格`缩进的（静态网站生成器似乎自动把 Makefile 里的 `tab` 改成 `空格` 了）。
+可以看到，Just 明显可读性更好，而且 Justfile 里不一定要使用 `tab` 键，比如前面的代码里就是用`空格`缩进的 ~~静态网站生成器似乎自动把 Makefile 里的 `tab` 改成 `空格` 了~~ 。
 
-但上面的例子其实并没有体现出 Just 的优点。毕竟转换成 PDF 也算个构建任务，而 Make 是个构建系统，它可以自动比较 md 文件 和 pdf 文件的修改日期，判断要不要重新构建，而 Just 做不到这一点。
+不过对于这种构建任务，Just 其实没有多少优势。毕竟 Make 是个构建系统，它可以自动比较 md 文件 和 pdf 文件的修改日期，判断要不要重新构建，而 Just 做不到这一点。
 
-而下面这个例子才真正能够体现 Just 作为一个任务运行器的优势
+### 非构建任务
 
-Just 的版本，使用时只需 `just train coco8 yolo11n 50 8 0.01` 即可
+我想用 YOLO CLI 进行一些简单的模型训练任务，并希望能够在命令行里修改主要的参数。
+
+以下是 Just 的版本，使用时只需 `just train coco8 yolo11n 50 8 0.01` 即可
 
 ```justfile
 # 模型训练
@@ -64,7 +60,7 @@ train data model epochs batch lr:
         name="train"
 ```
 
-而 Make 的版本如下，使用时需要 `make train DATA=coco MODEL=yolo11n EPOCHS=50 BATCH=8 LR=0.001`
+而 Make 的版本如下，使用时需要用 `make train DATA=coco MODEL=yolo11n EPOCHS=50 BATCH=8 LR=0.001` 覆盖掉默认的环境变量
 
 ```makefile
 DATA ?= data
@@ -86,6 +82,28 @@ train:
 		name="train"
 ```
 
-可以看到，Just 显然更好写，不需要 `.PHONY` 了。Just 也更好读，第一个例子应该体现的更明显。
+可以看到，Just 会更好写一点，并且不需要 `.PHONY`。由于模型训练本身不是一个构建任务，所以更适合用 Just。根据自己的需求选择合适的工具，是一个开发者应该学会的技能。
 
-另外 Just 还有一个我很喜欢的功能。`just --list` 可以列出所有任务，并会显示参数以及任务描述。任务描述就是写在任务定义上一行的注释。这个功能可能并不是很实用，但真的非常 cool。
+不过上面的两个例子其实并没有用到多少 Just 的特性。在[官方文档](https://just.systems/man/en/)中你可以找到完整的几十个 Just 的特性，这些都让它比起 Make 更加现代。
+
+## 安装
+
+非常适合使用 Scoop 安装
+
+```sh
+scoop install just
+```
+
+## 特性
+
+这里只列出我常用的几个 Just 特性，[官方文档](https://just.systems/man/en/)里有全部的 Just 特性介绍。
+
+在 Just 中，任务被称作配方，不过我还是更习惯称其为任务。
+
+### [列出配方](https://just.systems/man/en/listing-available-recipes.html)和[文档注释](https://just.systems/man/en/documentation-comments.html)
+
+`just --list` 它可以列出所有任务，并会显示参数以及任务描述，任务描述就是写在任务定义上一行的注释。
+
+### [配方属性](https://just.systems/man/en/attributes.html)
+
+Just 支持给任务定义额外的属性，通过在任务定义的上方写个 `[xxx]` 来使用。

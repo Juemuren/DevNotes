@@ -93,7 +93,11 @@ private:
 doxygen -g
 ```
 
-然后调整配置文件。配置文件非常长，但大多都是说明。以下是一些可能有用的选项
+然后调整配置文件。配置文件非常长，但大多都是说明。实际上只有 *200* 多个设置，并且结构其实很清晰。
+
+#### 基本配置
+
+一些我认为比较基本的配置
 
 ```ini
 # 源代码目录
@@ -104,10 +108,36 @@ EXTRACT_ALL = YES
 EXTRACT_PRIVATE = YES
 ```
 
+#### HTML 配置
+
+如果想要生成 HTML，这些选项可能有用
+
+```ini
+# 是否生成 HTML
+GENERATE_HTML = YES
+# 设置颜色样式，设为 TOGGLE 会为页面增加一个切换颜色的按钮
+HTML_COLORSTYLE = TOGGLE
+```
+
+#### PDF 配置
+
+如果想要生成 PDF，这些选项可能有用
+
+```ini
+# 是否生成 LATEX
+GENERATE_LATEX = YES
+# 使用的编译命令
+LATEX_CMD_NAME = lualatex
+# 添加中文支持
+EXTRA_PACKAGES = [UTF8]{ctex}
+```
+
+#### DOT 配置
+
 如果想要生成类图、调用图，这些选项可能有用
 
 ```ini
-# 使用 DOT 生成图片
+# 是否使用 DOT 生成图片
 HAVE_DOT = YES
 # 启用类图
 CLASS_GRAPH = YES
@@ -134,7 +164,7 @@ cd latex
 make
 ```
 
-文档是中文的话会比较麻烦，改为 `LATEX_CMD?=lualatex` 后至少不会报错了，但中文仍然不会正确显示。
+文档是中文的话会比较麻烦，可参照[配置文件](#配置文件)的 PDF 部分解决。
 
 #### HTML
 
