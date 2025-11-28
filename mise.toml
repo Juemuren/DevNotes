@@ -11,3 +11,7 @@ run = "mkdocs serve"
 [tasks.build]
 description = "Build the website"
 run = "mkdocs build"
+
+[tasks.preview]
+description = "Build & Preview the website"
+run = "mkdocs build && python -m http.server -d site"

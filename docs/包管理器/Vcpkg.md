@@ -2,7 +2,7 @@
 
 ## 对比
 
-[vcpkg 与其他包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
+[vcpkg 与其它包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 
 `vcpkg` 相比系统包管理器（比如 `apt`、`pacman`）有一些区别。建议与系统包管理器配合使用，因为二者**优势区间**不同。
 

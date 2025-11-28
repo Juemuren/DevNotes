@@ -76,7 +76,7 @@ sequenceDiagram
 让 *代码在客户端进行渲染* 的好处是显而易见的。
 
 - 集成方便。对于 Web 应用，不需要配置后端服务；对于文档，不需要先本地生成图片再进行插入
-- 方便自定义。尽管代码是一样的，但 [GitHub 上的图片](https://github.com/Juemuren/DevNotes/blob/main/docs/%E6%96%87%E6%A1%A3%E5%B7%A5%E5%85%B7/Mermaid.md)样式就和本网站上的样式不太一样，并且 GitHub 还给图片增加了一些功能，比如缩放、移动等。同时这也能够实现真正的暗黑模式，而不是仅粗暴地反转图片颜色。
+- 方便自定义。尽管代码是一样的，但 [GitHub 上的图片](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md)样式就和本网站上的样式不太一样，并且 GitHub 还给图片增加了一些功能，比如缩放、移动等。同时这也能够实现真正的暗黑模式，而不是仅粗暴地反转图片颜色。
 
 ## 安装
 
