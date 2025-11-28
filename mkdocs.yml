@@ -129,10 +129,14 @@ nav:
     - YOLO: 库和框架/YOLO.md
     - React: 库和框架/React.md
     - Expo: 库和框架/Expo.md
+  - 应用开发:
+    - 应用开发: 应用开发/index.md
+    - Web: 应用开发/Web.md
+    - API: 应用开发/API.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md
-  - 网站开发:
-    - 网站开发: 网站开发/index.md
+  - 人工智能开发:
+    - 人工智能开发: 人工智能开发/index.md
 
 extra:
   generator: false

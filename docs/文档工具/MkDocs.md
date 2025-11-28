@@ -54,7 +54,7 @@ MkDocs 的配置文件为根目录的 `mkdocs.yml`
 
 本网站就是使用 `MkDocs` 生成的，可以参考[我的配置文件](https://github.com/Juemuren/DevNotes/blob/main/mkdocs.yml)
 
-[Material for MkDocs 官方文档](https://squidfunk.github.io/mkdocs-material/reference/)中有更详细的说明
+[Material for MkDocs 官方文档](https://squidfunk.github.io/mkdocs-material)中有更详细的说明
 
 ## 使用
 
