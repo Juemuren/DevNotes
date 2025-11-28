@@ -108,26 +108,6 @@ uv add numpy
 
 ## 库和框架
 
-### 科学计算
+### 控制
 
-- numpy
-- sympy
-- scipy
 - control
-
-### 绘图
-
-- matplotlib
-- manim
-
-### 数据分析
-
-- networkx
-- pandas
-
-### 机器学习
-
-- scikit-learn
-- tensorflow
-- [PyTorch](../库和框架/PyTorch.md)
-- [YOLO](../库和框架/YOLO.md)
