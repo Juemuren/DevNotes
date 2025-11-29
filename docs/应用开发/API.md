@@ -50,6 +50,7 @@ Web 开发绕不开 **HTML**/**CSS**/**JavaScript**，而 API 开发在这方面
 - Express 用来实现 RESTful API 的 JavaScript 框架
 - FastAPI 用来实现 RESTful API 的 Python 框架
 - Apollo 用来实现 GraphQL API 的 JavaScript 框架，分为 Server 和 Client，后者用来在前端调用 GraphQL 接口
+- Gin 用来实现 RESTful API 的 Go 框架
 
 #### 数据库映射
 

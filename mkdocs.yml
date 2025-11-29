@@ -132,6 +132,8 @@ nav:
   - 应用开发:
     - 应用开发: 应用开发/index.md
     - Web: 应用开发/Web.md
+    - GUI: 应用开发/GUI.md
+    - CLI: 应用开发/CLI.md
     - API: 应用开发/API.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md

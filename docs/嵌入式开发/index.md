@@ -30,7 +30,7 @@ flowchart TD
 
 ### SDCC
 
-由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
+SDCC 通常用于 8051 MCU 的开发。由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
 
 可以手动修改 `.vscode\c_cpp_properties.json` 让编辑器识别这种拓展类型。
 

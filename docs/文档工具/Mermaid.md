@@ -1,6 +1,6 @@
 # Mermaid
 
-[官网](https://github.com/mermaid-js/mermaid-cli)
+[官网](https://mermaid.js.org/)
 
 ## 简介
 
@@ -63,7 +63,7 @@ sequenceDiagram
   B ->> B: 把 HTML 中的 mermaid 渲染为 SVG
 ```
 
-`mermaid` 还有个 CLI 工具，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
+`mermaid` 还有个 [CLI 工具](https://github.com/mermaid-js/mermaid-cli)，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
 
 后面只介绍 mermaid-cli 的安装和使用。而对于客户端渲染的需要，大多数 *静态网站生成器* 和 *前端框架* 应该都支持与 mermaid 集成，你可以自行研究。
 
@@ -123,6 +123,6 @@ mmdc -p puppeteer.json -i example.md -o example.temp.md
 mmdc -i input.mmd -o output.png
 # 自定义 css 文件
 mmdc --input flowchart.mmd --cssFile flowchart.css -o flowchart.svg
-# 转换 md 文件，让接收者直得到图片，不用自行渲染
-mmdc -i readme.template.md -o readme.md
+# 转换 md 文件，将所有内嵌 mermaid 代码导出为图片并引用
+mmdc -i example.template.md -o example.md
 ```
