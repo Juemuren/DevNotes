@@ -108,6 +108,7 @@ nav:
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md
+    - Neovim: 编辑器/Neovim.md
     - Jupyter: 编辑器/Jupyter.md
   - 编程语言:
     - 编程语言: 编程语言/index.md

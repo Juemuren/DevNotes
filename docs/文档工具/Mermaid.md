@@ -93,7 +93,7 @@ npm install -g @mermaid-js/mermaid-cli
 npx puppeteer browsers install chrome-headless-shell
 ```
 
-其中最后一步是可选的。如果你的系统中已有 `chrome` 内核的浏览器，可以先试试是否能够使用，不能用的话再去安装。
+其中最后一步是可选的。如果你的系统中已有 `chromium` 内核的浏览器，可以先试试是否能够使用，不能用的话再去安装。
 
 最后还要准备一个 `puppeteer.json` 文件，用于指定 `chrome-headless` 可执行文件的路径。通过 `npx puppeteer` 下载的无头浏览器一般在 `~/.cache/puppeteer` 目录里。对于比较新的 Windows 系统，可以先试试自带的 **Edge** 浏览器
 
