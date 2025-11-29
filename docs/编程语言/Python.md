@@ -106,8 +106,15 @@ uv add numpy
 
 - snakeviz
 
+### 打包器
+
+- PyInstaller
+
 ## 库和框架
 
-### 控制
+Python 由于标准库已经非常强大了，并且大多第三方库都是用于特定应用的（已移到专门的章节中），因此这里列出的框架/库会比较少。
 
-- control
+### 通用库
+
+- requests 网络请求库
+- psutil 用于系统监控的库，提供了和 `ps`、`top`、`iotop`、`lsof`、`netstat`、`ifconfig`、`free` 等命令类似的功能
