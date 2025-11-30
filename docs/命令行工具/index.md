@@ -83,3 +83,4 @@
 - lolcat 给输出着上彩虹色
 - cowsay 搞怪版的 echo，会让一只牛顶着对话框
 - fortune 随机生成名言，可以和前者结合达成奇妙效果
+- figlet 把输入转为 ASCII 艺术字
