@@ -13,9 +13,9 @@ ImageMagick 还有另一个分支叫 GraphicsMagick，后者更注重速度、�
 ## 安装
 
 ```sh
-pacman -S mingw-w64-ucrt-x86_64-imagemagick # 建议使用 MSYS 安装 ImageMagick
-pacman -S mingw-w64-ucrt-x86_64-graphicsmagick # 用 MSYS 安装 GraphicsMagick
-scoop install chafa # 用 Scoop 安装 chafa
+# Windows
+scoop install imagemagick
+scoop install chafa
 ```
 
 ## 使用
