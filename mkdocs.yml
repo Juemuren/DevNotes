@@ -138,6 +138,8 @@ nav:
     - API: 应用开发/API.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md
+    - MCU: 嵌入式开发/MCU.md
+    - FPGA: 嵌入式开发/FPGA.md
   - 人工智能开发:
     - 人工智能开发: 人工智能开发/index.md
 

@@ -6,7 +6,7 @@ _.python.venv = "venv"
 
 [tasks.dev]
 description = "Start the development server"
-run = "mkdocs serve"
+run = "mkdocs serve --livereload"
 
 [tasks.build]
 description = "Build the website"
