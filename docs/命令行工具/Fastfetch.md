@@ -14,9 +14,8 @@ Fastfetch 是一个能够高度定制的系统信息获取工具。不过在开�
 
 ## 安装
 
-Windows 可通过 Scoop 安装
-
 ```sh
+# Windows
 scoop install fastfetch
 ```
 
@@ -26,7 +25,7 @@ scoop install fastfetch
 
 想要在 Shell 启动时自动调用 `fastfetch` 很简单，只需往配置文件中写入命令就行。
 
-对于 Pwsh，添加如下命令到 `$profile` 的最后一行
+对于 Pwsh，添加如下命令到 `$PROFILE` 的最后一行
 
 ```pwsh
 fastfetch

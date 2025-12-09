@@ -1,16 +1,13 @@
 # Pandoc
 
-[官网](https://pandoc.org/)
-
 ## 简介
 
-Pandoc 是一个文档格式转换工具，可以处理非常多种的文档格式转换。你可以在官网找到[所有支持的格式转换](https://pandoc.org/diagram.svgz)
+Pandoc 是一个文档格式转换工具，可以处理非常多种的文档格式转换。你可以在[官网](https://pandoc.org/)找到[所有支持的格式转换](https://pandoc.org/diagram.svgz)
 
 ## 安装
 
-Windows 上我个人使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install pandoc
 ```
 

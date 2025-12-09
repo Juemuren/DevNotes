@@ -91,13 +91,12 @@ make-pdf name:
     make {{name}}.pdf
 ```
 
-然后使用 `just make-pdf example` 来生成 PDF 文件。这样即利用了 Make 作为一个构建系统的功能，有利用了 Just 的很多现代特性来统一管理任务。
+然后使用 `just make-pdf example` 来生成 PDF 文件。这样即利用了 Make 作为一个构建系统的功能，又利用了 Just 的很多现代特性来统一管理任务。
 
 ## 安装
 
-非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install just
 ```
 

@@ -69,8 +69,8 @@
 
 一些不太好分类的工具都放到了这里
 
-- [delta](Delta.md) 差异比较器，类似 diff 但更现代
 - [bat](Bat.md) 显示文件内容，类似 cat 但更现代。支持语法高亮、显示行号等功能
+- [delta](Delta.md) 差异比较器，类似 diff 但更现代
 - [eza](Eza.md) 文件目录查看工具，类似 ls 但更现代
 - [cloc](Cloc.md) 统计代码行数，类似的工具还有 `tokei`
 - [dotter](Dotter.md) 点文件管理器。类似的工具还有 chezmoi

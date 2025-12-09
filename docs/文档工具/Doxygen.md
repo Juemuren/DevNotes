@@ -8,9 +8,8 @@ Doxygen 是一个从源代码自动生成文档的工具，一般只用于 C/C++
 
 ## 安装
 
-我在 Windows 上使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install doxygen
 ```
 
@@ -18,7 +17,7 @@ scoop install doxygen
 
 Doxygen 会读取你提供的源代码文件，获取每个函数、类的相关信息，并且按照约定好的注释块格式获取接口的额外信息，然后生成文档。生成的文档包括 HTML、PDF 等格式，也可以自动生成类图、调用图，但需要已安装 Graphviz。
 
-Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。但别的语言大多都有官方工具来实现这个功能，且各语言社区基本上都更习惯遵守官方文档生成工具的注释风格。因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给其它语言做适配了，所有人都默认 Doxygen 就是用于  C/C++ 项目的。
+Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。但别的语言大多都有官方工具来实现这个功能，且各语言社区基本上都更习惯遵守官方文档生成工具的注释风格。因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给其它语言做适配了，所有人都默认 Doxygen 就是用于 C/C++ 项目的。
 
 ### 注释约定
 
@@ -64,7 +63,7 @@ public:
     virtual void stop() = 0;
     
 protected:
-    int speed;  ///< 当前速度
+    int speed; ///< 当前速度
 };
 
 /**
@@ -81,7 +80,7 @@ public:
     void stop() override;
     
 private:
-    int doorCount;  ///< 车门数量
+    int doorCount; ///< 车门数量
 };
 ```
 

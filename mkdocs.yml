@@ -67,11 +67,11 @@ nav:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Just: 命令行工具/Just.md
-    - Zoxide: 命令行工具/Zoxide.md
-    - Tldr: 命令行工具/Tldr.md
     - Fzf: 命令行工具/Fzf.md
     - Ripgrep: 命令行工具/Ripgrep.md
     - Fd: 命令行工具/Fd.md
+    - Tldr: 命令行工具/Tldr.md
+    - Zoxide: 命令行工具/Zoxide.md
     - Starship: 命令行工具/Starship.md
     - Fastfetch: 命令行工具/Fastfetch.md
     - Bat: 命令行工具/Bat.md
@@ -89,8 +89,8 @@ nav:
     - Doxygen: 文档工具/Doxygen.md
     - MkDocs: 文档工具/MkDocs.md
     - Hugo: 文档工具/Hugo.md
-    - ImageMagick: 文档工具/ImageMagick.md
     - PDFcpu: 文档工具/PDFcpu.md
+    - ImageMagick: 文档工具/ImageMagick.md
   - 环境管理器: 
     - 环境管理器: 环境管理器/index.md
     - Conda: 环境管理器/Conda.md

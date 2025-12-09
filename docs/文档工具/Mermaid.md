@@ -1,10 +1,8 @@
 # Mermaid
 
-[官网](https://mermaid.js.org/)
-
 ## 简介
 
-Mermaid 是一个用 JavaScript 实现的图表绘制工具，可以通过简单的代码绘制图表。
+Mermaid 是一个用 JavaScript 实现的图表绘制工具，可以通过简单的代码绘制图表。具体的语法可查阅[官方文档](https://mermaid.js.org/intro/)
 
 mermaid 这个工具流行的主要原因就是可以把代码嵌入 MD 文档中。毕竟大多数时候 MD 都会转为 HTML，而 mermaid 恰好有 JavaScript 实现，这使得客户端可以自行完成图片的渲染。比如 Github 的 MD 就支持渲染内嵌的 mermaid 代码，大多数 LLM（比如 DeepSeek）都可以用 mermaid 来生成和展示图片。
 

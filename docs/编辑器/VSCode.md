@@ -1,10 +1,8 @@
 # VSCode
 
-[官网](https://code.visualstudio.com/)
-
 ## 安装
 
-建议使用官网的安装程序。VSCode 的安装程序还是非常友好的
+建议使用[官网](https://code.visualstudio.com/)的安装程序。VSCode 的安装程序还是非常友好的
 
 ## 插件推荐
 
@@ -83,7 +81,7 @@
 
 是的，VSCode 还提供了命令行工具 `code`，不过我一般很少使用这个东西
 
-可以使用  `code .` 在 VSCode 中打开当前目录，用 `code text.c` 在 VSCode 中打开单个文件
+可以使用 `code .` 在 VSCode 中打开当前目录，用 `code text.c` 在 VSCode 中打开单个文件
 
 另外可以用这个工具列出所有已安装插件
 

@@ -100,12 +100,13 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 ## 工具
 
-### 综合处理
+### 格式转换
 
-可以用来对一些格式的文件进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
+用来在不同格式之间进行转换的工具
 
-- [PDFcpu](PDFcpu.md) 一个对 PDF 文档进行各种处理的命令行工具。类似的还有 `qpdf`、`xpdf`、`pdftk`、`GhostScript`，最后一个工具类似 `awk`，有自己的一套语言，很强大但学习曲线很高。
-- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`，但功能没有那么丰富，主要用于在终端显示图片和制作 ANSI 艺术品。
+- [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、Docx、HTML、PDF、PPTX 等。
+- [Marp](Marp.md) 一种专门将 Markdown 转换为幻灯片的工具
+- markitdown 微软官方的做的一个把各种格式的文件转为 markdown 的工具，甚至可以处理 YouTube 链接 ~~实际上只是把字幕文件转化为 markdown 文件，不要以为能够一帧一帧地转换视频内容~~ 。在 LLM 盛行的时代，非常适合炒作这个工具 `:)`，可以用来把所有东西都转换成 Markdown 然后全部喂给 AI。
 
 ### 图表演示
 
@@ -116,14 +117,6 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 - QRencode 文本转二维码的命令行工具
 - Manim 用来生成数学动画的 Python 库，最初是由 3blue1brown 制作的，现在更推荐使用社区维护的版本
 - vhs 终端录像生成工具。和 `script`、`asciinema` 等工具不同，vhs 会根据你提供的要求，比如输入的命令、打字速度、画面大小等自动生成录像。这非常适合用来制作 CLI 应用的演示视频，毕竟自己手打命令的话，不小心操作失误可能就得重新录制。
-
-### 格式转换
-
-用来在不同格式之间进行转换的工具
-
-- [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、Docx、HTML、PDF、PPTX 等。
-- [Marp](Marp.md) 一种专门将 Markdown 转换为幻灯片的工具
-- markitdown 微软官方的做的一个把各种格式的文件转为 markdown 的工具，甚至可以处理 YouTube 链接 ~~实际上只是把字幕文件转化为 markdown 文件，不要以为能够一帧一帧地转换视频内容~~ 。在 LLM 盛行的时代，非常适合炒作这个工具 `:)`，可以用来把所有东西都转换成 Markdown 然后全部喂给 AI。
 
 ### 代码内嵌
 
@@ -149,3 +142,10 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 - [MkDocs](MkDocs.md) 一个用 Python 写的静态网站生成器，本网站就是使用这个制作的
 - VitePress 通过 Vite 和 Vue 驱动，算是 Vue 生态的一部分，是 VuePress 的更现代的版本
 - [Hugo](Hugo.md) 一个构建速度很快的静态网站生成器，配置麻烦但更灵活
+
+### 综合处理
+
+可以用来对一些格式的文件进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
+
+- [PDFcpu](PDFcpu.md) 一个对 PDF 文档进行各种处理的命令行工具。类似的还有 `qpdf`、`xpdf`、`pdftk`、`GhostScript`，最后一个工具类似 `awk`，有自己的一套语言，很强大但学习曲线很高。
+- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`，但功能没有那么丰富，主要用于在终端显示图片和制作 ANSI 艺术品。

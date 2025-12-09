@@ -14,9 +14,8 @@ Mise 是个用来管理工具链版本和切换环境的工具，也可以充当
 
 ## 安装
 
-非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install mise
 ```
 

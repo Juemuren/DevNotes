@@ -1,16 +1,13 @@
 # Fd
 
-[官网](https://github.com/sharkdp/fd)
-
 ## 简介
 
 fd 是个文件查找器，功能和 `find` 类似，但使用起来更友好
 
 ## 安装
 
-非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install fd
 ```
 

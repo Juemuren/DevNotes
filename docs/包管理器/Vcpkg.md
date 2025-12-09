@@ -110,15 +110,15 @@ vcpkg install
       "name": "default",
       "inherits": "vcpkg",
       "environment": {
-        "PATH": "C:\\msys64\\ucrt64\\bin;C:\\msys64\\msys2\\usr\\bin;$penv{PATH}",
-        "VCPKG_ROOT": "$env{USERPROFILE}\\Scoop\\apps\\vcpkg\\current"
+        "PATH": "path\\to\\msys2\\ucrt64\\bin;path\\to\\msys2\\usr\\bin;$penv{PATH}",
+        "VCPKG_ROOT": "path\\to\\vcpkg"
       }
     }
   ]
 }
 ```
 
-在版本控制系统中，通常要把 `CMakeUserPresets.json` 文件忽略。因为每个人环境不同，可能需要编写自己的预设来覆盖一些默认值。将该文件从版本控制中排除可以方便协作。
+在版本控制系统中，通常要把 `CMakeUserPresets.json` 文件忽略。因为每个人环境不同，需要编写自己的预设来覆盖一些默认值。
 
 如果使用 VSCode，那么可以下载 [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) 插件。这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。如果找不到自己写的预设，可能需要重启一下 VSCode。
 

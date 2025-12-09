@@ -1,7 +1,5 @@
 # Zoxide
 
-[官网](https://github.com/ajeetdsouza/zoxide)
-
 ## 简介
 
 Zoxide 是一个目录跳转工具，可以快速跳转目录。
@@ -14,9 +12,8 @@ fzf 也可以方便更换工作目录，但 fzf 只会在当前工作目录的�
 
 ## 安装
 
-非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install zoxide
 ```
 
@@ -26,7 +23,7 @@ scoop install zoxide
 
 显然，Zoxide 要能够正常工作，首先得能够集成到 Shell 里。Zoxide 支持非常多的 Shell，可以在[官网](https://github.com/ajeetdsouza/zoxide)找到集成方法
 
-对于 Pwsh，添加如下命令到 `$profile` 里
+对于 Pwsh，添加如下命令到 `$PROFILE` 里
 
 ```pwsh
 Invoke-Expression (& { (zoxide init powershell | Out-String) })

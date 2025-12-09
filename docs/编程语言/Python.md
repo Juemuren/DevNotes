@@ -69,7 +69,7 @@ uv add numpy
 
 新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器
 
-> [!TIP]- 无法识别 Conda 环境
+> [!Tip]- 无法识别 Conda 环境
 > 如果 VSCode 没有识别到 conda 环境的话，你可以参考 [Conda 编辑器集成](../环境管理器/Conda.md#编辑器集成) 来解决
 
 之后就可以在 `.py` 文件的右上角找到运行按钮，此时 VSCode 会调用刚选择的解释器
@@ -88,7 +88,7 @@ uv add numpy
 
 如果需要使用编程笔记本，请确保已经安装了 `ipykernel`。你可以通过 `mamba list` 或 `pip list` 查看是否已经安装。
 
-新建一个 `test.ipynb` 文件，输入 VSCode 命令  `Jupyter: Select Interpreter to Start Jupyter Server`，选择一个合适的内核，然后就可以使用编程笔记本了。
+新建一个 `test.ipynb` 文件，输入 VSCode 命令 `Jupyter: Select Interpreter to Start Jupyter Server`，选择一个合适的内核，然后就可以使用编程笔记本了。
 
 ## 命令行工具
 

@@ -16,9 +16,8 @@ Xmake 还还还试图解决 C++ 的又又又一大痛点 ~~C++ 的痛点实在�
 
 ## 安装
 
-在 Windows 上可以使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install xmake
 ```
 

@@ -48,13 +48,13 @@ podman run hello
 
 [podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
 
-如果要直接在 Windows 的文件系统里安装 podman，可以使用 Scoop
+首先在 Windows 的文件系统里安装 podman
 
 ```sh
 scoop install podman
 ```
 
-然后初始化 WSL 后端虚拟机
+然后初始化 WSL 虚拟机
 
 ```sh
 podman machine init
@@ -64,9 +64,8 @@ podman machine init
 
 也可以直接在 WSL 里安装 podman
 
-如果使用 Ubuntu，那么可以使用系统包管理器
-
 ```sh
+# Ubuntu
 apt install podman
 ```
 
@@ -192,9 +191,10 @@ podman run -p 3000:3000 express-server
 
 podman 可以直接使用 `docker-compose`，这也是默认的行为。而 `podman-compose` 在 Windows 环境里好像有点问题
 
-安装 docker-compose 可以直接使用 Scoop，似乎不用先安装 `docker`，不过建议还是把后者一起装了
+安装 docker-compose 时建议把 docker 也一起安装了
 
 ```sh
+# Windows
 scoop install docker docker-compose
 ```
 

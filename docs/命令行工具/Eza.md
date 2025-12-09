@@ -16,9 +16,8 @@ eza 相比 ls，我个人认为有如下的优点
 
 ## 安装
 
-Windows 上可以通过 Scoop 安装
-
 ```sh
+# Windows
 scoop install eza
 ```
 

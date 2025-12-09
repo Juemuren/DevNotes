@@ -12,9 +12,8 @@ Quarto 自创了 qmd 这个 Markdown 拓展格式，并组合了 Pandoc 和 Jupy
 
 ## 安装
 
-不知道为什么 quarto 不在 Scoop 的 *main bucket* 里，想要安装的话得添加 *extra bucket*，或者自己去官网下载
-
 ```sh
+# Windows
 scoop bucket add extras
 scoop install quarto
 ```

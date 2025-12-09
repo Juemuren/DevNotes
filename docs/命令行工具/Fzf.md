@@ -1,14 +1,10 @@
 # Fzf
 
-[官网](https://junegunn.github.io/fzf/)
-
 ## 简介
 
 Fzf 是个模糊查找器，可以对提供的输入进行模糊查找，某种程度上可以看作一个交互式的 grep
 
 ## 安装
-
-在 Windows 上我是使用 Scoop 安装的，在 Linux 上我则使用 Homebrew 安装
 
 ```sh
 # Windows
@@ -45,15 +41,15 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 
 ## 使用
 
-Fzf 功能非常强大，用法很多，建议去看官方文档里的演示
+Fzf 功能非常强大，用法很多，建议去看[官方文档里的演示](https://junegunn.github.io/fzf/getting-started/#an-example)
 
-Fzf 会占用整个终端屏幕来显示交互式的搜索界面。输入字符后就会用这些字符进行模糊查找，按上、下和回车可以选择不同的搜索结果
+Fzf 使用 `TUI` 作为交互界面，输入字符后就会用这些字符进行模糊查找。
 
 ### 命令历史记录搜索
 
 如果启用了 Shell 集成，那么按下 `Ctrl+r` 就可以逆序搜索命令历史记录。如果你想重复运行之前的某个只有模糊记忆的命令，那么这非常有帮助
 
-### 文件搜索
+### 文件和目录搜索
 
 如果启用了 Shell 集成，那么按下 `Ctrl+t` 就可以搜索当前目录下的文件夹和文件。这让切换目录、搜索文件等许多操作都更加方便了
 

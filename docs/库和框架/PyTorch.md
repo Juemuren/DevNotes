@@ -1,20 +1,18 @@
 # PyTorch
 
-[官网](https://pytorch.org/)
-
 ## 简介
 
 PyTorch 是一个经过优化的深度学习张量库，不过我认为称其为 *机器学习框架* 也没什么问题
 
 ## 安装
 
-首先打开[官方安装手册](https://pytorch.org/get-started/locally/)，它会检测操作系统和显卡，并推荐下载的版本。
+首先进入[官网的本地安装指导页面](https://pytorch.org/get-started/locally/)，它会检测操作系统和显卡，并推荐下载的版本。
 
 ![PyTorch](../images/pytorch.png)
 
 然后你可以自行检测版本是否正确
 
-> [!TIP]+ 检查 CUDA 版本
+> [!Tip]+ 检查 CUDA 版本
 > 如果使用的是 N 卡，可以运行命令如下查看 CUDA 版本。
 >
 > ```sh

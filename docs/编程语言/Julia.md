@@ -9,6 +9,7 @@
 首先安装 Juliaup
 
 ```sh
+# Windows
 scoop install juliaup
 ```
 

@@ -24,7 +24,7 @@ mamba activate pytorch
 
 后续所有命令都在该环境中运行，请确保你激活了正确的环境。
 
-> [!TIP]- 忘了环境名字
+> [!Tip]- 忘了环境名字
 > 如果忘记了刚创建的环境的名字，可以使用 `mamba env list` 列出所有环境。
 
 #### PyTorch
@@ -71,7 +71,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 ![Yolo test](../images/bus.jpg)
 
-> [!TIP]- 网络问题
+> [!Tip]- 网络问题
 > 如果因网络问题无法下载图片的话，你可以用自己的图片，只需修改 source 参数即可。如果无法下载模型，你可能不得不先解决网络问题。
 >
 > ```sh
@@ -84,11 +84,9 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 #### cuDNN
 
-[官网](https://developer.nvidia.com/cudnn)
-
 目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 PyTorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
 
-进入官网后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
+进入[官网](https://developer.nvidia.com/cudnn)后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
 
 不过英伟达非常逆天地在 [PyPI](https://pypi.org/search/?q=cudnn) 上注册了多个假包来告诉你没有安装正确的版本
 
@@ -127,7 +125,7 @@ exit()
 
 ## 使用方法
 
-YOLO 有两种用法，分别是 `Python` 和  `CLI`
+YOLO 有两种用法，分别是 `Python` 和 `CLI`
 
 ### Python
 
@@ -176,7 +174,7 @@ YOLO
 yolo settings datasets_dir="datasets"
 ```
 
-> [!TIP]- 无法激活环境
+> [!Tip]- 无法激活环境
 > 如果无法在 VSCode 的集成终端中激活环境，可能有如下原因
 >
 > - 未初始化 shell。可参考 [Conda 初始化](../环境管理器/Conda.md#初始化) 来解决
@@ -186,7 +184,7 @@ yolo settings datasets_dir="datasets"
 
 #### 具体任务
 
-> [!NOTE]- 阅读官方文档
+> [!Note]- 阅读官方文档
 > 仅展示使用 CLI 进行训练和预测的示例。使用 Python 方法差不多，可以参考部分内容。
 >
 > 更详细的示例请阅读官方文档，包括 [CLI 示例](https://docs.ultralytics.com/zh/usage/cli/) 和 [Python 示例](https://docs.ultralytics.com/zh/usage/python/)

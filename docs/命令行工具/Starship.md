@@ -14,9 +14,8 @@ Prompt 美化工具有很多，但我最喜欢 Starship，主要有以下优点
 
 ## 安装
 
-非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install starship
 ```
 
@@ -26,7 +25,7 @@ scoop install starship
 
 Starship 支持非常多的 Shell，你可以在[官方指南](https://starship.rs/zh-CN/guide)中找到集成方法。
 
-对于 Pwsh，添加如下命令到 `$profile` 里
+对于 Pwsh，添加如下命令到 `$PROFILE` 里
 
 ```pwsh
 Invoke-Expression (&starship init powershell)

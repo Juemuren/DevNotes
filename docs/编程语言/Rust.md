@@ -2,18 +2,14 @@
 
 ## 环境搭建
 
-我使用 Rustup + VSCode 搭建开发环境
+我使用 Rustup + VSCode 搭建开发环境。Rustup 用于管理工具链版本。
 
 ### 获取工具链
 
-rustup 是 Rust 官方的工具，提供了管理工具链版本的功能。
-
-可以通过 Scoop 安装 rustup
-
-> [!Note]- Scoop 的 rustup
-> 使用 Scoop 安装 rustup 时会下载 MSVC ABI 的 Rust 编译器作为默认编译器。`rustup` 事实上可以在安装时不下载任何编译器，然后用户需要手动安装编译器。Scoop 的 *main bucket* 里有 **3** 个 rustup，分别名为 `rustup`、`rustup-msvc`、`rustup-gnu`，但 `rustup` 和 `rustup-msvc` 行为基本上一模一样。说实话我不太能理解这种行为，`rustup` 应该设计为安装时不下载任何编译器的。
+首先安装 Rustup
 
 ```sh
+# Windows
 scoop install rustup
 ```
 

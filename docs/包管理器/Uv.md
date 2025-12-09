@@ -10,9 +10,8 @@ uv 自称是可以替代 `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`,
 
 ## 安装
 
-Windows 上非常适合使用 Scoop 安装
-
 ```sh
+# Windows
 scoop install uv
 ```
 
