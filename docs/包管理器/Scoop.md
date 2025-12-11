@@ -52,7 +52,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 
 Scoop 自身会使用一些工具，缺失它们会导致 Scoop 功能不全。你可以运行 `scoop checkup` 看看缺少什么
 
-- `scoop install git` Scoop 中的桶使用 Git 进行管理, 如果要更新或添加其它桶则必须安装 Git。部分工具安装时也要使用 Git，比如 `vcpkg`
+- `scoop install git` Scoop 中的桶使用 Git 进行管理，如果要更新或添加其它桶则必须安装 Git。部分工具安装时也要使用 Git，比如 `vcpkg`
 - `scoop install 7zip dark innounp` Scoop 安装一些软件时要用到这些工具
 - `scoop install sudo` Scoop 添加服务等操作则需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 -> 高级 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/)
 
@@ -102,17 +102,19 @@ scoop list
 
 Scoop 可以通过 `scoop search xxx` 来搜索应用，用 `scoop info git` 来查看应用的详细信息。不过我个人更喜欢在 [Scoop 官网](https://scoop.sh/#/apps)上搜索和查看这些东西
 
-### 管理脚本
+### 管理脚本和命令
 
-Scoop 的 *shim* 机制不仅是一种防止 *PATH* 膨胀的好东西，还能方便脚本的管理。
+Scoop 的 *shim* 机制不仅是一种防止 *PATH* 膨胀的好东西，还能方便脚本和命令的管理。
 
-你可以通过以下命令在 Scoop 的 `shims` 目录下新建一个名为 `example` 的脚本，并填上一些默认的参数
+以下命令会在 Scoop 的 `shims` 目录下创建一个名为 `example` 的脚本或可执行文件，并填上一些默认的参数，以便可以简单地在命令行中调用
 
 ```sh
 scoop shim add example 'path\to\script' '--' -arg1 val1 -arg2 val2
+# 比如添加 msedge 命令
+scoop shim add msedge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 ```
 
-你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有 `exe` 后缀的 *shim* 才会被列出来。
+你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有拓展名为 `exe` 和 `ps1` 的 *shim* 才会被列出来。
 
 ### 创建自己的桶
 
@@ -122,7 +124,7 @@ scoop shim add example 'path\to\script' '--' -arg1 val1 -arg2 val2
 
 我已经创建了一个自己的桶，你可以通过以下方式来使用
 
-```pwsh
+```sh
 # 添加桶，可以随便取个名字
 scoop bucket add <bucket-name> https://github.com/Juemuren/ScoopBucket
 # 安装这个桶里的软件

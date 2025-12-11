@@ -48,13 +48,13 @@ magick example.png example.jpg
 magick input.png -resize 800 output.png
 # 高度设为 600，宽度按原比例缩放
 magick input.png -resize x600 output.png
-# 尺寸设为 800x600，保留原比例，会自动调整宽度和高度
+# 保留原比例，可能会缩小宽度或高度
 magick input.png -resize 800x600 output.png
-# 尺寸设为 800x600，忽略原比例，可能让图片变形
+# 保留原比例，可能会放大宽度或高度
+magick input.png -resize 800x600^ output.png
+# 忽略原比例，可能让图片变形
 magick input.png -resize 800x600! output.png
-# 尺寸设为 800x600，图片不变形，居中后在四周填充白色背景
-magick input.png -resize 800x600 -background white -gravity center -extent 800x600 output.png
-# 保留原比例按百分比缩放
+# 保留原比例，按百分比缩放
 magick input.png -resize 150% output.png
 ```
 
@@ -78,7 +78,7 @@ chafa example.png
 制作 ASCII 艺术
 
 ```sh
-# 个人认为 braille 符号集效果最好
+# 使用 braille 符号集，不要颜色
 chafa -f symbols --symbols braille -c none example.jpg > example.txt
 # 保留前景色
 chafa -f symbols --symbols braille --fg-only example.jpg > example.txt

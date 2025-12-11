@@ -78,7 +78,7 @@ pacman -S zsh
 
 你可以通过 `path\to\msys2\msys2_shell.cmd -help` 来获取该脚本的使用帮助
 
-```pwsh
+```sh
 # 使用默认终端、不启动新窗口、在当前目录、保留原 PATH、使用 Zsh、进入 UCRT64 环境
 path\to\msys2\msys2_shell.cmd -defterm -no-start -here -full-path -ucrt64 -shell zsh
 ```
@@ -87,7 +87,7 @@ path\to\msys2\msys2_shell.cmd -defterm -no-start -here -full-path -ucrt64 -shell
 
 虽然不建议用 Scoop 安装，但可以用它来管理脚本
 
-```pwsh
+```sh
 # 用 scoop 方便地管理脚本
 scoop shim add msys 'path\to\msys2\msys2_shell.cmd' '--' -defterm -here -no-start -full-path -shell zsh
 # 此后只需一个命令和一个参数就能启动对应的环境
@@ -103,7 +103,7 @@ msys -mingw64
 
 当然也可以不使用官方的脚本，自己写命令。
 
-```pwsh
+```sh
 # 在当前目录、保留原 PATH、使用 Zsh、进入 UCRT64 环境
 path\to\msys2\usr\bin\env CHERE_INVOKING=1 MSYS2_PATH_TYPE=inherit MSYSTEM=UCRT64 /usr/bin/zsh -li
 ```

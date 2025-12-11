@@ -4,7 +4,7 @@
 
 uv 是一个 python 的 *包管理* 和 *项目管理器*。然而这只是官方说法，实际上 uv 的功能更多，比如 *工具管理*、*运行时管理* 等功能 uv 也是有的
 
-uv 自称是可以替代 `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv` 以及更多的工具的单一工具。这回倒是不谦虚了，不过这确实是对的。
+uv 自称是可以替代 `pip`/`pip-tools`/`pipx`/`poetry`/`pyenv`/`twine`/`virtualenv` 以及更多的工具的单一工具。这回倒是不谦虚了，不过这确实是对的。
 
 并且由于 uv 使用 Rust 实现，所以速度很快。
 
@@ -21,7 +21,7 @@ scoop install uv
 
 uv 自称项目管理器，因此有项目管理的功能
 
-```pwsh
+```sh
 # 新建项目
 uv init example
 # 可以指定 python 版本
@@ -72,7 +72,7 @@ uvx 会把工具安装到临时的隔离环境中。如果需要把工具添加�
 
 uv 还有管理运行时版本的功能
 
-```pwsh
+```sh
 # 下载 python 3.12
 uv python install 3.12
 # 固定项目使用的版本为 3.12

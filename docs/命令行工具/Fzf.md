@@ -24,7 +24,7 @@ eval "$(fzf --bash)"
 source <(fzf --zsh)
 ```
 
-对于 pwsh，则需要额外安装模块 [PSFzf](https://github.com/kelleyma49/PSFzf) 来启用集成
+对于 Pwsh，则需要额外安装模块 [PSFzf](https://github.com/kelleyma49/PSFzf) 来启用集成
 
 ```sh
 Install-Module -Name PSFzf
@@ -32,7 +32,7 @@ Install-Module -Name PSFzf
 
 然后可以添加以下命令到配置文件 `$PROFILE` 中
 
-```sh
+```pwsh
 # 启用模块
 Import-Module PSFzf
 # 覆盖 PSReadline 的按键绑定

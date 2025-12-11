@@ -18,12 +18,13 @@ mkdocs 是个静态网站生成器，用 Python 实现
 
 ## 安装
 
-先创建一个虚拟环境
+先创建一个虚拟环境并激活
 
 ```sh
-# 比如在 pwsh 里使用 venv 模块
+# 比如使用 venv
 python -m venv venv
-./venv/Scripts/Activate.ps1
+./venv/Scripts/Activate.ps1 # pwsh
+source ./venv/Scripts/activate # bash
 ```
 
 然后通过 pip 安装

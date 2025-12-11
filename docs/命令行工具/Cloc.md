@@ -73,9 +73,9 @@ tokei docs
 --hidden
 # 统计忽略文件
 --no-ignore
-# 更改输出格式，包括 json, yaml, cbor
+# 更改输出格式，包括 json/yaml/cbor
 --output json
-# 更改排序方式，包括 blanks, code, comments, lines
+# 更改排序方式，包括 blanks/code/comments/lines
 --sort
 # 仅统计部分语言
 --type=Rust,Markdown

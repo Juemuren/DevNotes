@@ -4,7 +4,7 @@
 
 Shell，或者偶尔翻译为外壳，是一种 CLI 工具。
 
-Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器一样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 让 Shell 执行 `echo hello` 单条命令，而 `sh test.sh` 则让 Shell 执行 `test.sh` 这个脚本
+Shell 通常有两种使用方式。最常见的就是 *REPL* 模式，Shell 在终端里运行，读取输入、运行命令、打印结果、循环，这就是 `Read-Eval-Print-Loop` 的含义；另一种方式是像解释器那样直接运行单个脚本或命令，比如 `sh -c 'echo hello'` 让 Shell 执行 `echo hello` 单条命令，而 `sh test.sh` 则让 Shell 执行 `test.sh` 这个脚本
 
 > [!Note]+ 系统相关
 > Linux 系统通常都会自带 Bash，这是事实上的标准，因此其兼容性也是最好的。
@@ -34,16 +34,15 @@ Bash 也可以安装插件，不过生态似乎没有 Zsh 好。我试了几个�
 
 ## Pwsh
 
-如果喜欢用 powershell，那么 `powershell 7`，或者叫它 pwsh，最好还是安装一个。这比自带的旧的 powershell 好用很多。
+如果喜欢用 PowerShell，那么 `PowerShell 7`（我喜欢叫它 Pwsh）最好还是安装一个。这比自带的旧的 PowerShell 好用很多。
 
 目前我感觉最主要的好处有以下几个
 
 - 更精确的错误提示
 - 常用的内置命令输出有高亮
 
-另外 pwsh 也能安装插件，不过官方的说法是模块。pwsh 自带了模块的管理框架，通过 `Install-Module PSCompletions` 命令就可以安装新的模块。以下是推荐的部分模块
+另外 Pwsh 也能安装插件，不过官方的说法是模块。Pwsh 自带了模块的管理框架，通过 `Install-Module PSReadLine` 命令就可以安装新的模块。以下是推荐的部分模块
 
-- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（只支持 `powershell` 内置命令）、自动建议等功能，体验上不如 Zsh 的类似插件，但也算够用。这个插件在 `powershell 7` 中似乎是预先安装了的。
+- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（只支持 `PowerShell` 内置命令）、自动建议等功能，体验上不如 Zsh 的类似插件，但也算够用。
 - PSFzf 集成 fzf 的模块，需要先安装 fzf。
 - PSCompletions 命令补全模块，提供了常用命令（包括 git、npm、scoop 等）的补全，并且可以管理这些补全。非常好用，缺点就是加载速度略慢。
-- Pshazz 提供了很多功能，包括别名管理、prompt 美化、Git 补全、SSH 辅助等。这个脚本无法通过 `Install-Module` 获取，可以使用 `scoop install pshazz` 下载

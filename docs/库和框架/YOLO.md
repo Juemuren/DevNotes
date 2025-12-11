@@ -143,8 +143,8 @@ yolo TASK MODE ARGS
 
 其中
 
-- **TASK** （可选）是以下之一 `[detect, segment, classify, pose, obb]`。如果未明确传递，YOLO 将尝试推断 TASK 。`detect` 是目标检测，`segment` 是语义分割，其余的我没用过。
-- **MODE** （必需）是以下之一 `[train, val, predict, export, track, benchmark]`。`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试，剩下的那个我没用过。
+- **TASK** （可选）是以下之一 `detect/segment/classify/pose/obb`。如果未明确传递，YOLO 将尝试推断 TASK 。`detect` 是目标检测，`segment` 是语义分割，其余的我没用过。
+- **MODE** （必需）是以下之一 `train/val/predict/export/track/benchmark`。`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试，剩下的那个我没用过。
 - **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
 
 更详细的参考请阅读[官方文档](https://docs.ultralytics.com/zh/usage/cli/)

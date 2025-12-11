@@ -21,23 +21,21 @@ Pandoc 的原理其实很简单，就是把输入文件先转成一个内部格�
 
 docx 支持双向转换
 
-docx 可以转换成别的格式，比如 markdown。也可以转为 pdf，但更建议使用 **Microsoft Word** 完成这个转换，pandoc 使用第三方 pdf 引擎，可能会有排版上的差异。
+docx 可以转换成别的格式，比如 markdown，不过可能会丢失部分关于样式的信息。docx 也可以转为 pdf，但更建议使用 **Microsoft Word** 完成这个转换，pandoc 使用第三方 pdf 引擎，可能会有排版上的差异。
 
 ```sh
 # docx 转 markdown
 pandoc example.docx -o example.md
 ```
 
-样式不规范的 docx 文档转成别的格式后会可能会丢失部分关于样式的信息。目前我不知道有什么解决方法，也许只能督促那些用 *Microsoft Word* 的人正确地使用样式了
-
-别的格式也可以转换 docx，并且支持自定义模板
+别的格式也可以转为 docx，并且支持自定义模板
 
 ```sh
 # markdown 转 docx
 pandoc example.md -o example.docx
 # 导出默认的 docx 模板
 pandoc -o custom-reference.docx --print-default-data-file reference.docx
-# 修改模板后，再使用这个自定义的模板
+# 使用修改后的模板
 pandoc example.md -o example.docx --reference-doc=custom-reference.docx
 ```
 
@@ -45,13 +43,13 @@ pandoc example.md -o example.docx --reference-doc=custom-reference.docx
 
 markdown 也支持双向转换
 
-不过由于 markdown 本身没有排版和样式的支持，因此如有相关需求需指定模板，这通常是 css、latex 或别的格式。你可以在 [Pandoc templates](https://pandoc-templates.org/) 上搜寻别人分享的模板。如果你不知道该用哪个模板，也许可以试试这个覆盖了几乎所有导出格式的[学术模板](https://github.com/maehr/academic-pandoc-template)。
+markdown 本身没有排版和样式的功能，导出为其他格式时需指定模板。Pandoc 默认的模板效果比较一般。你可以在 [Pandoc templates](https://pandoc-templates.org/) 上搜寻别人分享的模板。如果你不知道该用哪个模板，也许可以试试这个覆盖了几乎所有导出格式的[学术模板](https://github.com/maehr/academic-pandoc-template)。
 
 #### markdown 转 HTML
 
 markdown 转 **HTML** 特别方便，速度也很快，毕竟大多数使用 markdown 的场景都和 html 有关。
 
-通过指定 css 参数，可以自定义样式。
+通过 css 参数可以自定义样式。
 
 ```sh
 # markdown 转 html
@@ -66,7 +64,7 @@ markdown 转 **PDF** 有点麻烦，因为 markdown 是个没有排版功能的�
 
 #### markdown 转 PPTX
 
-markdown 转 **PPTX** 默认按照 *二级标题* 分页。因此，每个二级标题后的内容不应太长，否则会显示不下。不过其实用 *Microsoft PowerPoint* 的时候分页也是个很烦人的问题。
+markdown 转 **PPTX** 默认按照 *二级标题* 分页。因此，每个二级标题后的内容不应太长，否则会显示不下。不过其实用 **Microsoft PowerPoint** 的时候分页也是个很烦人的问题。
 
 ```sh
 # markdown 转 pptx
@@ -83,7 +81,7 @@ pandoc 通过将文档转为另一种格式，再使用 pdf 引擎生成 pdf。�
 
 - **LaTeX** 推荐使用 *lualatex* 引擎，对中文、数学公式的支持最好。不过 LaTeX 坑有点多，比如编译慢、安装环境很复杂，且使用时必须要指定模板，不然效果很差。
 - **Typst** 引擎指定 *typst* 就行，默认的排版和样式就很不错。
-- **HTML** 引擎默认为 *weasyprint*。最大的优势是样式很丰富 ~~css 太强大了~~，但排版效果不太好。我尝试了 pandoc 支持的所有 html 转 pdf 引擎，效果都不是很完美。如果要通过 **HTML** 转 **PDF**，建议先转为 **HTML**，再使用浏览器的打印功能生成 **PDF**。除了无法用脚本自动化以外，比其它的引擎效果都更好。
+- **HTML** 引擎默认为 *weasyprint*。最大的优势是样式很丰富 ~~css 太强大了~~，但排版效果不太好。如果要通过 **HTML** 转 **PDF**，建议先转为 **HTML**，再使用浏览器的打印功能生成 **PDF**。除了无法用脚本自动化以外，比其它的引擎效果都更好。
 
 ```sh
 # markdown 通过 LaTeX 转 pdf
