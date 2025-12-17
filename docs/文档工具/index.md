@@ -102,7 +102,7 @@ LaTeX 可以用 beamer 制作 PPT，而 Markdown 借助工具也能制作 PPT。
 
 ### 格式转换
 
-用来在不同格式之间进行转换的工具
+用来在不同文档格式之间进行转换的工具
 
 - [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、Docx、HTML、PDF、PPTX 等。
 - [Marp](Marp.md) 一种专门将 Markdown 转换为幻灯片的工具

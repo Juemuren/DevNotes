@@ -50,8 +50,12 @@ magick input.png -resize 800 output.png
 magick input.png -resize x600 output.png
 # 保留原比例，可能会缩小宽度或高度
 magick input.png -resize 800x600 output.png
+# 上述变化后填充背景
+magick input.png -resize 800x600 -background white -gravity center -extent 800x600 output.png
 # 保留原比例，可能会放大宽度或高度
 magick input.png -resize 800x600^ output.png
+# 上述变化后裁剪图片
+magick input.png -resize 800x600^ -background none -gravity center -extent 800x600 output.png
 # 忽略原比例，可能让图片变形
 magick input.png -resize 800x600! output.png
 # 保留原比例，按百分比缩放
