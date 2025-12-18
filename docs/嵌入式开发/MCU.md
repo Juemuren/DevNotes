@@ -30,27 +30,6 @@ flowchart TD
 
 ### SDCC
 
-SDCC 通常用于 8051 MCU 的开发。由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不支持 SDCC 拓展的一些类型。
+SDCC 通常用于 8051 MCU 的开发。
 
-可以手动修改 `.vscode\c_cpp_properties.json` 让编辑器识别这种拓展类型。
-
-```json
-{
-  "configurations": [
-    {
-      "defines": [
-        // 原有定义
-        "__sfr=unsigned char",
-        "__sbit=int",
-        "__at(a)= ",
-        // 更多类型
-        ""
-      ],
-    }
-  ]
-}
-```
-
-不过这只是权宜之计，PlatformIO IDE 会自动更新配置文件，更新后又需要重新修改。并且有的时候 C/C++ 插件甚至无法解析 `compilerPath` 字段，直接连头文件都找不到。我遇到过这个 BUG，至今依然没有找到优雅的解决方法。
-
-这些问题的真正解决也许只有等待 C/C++ 插件正式支持 SDCC 了。
+由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不完全支持 SDCC 拓展的语法。虽然可以手动修改 `.vscode/c_cpp_properties.json` 的 `defines` 字段让编辑器识别一些拓展类型，但这只是权宜之计。PlatformIO IDE 会自动更新配置文件，也明确表示了不要手动修改 `.vscode/c_cpp_properties.json` 文件。这个问题的真正解决只有等待 C/C++ 插件正式支持 SDCC 了。

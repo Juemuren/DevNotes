@@ -7,9 +7,7 @@ C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG
 > [!Note]- 解释器
 > C++ 其实还有个解释器 Cling，不过不推荐拿这个来搭建环境，也许初学时可以用一用。在 Windows 上该工具可通过 Conda 获取，但似乎不太稳定；建议在 Linux 系统里尝试。
 
-我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。
-
-我也用过 VSBuild + VSCode 来搭建环境，这个方案支持使用 MSVC/CLANG 编译器
+我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。同时我也使用 VS + VSCode 来搭建环境，这个方案支持使用 MSVC/CLANG 编译器。
 
 ### 安装工具链
 
@@ -33,11 +31,11 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 > pacman -S mingw-w64-x86_64-clang mingw-w64-x86_64-lldb
 > ```
 
-#### VSBuild
+#### VS
 
 很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp，最主要的原因可能是 MSVC 和 GCC 的 ABI 不兼容，导致处理起来非常麻烦，为了省事就只支持 MSVC 了 ~~不过也许还有商业因素在里面~~ 。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
 
-如果需要安装 VS 的话，建议只安装构建工具 ~~虽然安装体积还是很大~~ ，然后使用 VSCode 作为编辑器。在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。如果硬盘告急，则右侧可选项先只保留一个 `MSVC`，到时候缺什么再补什么就行。
+如果需要安装 VS 的话，建议只安装生成工具，然后使用 VSCode 作为编辑器。在[下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/)找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。右侧选项中可以先只保留 `MSVC` 和 `Windows SDK`，到时候缺什么再补什么就行。
 
 VS 为了不污染系统环境，需要进入编译环境后才能使用编译器。我不推荐去修改系统的 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并且配置好了 `Windows Terminal`。不过我个人不太喜欢这些东西
 
@@ -45,9 +43,9 @@ VS 为了不污染系统环境，需要进入编译环境后才能使用编译�
 
 ```sh
 # 创建脚本别名
-scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1'
+scoop shim add vs 'path\to\vs\Common7\Tools\Launch-VsDevShell.ps1'
 # 或者添加一些默认的参数
-scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Arch amd64 -HostArch amd64
+scoop shim add vs 'path\to\vs\Common7\Tools\Launch-VsDevShell.ps1' '--' -Arch amd64 -HostArch amd64
 ```
 
 之后就可以使用 `vs` 来进入编译环境了。如果你没有在脚本中添加默认参数的话，启动时记得指定 `-Arch` 和 `-HostArch`，因为默认值是 *x86* 而非 *amd64*。你可以输入 `vs -?` 来查看有关这个脚本的更多信息。
@@ -80,9 +78,7 @@ scoop shim add vs 'path\to\vsbuild\Common7\Tools\Launch-VsDevShell.ps1' '--' -Ar
 然后输入 `gcc --version` 或 `clang --version` 测试是否成功。
 
 > [!Tip]- 环境变量未更新
-> 如果你在 VSCode 的集成终端中输入以上命令时报错，这可能是因为 *PATH* 变量并没有及时更新。你可以输入 `echo $env:PATH` 看看是不是这样。
->
-> 如果确实如此，你可能需要重启一下 VSCode 而不仅仅是重启终端，从而让编辑器重新读取环境变量。
+> 如果你在 VSCode 的集成终端中输入以上命令时报错，这可能是因为 *PATH* 变量并没有及时更新。你可以运行 `echo $env:PATH` 看看是不是这样。若确实如此，你可能需要重启一下 VSCode 而不仅仅是重启终端，从而让编辑器重新读取环境变量。
 
 #### 配置智能感知
 

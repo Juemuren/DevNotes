@@ -98,7 +98,7 @@ npx puppeteer browsers install chrome-headless-shell
 ```json
 // 自定义无头浏览器路径
 {
-  "executablePath": "path\\to\\chrome-headless-shell.exe"
+  "executablePath": "path/to/chrome-headless-shell.exe"
 }
 // Windows 系统建议先试试这个能不能用
 {

@@ -18,9 +18,9 @@ brew install fzf
 Fzf 原生只支持 bash、zsh 和 fish 的集成。要启用 Shell 集成，需把以下命令添加到配置文件里
 
 ```sh
-# bash ~\.bashrc
+# bash ~/.bashrc
 eval "$(fzf --bash)"
-# zsh ~\.zshrc
+# zsh ~/.zshrc
 source <(fzf --zsh)
 ```
 

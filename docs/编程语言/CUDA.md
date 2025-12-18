@@ -32,4 +32,19 @@ mamba install nvidia::cuda-toolkit==12.9.1
 
 ### 编辑器集成
 
-VSCode 上有一个 NVIDIA 的官方插件 [Nsight Visual Studio Code Edition](https://marketplace.visualstudio.com/items?itemName=NVIDIA.nsight-vscode-edition)，可以自行研究如何集成。
+VSCode 上有 NVIDIA 的官方 CUDA 插件 [Nsight Visual Studio Code Edition](https://marketplace.visualstudio.com/items?itemName=NVIDIA.nsight-vscode-edition)
+
+该插件是开箱即用的，没有任何设置。不过由于 CUDA 实际上只是拓展了 C++ 的语法，因此你还需要 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) 这个插件。尽管 C/C++ 插件已经被作为依赖一起安装了，但它还需要配置。通常修改 `.vscode/c_cpp_properties.json` 文件中的 `compilerPath` 字段就行了
+
+```json
+{
+  "configurations": [
+    {
+      // ...
+      "compilerPath": "path\\to\\miniforge3\\envs\\cuda\\Library\\bin\\nvcc.exe",
+      // ...
+    }
+  ],
+  "version": 4
+}
+```

@@ -13,12 +13,17 @@ mise use -g go@latest
 
 ### 编辑器集成
 
-VSCode 里有官方插件 [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go)
+VSCode 上有 Go 官方插件 [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go)，该插件几乎是开箱即用的，它会自动帮你安装需要的东西，不需要什么额外的设置。
 
-该插件几乎是开箱即用的，它会自动帮你安装需要的东西
+由于使用 mise 安装 go 时不会直接修改 **PATH** 环境变量，因此插件可能找不到已安装的 go。最简单的解决方式就是修改 `.vscode/settings.json` 文件
 
-由于使用 mise 安装 go 时不会直接修改本机的 **PATH** 环境变量，因此插件可能找不到 go 编译器。解决方案大概有这几种
+```json
+{
+  "go.goroot": "path/to/go/root"
+}
+```
 
-- 在 shell 中[激活 Mise](../环境管理器/Mise.md#激活)，然后通过 `code .` 打开项目
+或者使用如下方法之一
+
+- 先在 shell 中[激活 Mise](../环境管理器/Mise.md#激活)，然后通过 `code .` 打开项目
 - Mise [改为 *Shims* 模式](../环境管理器/Mise.md#激活)
-- 换别的方式安装 go 编译器

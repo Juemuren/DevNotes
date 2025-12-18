@@ -107,6 +107,7 @@ nav:
     - Xmake: 包管理器/Xmake.md
     - Vcpkg: 包管理器/Vcpkg.md
     - Uv: 包管理器/Uv.md
+    - Pnpm: 包管理器/Pnpm.md
   - 编辑器:
     - 编辑器: 编辑器/index.md
     - VSCode: 编辑器/VSCode.md

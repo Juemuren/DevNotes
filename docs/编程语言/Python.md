@@ -2,11 +2,7 @@
 
 ## 环境搭建
 
-目前我使用 Miniforge + VSCode 搭建开发环境，Miniforge 用于获取工具，而 VSCode 用于编辑代码。
-
-我有时也使用别的方法获取工具，比如 mise/uv。
-
-不是很推荐直接安装 Python，因为这样没办法管理运行时的版本。
+目前我使用 Miniforge + VSCode 搭建开发环境，Miniforge 用于获取工具，顺应人工智能和科学计算的相关传统，而 VSCode 用于编辑代码。同时我也使用 mise/uv + VSCode 来搭建环境，这比较适合 Web 项目。
 
 ### 安装工具链
 
@@ -67,7 +63,7 @@ uv add numpy
 
 需要安装插件 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 conda 环境，请选择正确的那个解释器
+新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 Conda 环境，请选择正确的那个解释器
 
 > [!Tip]- 无法识别 Conda 环境
 > 如果 VSCode 没有识别到 conda 环境的话，你可以参考 [Conda 编辑器集成](../环境管理器/Conda.md#编辑器集成) 来解决

@@ -76,7 +76,7 @@ mamba config set show_channel_urls true
 
 打开 VSCode，按下 `ctrl + ,`，然后输入 `conda` 会看到一个叫 `Python: Conda Path` 的设置，在里面填写 conda 可执行文件的路径。你可以在激活了 `base` 环境的 shell 里运行 `where.exe conda` 来获取路径。
 
-或者可以直接修改 VSCode 的 `settings.json` 文件，如果你知道怎么修改的话
+或者可以直接修改 VSCode 的 `settings.json` 文件
 
 ```json
 {

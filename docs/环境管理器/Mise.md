@@ -122,7 +122,7 @@ mise set NODE_ENV=production
 NODE_ENV = "production"
 ```
 
-有一些环境变量比较特殊，比如 `_.python.venv`。若将其设置为虚拟环境的路径，mise 就会在进入项目目录后自动激活虚拟环境，不过这样似乎无法通过 `deactivate` 退出虚拟环境了 `:(`
+有一些环境变量比较特殊，比如 `_.python.venv`。若将其设置为虚拟环境的路径，mise 就会在进入项目目录后自动激活虚拟环境 ~~不过这样似乎无法通过 `deactivate` 退出虚拟环境了~~
 
 ```toml
 [env]

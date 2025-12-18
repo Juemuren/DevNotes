@@ -1,5 +1,9 @@
 # Vcpkg
 
+## 简介
+
+Vcpkg 是一个 C/C++ 的包管理器，与 CMake 的集成度很高。
+
 ## 对比
 
 [vcpkg 与其它包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
@@ -110,8 +114,8 @@ vcpkg install
       "name": "default",
       "inherits": "vcpkg",
       "environment": {
-        "PATH": "path\\to\\msys2\\ucrt64\\bin;path\\to\\msys2\\usr\\bin;$penv{PATH}",
-        "VCPKG_ROOT": "path\\to\\vcpkg"
+        "PATH": "path/to/msys2/ucrt64/bin;path/to/msys2/usr/bin;$penv{PATH}",
+        "VCPKG_ROOT": "path/to/vcpkg"
       }
     }
   ]

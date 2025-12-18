@@ -38,7 +38,7 @@ rg pattern example.md
 ripgrep 会自动忽略部分文件，比如隐藏文件、`.gitignore` 中的文件等，你可以添加一些参数来搜索这些隐藏的文件
 
 ```sh
-# 包含 .gitignore 中的文件
+# 无视 .gitignore 等文件的要求
 rg pattern --no-ignore
 # 包含隐藏文件
 rg pattern --hidden
@@ -46,6 +46,15 @@ rg pattern --hidden
 rg pattern --text
 # 包含符号链接文件
 rg pattern --follow
+```
+
+除此之外 ripgrep 还有非常非常多的参数，个人比较常用的有以下几个
+
+```sh
+# -v 反向过滤文本
+rg -v pattern
+# -F 将 pattern 视为字面量而非正则表达式
+rg -F pattern
 ```
 
 ### 配置文件

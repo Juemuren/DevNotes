@@ -41,7 +41,7 @@ mise use -g bun
 ### 包管理器
 
 - npm `nodejs` 的官方包管理器
-- pnpm 改进的 `npm`，优点是更快和更节省硬盘空间
+- [pnpm](../包管理器/Pnpm.md) 改进的 `npm`，优点是更快和更节省硬盘空间
 - ncu 增加了 `npm` 没有的功能。它会检查 `package.json` 文件，然后列出所有可以更新的依赖，也可以加个 `-u` 参数一键更新。不过这个工具只更新 `package.json` 文件，还要重新运行 `npm install` 来安装新版本的依赖
 
 ### 静态检查和格式化
