@@ -50,7 +50,6 @@
 
 可以显著提升开发效率的工具
 
-- [fzf](Fzf.md) 模糊查找器，可以看作一个交互式的 grep。fzf 提供了 shell 集成方法，能够显著改善终端使用的体验。
 - [fd](Fd.md) 文件查找器，类似 find 但更现代
 - [tldr](Tldr.md) 命令手册，懒人福音
 - watchexec 可以监视文件，在其更改后自动重新运行命令
@@ -68,12 +67,8 @@
 
 一些不太好分类的工具都放到了这里
 
-- [bat](Bat.md) 显示文件内容，类似 cat 但更现代。支持语法高亮、显示行号等功能
-- [delta](Delta.md) 差异比较器，类似 diff 但更现代
 - [eza](Eza.md) 文件目录查看工具，类似 ls 但更现代
-- [cloc](Cloc.md) 统计代码行数，类似的工具还有 `tokei`
 - [dotter](Dotter.md) 点文件管理器。类似的工具还有 chezmoi
-- [ollama](Ollama.md) LLM 运行器，支持运行本地模型和云端的模型
 
 ### 玩具
 

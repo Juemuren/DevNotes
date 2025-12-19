@@ -1,12 +1,16 @@
 # Conda
 
-[Miniforge 仓库](https://github.com/conda-forge/miniforge)
+## 简介
+
+Conda 是一个多语言的**环境管理**和**包管理**器
+
+Conda 会创建一些互相隔离的虚拟环境，可以激活不同的虚拟环境并在其中安装软件包，这避免了全局安装导致的环境冲突。虚拟环境本身在系统中是全局存储的，因此可以在不同的项目中复用相同的环境。
 
 ## 对比
 
 [Miniforge 对比其它项目](https://conda-forge.org/docs/user/introduction/)
 
-*Miniforge* 相比 *Anaconda* 有一些区别。个人更推荐使用前者
+Conda 有多种实现，比如 *Miniforge* 和 *Anaconda*，个人更推荐使用前者
 
   1. 优势
     - 默认提供了更快速的包管理器 `mamba`，兼容所有常用的 `conda` 命令。当然 `conda` 在 *Miniforge* 里也是可用的
@@ -17,20 +21,20 @@
 
 ## 安装
 
-### 下载
-
 不建议用 scoop 安装。推荐使用[官方的安装脚本/程序](https://conda-forge.org/download/)。
 
 Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行
 
-### 初始化
+## 初始化和设置
 
-使用默认选项安装完后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。
+### Shell 集成
 
-打开该快捷方式会启动一个激活了 `base` 环境的 shell，输入以下命令可以初始化 shell，让其能在正常启动的 shell 里执行 `conda` 或 `mamba` 命令
+Conda 通过修改 **PATH** 来激活不同的虚拟环境，因此需要与 Shell 集成后才能正常使用。
+
+在 Windows 上使用默认选项安装完 *Miniforge* 后应该会有一个快捷方式，按下 `win` 后输入 `miniforge` 就能找到。该快捷方式会启动一个激活了 `base` 环境的 Shell，输入以下命令即可与 Shell 集成
 
 > [!Tip]- 找不到快捷方式
-> 如果你没有这个快捷方式，可以输入如下命令初始化 shell，效果是一样的
+> 如果你没有这个快捷方式，可以使用以下命令，效果是一样的
 >
 > ```pwsh
 > # 将 path\to\miniforge3 替换为你的安装路径
@@ -39,18 +43,18 @@ Windows 版本的安装程序会提供一个图形界面，按照指示安装即
 > ```
 
 ```sh
-# conda 初始化 powershell
+# conda 的 powershell 集成
 conda init powershell
-# conda 初始化 bash
+# conda 的 bash 集成
 conda init bash
-# mamba 初始化 bash 和 powershell
+# mamba 的 shell 集成
 mamba shell init
 ```
 
 > [!Warning]- 启动速度
-> 所谓初始化 shell，其实就是在 shell 的启动文件中添加了一些命令。
+> 启用 Shell 集成后，Shell 的启动文件中会添加上一些命令。
 >
-> 如前所述，`conda` 由于使用 **Python** 实现，速度非常慢，执行初始化命令要很长时间，会严重拖慢 shell 的启动速度。我在自己的机器上测试，conda 初始化后每次启动 shell 大概要多花费 *2* 秒左右；而 `mamba` 由于用 **C++** 实现，会快很多，大概只花了 *0.2* 秒。因此 `conda` 和 `mamba` 二者只需初始化一个即可，并且最好选择后者，能节省一点时间。
+> 如前所述，`conda` 由于使用 **Python** 实现，速度比较慢，执行这些命令要很长时间，会拖慢 Shell 的启动。我在自己的机器上测试，conda 集成后每次启动 Shell 大概要多花费 *2* 秒左右；而 `mamba` 由于用 **C++** 实现，会快很多，大概只花了 *0.2* 秒。因此 `conda` 和 `mamba` 二者只需集成一个，并且最好选择后者，这样能节省一点时间。
 
 重启 shell 并测试是否成功
 

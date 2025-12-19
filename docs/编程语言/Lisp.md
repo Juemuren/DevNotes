@@ -2,6 +2,8 @@
 
 ## 环境搭建
 
+我使用 Scoop + VSCode 搭建开发环境
+
 ### 获取工具链
 
 Lisp 的实现非常多。目前我使用的是 `SBCL` 这个解释器，可以通过 `scoop install sbcl` 安装
@@ -41,6 +43,6 @@ sbcl --load quicklisp.lisp
 
 ### 编辑器集成
 
-我使用 VSCode 来编写代码。目前我觉得最好的 Lisp 插件是 [Common Lisp](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)。该插件是开箱即用的，不过它只提供了语言服务，运行程序还需要使用命令行。
+目前我觉得 VSCode 上最好的 Lisp 插件是 [Common Lisp](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)。该插件是开箱即用的，不过它只提供了语言服务，运行程序还需要使用命令行。
 
 如果想通过点击按钮来运行程序，那么可以再安装 [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) 这个插件。

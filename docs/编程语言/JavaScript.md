@@ -2,6 +2,8 @@
 
 ## 环境搭建
 
+我使用 Mise + VSCode 搭建开发环境
+
 ### 获取工具链
 
 JavaScript 的运行时一般选择 *nodejs*，不过 *deno*、*bun* 也是不错的。浏览器的控制台里也可以运行 JavaScript 代码，如果只是想写点浏览器脚本发到 GreasyFork，甚至都没必要本地搭建环境
@@ -17,7 +19,7 @@ scoop install bun
 
 如果有管理运行时版本的需要，则可以安装专门的工具，比如 `nvm` 可以用来管理不同版本的 `nodejs`。不过我个人更喜欢 [mise](../环境管理器/Mise.md)，这是一个可以管理多种语言运行时版本的工具。对于 **JavaScript**，它支持管理 `nodejs`、`deno`、`bun` 的运行时版本
 
-如果选择 mise，则可以如下安装并使用不同版本的运行时
+mise 的以下命令可以安装并使用不同版本的运行时
 
 ```sh
 # 使用 node latest
@@ -34,7 +36,7 @@ mise use -g bun
 
 ### 编辑器集成
 
-我使用 VSCode 来编写代码。对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
+对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
 
 ## 命令行工具
 

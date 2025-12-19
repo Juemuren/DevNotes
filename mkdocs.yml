@@ -67,18 +67,13 @@ nav:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Just: 命令行工具/Just.md
-    - Fzf: 命令行工具/Fzf.md
     - Fd: 命令行工具/Fd.md
     - Tldr: 命令行工具/Tldr.md
     - Zoxide: 命令行工具/Zoxide.md
     - Starship: 命令行工具/Starship.md
     - Fastfetch: 命令行工具/Fastfetch.md
-    - Bat: 命令行工具/Bat.md
-    - Delta: 命令行工具/Delta.md
     - Eza: 命令行工具/Eza.md
-    - Cloc: 命令行工具/Cloc.md
     - Dotter: 命令行工具/Dotter.md
-    - Ollama: 命令行工具/Ollama.md
   - 文档工具:
     - 文档工具: 文档工具/index.md
     - Pandoc: 文档工具/Pandoc.md
@@ -92,7 +87,11 @@ nav:
     - ImageMagick: 文档工具/ImageMagick.md
   - 数据处理工具:
     - 数据处理工具: 数据处理工具/index.md
+    - Fzf: 数据处理工具/Fzf.md
     - Ripgrep: 数据处理工具/Ripgrep.md
+    - Delta: 数据处理工具/Delta.md
+    - Bat: 数据处理工具/Bat.md
+    - Cloc: 数据处理工具/Cloc.md
   - 环境管理器: 
     - 环境管理器: 环境管理器/index.md
     - Conda: 环境管理器/Conda.md
@@ -145,6 +144,7 @@ nav:
     - FPGA: 嵌入式开发/FPGA.md
   - 人工智能开发:
     - 人工智能开发: 人工智能开发/index.md
+    - Ollama: 人工智能开发/Ollama.md
 
 extra:
   generator: false

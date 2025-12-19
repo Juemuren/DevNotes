@@ -1,7 +1,5 @@
 # Doxygen
 
-[官方文档](https://doxygen.cn/manual/index.html)
-
 ## 简介
 
 Doxygen 是一个从源代码自动生成文档的工具，一般只用于 C/C++ 项目
@@ -17,13 +15,13 @@ scoop install doxygen
 
 Doxygen 会读取你提供的源代码文件，获取每个函数、类的相关信息，并且按照约定好的注释块格式获取接口的额外信息，然后生成文档。生成的文档包括 HTML、PDF 等格式，也可以自动生成类图、调用图，但需要已安装 Graphviz。
 
-Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。但别的语言大多都有官方工具来实现这个功能，且各语言社区基本上都更习惯遵守官方文档生成工具的注释风格。因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给其它语言做适配了，所有人都默认 Doxygen 就是用于 C/C++ 项目的。
+Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Objective-C、IDL、Java、PHP、Python、Fortran、D 以及 VHDL，并且可以通过一些配置来支持别的语言。但别的语言大多都有官方工具来实现这个功能，因此大多数用来快速生成 Doxygen 注释块的编辑器插件也都懒得给 C/C++ 外的语言做适配了。
 
 ### 注释约定
 
 如果使用 VSCode，建议下载插件 [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)。这个插件可以快速生成 Doxygen 支持的注释块。不过，如前所述，只支持 C/C++。
 
-Doxygen 支持多种风格的注释块，你可以去[官方文档](https://doxygen.cn/manual/docblocks.html#specialblock)中查看更多示例。我这里只列出我个人比较喜欢的注释块风格
+Doxygen 支持多种风格的注释块，你可以去[官方文档](https://www.doxygen.nl/manual/docblocks.html#specialblock)中查看更多示例。我这里只列出我个人比较喜欢的注释块风格
 
 #### 函数
 
@@ -138,11 +136,11 @@ EXTRA_PACKAGES = [UTF8]{ctex}
 ```ini
 # 是否使用 DOT 生成图片
 HAVE_DOT = YES
-# 启用类图
+# 生成类图
 CLASS_GRAPH = YES
-# 启用调用依赖图
+# 生成调用依赖图
 CALL_GRAPH = YES
-# 启用调用者依赖图
+# 生成调用者依赖图
 CALLER_GRAPH = YES
 ```
 
@@ -173,8 +171,6 @@ HTML 通常不需要额外处理，直接浏览器打开 `html/index.html` 就�
 
 ```sh
 cd html
-# 使用 Python 自带的 http 服务器
+# 运行 http 服务器
 python -m http.server
-# 或者使用 NodeJs 环境的 http 服务器
-npx http-server
 ```

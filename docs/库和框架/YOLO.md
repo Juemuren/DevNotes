@@ -177,7 +177,7 @@ yolo settings datasets_dir="datasets"
 > [!Tip]- 无法激活环境
 > 如果无法在 VSCode 的集成终端中激活环境，可能有如下原因
 >
-> - 未初始化 shell。可参考 [Conda 初始化](../环境管理器/Conda.md#初始化) 来解决
+> - 未初始化 Shell。可参考 [Conda Shell 集成](../环境管理器/Conda.md#shell-集成) 来解决
 > - VSCode 无法识别 Conda 环境。可参考 [Conda 编辑器集成](../环境管理器/Conda.md#编辑器集成) 来解决
 
 之后 YOLO CLI 就会从 `datasets` 中去寻找数据集，从网上下载的示例数据集也会保存在这个目录里。

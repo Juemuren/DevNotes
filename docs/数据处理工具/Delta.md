@@ -2,16 +2,14 @@
 
 ## 简介
 
-delta 是一个差异比较器，或者更准确地说是一个语法高亮分页器
+delta 是一个语法高亮分页器，可用于 git/diff 等命令的输出，且可与 Git 集成
 
 ## 对比
 
-delta 类似 diff，但前者更现代，个人感觉主要区别如下
+尽管看上去 delta 类似 diff，但两者区别很大。delta 实际上并没有实现**比较差异**这一基本功能，它调用系统已有的 diff 并美化了输出。对比原本的输出，delta 增加了以下功能
 
 - 可以对代码进行高亮，与 bat 同款
 - 有多种主题颜色，可以高度定制
-
-由于我更习惯使用 VSCode 自带的差异比较器，所以其实 `diff` 和 `delta` 我都很少使用 `:)`
 
 ## 安装
 
@@ -24,7 +22,7 @@ scoop install delta
 
 ### Git 集成
 
-diff 是 git 默认使用的差异比较器。可以让 git 默认使用 delta 作为差异比较器
+可以让 git 默认使用 delta 作为语法高亮分页器
 
 ```sh
 git config --global core.pager delta

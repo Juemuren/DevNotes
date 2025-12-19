@@ -23,7 +23,7 @@ scoop install starship
 
 ### Shell 集成
 
-Starship 支持非常多的 Shell，你可以在[官方指南](https://starship.rs/zh-CN/guide)中找到集成方法。
+Starship 支持非常多的 Shell，你可以在[官方指南](https://starship.rs/guide)中找到集成方法。
 
 对于 Pwsh，添加如下命令到 `$PROFILE` 里
 
@@ -35,9 +35,9 @@ Invoke-Expression (&starship init powershell)
 
 使用 `starship config` 可以打开配置文件。
 
-官网上有很多的[预设](https://starship.rs/zh-cn/presets/)，还有详细的[配置说明](https://starship.rs/zh-CN/config/)。建议先去看看有没有喜欢的预设，复制过来后再对着配置说明自行修改。
+官网上有很多的[预设](https://starship.rs/presets/)，还有详细的[配置说明](https://starship.rs/config/)。建议先去看看有没有喜欢的预设，复制过来后再对着配置说明自行修改。
 
-我用的配置文件已公开在 [Github](https://github.com/Juemuren/.dotfiles)。它是在 [Catppuccin Powerline Preset](https://starship.rs/zh-cn/presets/catppuccin-powerline) 这个预设的基础上修改的，效果如下
+我用的配置文件已公开在 [Github](https://github.com/Juemuren/.dotfiles)。它是在 [Catppuccin Powerline Preset](https://starship.rs/presets/catppuccin-powerline) 这个预设的基础上修改的，效果如下
 
 ![Starship](../images/starship.png)
 
