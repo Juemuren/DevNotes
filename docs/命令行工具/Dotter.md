@@ -8,9 +8,7 @@ dotter 是一个用 Rust 编写的点文件管理器
 
 在点文件管理器中，更权威的应该是 `chezmoi` 这个工具
 
-我个人感觉 chezmoi 更全能，但 dotter 相对更易用
-
-chezmoi 官方文档里有[与各种点文件管理器的比较](https://www.chezmoi.io/comparison-table/)，不过缺少了 dotter，可能是因为后者比较新
+chezmoi 官方文档里虽有[与各种点文件管理器的比较](https://www.chezmoi.io/comparison-table/)，但缺少了 dotter。个人感觉 chezmoi 更全能，但 dotter 相对更易用
 
 ## 安装
 

@@ -6,13 +6,11 @@ WSL 是 Windows 下的 Linux 子系统，提供了原生而非移植的 Linux �
 
 WSL 在虚拟机里运行 Linux 内核，因此理论上所有 Linux 能运行的软件 WSL 都能运行。
 
-WSL 提供了多种 Linux 发行版，目前能直接安装的就有 19 种，可以通过 `wsl -l -o` 查看。
-
 ## 安装
 
 [官方安装教程](https://learn.microsoft.com/zh-cn/windows/wsl/install)
 
-在较新的 Windows 机器上安装 WSL 非常简单。
+在较新的 Windows 机器上安装 WSL 非常简单
 
 ```sh
 # 下载默认的发行版
@@ -21,7 +19,7 @@ wsl --install
 wsl --install -d Ubuntu-24.04
 ```
 
-你可以使用以下命令查看哪些可用的发行版
+WSL 提供了多种 Linux 发行版，一般来说选择 Ubuntu 就行
 
 ```sh
 # 查看所有可下载的发行版
@@ -46,9 +44,9 @@ wsl --shutdown
 WSL 还有更高级的用法，比如可以像 `sh` 一样执行单条命令
 
 ```sh
-# 用 WSL 的默认发行版执行 date 命令
+# 用默认发行版运行命令
 wsl date
-# 执行 uname -a 命令
+# 可以添加参数
 wsl uname -a
 ```
 
@@ -61,6 +59,6 @@ WSL 本质上是个虚拟机，而虚拟机的网络连接方式略微有点复�
 我目前的解决方案大概如下
 
 - 先试试网络代理使用 TUN 模式能不能解决，大多数情况都是可行的
-- 还有问题就试试更改 WSL Settings，比如网络模式选择 Mirrored，并开启主机地址回环
+- 还有问题就试试更改 WSL Settings，比如网络模式选择 `Mirrored`，并开启`主机地址回环`
 
-不过，这些方法偶尔还是会出现问题。目前我找不到完美的解决方案，改善网络环境 ~~没有暗指墙~~ 应该是个最好的选择。
+不过，这些方法偶尔还是会出现问题。目前我找不到完美的解决方案，改善网络环境应该是个最好的选择。

@@ -64,15 +64,6 @@ VSCode 是一个开源的代码编辑器，基于 Web 且有着非常强大的�
     - **Azure Repos** 远程浏览和编辑 Azure 仓库
   - **Remote Explorer** 提供了一个视图显示可连接的远程机器列表，让 *Remote - SSH* 和 *Remote - Tunnels* 用起来更方便
 
-### 格式支持
-
-- **Office Viewer** 支持在 VSCode 里查看非常多种的格式，包括 docx、xlsx、pdf、ttf、zip 等
-- **Mermaid Chart** 提供了 Mermaid 的语言服务
-- **PlantUML** 提供了 PlantUML 的语言服务
-- **YAML** 提供了 YAML 的语言服务
-- **Even Better TOML** 提供了 TOML 的语言服务
-- **Jupyter** 提供了对交互式编程笔记本的支持
-
 ## 配置文件管理
 
 启用太多插件可能会导致一些问题，比如占用内存变大、启动变慢等。但每打开一个不同的项目就要手动禁用、启用插件又过于麻烦。配置文件的出现就是为了解决这个问题的，不仅支持为不同的项目配置不同的插件，还可以配置不同的设置、键盘快捷方式、任务、代码片段等，功能非常强大

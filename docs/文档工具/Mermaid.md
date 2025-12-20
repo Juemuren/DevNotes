@@ -4,7 +4,7 @@
 
 Mermaid 是一个用 JavaScript 实现的图表绘制工具，可以通过简单的代码绘制图表。具体的语法可查阅[官方文档](https://mermaid.js.org/intro/)
 
-mermaid 这个工具流行的主要原因就是可以把代码嵌入 MD 文档中。毕竟大多数时候 MD 都会转为 HTML，而 mermaid 恰好有 JavaScript 实现，这使得客户端可以自行完成图片的渲染。比如 Github 的 MD 就支持渲染内嵌的 mermaid 代码，大多数 LLM（比如 DeepSeek）都可以用 mermaid 来生成和展示图片。
+mermaid 流行的主要原因就是可以把代码嵌入 MD 文档中。毕竟大多数时候 MD 都会转为 HTML，而 mermaid 恰好有 JavaScript 实现，这使得客户端可以自行完成图片的渲染。Github 的 MD 就支持渲染内嵌的 mermaid 代码，LLM 也常用 mermaid 来生成和展示图片。
 
 ```mermaid
 sequenceDiagram
@@ -61,22 +61,29 @@ sequenceDiagram
   B ->> B: 把 HTML 中的 mermaid 渲染为 SVG
 ```
 
-`mermaid` 还有个 [CLI 工具](https://github.com/mermaid-js/mermaid-cli)，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
+mermaid 提供了 [CLI 工具](https://github.com/mermaid-js/mermaid-cli)，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
 
-后面只介绍 mermaid-cli 的安装和使用。而对于客户端渲染的需要，大多数 *静态网站生成器* 和 *前端框架* 应该都支持与 mermaid 集成，你可以自行研究。
+mermaid 还有 VSCode 拓展 [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart)，提供了语言服务、本地预览和导出等功能。
 
 ## 对比
 
-除了 Mermaid 外，还有一些能够用代码生成图表的工具，但我个人认为 Mermaid 是最好用的
+除了 Mermaid 外，还有一些能够用代码生成图表的工具，比如 `plantUML`，两者有一些差别
 
-`plantUML` 是另一种绘制 UML 图表的工具，同样通过代码生成图表。plantUML 图的种类似乎比 Mermaid 更丰富一点，但由于是用 Java 实现的，所以体验和生态都没有 Mermaid 好。plantUML 一般用来本地生成图片，然后再把图片插入文档；Mermaid 更适合直接提供代码，让接收者自行渲染，但它也能直接在本地生成图片。
+- plantUML 的语法和 Mermaid 不一样，但两者都很简单
+- plantUML 图的种类和 Mermaid 不完全一样，但两者都很丰富
+- plantUML 的体验和生态没有 Mermaid 好。plantUML 使用 Java 实现，无法只提供代码让接收者自行渲染
 
-让 *代码在客户端进行渲染* 的好处是显而易见的。
+对于最后一点，让**代码在客户端进行渲染**的好处是显而易见的
 
 - 集成方便。对于 Web 应用，不需要配置后端服务；对于文档，不需要先本地生成图片再进行插入
-- 方便自定义。尽管代码是一样的，但 [GitHub 上的图片](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md)样式就和本网站上的样式不太一样，并且 GitHub 还给图片增加了一些功能，比如缩放、移动等。同时这也能够实现真正的暗黑模式，而不是仅粗暴地反转图片颜色。
+- 可自定义。客户端能够对代码进行自定义渲染，这允许实现真正的暗黑模式，而非粗暴地反转图片颜色。[开头的图片在 GitHub 上](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md)就和本网站上的不太一样，尽管代码是相同的。
 
 ## 安装
+
+> [!Note] 只介绍 CLI 工具
+> 本文只介绍 `mermaid-cli` 的安装和使用。
+>
+> 对于客户端渲染，大多数 *静态网站生成器* 和 *前端框架* 都支持与 mermaid 集成，你可以阅读对应工具的文档。
 
 目前 mermaid-cli 的安装非常麻烦，因为没有打包成单个二进制文件，必须安装 NodeJS 运行时并通过 npm 下载。有能力的或者感兴趣的可以看看 [GitHub Issues](https://github.com/mermaid-js/mermaid-cli/issues/467) 来帮忙解决这个问题
 
