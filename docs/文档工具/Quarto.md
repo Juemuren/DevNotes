@@ -18,7 +18,7 @@ scoop bucket add extras
 scoop install quarto
 ```
 
-Quarto 里捆绑了一个 pandoc，所以体积会相对大点
+Quarto 里捆绑了 `pandoc`/`typst`/`deno`/`dart` 等工具，所以体积会相对大点
 
 ## 使用
 

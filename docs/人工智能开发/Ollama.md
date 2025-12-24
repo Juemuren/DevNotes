@@ -11,11 +11,7 @@ ollama 是一个 LLM 运行器，可以把 LLM 下载到本地运行，也可以
 scoop install ollama
 ```
 
-然后可以修改一下环境变量，这个环境变量决定了模型下载到哪里
-
-```sh
-setx OLLAMA_MODELS path/to/models
-```
+然后可以修改一下 `OLLAMA_MODELS` 环境变量，这个环境变量决定了模型保存到哪里
 
 ## 使用
 

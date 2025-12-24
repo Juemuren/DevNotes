@@ -58,22 +58,9 @@ vcpkg add port <package-name>
 vcpkg install --triplet=<target-triplet> --host-triplet=<host-triplet>
 ```
 
-或者提前设置环境变量
+或者提前设置 `VCPKG_DEFAULT_HOST_TRIPLET` 和 `VCPKG_DEFAULT_TRIPLET` 环境变量，作为默认主机 triplet 和默认目标 triplet。有了环境变量后就只需运行 `vcpkg install` 即可
 
-```sh
-# 设置默认主机 triplet
-setx VCPKG_DEFAULT_HOST_TRIPLET "x64-mingw-dynamic"
-# 设置默认目标 triplet
-setx VCPKG_DEFAULT_TRIPLET "x64-mingw-dynamic"
-```
-
-之后每次安装都只需要
-
-```sh
-vcpkg install
-```
-
-该命令会将文件安装到 `vcpkg_installed`，这和 **nodejs** 的 `node_modules` 很像。
+该命令会将文件安装到 `vcpkg_installed`
 
 ### 构建项目
 

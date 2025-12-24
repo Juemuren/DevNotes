@@ -74,6 +74,7 @@ nav:
     - Fastfetch: 命令行工具/Fastfetch.md
     - Eza: 命令行工具/Eza.md
     - Dotter: 命令行工具/Dotter.md
+    - Git: 命令行工具/Git.md
   - 文档工具:
     - 文档工具: 文档工具/index.md
     - Pandoc: 文档工具/Pandoc.md
@@ -138,6 +139,8 @@ nav:
     - GUI: 应用开发/GUI.md
     - CLI: 应用开发/CLI.md
     - API: 应用开发/API.md
+  - 游戏开发:
+    - 游戏开发: 游戏开发/index.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md
     - MCU: 嵌入式开发/MCU.md

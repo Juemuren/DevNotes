@@ -85,7 +85,7 @@ XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语
 
 #### 专一格式
 
-只能处理一种格式**命令行工具**
+只能处理一种格式的**命令行工具**
 
 - jq 命令行 JSON 处理器
 - jid 基于 jq 的交互式 JSON 处理器
@@ -94,7 +94,7 @@ XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语
 - taplo 命令行 TOML 处理器
 - xmlstarlet 命令行 XML 处理器
 
-为一种格式提供了语言服务的 **VSCode 拓展**
+为一种格式提供了语言服务的 **VSCode 拓展**。VSCode 已经自带了对 JSON 的支持
 
 - Rainbow CSV 提供了 CSV 的语言服务
 - Even Better TOML 提供了 TOML 的语言服务

@@ -80,7 +80,7 @@ mermaid 还有 VSCode 拓展 [Mermaid Chart](https://marketplace.visualstudio.co
 
 ## 安装
 
-> [!Note] 只介绍 CLI 工具
+> [!Note]+ 只介绍 CLI 工具
 > 本文只介绍 `mermaid-cli` 的安装和使用。
 >
 > 对于客户端渲染，大多数 *静态网站生成器* 和 *前端框架* 都支持与 mermaid 集成，你可以阅读对应工具的文档。

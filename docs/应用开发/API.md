@@ -88,7 +88,7 @@ API 设计方式有很多，在实践中通常会使用 `RESTful` 或 `GraphQL` 
 
 实现这些范式可以使用框架。基本上主流的编程语言都有实现 `RESTful` 的框架，而 `GraphQL` 比较新，目前好用的框架比较少。
 
-### 更多 API 技术
+### 更多后端技术
 
 我对后端开发了解不多，很多技术可以自行了解
 
@@ -107,12 +107,16 @@ API 设计方式有很多，在实践中通常会使用 `RESTful` 或 `GraphQL` 
 
 由于 API 开发可选的语言很多，所以下面的框架/库并不局限于一种语言。有些框架/库可能提供了多个语言的接口，有些可能只有特定语言才可以使用。对于那些编程语言各自的通用框架/库/工具，由于它们并不专属于 API 开发，因此不会列举在这里，可以在[编程语言](../编程语言/index.md)章节中查看对应的语言。
 
-### API 框架
+### 后端框架
 
 - Express 用来实现 RESTful API 的 JavaScript 框架
 - FastAPI 用来实现 RESTful API 的 Python 框架
 - Apollo 用来实现 GraphQL API 的 JavaScript 框架，分为 Server 和 Client，后者用来在前端调用 GraphQL 接口
 - Gin 用来实现 RESTful API 的 Go 框架
+
+### 接口生成器
+
+- openapi-generator 代码生成工具，可以根据 API 规范自动生成客户端、服务端和测试的代码
 
 ### 数据库映射
 

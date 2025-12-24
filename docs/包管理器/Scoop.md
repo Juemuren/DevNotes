@@ -12,9 +12,7 @@ Scoop 用一个 *JSON* 文件指定了软件从哪里下载、如何安装、如
 
 [和 Chocolatey、Winget 的对比](https://github.com/ScoopInstaller/Scoop/wiki/Chocolatey-and-Winget-Comparison)
 
-Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独在一个目录里安装，附带了所有的运行时。而 Linux 系统为了节省空间，程序都是动态链接的，不会单独在一个目录里安装，而是散布在系统的各个角落，并疯狂地复用系统的运行时。所以 Windows 系统是可以手动安装软件的，但 Linux 基本上不可能不使用包管理器。
-
-虽然说 Windows 平台不是那么需要包管理器，但 Scoop 确实提供了一些好处，具体地说
+Windows 系统中软件的依赖通常不会很复杂，因为它们安装在一个独立的目录里，并附带了所有的运行时。所以 Windows 系统不是特别需要包管理器，手动安装软件也是很常见的行为。尽管如此，Scoop 还是有很多好处，比如
 
 - 让安装、卸载更方便了。不需要上官网下载文件，不需要和安装程序反复交互，使用 Scoop 只需运行一个命令就可以安装软件。同样的，卸载也不需要和卸载程序反复交互，只需要一行命令。
 - 让软件更新变得自动化。Scoop 可以列出所有安装的软件，能够检查是否有软件可以更新，还可以一个命令更新所有可更新软件，不需要每个软件都手动去官网下载和更新。
@@ -28,12 +26,10 @@ Windows 系统软件依赖通常不会很复杂，因为软件通常都是单独
 根据 Scoop 的原理，有一些软件很适合用 Scoop 安装
 
 - 没办法自我更新的软件
-- 可执行文件比较少的或完全静态链接的软件
 - 可以便携安装，不会修改系统其余部分的软件
+- 不需要同时使用多个版本的软件
 
-我个人只使用 Scoop 安装命令行工具和字体。常用的命令行工具一般都会在官方的 *main bucket* 里，而这个桶默认就已经添加了。而字体不在官方主桶里，需要先运行 `scoop bucket add nerd-fonts` 添加桶，再安装字体。
-
-有图形界面的程序我还是更习惯手动安装。当然也可以添加 *extra bucket* 然后用 Scoop 来安装。
+我个人只使用 Scoop 安装命令行工具和字体。常用的命令行工具一般都会在官方的 *main bucket* 里，而这个桶默认就已经添加了。而字体不在官方主桶里，需要先运行 `scoop bucket add nerd-fonts` 添加桶，再安装字体。有图形界面的程序我更习惯手动安装，当然也可以添加 *extra bucket* 然后用 Scoop 来安装。
 
 ## 安装
 
@@ -53,8 +49,8 @@ irm get.scoop.sh -outfile 'install.ps1'
 Scoop 自身会使用一些工具，缺失它们会导致 Scoop 功能不全。你可以运行 `scoop checkup` 看看缺少什么
 
 - `scoop install git` Scoop 中的桶使用 Git 进行管理，如果要更新或添加其它桶则必须安装 Git。部分工具安装时也要使用 Git，比如 `vcpkg`
-- `scoop install 7zip dark innounp` Scoop 安装一些软件时要用到这些工具
-- `scoop install sudo` Scoop 添加服务等操作则需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 -> 高级 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/)
+- `scoop install 7zip dark innounp` Scoop 安装部分软件时要用到这些工具
+- `scoop install sudo` Scoop 添加服务等操作需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 -> 高级 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/)
 
 ### 增强工具
 
@@ -115,6 +111,9 @@ scoop shim add msedge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.
 ```
 
 你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有拓展名为 `exe` 和 `ps1` 的 *shim* 才会被列出来。
+
+> [!Tip]- 管理复杂脚本
+> 对于需要多行代码的复杂脚本，不建议使用 Scoop 进行管理。在 **PATH** 中新增一个目录（比如 `~/.local/bin`）并将所有脚本保存到其中会更好。
 
 ### 创建自己的桶
 
