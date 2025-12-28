@@ -75,6 +75,8 @@ nav:
     - Eza: 命令行工具/Eza.md
     - Dotter: 命令行工具/Dotter.md
     - Git: 命令行工具/Git.md
+  - 网络工具:
+    - 网络工具: 网络工具/index.md
   - 文档工具:
     - 文档工具: 文档工具/index.md
     - Pandoc: 文档工具/Pandoc.md

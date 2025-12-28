@@ -6,7 +6,13 @@ PDFcpu 是一个用 Go 编写的 PDF 处理器
 
 ## 对比
 
-类似的工具有很多，比如 `qpdf`、`xpdf`、`pdftk`、`GhostScript` 等
+类似的命令行 PDF 处理工具有很多，比如
+
+- `qpdf`
+- `xpdf`
+- `pdftk`
+- `poppler`
+- `GhostScript`
 
 ## 安装
 

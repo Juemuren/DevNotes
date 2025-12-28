@@ -167,10 +167,10 @@ make
 
 HTML 通常不需要额外处理，直接浏览器打开 `html/index.html` 就行。
 
-不过更推荐的方式是运行本地 http 服务器，这可以防止出现 CORS 导致的样式错误
+不过更推荐的方式是运行本地 HTTP 服务器，这可以防止出现 CORS 导致的样式错误
 
 ```sh
 cd html
-# 运行 http 服务器
+# 运行 HTTP 服务器
 python -m http.server
 ```

@@ -4,6 +4,8 @@
 
 文档（在本文应该称为电子文档）是这个信息时代里每个人都会接触到的事物。对于开发者而言，有必要认识几种常见的文档格式，并了解一些有关文档的工具。
 
+除了传统意义上的文档外，图片、音视频等广义上的文档也放在了本章里。
+
 ## 格式
 
 ### Markdown
@@ -105,7 +107,7 @@ PPTX 将内容以幻灯片的方式进行展示，一般用于现场演示。
 >
 > 因此虽然 PPT/PPTX 现在成为了幻灯片的同义词，但它始终只是一种能进行幻灯片演示的格式。
 >
-> 如果你只是需要以幻灯片的方式展示内容，那么你不一定要选择 PPTX。HTML 同样能进行幻灯片演示，而且效果并不差。
+> 如果你只是需要以幻灯片的方式展示内容，那么你不一定非得选择 PPTX。HTML 同样能进行幻灯片演示，而且效果并不差。
 
 PPTX 和 DOCX 的实现类似，本质是个包含了 XML 等各种文件的压缩包。
 
@@ -113,37 +115,41 @@ PPTX 通常要使用别的软件进行编辑，比如 **Microsoft PowerPoint** �
 
 ## 工具
 
-### 文档阅读
+### 内容查阅
 
-用于阅读文档的工具
+用于阅读文档、查看图片、播放多媒体的工具
 
-- glow 终端 Markdown 渲染器，功能非常有限，但至少可以让阅读源代码更舒服一点
+- glow 终端 Markdown 渲染器，功能非常有限，但至少比直接阅读源代码更舒服一点
 - SumatraPDF 开源的 PDF 阅读器，非常轻量和快速，没有臃肿的功能
+- ImageGlass 开源的图片查看器，提供了简易的编辑功能
+- VLC 开源的多媒体播放器
 
 ### 格式转换
 
-用来在不同文档格式之间进行转换的工具
+用来在不同格式之间进行转换的工具
 
-- [Pandoc](Pandoc.md) 文档格式转换工具，非常强大，支持非常多的格式互相转换，包括 Markdown、LaTeX、Typst、DOCX、HTML、PDF、PPTX 等。
-- [Marp](Marp.md) 一种专门将 Markdown 转换为幻灯片的工具
-- markitdown 微软官方的做的一个把各种格式的文件转为 Markdown 的工具，甚至可以处理 YouTube 链接 ~~实际上只是把字幕文件转化为 Markdown 文件，不要以为能够一帧一帧地转换视频内容~~ 。在 LLM 盛行的当下非常适合炒作这个工具 `:)`，可以用它把所有东西都转成 Markdown 然后喂给 AI。
+- [Pandoc](Pandoc.md) 文档转换工具，支持多种格式，包括 Markdown、LaTeX、Typst、DOCX、HTML、PDF、PPTX 等
+- [Marp](Marp.md) 用 Markdown 制作幻灯片的工具
+- MarkItDown 微软开源的将各种格式转为 Markdown 的工具
+- Tesseract 将图片转为文字的工具，使用 OCR 技术，可识别多种语言
+- OCRmyPDF 在 PDF 上添加文本层，OCR 引擎为 Tesseract
 
-### 图表生成
+### 图片生成
 
-可以用来生成表格/图片/视频的工具
+使用代码生成图片/视频的工具
 
-- [Mermaid](Mermaid.md) 一个基于 JavaScript 的图表绘制工具，可以通过简单的代码绘制图表。类似的工具还有 `plantUML`，不过后者基于 Java，生态不如前者好
-- Graphviz 代码生成图片的工具，`plantUML` 的底层就使用了这个工具
-- QRencode 文本转二维码的命令行工具
-- Manim 用来生成数学动画的 Python 库，最初是由 3blue1brown 制作的，现在更推荐使用社区维护的版本
-- vhs 终端录像生成工具。和 `script`、`asciinema` 等工具不同，vhs 会根据你提供的要求，比如输入的命令、打字速度、画面大小等自动生成录像。这非常适合用来制作 CLI 应用的演示视频，毕竟自己手打命令的话，不小心操作失误可能就得重新录制。
+- [Mermaid](Mermaid.md) 一个基于 JavaScript 的图表绘制工具，可以通过简单的代码绘制图表。类似的工具还有 `plantUML`
+- Graphviz 代码生成图片的工具，`plantUML` 就使用它作为底层引擎
+- QRencode 二维码生成工具，可识别出给定的文本
+- Manim 用来生成数学动画的 Python 库，最初由 3blue1brown 制作，现在更推荐使用社区维护的版本
+- vhs 终端录像生成工具。和 `script`、`asciinema` 等工具不同，vhs 可根据要求自动生成录像
 
-### 可执行文档
+### 文学编程
 
 让文档里能够嵌入可执行代码的工具。这些工具通常都会使用自定义的文件格式。
 
-- [Jupyter](../编辑器/Jupyter.md) 交互式编程笔记本，功能非常强大。我把它放入了 *编辑器* 这一章节。
-- [Quarto](Quarto.md) 基于 Pandoc 和 Jupyter 构建的开源科技出版系统。
+- [Jupyter](../编辑器/Jupyter.md) 交互式编程笔记本，功能非常强大。我把它放入了 *编辑器* 这一章节
+- [Quarto](Quarto.md) 基于 Pandoc 和 Jupyter 构建的开源科技出版系统
 
 ### 代码文档生成器
 
@@ -165,5 +171,6 @@ PPTX 通常要使用别的软件进行编辑，比如 **Microsoft PowerPoint** �
 
 可以用来对一些格式进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
 
-- [PDFcpu](PDFcpu.md) 一个对 PDF 文档进行各种处理的命令行工具。类似的还有 `qpdf`、`xpdf`、`pdftk`、`GhostScript`。
-- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`。
+- [PDFcpu](PDFcpu.md) 一个对 PDF 文档进行各种处理的命令行工具。类似的还有 `qpdf`、`xpdf`、`pdftk`、`poppler`、`GhostScript`
+- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`
+- FFmpeg 一种可以对音视频进行各种处理的命令行工具
