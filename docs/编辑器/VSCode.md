@@ -14,55 +14,62 @@ VSCode 是一个开源的代码编辑器，基于 Web 且有着非常强大的�
 
 ### 本地化
 
-- **Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code** 中文本地化插件
+- [Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans) 中文本地化插件
 
 ### 实用
 
-- **EditorConfig for VS Code** 可以在不同的编辑器间使用相同的配置，包括缩进格式、编码方式、行尾序列等。如果参与开源项目的协作，通常都会要求安装这个插件。
-- **Project Manager** 为 VSCode 提供了一个项目管理视图
-- **Todo Tree** 识别代码中所有类似 `TODO`、`FIXME` 这样的特殊注释，并在一个视图中显示
-- **Bookmarks** 代码书签。在一个视图中显示收藏的代码
-- **Vim** 提供类似 Vim 的无鼠标编辑体验
+- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) 可以在不同的编辑器间使用相同的配置，包括缩进格式、编码方式、行尾序列等。如果参与开源项目的协作，通常都会要求安装这个插件。
+- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) 可以对项目进行分类，并提供了一个项目管理视图
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) 识别代码中所有类似 `TODO`、`FIXME` 这样的特殊注释，并在一个视图中显示所有待办事项
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) 可以为代码添加书签，并在一个视图中展示
+- [VSCode Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) 将 Neovim 作为后端，提供强大的无鼠标编辑体验
 
 ### 外观
 
-- **CodeSnap** 生成好看的代码截图
-- **Error Lens** 把错误/警告/信息等直接显示在代码的同一行，而不是要打开别的面板才能查看
-- **ident-rainbow** 给缩进高亮，让你能够清楚地看出缩进层数
-- **Output Colorizer** 为 VSCode 的输出面板和 log 文件着色
+- [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap) 生成好看的代码截图
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) 把错误/警告/信息等直接显示在代码的同一行，而不是要打开别的面板才能查看
+- [ident-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) 给缩进高亮，让你能够清楚地看出缩进层数
+- [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer) 为 VSCode 的输出面板和 log 文件着色
 
 ### 主题
 
 美化就是生产力！
 
-- **Material Icon Theme** 比默认图标更好看（主观）的图标
-- **One Dark Pro** 比默认主题更好看（主观）的主题
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 比默认文件图标更好看（主观）的文件图标
+- [Material Product Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-product-icons) 比默认产品图标更好看的（主观）的产品图标
+- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) 比默认颜色主题更好看（主观）的颜色主题
 
 ### 文档编写
 
-- **Code Spell Checker** 拼写检查。虽然只检查英文的拼写，但仍然很有用，尤其是在编写文档的时候。
-- **Foam** 拓展了 Markdown 的功能，新增**双链**、**嵌入**、**图谱**等特性，类似 Obsidian，使得可以用 Markdown 打造个人知识库。
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 拼写检查。虽然只检查英文的拼写，但仍然很有用，尤其是在编写文档的时候。
+- [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) 拓展了 Markdown 的功能，新增**双链**、**嵌入**、**图谱**等特性，类似 Obsidian，使得可以用 Markdown 打造个人知识库。
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) 提供实时的 Markdown 静态检查和简单的 Markdown 格式化
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 全面的 Markdown 增强，提供了创建/更新目录、数学公式自动补全、常用快捷键等功能
+- [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable) 增强了 Markdown 的表格功能，包括快速插入行/列、格式化/美化表格、将 CSV/TSV 转为 Markdown 表格等
+- [Markdown Image](https://marketplace.visualstudio.com/items?itemName=hancel.markdown-image) 增强了 Markdown 的图片功能，可以方便地将图片插入 Markdown 文档
+- [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) 为 LaTeX 提供了编辑器支持
+- [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 为 Typst 提供了编辑器支持
 
 ### 版本控制
 
 我平常只使用 VSCode 自带的 Git 拓展以及命令行 Git 操作，很少使用 Git 相关插件
 
-- **Git Graph** 可以图形的方式显示 Git 提交历史，并支持丰富的操作。
-- **Gitlens** 提供了非常多基于 Git 的功能，感觉有点臃肿。
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) 可以图形的方式显示 Git 提交历史，并支持丰富的操作。
+- [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) 提供了非常多基于 Git 的功能，感觉有点臃肿。
 
 ### 远程开发
 
 远程开发似乎是 VSCode 的最大优势，也是很多人看中 VSCode 的原因。不过我个人很少用到远程开发
 
-  - **Remote Development** 包含了下面 4 个拓展的拓展包
+  - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) 包含了下面 4 个拓展的拓展包
     - **WSL** 支持在 VSCode 中打开 WSL 中的文件夹
     - **Dev Containers** 支持在 VSCode 中打开容器中的文件夹
     - **Remote - SSH** 支持在 VSCode 中通过 SSH 连接到远程机器
     - **Remote - Tunnels** 支持在 VSCode 中通过 Tunnel 连接到远程机器
-  - **Remote Repositories** 包含了下面 2 个拓展的拓展包
+  - [Remote Repositories](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-repositories) 包含了下面 2 个拓展的拓展包
     - **GitHub Repositories** 远程浏览和编辑 GitHub 仓库。如果某些仓库特别大不适合 clone 到本地的话，这个插件非常方便
     - **Azure Repos** 远程浏览和编辑 Azure 仓库
-  - **Remote Explorer** 提供了一个视图显示可连接的远程机器列表，让 *Remote - SSH* 和 *Remote - Tunnels* 用起来更方便
+  - [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) 提供了一个视图显示可连接的远程机器列表，让 *Remote - SSH* 和 *Remote - Tunnels* 用起来更方便
 
 ## 配置文件管理
 

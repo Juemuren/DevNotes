@@ -4,39 +4,72 @@
 
 数据处理是这个信息时代中的一项重要活动。对于开发者而言，有必要认识一些常见的数据格式，并学会使用工具进行数据处理。
 
-相比于二进制数据，本文更关注文本数据。因此之后介绍的数据格式和相关工具都主要和文本数据有关。
+相比于二进制数据，本文更关注文本数据。另外文档、图片、视频等某种程度上也算是数据，但这些内容放到了[文档](../文档工具/index.md)章节中。
 
 ## 格式
 
-### JSON
+### 嵌套型数据
+
+| 需求           | 适合格式  | 原因              |
+| :------------- | :-------- | :---------------- |
+| **人工编写**   | YAML/TOML | 可读性强/支持注释 |
+| **浅层嵌套**   | TOML      | 使用路径          |
+| **深层嵌套**   | YAML      | 使用缩进          |
+| **机器处理**   | JSON      | 解析快速/广泛支持 |
+| **数据传输**   | JSON      | JavaScript 原生   |
+| **文档型数据** | XML       | 命名空间/属性信息 |
+
+#### JSON
 
 JSON 全称为 `JavaScript 对象表示法`。顾名思义，JavaScript 就使用这种格式表示对象，因此 JavaScript 序列化和反序列化 JSON 都非常方便。
 
+JSON 是机器友好的，因此解析起来特别快速。但 JSON 不是人类友好的，文件中充斥着 `{}[]()",` 这些符号，非常影响阅读和修改。
+
 JSON 经常会在和 JavaScript 有关的场合被用到，比如通过 HTTP 传输的数据、VSCode 的配置文件等。
 
-### CSV
+#### YAML
 
-CSV 全称为 `逗号分隔值`。顾名思义，CSV 通过逗号隔开每个值，很适合存储像表格这样的数据。
+YAML 很类似 JSON，但为了便于人类读写而做了很多优化。
 
-CSV 在电子表格、数据库导入/导出、数据科学等领域中很常见。
-
-### YAML
-
-YAML 很类似 JSON，但为了便于人类读写而做了很多优化，比如使用缩进来表示层次结构、字段名和字符串可以省略引号、原生支持注释等。
+YAML 是人类友好的，使用缩进和约定消除了 JSON 中的那些冗余符号，且原生支持注释。但这也导致它不是机器友好的，解析起来比 JSON 更慢一点。
 
 YAML 常被用于配置文件，比如 Docker/Kubernetes/GitHub Actions 等都选择了 YAML。
 
-### TOML
+#### TOML
 
 TOML 算是 INI 的升级版，同样使用键值对并支持分节，不过 TOML 还允许嵌套的组织结构。
 
+TOML 是人类友好的，不过更适用于扁平的结构，那种非常深的嵌套 TOML 写起来要比 JSON/YAML/XML 麻烦许多。
+
 TOML 被一些新兴语言用作项目配置文件，比如 Rust 和 Julia。TOML 现在随着新兴工具的流行而越来越常见，Python 社区也逐渐接受了使用 TOML 作为项目配置文件。
 
-### XML
+#### XML
 
 XML 全称为 `可拓展标记语言`，使用标签来组织数据和结构，并且标签可以嵌套和附加属性。
 
-XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语法，不过目前已几乎被 JSON 取代。另外 XML 还被很多软件选为内部格式，比如 Microsoft Office 的那些文档（包括 docx/xlsx/pptx）解压后其实就是一些包含了 XML 的文件、VLC 的皮肤文件解压后也包含了 XML 文件、SimulIDE 的电路图实际保存为一个 XML 文件。
+XML 是机器友好的，适合深度嵌套和需要属性信息、命名空间的数据。
+
+XML 早期在 Web 中常用于传输数据，不过目前已几乎被 JSON 取代。另外 XML 还被很多软件选为内部格式，比如 Microsoft Office 的那些文档（包括 docx/xlsx/pptx）解压后其实就是一些包含了 XML 的文件、VLC 的皮肤文件解压后也包含了 XML 文件、SimulIDE 的电路图实际保存为一个 XML 文件。
+
+### 表格型数据
+
+| 特性         | CSV          | TSV          |
+| :----------- | :----------- | :----------- |
+| **转义需求** | 经常需要转义 | 很少需要转义 |
+| **可读性**   | 通常对不齐   | 对得更整齐   |
+| **通用性**   | 更常见       | 更不常见     |
+
+#### CSV
+
+CSV 全称为 `逗号分隔值`。顾名思义，CSV 通过逗号隔开每个值。
+
+CSV 在电子表格、数据库导入/导出、数据科学等领域中很常见。
+
+#### TSV
+
+TSV 全称为 `制表符分隔值`。顾名思义，TSV 通过制表符隔开每个值。
+
+TSV 相比 CSV 通常解析更快，且制表符相对而言更少需要转义，也更容易在编辑器中对齐，从而易于人工编辑。
 
 ## 工具
 
@@ -69,6 +102,7 @@ XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语
 - sd 文本查找替换器，类似 `sed` 但更现代
 - [delta](Delta.md) 对 git/diff 等命令的输出进行语法高亮和分页，方便查看
 - jc 把很多常用命令的输出转为 JSON 格式，方便后续处理
+- argos-translate 命令行离线翻译器，基于神经网络模型
 
 ### 格式处理
 
@@ -87,19 +121,19 @@ XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语
 
 只能处理一种格式的**命令行工具**
 
-- jq 命令行 JSON 处理器
-- jid 基于 `jq` 的交互式 JSON 处理器
-- yq 命令行 YAML 处理器
-- qsv 命令行 CSV 处理器
+- [jq](Jq.md) 命令行 JSON 处理器
+- [yq](Yq.md) 命令行 YAML 处理器
 - taplo 命令行 TOML 处理器
 - xmlstarlet 命令行 XML 处理器
+- mdq 命令行 Markdown 处理器
+- qsv 命令行 CSV/TSV 处理器
 
 为一种格式提供了语言服务的 **VSCode 拓展**。VSCode 已经自带了对 JSON 的支持
 
-- Rainbow CSV 提供了 CSV 的语言服务
-- Even Better TOML 提供了 TOML 的语言服务
-- YAML 提供了 YAML 的语言服务
-- XML 提供了 XML 的语言服务
+- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) 提供了 TOML 的语言服务
+- [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) 提供了 YAML 的语言服务
+- [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) 提供了 XML 的语言服务
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) 提供了 CSV/TSV 的语言服务
 
 #### 通用格式
 
@@ -108,3 +142,4 @@ XML 早期在 Web 领域很流行，以至于 HTML 也选择了类似 XML 的语
 - miller 可以处理多种格式的数据，不过更适合表格型数据
 - dasel 类似前者，不过更适合嵌套型数据
 - rga 类似 `ripgrep` 但可以处理 PDF、压缩文件等各种非文本数据
+- [SQLite](SQLite.md) 关系型数据库，支持读取 CSV、JSON 等文件然后用 SQL 进行处理。这个数据库非常轻量，且不是传统的 `C-S` 架构，因此经常被嵌入其它应用中
