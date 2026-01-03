@@ -34,6 +34,22 @@ Git 保存的代码通常被叫做仓库。仓库可以是**本地仓库**，存
 
 在实现新功能之前最好本地新建一个分支，推送到远程仓库时也应该推送到指定的分支。项目通常会有一个主分支，主分支的代码应保证始终可用。远程仓库中可以启用主分支保护以避免被推送更新，然后由高权限的人员定期将别的分支合并到主分支中
 
+### 钩子
+
+钩子指一段自动触发的脚本。Git 提供了钩子机制，可以在其执行某个操作前/后自动运行一段脚本。
+
+Git 中有很多种钩子，可以修改它们来实现想要的功能。更多介绍请阅读[官方文档](https://git-scm.com/docs/githooks)
+
+- `pre-commit` 提交前钩子，会在 `git commit` 前自动运行
+- `post-commit` 提交后钩子，会在 `git commit` 后自动运行
+- `commit-msg` 提交消息钩子，由 `git commit`/`git merge` 调用。这个钩子可以直接编辑消息文件来规范提交消息，还可以在检查消息文件后拒绝提交
+- `post-checkout` 检出后钩子，会在 `git checkout`/`git switch` 后自动运行
+- `pre-rebase` 变基前钩子，会在 `git rebase` 前自动运行
+- `post-merge` 合并后钩子，会在 `git merge`/`git pull` 后自动运行
+- `pre-push` 推送前钩子，会在 `git push` 前自动运行
+
+对于常用的提交前钩子，社区维护了一个框架，可以在 [prek](Prek.md) 章节中了解更多。
+
 ## 安装
 
 ```sh
@@ -91,6 +107,22 @@ git pull <repository-name> <branch-name>
 git push <repository-name> <branch-name>
 ```
 
+### 基本设置
+
+Git 使用配置文件，默认位置为 `~/.gitconfig`。可以直接修改文件，也可以使用 CLI 进行配置
+
+一些常用的配置如下
+
+```sh
+# 邮箱和姓名
+git config --global user.name xxx
+git config --global user.email xxx@example.com
+# 关闭非 ASCII 字符转义
+git config --global core.quotepath false
+# 修改默认编辑器
+git config --global core.editor 'code --wait'
+```
+
 ### 分支与合并
 
 分支可以创建、切换、删除
@@ -132,9 +164,11 @@ git restore --staged :/
 
 ```sh
 # 显示未暂存的更改
-git diff
+git diff <file> # 单个文件
+git diff        # 整个暂存区
 # 显示已暂存的更改
-git diff --staged
+git diff --staged <file>    # 单个文件
+git diff --staged           # 整个暂存区 
 # 撤销对单个文件的未暂存更改
 git restore path/to/file
 # 撤销所有的未暂存更改

@@ -67,6 +67,7 @@ nav:
     - 命令行工具: 命令行工具/index.md
     - Shell: 命令行工具/Shell.md
     - Just: 命令行工具/Just.md
+    - Prek: 命令行工具/Prek.md
     - Fd: 命令行工具/Fd.md
     - Tldr: 命令行工具/Tldr.md
     - Zoxide: 命令行工具/Zoxide.md
@@ -78,6 +79,8 @@ nav:
   - 网络工具:
     - 网络工具: 网络工具/index.md
     - Chrome: 网络工具/Chrome.md
+  - 安全工具:
+    - 安全工具: 安全工具/index.md
   - 文档工具:
     - 文档工具: 文档工具/index.md
     - Pandoc: 文档工具/Pandoc.md
@@ -89,10 +92,12 @@ nav:
     - Hugo: 文档工具/Hugo.md
     - PDFcpu: 文档工具/PDFcpu.md
     - ImageMagick: 文档工具/ImageMagick.md
+    - FFmpeg: 文档工具/FFmpeg.md
   - 数据处理工具:
     - 数据处理工具: 数据处理工具/index.md
     - Fzf: 数据处理工具/Fzf.md
     - Ripgrep: 数据处理工具/Ripgrep.md
+    - Sd: 数据处理工具/Sd.md
     - Delta: 数据处理工具/Delta.md
     - Bat: 数据处理工具/Bat.md
     - Cloc: 数据处理工具/Cloc.md

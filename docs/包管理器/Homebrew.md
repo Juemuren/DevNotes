@@ -2,11 +2,11 @@
 
 ## 简介
 
-Homebrew 是 MacOS 和 Linux 平台的包管理器
+Homebrew 是 macOS 和 Linux 平台的包管理器
 
 ## 对比
 
-由于我没用过 MacOS，所以只能评价在 Linux 上的体验。
+由于我没用过 macOS，所以只能评价在 Linux 上的体验。
 
 Linux 通常自带**系统包管理器**，Homebrew 与之有一些显著的区别
 

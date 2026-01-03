@@ -151,11 +151,11 @@ message := f'Hello, {{name}}!'
 
 ```justfile
 # 是否等于
-foo := if "2" == "2" { "Good!" } else { "1984" }
+year := if `expr 2 + 2` == "5" { "1984" } else { datetime("%Y") }
 # 是否不等于
-foo := if "hello" != "goodbye" { "xyz" } else { "abc" }
+year := if `expr 2 + 2` != "5" { datetime("%Y") } else { "1984" }
 # 是否匹配正则表达式
-foo := if "hello" =~ 'hel+o' { "match" } else { "mismatch" }
+foo := if "114514" =~ '[0-9]+' { "match" } else { "mismatch" }
 ```
 
 可以通过 ``` `command` ``` 或 `shell(command)` 使用命令表达式，后者支持传递变量

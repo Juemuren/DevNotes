@@ -24,7 +24,7 @@ apt install ./google-chrome-stable_current_amd64.deb
 
 ## 使用
 
-### 插件
+### 浏览器插件
 
 Chrome 支持安装插件。大多数插件都可以在 [Chrome 插件商店](https://chromewebstore.google.com/category/extensions)中获取
 

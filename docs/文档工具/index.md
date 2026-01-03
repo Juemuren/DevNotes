@@ -134,6 +134,11 @@ PPTX 通常要使用别的软件进行编辑，比如 **Microsoft PowerPoint** �
 - Tesseract 将图片转为文字的工具，使用 OCR 技术，可识别多种语言
 - OCRmyPDF 在 PDF 上添加文本层，OCR 引擎为 Tesseract
 
+### 拼写检查
+
+- autocorrect 一个针对 CJK 和英文混合编写的工具，可以自动检查并纠正标点不规范、拼写错误等问题。且提供了 VSCode 插件
+- typos 一个源代码拼写检查工具，误报率相当低。该工具使用黑名单，只针对已知的拼写错误，不检查未知单词
+
 ### 图片生成
 
 使用代码生成图片/视频的工具
@@ -172,5 +177,5 @@ PPTX 通常要使用别的软件进行编辑，比如 **Microsoft PowerPoint** �
 可以用来对一些格式进行各种操作的综合工具。因为功能比较多，不太好分类，所以放到了这里
 
 - [PDFcpu](PDFcpu.md) 一个对 PDF 文档进行各种处理的命令行工具。类似的还有 `qpdf`、`xpdf`、`pdftk`、`poppler`、`GhostScript`
-- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`
-- FFmpeg 一种可以对音视频进行各种处理的命令行工具
+- [ImageMagick](ImageMagick.md) 一个对图片进行各种处理的命令行工具。类似的还有 `chafa`、`resvg`
+- [FFmpeg](FFmpeg.md) 一种可以对音视频进行各种处理的命令行工具

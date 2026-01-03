@@ -94,7 +94,7 @@ pandoc -s example.md -o example.pdf --pdf-engine=weasyprint --css="github-markdo
 
 部分参数说明
 
-- `-V` 参数向 pandoc 传递了模板变量.模板变量也可以通过 `front-matter` 传递。你可以在[官方文档](https://pandoc.org/MANUAL.html#variables)里找到更多的可使用变量。
+- `-V` 参数向 pandoc 传递了模板变量。模板变量也可以通过 `front-matter` 传递。你可以在[官方文档](https://pandoc.org/MANUAL.html#variables)里找到更多的可使用变量。
 - `-s` 参数生成带有页眉、页脚的输出。对于 pdf 格式这个参数会自动设置，因此可省略。
 - `--template` 用于指定模板，和 `--css` 一样，一般是文件的相对路径。
 
