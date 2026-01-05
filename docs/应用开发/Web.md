@@ -198,10 +198,6 @@ WebComponents 支持自定义 HTML 标签，可以把样式、逻辑行为都封
 - Cordova 通过 `WebView` 来用 Web 技术开发 *移动应用* 的框架
 - Yew 一个 Rust 编写的 Web 前端框架，使用了 `WebAssembly` 技术
 
-### 应用生成器
-
-- Yeoman 一个代码生成工具，可以快速搭建起 Web 应用的骨架，有非常多的应用类型可选择
-
 ### 测试框架
 
 - Playwright 端到端测试框架，会在真实的浏览器环境中进行测试，并生成详细的报告

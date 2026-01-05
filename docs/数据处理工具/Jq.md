@@ -106,12 +106,3 @@ update_description |
 ```sh
 jq -f convert-to-both.jq my-243-2-normal.json > my-243-2-both.json
 ```
-
----
-
-我希望能够对 JSON 数据进行交互式探索。可以组合 jq + fzf 实现这一功能
-
-```sh
-# 展开所有路径，然后用 fzf 进行筛选和预览
-jq -r 'paths | @json' data.json | fzf --preview "jq getpath({}) data.json"
-```

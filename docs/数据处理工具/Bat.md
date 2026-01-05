@@ -36,12 +36,3 @@ bat -A example.md
 # 禁止自动分页
 bat -P example.md
 ```
-
-以及与其它工具的集成
-
-```sh
-# 当作 fzf 的预览器
-fzf --preview "bat --color=always --style=numbers {}"
-# 预览 fd 找到的所有文件
-fd example -X bat
-```

@@ -104,7 +104,7 @@ fzf 自带 TUI，这个 TUI 是可以高度自定义的。
 - `--preview` 修改预览命令。比如 `fzf --preview "bat {}"` 将用 bat 预览文件
 - `--bind` 修改按键绑定。比如 `fzf --bind "enter:become(rm {})"` 将按键 `enter` 绑定到 `rm` 命令
 
-> [!Note] 占位符
+> [!Note]+ 占位符
 >
 > `--preview` 和 `--bind` 中的 `{}` 为占位符，被替换为当前行的单引号字符串。
 >
@@ -151,7 +151,7 @@ jq 本身没有交互式功能，但可以借助 fzf 来对 JSON 数据进行交
 
 ```sh
 # 展开所有路径，然后用 fzf 进行筛选和预览
-jq -r 'paths | @json' data.json | fzf --preview "jq getpath({}) data.json"
+jq -r 'paths | @json' data.json | fzf --preview "jq -C getpath({}) data.json" --preview-window=wrap
 ```
 
 ---
@@ -161,13 +161,13 @@ jq -r 'paths | @json' data.json | fzf --preview "jq getpath({}) data.json"
 我想要快速浏览一下项目代码，但项目结构嵌很深且代码分散，在目录里来回切换很麻烦。这时就可以用 fzf 配合预览器 bat 来完成这一任务
 
 ```sh
-fzf --preview "bat --color=always --style=numbers {}"
+fzf --preview "bat --color=always --style=numbers {}" --preview-window=wrap,up,80%
 ```
 
 还可以更进一步，用 fd 对想预览的文件提前进行一些过滤
 
 ```sh
-fd -e tsx | fzf --preview "bat --color=always --style=numbers {}"
+fd -e tsx | fzf --preview "bat --color=always --style=numbers {}" --preview-window=wrap,up,80%
 ```
 
 ---
@@ -179,19 +179,19 @@ fd -e tsx | fzf --preview "bat --color=always --style=numbers {}"
 这是用 rg + bat 实现的交互式正则查找，没有替换功能。官网上有一个更强大也更复杂的[示例](https://junegunn.github.io/fzf/tips/ripgrep-integration/)
 
 ```sh
-fzf --disabled --ansi `
-    --bind 'change:reload:rg --column --color=always --smart-case {q}' `
-    --delimiter : `
-    --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' `
+fzf --disabled --ansi \
+    --bind 'change:reload:rg --column --color=always --smart-case {q}' \
+    --delimiter : \
+    --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
     --preview-window '+{2}/2'
 ```
 
 这是用 rg + sd 实现的交互式正则替换编辑器，其中用空格分割查询字符串和替换字符串
 
 ```sh
-fzf --disabled --ansi --multi `
-    --bind 'change:reload:rg --files-with-matches {q:1}' `
-    --preview 'sd --preview {q:1} {q:2} {+}' `
+fzf --disabled --ansi --multi \
+    --bind 'change:reload:rg --files-with-matches {q:1}' \
+    --preview 'sd --preview {q:1} {q:2} {+}' \
     --bind 'enter:execute:sd {q:1} {q:2} {+}'
 ```
 

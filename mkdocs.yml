@@ -68,6 +68,7 @@ nav:
     - Shell: 命令行工具/Shell.md
     - Just: 命令行工具/Just.md
     - Prek: 命令行工具/Prek.md
+    - Hyperfine: 命令行工具/Hyperfine.md
     - Fd: 命令行工具/Fd.md
     - Tldr: 命令行工具/Tldr.md
     - Zoxide: 命令行工具/Zoxide.md

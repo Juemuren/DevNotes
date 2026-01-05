@@ -55,6 +55,8 @@ rg pattern --follow
 rg -v pattern
 # -F 将 pattern 视为字面量而非正则表达式
 rg -F pattern
+# -C N 在匹配行前后额外显示 N 行
+rg -C 5 pattern
 ```
 
 ### 配置文件
