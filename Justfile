@@ -2,8 +2,15 @@
 default:
     just --list
 
-lint-sh:
+lint:
     shellcheck scripts/*.sh
 
-check-docs:
-    ./scripts/check-alarms.sh
+check:
+    ./scripts/check-alerts.sh
+    ./scripts/check-spaces.sh
+
+count:
+    ./scripts/count-words.sh
+
+timeline:
+    ./scripts/list-timeline.sh
