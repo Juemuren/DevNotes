@@ -11,7 +11,7 @@
 >
 > 另外 `Cyber` 一词我认为翻译为 `网络` 是不好的。`Cyber` 在英文里并不等于 `Network`，它起源于控制论（Cybernetics），后来衍生出了很多含义。在 Cyber Security 里我认为将 Cyber 理解为 `信息系统` 更贴合原意。
 
-计算机安全领域有一类很出名的竞赛，即 CTF（Capture the Flags）。CTF 比赛的内容包含以下几个部分
+计算机安全领域有一类很出名的竞赛，名为 CTF（Capture the Flags）。CTF 比赛的内容包含以下几个部分
 
 - Web 网络攻防。寻找服务器上的漏洞并尝试进行攻击。
 - Crypto 密码学。破解密码，或者伪造数字签名。
@@ -133,7 +133,7 @@
 
 抓取网络流量并进行分析。
 
-- termshark 网络协议分析工具，是 `Wireshark` 的命令行版本
+- Wireshark 网络协议分析工具
 
 #### 字典
 

@@ -48,7 +48,7 @@ Shell 通常会自动设置一些变量/环境变量，当然它们也可以被�
 > Pwsh 中变量和环境变量的用法与 UNIX Shell 存在较大的区别
 >
 > - 对于变量用 `$VAR` 获取值，用 `$VAR=xxx` 创建或修改值
-> - 对于环境变量用 `$Env:VAR` 获取值，用 `$Env:VAR=xxx` 创建或修改值
+> - 对于环境变量用 `$env:VAR` 获取值，用 `$env:VAR=xxx` 创建或修改值
 
 ### 查找命令
 
@@ -84,7 +84,7 @@ Shell 通常都支持使用文件进行配置。不同 Shell 的配置文件可�
 - Zsh 的配置文件为 `~/.zshrc`
 - Pwsh 的配置文件路径保存在环境变量 `$PROFILE` 中
 
-提示符、别名、环境变量等都可以在配置文件中修改。不过一般不需要在配置文件中写特别复杂的脚本/命令，因为社区里总会有插件或类似的东西帮忙解决这些问题。
+提示符、别名、环境变量等都可以在配置文件中修改。不过一般不需要在配置文件中写特别复杂的脚本，因为社区里总会有工具能够解决这些问题。
 
 ### 管道和重定向
 
@@ -105,7 +105,7 @@ Shell 只是一个运行在用户空间的普通 CLI 程序，并不是操作系
 
 ### Linux
 
-Linux 系统通常都会自带 Bash，这是事实上的标准。
+Linux 系统通常自带 *Bash*，这是事实上的标准。
 
 Linux 使用其它 Shell 只需用系统包管理器安装然后修改登录 Shell 即可。以 Ubuntu + Zsh 为例，操作如下
 
@@ -120,16 +120,69 @@ chsh -s $(which zsh)
 
 Windows 系统通常自带了 *CMD* 和 *PowerShell*。日常使用推荐优先选择后者。
 
-Windows 如果要使用别的 Shell，需配置环境，会比较麻烦。目前有两种主流的方法，当然后者应该更主流一点
+Windows 如果要使用别的 Shell，可能需要配置 UNIX 环境。目前有两种主流的方法，当然后者应该更主流一点
 
 - 通过 [MSYS](../环境管理器/MSYS.md) 在一个模拟的 UNIX 环境中使用移植的 Shell
 - 通过 [WSL](../环境管理器/WSL.md) 在一个 Linux 子系统里使用 Shell
 
+### macOS
+
+macOS 系统通常自带 *Zsh*。
+
+macOS 使用其它 Shell 也只需简单安装即可，因为 macOS 是标准的类 UNIX 系统。具体方式和 Linux 类似。
+
 ## 常用 Shell
+
+| 名称    | 系统自带 | 主要特点                     |
+| :------ | :------- | :--------------------------- |
+| Bash    | Linux    | 脚本标准，兼容性最好         |
+| Pwsh    | Windows  | 基于对象，擅长处理复杂数据   |
+| Zsh     | macOS    | 高度可定制，有强大的生态     |
+| Fish    | 无       | 开箱即用，提供良好的交互体验 |
+| Nushell | 无       | 现代的交互设计和数据处理     |
+
+现代 Shell 的发展趋势主要有以下几个
+
+- 改善交互体验。增强 REPL 模式，降低使用门槛。比如 Fish 自带了**命令补全**、**语法高亮**、**自动建议**等功能
+- 优化数据处理。用**结构化数据**替代纯文本流，提高数据处理的可靠性和效率。比如 Nushell 为数据添加了类型，并提供强大的、基于类型的操作
+- 实现跨平台一致。不再绑定操作系统，并减少环境差异所产生的问题。比如 Pwsh 就是旧的 PowerShell 改进架构后的可跨平台版本
+- 打造开源生态。通过**平台**和**框架**，形成社区驱动的共享生态。比如 Zsh 通过 GitHub 和 Oh My Zsh 让用户可以轻松分享并获取主题、插件等配置
+
+### Bash
+
+Bash 是 Linux 的默认 Shell。使用 Windows 配置的 UNIX 环境（比如 WSL、MSYS 和 Git for Windows）也将 Bash 作为默认 Shell。
+
+Bash 的生态比较一般，但还是有一些不错的工具
+
+- blesh 行编辑器，有语法高亮和自动建议等功能，非常强大。但在 Windows 上性能问题有点严重
+
+### Pwsh
+
+如果喜欢在 Windows 中使用 PowerShell，那么最好去[安装新 PowerShell](https://learn.microsoft.com/powershell/scripting/install/install-powershell-on-windows)。这比自带的旧 PowerShell 好用很多。
+
+> [!Note]+ 新旧 PowerShell 的区别
+> 微软官方用如下两个名称区分新旧 PowerShell
+>
+> - PowerShell 基于新版本的 .NET 而不是 .NET Framework，可在 Windows、Linux 和 macOS 上运行
+> - Windows PowerShell 是 Windows 中自带的 PowerShell 版本，使用了仅可在 Windows 上运行的完整 .NET Framework
+>
+> 本文使用 Pwsh 称呼新 PowerShell，且不关注旧 PowerShell
+>
+> Pwsh 相比旧 PowerShell 有以下主要区别
+>
+> - 交互体验更好，比如错误提示更精确、内置命令的输出有高亮
+> - 生态更好，因为开源和社区驱动
+> - 可跨平台，因为改进了架构
+
+Pwsh 自带了模块的管理框架，通过 `Install-Module PSReadLine` 命令就可以安装新的模块。以下是一些推荐的模块
+
+- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（只支持 `PowerShell` 内置命令）、自动建议等功能，体验上不如 Zsh 的类似插件，但也算够用。
+- PSFzf 集成 fzf 的模块，需要先安装 [fzf](../数据处理工具/Fzf.md)。
+- PSCompletions 命令补全模块，提供了常用命令（包括 git、npm、scoop 等）的补全，并且可以管理这些补全。
 
 ### Zsh
 
-Zsh 通常不会自带，需要手动安装
+Zsh 是 macOS 的默认 Shell。其余系统可手动安装 Zsh。而 Windows 需要先配置类 UNIX 环境
 
 ```sh
 # Arch/MSYS
@@ -138,39 +191,38 @@ pacman -S zsh
 apt install zsh
 ```
 
-Zsh 可以安装插件。`oh-my-zsh` 是个插件框架，可以很方便地管理插件，同时自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
+Zsh 的特色就是高度可定制。而 `Oh My Zsh` 是一个 Zsh 的框架，可以用于管理配置，同时自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
 
-以下是一些常用的但 `oh-my-zsh` 中没有的插件
+以下是一些常用的但 `Oh My Zsh` 中没有的插件
 
-- zsh-autosuggestions 自动建议。可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-syntax-highlight 语法高亮。同样可以[使用 oh-my-zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-autosuggestions 自动建议。可以[使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-syntax-highlight 语法高亮。同样可以[使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
 - zsh-completions 额外的命令补全。一般来说没必要装这个插件，因为 zsh 自带的补全已经够多了。建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
 
-### Bash
+### Fish
 
-Bash 一般来说都会自带。Linux、WSL 以及 MSYS 都将 Bash 作为默认 Shell，甚至下载 Git for Windows 都会自带一个 Bash。
+Fish 通常不会自带，需要手动安装。Windows 同样得先配置类 UNIX 环境
 
-Bash 也可以安装插件，不过生态似乎没有 Zsh 好。因此不推荐插件框架了，只介绍一些好用的插件
+```sh
+# Arch/MSYS
+pacman -S fish
+# Ubuntu
+apt install fish
+# macOS
+brew install fish
+```
 
-- blesh 行编辑器，有语法高亮和自动建议等功能，非常强大。但在 Windows 上（不管是 MSYS、WSL 还是 git-bash）性能问题有点严重，建议用 Zsh 并安装 zsh-autosuggestions 和 zsh-syntax-highlight 这两个插件作为替代。
+Fish 是开箱即用的，不过同样可以进行配置。Fish 有 `Oh My Fish` 这个框架，但生态不如 Zsh。
 
-### Pwsh
+### Nushell
 
-如果在 Windows 上喜欢用 PowerShell，那么 `PowerShell 7`（我喜欢叫它 Pwsh）最好还是安装一个。这比自带的旧的 PowerShell 好用很多。
+Nushell 通常也不会自带，需要手动安装。不过 Windows 可以直接安装，不需要配置类 UNIX 环境
 
-明显的好处有以下几个
+```sh
+# Windows
+scoop install nu
+# macOS/Linux
+brew install nushell
+```
 
-- 更精确的错误提示
-- 常用的内置命令输出有高亮
-
-另外还有一些不太能感知到的好处
-
-- 开源和社区驱动
-- 架构改进，可跨平台
-- 性能改善，增加了语法糖
-
-Pwsh 也能安装插件，不过官方的说法是模块。Pwsh 自带了模块的管理框架，通过 `Install-Module PSReadLine` 命令就可以安装新的模块。以下是一些推荐的模块
-
-- PSReadLine 改善使用体验的模块。有语法高亮、命令补全（只支持 `PowerShell` 内置命令）、自动建议等功能，体验上不如 Zsh 的类似插件，但也算够用。
-- PSFzf 集成 fzf 的模块，需要先安装 [fzf](../数据处理工具/Fzf.md)。
-- PSCompletions 命令补全模块，提供了常用命令（包括 git、npm、scoop 等）的补全，并且可以管理这些补全。
+目前 Nushell 的生态还在发展。官方维护的 [awesome-nu](https://github.com/nushell/awesome-nu) 记录了一些好用的 Nushell 工具，包括插件、脚本、编辑器拓展等。

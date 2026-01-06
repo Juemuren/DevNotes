@@ -50,7 +50,7 @@ Scoop 自身会使用一些工具，缺失它们会导致 Scoop 功能不全。�
 
 - `scoop install git` Scoop 中的桶使用 Git 进行管理，如果要更新或添加其它桶则必须安装 Git。部分工具安装时也要使用 Git，比如 `vcpkg`
 - `scoop install 7zip dark innounp` Scoop 安装部分软件时要用到这些工具
-- `scoop install sudo` Scoop 添加服务等操作需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 -> 高级 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/zh-cn/windows/advanced-settings/sudo/)
+- `scoop install sudo` Scoop 添加服务等操作需要管理员权限。不过新版的 Windows 已经在系统层面提供了 `sudo` 命令，可以在 `设置 -> 系统 -> 高级 -> 启用 sudo` 里开启，详见 [Windows 官方文档](https://learn.microsoft.com/windows/advanced-settings/sudo/)
 
 ### 增强工具
 

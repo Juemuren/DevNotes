@@ -6,7 +6,7 @@ Vcpkg 是一个 C/C++ 的包管理器，与 CMake 的集成度很高。
 
 ## 对比
 
-[vcpkg 与其它包管理器的比较](https://learn.microsoft.com/zh-cn/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
+[vcpkg 与其它包管理器的比较](https://learn.microsoft.com/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 
 `vcpkg` 相比系统包管理器（比如 `apt`、`pacman`）有一些区别。建议与系统包管理器配合使用，因为二者**优势区间**不同。
 
@@ -19,7 +19,7 @@ Vcpkg 是一个 C/C++ 的包管理器，与 CMake 的集成度很高。
 
 ## 安装
 
-[官方的安装方式](https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started#1---set-up-vcpkg)
+[官方的安装方式](https://learn.microsoft.com/vcpkg/get_started/get-started#1---set-up-vcpkg)
 
 ```sh
 git clone https://github.com/microsoft/vcpkg.git
@@ -36,7 +36,7 @@ scoop install vcpkg
 
 ## 使用
 
-[官方入门手册](https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started#3---add-dependencies-and-project-files)
+[官方入门手册](https://learn.microsoft.com/vcpkg/get_started/get-started#3---add-dependencies-and-project-files)
 
 ### 新建清单
 

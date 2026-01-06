@@ -57,6 +57,8 @@ rg -v pattern
 rg -F pattern
 # -C N 在匹配行前后额外显示 N 行
 rg -C 5 pattern
+# -P 使用 PCRE2 引擎
+rg -P pattern
 ```
 
 ### 配置文件

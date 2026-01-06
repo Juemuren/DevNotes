@@ -8,7 +8,7 @@ WSL 在虚拟机里运行 Linux 内核，因此理论上所有 Linux 能运行�
 
 ## 安装
 
-[官方安装教程](https://learn.microsoft.com/zh-cn/windows/wsl/install)
+[官方安装教程](https://learn.microsoft.com/windows/wsl/install)
 
 在较新的 Windows 机器上安装 WSL 非常简单
 
