@@ -50,7 +50,7 @@ podman<span class=w> </span>stop<span class=w> </span>CONTAINER-ID/CONTAINER-NAM
 <span class=k>COPY</span><span class=w> </span>./index.js<span class=w> </span>./index.js
 
 <span class=k>CMD</span><span class=w> </span>node<span class=w> </span>index.js
-</code></pre></div> <p>以上示例非常简单，你可以在 <a href=https://docs.docker.com/reference/dockerfile/ >Docker 官方文档</a>里获得更详细的参考。有了 <code>Dockerfile</code> 后修改容器构建新镜像就变得非常简单了</p> <div class=highlight><pre><span></span><code><span class=c1># 根据配置文件自动构建镜像</span>
+</code></pre></div> <p>以上示例非常简单，你可以在 <a href=https://docs.docker.com/reference/dockerfile/ >Docker 官方文档</a> 里获得更详细的参考。有了 <code>Dockerfile</code> 后修改容器构建新镜像就变得非常简单了</p> <div class=highlight><pre><span></span><code><span class=c1># 根据配置文件自动构建镜像</span>
 podman<span class=w> </span>build<span class=w> </span>-t<span class=w> </span>node-hello-world<span class=w> </span>.
 </code></pre></div> <p>然后可以照常使用这个容器</p> <div class=highlight><pre><span></span><code><span class=c1># 运行容器</span>
 podman<span class=w> </span>run<span class=w> </span>node-hello-world
