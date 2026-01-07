@@ -23,7 +23,7 @@ scoop install hugo-extended
 
 ## 使用
 
-这个示例来自[官方快速入门教学](https://gohugo.io/getting-started/quick-start/)，不过我换了个主题。官网上可以查看[更多主题](https://themes.gohugo.io/)。
+这个示例来自 [官方快速入门教学](https://gohugo.io/getting-started/quick-start/)，不过我换了个主题。官网上可以查看 [更多主题](https://themes.gohugo.io/)。
 
 ```sh
 # 初始化目录并进入

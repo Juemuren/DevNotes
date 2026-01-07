@@ -40,7 +40,7 @@ Shell 通常会自动设置一些变量/环境变量，当然它们也可以被�
 - 使用 `export VAR=xxx` 创建或者修改环境变量
 
 > [!Tip]+ 环境变量持久化
-> 通过 `export VAR=xxx` 设置的环境变量只在当前 Shell 进程及子进程中有效。如果希望持久化设置，需要把命令添加到[配置文件](#配置文件)中。
+> 通过 `export VAR=xxx` 设置的环境变量只在当前 Shell 进程及子进程中有效。如果希望持久化设置，需要把命令添加到 [配置文件](#配置文件) 中。
 
 可以使用 `env` 命令查看当前会话中所有的环境变量，而 `set` 命令可以查看所有的变量
 
@@ -158,7 +158,7 @@ Bash 的生态比较一般，但还是有一些不错的工具
 
 ### Pwsh
 
-如果喜欢在 Windows 中使用 PowerShell，那么最好去[安装新 PowerShell](https://learn.microsoft.com/powershell/scripting/install/install-powershell-on-windows)。这比自带的旧 PowerShell 好用很多。
+如果喜欢在 Windows 中使用 PowerShell，那么最好去 [安装新 PowerShell](https://learn.microsoft.com/powershell/scripting/install/install-powershell-on-windows)。这比自带的旧 PowerShell 好用很多。
 
 > [!Note]+ 新旧 PowerShell 的区别
 > 微软官方用如下两个名称区分新旧 PowerShell
@@ -191,13 +191,13 @@ pacman -S zsh
 apt install zsh
 ```
 
-Zsh 的特色就是高度可定制。而 `Oh My Zsh` 是一个 Zsh 的框架，可以用于管理配置，同时自带了很多插件。安装方法可参考[官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
+Zsh 的特色就是高度可定制。而 `Oh My Zsh` 是一个 Zsh 的框架，可以用于管理配置，同时自带了很多插件。安装方法可参考 [官方文档](https://github.com/ohmyzsh/ohmyzsh/?tab=readme-ov-file#basic-installation)。
 
 以下是一些常用的但 `Oh My Zsh` 中没有的插件
 
-- zsh-autosuggestions 自动建议。可以[使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-syntax-highlight 语法高亮。同样可以[使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
-- zsh-completions 额外的命令补全。一般来说没必要装这个插件，因为 zsh 自带的补全已经够多了。建议先去[仓库](https://github.com/zsh-users/zsh-completions/tree/master/src)里看看有没有需要的补全。
+- zsh-autosuggestions 自动建议。可以 [使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-syntax-highlight 语法高亮。同样可以 [使用 Oh My Zsh 安装](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)。
+- zsh-completions 额外的命令补全。一般来说没必要装这个插件，因为 zsh 自带的补全已经够多了。建议先去 [仓库](https://github.com/zsh-users/zsh-completions/tree/master/src) 里看看有没有需要的补全。
 
 ### Fish
 

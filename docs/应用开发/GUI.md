@@ -18,7 +18,7 @@ GUI 框架是比图形 API 更高层次的抽象。有些操作系统已经提�
 
 ### Web 技术
 
-也许你可以考虑使用 [Web](Web.md) 技术来开发需要 GUI 的移动/桌面应用，有很多[框架](Web.md#前端框架)可以做到这一点。
+也许你可以考虑使用 [Web](Web.md) 技术来开发需要 GUI 的移动/桌面应用，有很多 [框架](Web.md#前端框架) 可以做到这一点。
 
 以下是一些 Web 技术和图形 API 的简单对比，部分参考了 [Electron 官网的对比](https://www.electronjs.org/docs/latest/why-electron)，也许可以给你一些启发
 

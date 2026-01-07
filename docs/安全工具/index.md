@@ -5,7 +5,7 @@
 安全（本文指计算机安全）是这个信息时代的重要主题。作为开发者，有必要了解基本的安全知识，并学会使用一些相关工具。
 
 > [!Note]- 计算机安全和网络安全的区别
-> 计算机安全英文为 Computer Security，它和网络安全 Cyber Security 在概念上很相似，本文不区分它们。[维基百科](https://en.wikipedia.org/wiki/Computer_security)上两者共用 Computer Security 这一词条。
+> 计算机安全英文为 Computer Security，它和网络安全 Cyber Security 在概念上很相似，本文不区分它们。[维基百科](https://en.wikipedia.org/wiki/Computer_security) 上两者共用 Computer Security 这一词条。
 >
 > 有些人认为计算机安全只涉及单台机器，而网络安全涉及到互联。我不喜欢这种说法，显然计算机网络属于计算机技术，计算机安全应该包含网络安全。我喜欢使用计算机安全作为统称，因此将其作为本章的标题。
 >

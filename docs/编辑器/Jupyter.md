@@ -47,7 +47,7 @@ Jupyter 为了远程开发和多语言支持而设计了复杂的架构。因此
 
 - 前端可以直接使用 **浏览器**，此时界面会取决于后端。或者也可以使用支持 Jupyter 的 **编辑器**，比如 `VSCode`（需要下载 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 插件）。
 - 后端可以选择 `jupyterlab` 或 `notebook`，两者都可以通过 `pip` 安装，jupyterlab 可能更好一点。`VSCode` 的插件实现了后端的主要功能，因此可以不额外安装后端。
-- 内核有很多种，不同语言自然有不同的内核，一种语言也可能有多种内核。python 的内核一般用 `ipykernel`，通过 `pip install ipykernel` 就可以安装。你可以在[这里](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)找到目前能用的所有内核。
+- 内核有很多种，不同语言自然有不同的内核，一种语言也可能有多种内核。python 的内核一般用 `ipykernel`，通过 `pip install ipykernel` 就可以安装。你可以在 [这里](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) 找到目前能用的所有内核。
 
 ## 使用
 
@@ -56,7 +56,7 @@ Jupyter 为了远程开发和多语言支持而设计了复杂的架构。因此
 
 ### VSCode
 
-使用 VSCode 作为前端可以参考[官方文档](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)，里面有很详细的使用方法说明。
+使用 VSCode 作为前端可以参考 [官方文档](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)，里面有很详细的使用方法说明。
 
 ### Browser
 

@@ -107,7 +107,7 @@ scoop install just
 
 ## 特性
 
-这里只列出我常用的几个 Just 特性，[官方文档](https://just.systems/man/en/)里有全部的 Just 特性介绍。
+这里只列出我常用的几个 Just 特性，[官方文档](https://just.systems/man/en/) 里有全部的 Just 特性介绍。
 
 在 Just 中，任务被称作配方。
 
@@ -176,7 +176,7 @@ lines := shell('wc -l $1 | cut -d " " -f 1', file)
 - 使用 `set working-directory := 'path'` 修改所有配方的工作目录
 - 使用 `[working-directory]` 属性修改单个配方的工作目录
 
-### [参数](https://just.systems/man/en/recipe-parameters.html)和[变量](https://just.systems/man/en/setting-variables-from-the-command-line.html)
+### [参数](https://just.systems/man/en/recipe-parameters.html)/[变量](https://just.systems/man/en/setting-variables-from-the-command-line.html)
 
 变量和参数有点类似，可以认为
 

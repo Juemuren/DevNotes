@@ -25,7 +25,7 @@ flowchart TD
 我目前使用的方案是 VSCode + PlatformIO IDE + SimulIDE
 
 - VSCode 写代码
-- PlatformIO IDE 编译代码，生成固件。由于不同架构的处理器通常需要使用不同的编译器，因此这里只写了 PlatformIO IDE，它会帮你处理这些事情。如果你很清楚自己使用的是哪种芯片，那么可以考虑自己处理编译过程，比如 STM32 可以使用 ARM GCC + CMake 编译出固件。另外，如果不想过度依赖图形化界面，可以[安装 PlatformIO Core](https://docs.platformio.org/en/latest/core/installation/index.html)，这是一个 CLI 工具。
+- PlatformIO IDE 编译代码，生成固件。由于不同架构的处理器通常需要使用不同的编译器，因此这里只写了 PlatformIO IDE，它会帮你处理这些事情。如果你很清楚自己使用的是哪种芯片，那么可以考虑自己处理编译过程，比如 STM32 可以使用 ARM GCC + CMake 编译出固件。另外，如果不想过度依赖图形化界面，可以 [安装 PlatformIO Core](https://docs.platformio.org/en/latest/core/installation/index.html)，这是一个 CLI 工具。
 - SimulIDE 绘制电路图，将模拟芯片和模拟输出设备连接，加载固件并运行，从而可视化地查看结果
 
 ### SDCC

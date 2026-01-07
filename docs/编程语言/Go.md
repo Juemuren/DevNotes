@@ -25,5 +25,5 @@ VSCode 上有 Go 官方插件 [Go](https://marketplace.visualstudio.com/items?it
 
 或者使用如下方法之一
 
-- 先在 shell 中[激活 Mise](../环境管理器/Mise.md#激活)，然后通过 `code .` 打开项目
+- 先在 shell 中 [激活 Mise](../环境管理器/Mise.md#激活)，然后通过 `code .` 打开项目
 - Mise [改为 *Shims* 模式](../环境管理器/Mise.md#激活)

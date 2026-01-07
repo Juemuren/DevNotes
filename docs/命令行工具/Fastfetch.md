@@ -35,7 +35,7 @@ fastfetch
 
 Fastfetch 没有一个官方的预设集，也没有一个用图片来展示不同配置文件效果的网站，因此配置起来略微有点麻烦。
 
-我首先通过 `fastfetch --gen-config` 生成了一个基础配置文件，然后参考了 [LierB 的配置文件](https://github.com/LierB/fastfetch/blob/master/presets/groups.jsonc)，再对照[官方文档](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration)和 `fastfetch -c all` 的输出进行修改
+我首先通过 `fastfetch --gen-config` 生成了一个基础配置文件，然后参考了 [LierB 的配置文件](https://github.com/LierB/fastfetch/blob/master/presets/groups.jsonc)，再对照 [官方文档](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration) 和 `fastfetch -c all` 的输出进行修改
 
 最终效果是这样的
 

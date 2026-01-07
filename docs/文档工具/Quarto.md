@@ -22,7 +22,7 @@ Quarto 里捆绑了 `pandoc`/`typst`/`deno`/`dart` 等工具，所以体积会�
 
 ## 使用
 
-不同的编辑器使用方法不太一样，建议参考[官方文档](https://quarto.org/docs/get-started/)
+不同的编辑器使用方法不太一样，建议参考 [官方文档](https://quarto.org/docs/get-started/)
 
 对于 VSCode，建议安装 [Quarto 插件](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)，并在虚拟环境中安装 `jupyter matplotlib plotly`
 

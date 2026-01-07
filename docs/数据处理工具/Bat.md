@@ -22,7 +22,7 @@ scoop install bat
 
 基本上所有 cat 能做的事 bat 都能做，并且可以做得更好
 
-你可以在[官网](https://github.com/sharkdp/bat?tab=readme-ov-file#how-to-use)找到非常多的示例
+你可以在 [官网](https://github.com/sharkdp/bat?tab=readme-ov-file#how-to-use) 找到非常多的示例
 
 比如这里有些比较好理解的示例
 

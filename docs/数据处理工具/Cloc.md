@@ -8,7 +8,7 @@ cloc 是一个统计代码行数的工具
 
 除了 cloc，还有类似的工具，比如 `tokei`。我更推荐使用后者，原因如下
 
-- cloc 的较新版本存在严重缺陷——目录名、文件名等包含中文字符时会出错，且作者目前[没有修改意愿](https://github.com/AlDanial/cloc/issues/813)
+- cloc 的较新版本存在严重缺陷——目录名、文件名等包含中文字符时会出错，且作者目前 [没有修改意愿](https://github.com/AlDanial/cloc/issues/813)
 - tokei 使用 Rust 实现，速度极快
 - tokei 功能更全面，比如对于 markdown，tokei 能够统计 md 内嵌的代码种类、行数，但 cloc 不行
 

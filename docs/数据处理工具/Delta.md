@@ -53,4 +53,4 @@ git config --global delta.navigate true
 git config --global delta.side-by-side true
 ```
 
-更多设置可以查阅[官方文档](https://dandavison.github.io/delta/usage.html)
+更多设置可以查阅 [官方文档](https://dandavison.github.io/delta/usage.html)

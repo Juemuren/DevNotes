@@ -2,7 +2,7 @@
 
 ## 简介
 
-Prek 是用 Rust 重写的 pre-commit，而后者是一个用 Python 写的[提交前钩子](Git.md#钩子)框架
+Prek 是用 Rust 重写的 pre-commit，而后者是一个用 Python 写的 [提交前钩子](Git.md#钩子) 框架
 
 ## 安装
 
@@ -20,7 +20,7 @@ prek 是一个钩子运行器，它兼容 pre-commit 的配置文件。因此可
 
 ### 仓库中的钩子
 
-首先创建一个配置文件 `.pre-commit-config.yaml`。这个配置文件使用了 [pre-commit 仓库](https://github.com/pre-commit/pre-commit-hooks)中的 `check-yaml` 和 `end-of-file-fixer` 钩子。关于配置文件的详细说明请阅读 [pre-commit 文档](https://pre-commit.com/#adding-pre-commit-plugins-to-your-project)。
+首先创建一个配置文件 `.pre-commit-config.yaml`。这个配置文件使用了 [pre-commit 仓库](https://github.com/pre-commit/pre-commit-hooks) 中的 `check-yaml` 和 `end-of-file-fixer` 钩子。关于配置文件的详细说明请阅读 [pre-commit 文档](https://pre-commit.com/#adding-pre-commit-plugins-to-your-project)。
 
 ```yaml
 repos:
@@ -42,7 +42,7 @@ prek uninstall
 
 ### 自定义钩子
 
-除了使用社区的钩子外，也可以自己编写钩子。[官方文档](https://pre-commit.com/#new-hooks)里有详细的说明。
+除了使用社区的钩子外，也可以自己编写钩子。[官方文档](https://pre-commit.com/#new-hooks) 里有详细的说明。
 
 > [!Tip]- 钩子的幂等性
 > 钩子即一段可自动触发的脚本，因此 **幂等性** 在这里非常重要。

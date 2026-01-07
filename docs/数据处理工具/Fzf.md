@@ -43,7 +43,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 
 fzf 的核心是 **模糊匹配算法** 和 **交互式终端界面**，基于这两大支柱 fzf 衍生出了非常多的用法。
 
-[官方文档](https://junegunn.github.io/fzf/getting-started/#an-example)里有很直观的的演示，建议去看一看。
+[官方文档](https://junegunn.github.io/fzf/getting-started/#an-example) 里有很直观的的演示，建议去看一看。
 
 ### 命令历史记录搜索
 
@@ -176,7 +176,7 @@ fd -e tsx | fzf --preview "bat --color=always --style=numbers {}" --preview-wind
 
 我很喜欢 VSCode 里的正则替换编辑器，因为它可以实时预览结果，不用担心出错。这个交互功能其实通过 fzf + rg + bat/sd 也能在终端里做到。
 
-这是用 rg + bat 实现的交互式正则查找，没有替换功能。官网上有一个更强大也更复杂的[示例](https://junegunn.github.io/fzf/tips/ripgrep-integration/)
+这是用 rg + bat 实现的交互式正则查找，没有替换功能。官网上有一个更强大也更复杂的 [示例](https://junegunn.github.io/fzf/tips/ripgrep-integration/)
 
 ```sh
 fzf --disabled --ansi \

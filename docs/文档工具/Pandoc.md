@@ -2,7 +2,7 @@
 
 ## 简介
 
-Pandoc 是一个文档格式转换工具，可以处理非常多种的文档格式转换。你可以在[官网](https://pandoc.org/)找到[所有支持的格式转换](https://pandoc.org/diagram.svgz)
+Pandoc 是一个文档格式转换工具，可以处理非常多种的文档格式转换。你可以在 [官网](https://pandoc.org/) 找到 [所有支持的格式转换](https://pandoc.org/diagram.svgz)
 
 ## 安装
 
@@ -43,7 +43,7 @@ pandoc example.md -o example.docx --reference-doc=custom-reference.docx
 
 markdown 也支持双向转换
 
-markdown 本身没有排版和样式的功能，导出为其他格式时需指定模板。Pandoc 默认的模板效果比较一般。你可以在 [Pandoc templates](https://pandoc-templates.org/) 上搜寻别人分享的模板。如果你不知道该用哪个模板，也许可以试试这个覆盖了几乎所有导出格式的[学术模板](https://github.com/maehr/academic-pandoc-template)。
+markdown 本身没有排版和样式的功能，导出为其他格式时需指定模板。Pandoc 默认的模板效果比较一般。你可以在 [Pandoc templates](https://pandoc-templates.org/) 上搜寻别人分享的模板。如果你不知道该用哪个模板，也许可以试试这个覆盖了几乎所有导出格式的 [学术模板](https://github.com/maehr/academic-pandoc-template)。
 
 #### markdown 转 HTML
 
@@ -60,7 +60,7 @@ pandoc example.md -o example.html --css="github-markdown.css"
 
 markdown 转 **PDF** 有点麻烦，因为 markdown 是个没有排版功能的格式。
 
-事实上，无论源格式是什么，pandoc 都会将文档转为中间格式，然后再借助 pdf 引擎完成转换。因此关于 pdf 的转换放到了[单独的部分](#pdf)。
+事实上，无论源格式是什么，pandoc 都会将文档转为中间格式，然后再借助 pdf 引擎完成转换。因此关于 pdf 的转换放到了 [单独的部分](#pdf)。
 
 #### markdown 转 PPTX
 
@@ -75,7 +75,7 @@ pandoc example.md -o example.pptx
 
 ### pdf
 
-pandoc 通过将文档转为另一种格式，再使用 pdf 引擎生成 pdf。引擎有很多种，[官方文档](https://pandoc.org/MANUAL.html#option--pdf-engine)里有详细的列表。引擎会决定使用哪种中间格式；或者也可以只指定中间格式，然后使用该格式的默认引擎。
+pandoc 通过将文档转为另一种格式，再使用 pdf 引擎生成 pdf。引擎有很多种，[官方文档](https://pandoc.org/MANUAL.html#option--pdf-engine) 里有详细的列表。引擎会决定使用哪种中间格式；或者也可以只指定中间格式，然后使用该格式的默认引擎。
 
 中间格式我一般会选择 LaTeX、Typst 或 HTML 中的一个
 
@@ -94,8 +94,8 @@ pandoc -s example.md -o example.pdf --pdf-engine=weasyprint --css="github-markdo
 
 部分参数说明
 
-- `-V` 参数向 pandoc 传递了模板变量。模板变量也可以通过 `front-matter` 传递。你可以在[官方文档](https://pandoc.org/MANUAL.html#variables)里找到更多的可使用变量。
+- `-V` 参数向 pandoc 传递了模板变量。模板变量也可以通过 `front-matter` 传递。你可以在 [官方文档](https://pandoc.org/MANUAL.html#variables) 里找到更多的可使用变量。
 - `-s` 参数生成带有页眉、页脚的输出。对于 pdf 格式这个参数会自动设置，因此可省略。
 - `--template` 用于指定模板，和 `--css` 一样，一般是文件的相对路径。
 
-你可以在[官方文档](https://pandoc.org/MANUAL.html#templates)里找到关于使用模板的更详细说明。
+你可以在 [官方文档](https://pandoc.org/MANUAL.html#templates) 里找到关于使用模板的更详细说明。

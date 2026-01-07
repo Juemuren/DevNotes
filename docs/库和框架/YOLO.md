@@ -33,7 +33,7 @@ mamba activate pytorch
 
 ### 安装
 
-[官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/)推荐使用 pip 安装，因此使用如下命令安装
+[官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/) 推荐使用 pip 安装，因此使用如下命令安装
 
 ```sh
 pip install ultralytics
@@ -86,7 +86,7 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 
 目前我没用到这个库，因此暂时作为可选项。事实上这并不是加速必需的，因为 PyTorch 已经自带了 CUDA 运行时。这个库的作用是让你自己写深度学习框架的时候可以加速。
 
-进入[官网](https://developer.nvidia.com/cudnn)后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
+进入 [官网](https://developer.nvidia.com/cudnn) 后会看到 NVIDIA 提供了多种安装方式。鉴于前面的库都使用 pip 安装，此处也使用 pip。
 
 不过英伟达非常逆天地在 [PyPI](https://pypi.org/search/?q=cudnn) 上注册了多个假包来告诉你没有安装正确的版本
 
@@ -119,7 +119,7 @@ exit()
 
 #### VSCode
 
-推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了[相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
+推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了 [相关拓展](https://docs.ultralytics.com/zh/integrations/vscode/)
 
 可以在 VSCode 中安装 [Ultralytics Snippets](https://marketplace.visualstudio.com/items?itemName=Ultralytics.ultralytics-snippets) 这个拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
 
@@ -131,7 +131,7 @@ YOLO 有两种用法，分别是 `Python` 和 `CLI`
 
 通过 `from ultralytics import YOLO` 来导入 YOLO 库。
 
-该库的接口很多，建议阅读[官方文档](https://docs.ultralytics.com/zh/usage/python/)。
+该库的接口很多，建议阅读 [官方文档](https://docs.ultralytics.com/zh/usage/python/)。
 
 ### CLI
 
@@ -145,9 +145,9 @@ yolo TASK MODE ARGS
 
 - **TASK** （可选）是以下之一 `detect/segment/classify/pose/obb`。如果未明确传递，YOLO 将尝试推断 TASK。`detect` 是目标检测，`segment` 是语义分割，其余的我没用过。
 - **MODE** （必需）是以下之一 `train/val/predict/export/track/benchmark`。`train` 是训练，`val` 是验证，`predict` 是预测，`export` 是导出，`benchmark` 是基准测试，剩下的那个我没用过。
-- **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考[官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
+- **ARGS** （可选）是任意数量的自定义 `arg=value` 键值对，例如 `imgsz=320`，用于覆盖默认值。这部分较为复杂，不同的 TASK 配置差别极大，建议参考 [官方配置说明](https://docs.ultralytics.com/zh/usage/cfg/)。
 
-更详细的参考请阅读[官方文档](https://docs.ultralytics.com/zh/usage/cli/)
+更详细的参考请阅读 [官方文档](https://docs.ultralytics.com/zh/usage/cli/)
 
 ### 示例
 
@@ -225,7 +225,7 @@ names:
 yolo detect train data='example.yaml' model=yolo11n.pt epochs=10 imgsz=640
 ```
 
-这会运行目标检测的模型训练，其中数据集是 `datasets/example`，在 `yolo11n.pt` 模型的基础上训练，并以 `epochs=10 imgsz=640` 覆盖默认参数值。更详细的说明请参考[官方文档 - 训练](https://docs.ultralytics.com/zh/modes/train/)。
+这会运行目标检测的模型训练，其中数据集是 `datasets/example`，在 `yolo11n.pt` 模型的基础上训练，并以 `epochs=10 imgsz=640` 覆盖默认参数值。更详细的说明请参考 [官方文档 - 训练](https://docs.ultralytics.com/zh/modes/train/)。
 
 训练的结果保存在 `runs/detect` 目录下。
 
@@ -237,6 +237,6 @@ yolo detect train data='example.yaml' model=yolo11n.pt epochs=10 imgsz=640
 yolo segment predict model=yolo11n-seg.pt source='data' imgsz=320
 ```
 
-这会运行语义分割的图片预测，其中数据来源是 `data`，而模型权重使用 `yolo11n-seg.pt`，并以 `imgsz=320` 覆盖默认参数值。更详细的说明请参考[官方文档 - 预测](https://docs.ultralytics.com/zh/modes/predict/)。
+这会运行语义分割的图片预测，其中数据来源是 `data`，而模型权重使用 `yolo11n-seg.pt`，并以 `imgsz=320` 覆盖默认参数值。更详细的说明请参考 [官方文档 - 预测](https://docs.ultralytics.com/zh/modes/predict/)。
 
 训练的结果保存在 `runs/segment` 目录下。

@@ -53,12 +53,12 @@ mkdocs-git-revision-date-plugin
 
 MkDocs 的配置文件为根目录的 `mkdocs.yml`
 
-本网站就是使用 `MkDocs` 生成的，可以参考[我的配置文件](https://github.com/Juemuren/DevNotes/blob/main/mkdocs.yml)
+本网站就是使用 `MkDocs` 生成的，可以参考 [我的配置文件](https://github.com/Juemuren/DevNotes/blob/main/mkdocs.yml)
 
-[Material for MkDocs 官方文档](https://squidfunk.github.io/mkdocs-material)中有更详细的说明
+[Material for MkDocs 官方文档](https://squidfunk.github.io/mkdocs-material) 中有更详细的说明
 
 > [!Tip]+ VSCode 的 YAML 报错
-> 如果你在使用 VSCode 的 [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) 插件，那么该插件可能会在 `mkdocs.yml` 文件配置正确时报错。[官方文档](https://squidfunk.github.io/mkdocs-material/creating-your-site/#minimal-configuration-visual-studio-code)中有说明应该如何修改 YAML 插件的设置以消除误报错。
+> 如果你在使用 VSCode 的 [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) 插件，那么该插件可能会在 `mkdocs.yml` 文件配置正确时报错。[官方文档](https://squidfunk.github.io/mkdocs-material/creating-your-site/#minimal-configuration-visual-studio-code) 中有说明应该如何修改 YAML 插件的设置以消除误报错。
 
 ## 使用
 
@@ -75,4 +75,4 @@ mkdocs serve
 
 ### 持续集成
 
-MkDocs 有个部署到 **Github Pages** 的命令 `mkdocs gh-deploy --force`，你可以据此进行持续集成。具体集成方法可参考[我的配置文件](https://github.com/Juemuren/DevNotes/blob/main/.github/workflows/ci.yml)。[Github Actions 官方文档](https://docs.github.com/en/actions)里有更详细的使用说明
+MkDocs 有个部署到 **Github Pages** 的命令 `mkdocs gh-deploy --force`，你可以据此进行持续集成。具体集成方法可参考 [我的配置文件](https://github.com/Juemuren/DevNotes/blob/main/.github/workflows/ci.yml)。[Github Actions 官方文档](https://docs.github.com/en/actions) 里有更详细的使用说明

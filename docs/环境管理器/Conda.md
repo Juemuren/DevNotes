@@ -21,7 +21,7 @@ Conda 有多种实现，比如 *Miniforge* 和 *Anaconda*，个人更推荐使�
 
 ## 安装
 
-不建议用 scoop 安装。推荐使用[官方的安装脚本/程序](https://conda-forge.org/download/)。
+不建议用 scoop 安装。推荐使用 [官方的安装脚本/程序](https://conda-forge.org/download/)。
 
 Windows 版本的安装程序会提供一个图形界面，按照指示安装即可。可以修改安装路径，其余选项使用默认的就行
 

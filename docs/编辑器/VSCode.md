@@ -6,11 +6,11 @@ VSCode 是一个开源的代码编辑器，基于 Web 且有着非常强大的�
 
 ## 安装
 
-建议使用[官网](https://code.visualstudio.com/)的安装程序。VSCode 的安装程序还是非常友好的
+建议使用 [官网](https://code.visualstudio.com/) 的安装程序。VSCode 的安装程序还是非常友好的
 
 ## 拓展推荐
 
-和特定[编程语言](../编程语言/index.md)/特定[工具](../命令行工具/index.md)有关的拓展就不列举在这里了，可以在相应的章节中查看
+和特定 [编程语言](../编程语言/index.md)/特定 [工具](../命令行工具/index.md) 有关的拓展就不列举在这里了，可以在相应的章节中查看
 
 ### 本地化
 
@@ -75,7 +75,7 @@ VSCode 是一个开源的代码编辑器，基于 Web 且有着非常强大的�
 
 启用太多拓展可能会导致一些问题，比如占用内存变大、启动变慢等。但每打开一个不同的项目就要手动禁用、启用拓展又过于麻烦。配置文件的出现就是为了解决这个问题的，不仅支持为不同的项目配置不同的拓展，还可以配置不同的设置、键盘快捷方式、任务、代码片段等，功能非常强大
 
-配置文件的具体使用方式取决于个人习惯，而且目前功能似乎不太完善，比如[配置文件不能继承](https://code.visualstudio.com/docs/configure/profiles#_can-i-inherit-settings-from-another-profile)。有需求的话建议去阅读[官方文档](https://code.visualstudio.com/docs/configure/profiles)
+配置文件的具体使用方式取决于个人习惯，而且目前功能似乎不太完善，比如 [配置文件不能继承](https://code.visualstudio.com/docs/configure/profiles#_can-i-inherit-settings-from-another-profile)。有需求的话建议去阅读 [官方文档](https://code.visualstudio.com/docs/configure/profiles)
 
 ## 命令行
 
@@ -105,11 +105,11 @@ code --list-extensions --show-versions
 code --diff file1 file2
 ```
 
-可以运行 `code --help` 或阅读[官方文档](https://code.visualstudio.com/docs/configure/command-line)了解更多功能
+可以运行 `code --help` 或阅读 [官方文档](https://code.visualstudio.com/docs/configure/command-line) 了解更多功能
 
 ## 制作自己的拓展
 
-虽然 VSCode 的拓展生态非常丰富，但仍可能存在一些特殊需求无法满足。这时一种解决方式是自己制作拓展。VSCode 官方有非常详细的、关于制作拓展的[文档](https://code.visualstudio.com/api#how-to-build-extensions)
+虽然 VSCode 的拓展生态非常丰富，但仍可能存在一些特殊需求无法满足。这时一种解决方式是自己制作拓展。VSCode 官方有非常详细的、关于制作拓展的 [文档](https://code.visualstudio.com/api#how-to-build-extensions)
 
 拓展有一套标准的项目结构。VSCode 官方提供了代码生成工具，可以快速搭建起项目的骨架
 
@@ -119,7 +119,7 @@ npm install -g yo generator-code
 yo code
 ```
 
-拓展制作完成后可以打包、安装和发布，VSCode 官方同样提供了易用的工具。其中发布拓展需要比较繁琐的步骤，建议阅读[官方文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions)
+拓展制作完成后可以打包、安装和发布，VSCode 官方同样提供了易用的工具。其中发布拓展需要比较繁琐的步骤，建议阅读 [官方文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions)
 
 ```sh
 npm install -g @vscode/vsce

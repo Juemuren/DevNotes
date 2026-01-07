@@ -2,7 +2,7 @@
 
 ## 简介
 
-Mermaid 是一个用 JavaScript 实现的图表绘制工具，可以通过简单的代码绘制图表。具体的语法可查阅[官方文档](https://mermaid.js.org/intro/)
+Mermaid 是一个用 JavaScript 实现的图表绘制工具，可以通过简单的代码绘制图表。具体的语法可查阅 [官方文档](https://mermaid.js.org/intro/)
 
 mermaid 流行的主要原因就是可以把代码嵌入 MD 文档中。毕竟大多数时候 MD 都会转为 HTML，而 mermaid 恰好有 JavaScript 实现，这使得客户端可以自行完成图片的渲染。Github 的 MD 就支持渲染内嵌的 mermaid 代码，LLM 也常用 mermaid 来生成和展示图片。
 
@@ -76,7 +76,7 @@ mermaid 还有 VSCode 拓展 [Mermaid Chart](https://marketplace.visualstudio.co
 对于最后一点，让 **代码在客户端进行渲染** 的好处是显而易见的
 
 - 集成方便。对于 Web 应用，不需要配置后端服务；对于文档，不需要先本地生成图片再进行插入
-- 可自定义。客户端能够对代码进行自定义渲染，这允许实现真正的暗黑模式，而非粗暴地反转图片颜色。[开头的图片在 GitHub 上](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md)就和本网站上的不太一样，尽管代码是相同的。
+- 可自定义。客户端能够对代码进行自定义渲染，这允许实现真正的暗黑模式，而非粗暴地反转图片颜色。[开头的图片在 GitHub 上](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md) 就和本网站上的不太一样，尽管代码是相同的。
 
 ## 安装
 

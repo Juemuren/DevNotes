@@ -4,7 +4,7 @@
 
 MSYS 为 Windows 平台提供了一个模拟的编程环境，并移植了很多软件到这个环境中，让 Windows 开发者可以有类似 **UNIX** 系统的开发体验。
 
-除去 arm 架构和 32 位的环境，MSYS 里能选的环境有 3 种，分别是 CLANG、UCRT、MINGW。你可以去[官网](https://www.msys2.org/docs/environments/)查看这些环境之间的区别
+除去 arm 架构和 32 位的环境，MSYS 里能选的环境有 3 种，分别是 CLANG、UCRT、MINGW。你可以去 [官网](https://www.msys2.org/docs/environments/) 查看这些环境之间的区别
 
 ## 对比
 
@@ -43,13 +43,13 @@ MSYS 全称为 *Minimal SYStem*，即最小系统，不过这和一般认知中�
 
 ## 安装
 
-不建议用 Scoop 安装。推荐使用[官方的安装程序](https://www.msys2.org/)。
+不建议用 Scoop 安装。推荐使用 [官方的安装程序](https://www.msys2.org/)。
 
 ## 更改设置
 
 ### 修改 HOME
 
-没找到官方文档，但 [Cygwin 用户手册](https://cygwin.com/cygwin-ug-net/ntsec.html)可以参考，毕竟 MSYS 的模拟环境部分来自于 Cygwin 项目。不过说实话，这个文档写得有点乱，用浏览器在页面查找 `db_home` 可以比较快地找到需要的内容。
+没找到官方文档，但 [Cygwin 用户手册](https://cygwin.com/cygwin-ug-net/ntsec.html) 可以参考，毕竟 MSYS 的模拟环境部分来自于 Cygwin 项目。不过说实话，这个文档写得有点乱，用浏览器在页面查找 `db_home` 可以比较快地找到需要的内容。
 
 修改 MSYS2 的 `/etc/nsswitch.conf` 文件
 
@@ -72,7 +72,7 @@ pacman -S zsh
 
 可以使用官方写的脚本，或者自己写命令。
 
-个人认为使用脚本可能更好，毕竟官方已经写好了脚本的启动命令，考虑到了更多的情况。你可以去查看 `msys2_shell.cmd` 这个脚本文件的具体内容，里面告诉了你一些本文没提到的东西。比如有些代码可以通过注释掉或取消注释掉来改变启动行为。像[启用符号链接](https://www.msys2.org/docs/symlinks)这个功能就可以通过 `set MSYS=winsymlinks:nativestrict` 来启用。不过 *cmd* 文件真的很难阅读，语法太丑陋了。
+个人认为使用脚本可能更好，毕竟官方已经写好了脚本的启动命令，考虑到了更多的情况。你可以去查看 `msys2_shell.cmd` 这个脚本文件的具体内容，里面告诉了你一些本文没提到的东西。比如有些代码可以通过注释掉或取消注释掉来改变启动行为。像 [启用符号链接](https://www.msys2.org/docs/symlinks) 这个功能就可以通过 `set MSYS=winsymlinks:nativestrict` 来启用。不过 *cmd* 文件真的很难阅读，语法太丑陋了。
 
 ### 使用脚本
 
@@ -116,7 +116,7 @@ path\to\msys2\usr\bin\env CHERE_INVOKING=1 MSYS2_PATH_TYPE=inherit MSYSTEM=UCRT6
 
 这很麻烦。好在大多数编辑器/终端都可以配置启动命令。
 
-启动命令可以参考[进入环境](#进入环境)这节
+启动命令可以参考 [进入环境](#进入环境) 这节
 
 ### VSCode Terminal
 

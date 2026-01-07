@@ -8,7 +8,7 @@ dotter 是一个用 Rust 编写的点文件管理器
 
 在点文件管理器中，更权威的应该是 `chezmoi` 这个工具
 
-chezmoi 官方文档里虽有[与各种点文件管理器的比较](https://www.chezmoi.io/comparison-table/)，但缺少了 dotter。个人感觉 chezmoi 更全能，但 dotter 相对更易用
+chezmoi 官方文档里虽有 [与各种点文件管理器的比较](https://www.chezmoi.io/comparison-table/)，但缺少了 dotter。个人感觉 chezmoi 更全能，但 dotter 相对更易用
 
 ## 安装
 
@@ -19,7 +19,7 @@ scoop install dotter
 
 ## 使用
 
-详细内容请参考[官方文档](https://github.com/SuperCuber/dotter/wiki/)
+详细内容请参考 [官方文档](https://github.com/SuperCuber/dotter/wiki/)
 
 ### 基本使用
 
@@ -128,7 +128,7 @@ scoop_root = "~/scoop"
 scoop_root = "E:/Program/Scoop"
 ```
 
-变量可以被覆盖。关于包及其覆盖规则参见后面的[文件和包](#文件和包)这部分
+变量可以被覆盖。关于包及其覆盖规则参见后面的 [文件和包](#文件和包) 这部分
 
 #### 文件和包
 

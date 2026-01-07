@@ -141,7 +141,7 @@ columns 1
 - **Mirrored** 镜像模式。虚拟机共享宿主机的 IP 地址，并通过端口转发规则来访问外网。这使得配置代理更加简单，但可能发生端口冲突
 
 > [!Note]- WSL VirtioProxy
-> WSL 有一种叫做 **VirtioProxy** 的网络模式，但我目前并没有找到任何相关资料。微软官方文档里提到这个概念的只有[一篇](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)，但那篇文档也没有对这个概念进行介绍
+> WSL 有一种叫做 **VirtioProxy** 的网络模式，但我目前并没有找到任何相关资料。微软官方文档里提到这个概念的只有 [一篇](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)，但那篇文档也没有对这个概念进行介绍
 
 #### 虚拟专用网
 

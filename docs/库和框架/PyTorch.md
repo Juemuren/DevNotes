@@ -6,7 +6,7 @@ PyTorch 是一个经过优化的深度学习张量库，不过我认为称其为
 
 ## 安装
 
-首先进入[官网的本地安装指导页面](https://pytorch.org/get-started/locally/)，它会检测操作系统和显卡，并推荐下载的版本。
+首先进入 [官网的本地安装指导页面](https://pytorch.org/get-started/locally/)，它会检测操作系统和显卡，并推荐下载的版本。
 
 ![PyTorch](../images/pytorch.png)
 

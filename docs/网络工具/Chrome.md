@@ -12,7 +12,7 @@ Microsoft Edge 是 Windows 系统自带的。由于和 Chrome 内核相同，因
 
 ## 安装
 
-Windows 用户建议上[官网](https://www.google.com/chrome/)去下载安装程序
+Windows 用户建议上 [官网](https://www.google.com/chrome/) 去下载安装程序
 
 命令行爱好者也可以尝试用脚本进行安装
 
@@ -26,10 +26,10 @@ apt install ./google-chrome-stable_current_amd64.deb
 
 ### 浏览器插件
 
-Chrome 支持安装插件。大多数插件都可以在 [Chrome 插件商店](https://chromewebstore.google.com/category/extensions)中获取
+Chrome 支持安装插件。大多数插件都可以在 [Chrome 插件商店](https://chromewebstore.google.com/category/extensions) 中获取
 
 > [!Note]- Microsoft Edge 的插件
-> Microsoft Edge 可以安装 Chrome 插件商店中的插件，同时它还有自己的[插件商店](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home)。
+> Microsoft Edge 可以安装 Chrome 插件商店中的插件，同时它还有自己的 [插件商店](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home)。
 
 以下是一些我常用的插件
 
@@ -46,7 +46,7 @@ DevTools 是给 Web 开发者使用的调试面版，有非常多的功能。
 > [!Note]- Microsoft Edge 的开发者工具
 > Microsoft Edge 的开发者工具功能和 Chrome 几乎一样，只是界面略有不同。
 
-在 [Web 开发](../应用开发/Web.md#浏览器)章节有简略的介绍，更多内容详见[官方文档](https://developer.chrome.com/docs/devtools)。
+在 [Web 开发](../应用开发/Web.md#浏览器) 章节有简略的介绍，更多内容详见 [官方文档](https://developer.chrome.com/docs/devtools)。
 
 ### 无头模式
 
@@ -55,7 +55,7 @@ Headless Chrome 是 Chrome 浏览器的无头模式。无头模式即没有图�
 > [!Note]- Microsoft Edge 的无头模式
 > Microsoft Edge 的无头模式用法和 Chrome 几乎相同。
 >
-> Windows 系统自带了 Microsoft Edge，但它并不在 `PATH` 中。可以[使用 Scoop 添加 shim](../包管理器/Scoop.md#管理脚本和命令) 来方便地使用 Microsoft Edge 的无头模式
+> Windows 系统自带了 Microsoft Edge，但它并不在 `PATH` 中。可以 [使用 Scoop 添加 shim](../包管理器/Scoop.md#管理脚本和命令) 来方便地使用 Microsoft Edge 的无头模式
 >
 > ```sh
 > scoop shim add msedge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'

@@ -21,7 +21,7 @@ Doxygen 支持的语言非常多。默认就能够支持 C、C++、Lex、C#、Ob
 
 如果使用 VSCode，建议下载插件 [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)。这个插件可以快速生成 Doxygen 支持的注释块。不过，如前所述，只支持 C/C++。
 
-Doxygen 支持多种风格的注释块，你可以去[官方文档](https://www.doxygen.nl/manual/docblocks.html#specialblock)中查看更多示例。我这里只列出我个人比较喜欢的注释块风格
+Doxygen 支持多种风格的注释块，你可以去 [官方文档](https://www.doxygen.nl/manual/docblocks.html#specialblock) 中查看更多示例。我这里只列出我个人比较喜欢的注释块风格
 
 #### 函数
 
@@ -161,7 +161,7 @@ cd latex
 make
 ```
 
-文档是中文的话会比较麻烦，可参照前面的 [PDF 配置](#pdf-配置)部分解决。
+文档是中文的话会比较麻烦，可参照前面的 [PDF 配置](#pdf-配置) 部分解决。
 
 #### HTML
 

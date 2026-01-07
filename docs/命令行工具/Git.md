@@ -18,7 +18,7 @@ Git 保存的代码通常被叫做仓库。仓库可以是 **本地仓库**，�
 
 每个提交都会产生一个唯一的哈希值，你可以用这个哈希值来指定具体的单次提交。也可以用 `HEAD` 表示最近的提交，用 `HEAD~n` 来表示最近提交的前 n 个提交
 
-提交时必须有提交信息，这些信息是给人阅读的。提交信息应该遵循一定的规范。[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)是一个社区里常用的提交范式，如果不知道怎么写提交的话可以参考一下。
+提交时必须有提交信息，这些信息是给人阅读的。提交信息应该遵循一定的规范。[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) 是一个社区里常用的提交范式，如果不知道怎么写提交的话可以参考一下。
 
 ### 暂存
 
@@ -38,7 +38,7 @@ Git 保存的代码通常被叫做仓库。仓库可以是 **本地仓库**，�
 
 钩子指一段自动触发的脚本。Git 提供了钩子机制，可以在其执行某个操作前/后自动运行一段脚本。
 
-Git 中有很多种钩子，可以修改它们来实现想要的功能。更多介绍请阅读[官方文档](https://git-scm.com/docs/githooks)
+Git 中有很多种钩子，可以修改它们来实现想要的功能。更多介绍请阅读 [官方文档](https://git-scm.com/docs/githooks)
 
 - `pre-commit` 提交前钩子，会在 `git commit` 前自动运行
 - `post-commit` 提交后钩子，会在 `git commit` 后自动运行
@@ -68,7 +68,7 @@ pacman -S git
 >
 > lazygit 这个命令行工具提供了操作 Git 的 TUI，同样可以降低 Git 的使用门槛
 
-Git 有非常多的子命令，详细的使用说明可以参考[官方文档](https://git-scm.com/docs)
+Git 有非常多的子命令，详细的使用说明可以参考 [官方文档](https://git-scm.com/docs)
 
 ### 基本工作流
 

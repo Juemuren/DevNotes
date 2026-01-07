@@ -22,7 +22,7 @@ scoop install hyperfine
 
 ## 使用
 
-参考[官方文档](https://github.com/sharkdp/hyperfine)
+参考 [官方文档](https://github.com/sharkdp/hyperfine)
 
 最基本的用法
 

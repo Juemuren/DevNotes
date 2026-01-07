@@ -6,7 +6,7 @@ Pnpm 是一个 JavaScript 的包管理器
 
 ## 对比
 
-pnpm 的[开发动机](https://pnpm.io/motivation)以及与 yarn/npm 的[特性对比](https://pnpm.io/feature-comparison)
+pnpm 的 [开发动机](https://pnpm.io/motivation) 以及与 yarn/npm 的 [特性对比](https://pnpm.io/feature-comparison)
 
 简单地说，pnpm 尝试通过符号链接的方式解决 npm 的一些痛点，如 **占用过多磁盘空间**、**安装过程很慢** 等。
 

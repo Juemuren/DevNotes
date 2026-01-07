@@ -15,7 +15,7 @@ Linux 通常自带 **系统包管理器**，Homebrew 与之有一些显著的区
 
 ## 安装
 
-安装的命令就在[官网主页](https://brew.sh/)
+安装的命令就在 [官网主页](https://brew.sh/)
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -38,4 +38,4 @@ brew upgrade fzf
 brew uninstall fzf
 ```
 
-更复杂的用法建议参考[官方参考手册](https://docs.brew.sh/Manpage)
+更复杂的用法建议参考 [官方参考手册](https://docs.brew.sh/Manpage)

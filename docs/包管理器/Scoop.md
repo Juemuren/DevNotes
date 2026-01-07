@@ -96,7 +96,7 @@ scoop status
 scoop list
 ```
 
-Scoop 可以通过 `scoop search xxx` 来搜索应用，用 `scoop info git` 来查看应用的详细信息。不过我个人更喜欢在 [Scoop 官网](https://scoop.sh/#/apps)上搜索和查看这些东西
+Scoop 可以通过 `scoop search xxx` 来搜索应用，用 `scoop info git` 来查看应用的详细信息。不过我个人更喜欢在 [Scoop 官网](https://scoop.sh/#/apps) 上搜索和查看这些东西
 
 ### 管理脚本和命令
 
@@ -119,7 +119,7 @@ scoop shim add msedge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.
 
 有些时候你可能觉得官方桶里某些程序的安装方式不合心意。这时你要么去手动安装软件，但这样很不优雅；要么去提 *Issues* 或 *PR*，但官方对 PR 的要求很严格，而且审核非常慢。最好的方式就是创建一个自己的桶，用自己的满意的方式来安装。
 
-你可以去看看官方的[桶模板](https://github.com/ScoopInstaller/BucketTemplate)来学习如何创建自己的桶。
+你可以去看看官方的 [桶模板](https://github.com/ScoopInstaller/BucketTemplate) 来学习如何创建自己的桶。
 
 我已经创建了一个自己的桶，你可以通过以下方式来使用
 

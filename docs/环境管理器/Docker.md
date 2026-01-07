@@ -194,7 +194,7 @@ COPY ./index.js ./index.js
 CMD node index.js
 ```
 
-以上示例非常简单，你可以在 [Docker 官方文档](https://docs.docker.com/reference/dockerfile/)里获得更详细的参考。有了 `Dockerfile` 后修改容器构建新镜像就变得非常简单了
+以上示例非常简单，你可以在 [Docker 官方文档](https://docs.docker.com/reference/dockerfile/) 里获得更详细的参考。有了 `Dockerfile` 后修改容器构建新镜像就变得非常简单了
 
 ```sh
 # 根据配置文件自动构建镜像

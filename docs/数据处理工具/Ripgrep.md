@@ -24,7 +24,7 @@ brew install ripgrep
 
 ## 使用
 
-ripgrep 功能非常强大，用法很多，还有自己的配置文件，这里只列出我常用的命令。可参考[官方文档](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md)获取更多信息
+ripgrep 功能非常强大，用法很多，还有自己的配置文件，这里只列出我常用的命令。可参考 [官方文档](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md) 获取更多信息
 
 ### 正则查找
 

@@ -21,7 +21,7 @@ scoop install zoxide
 
 ### Shell 集成
 
-显然，Zoxide 要能够正常工作，首先得能够集成到 Shell 里。Zoxide 支持非常多的 Shell，可以在[官网](https://github.com/ajeetdsouza/zoxide)找到集成方法
+显然，Zoxide 要能够正常工作，首先得能够集成到 Shell 里。Zoxide 支持非常多的 Shell，可以在 [官网](https://github.com/ajeetdsouza/zoxide) 找到集成方法
 
 对于 Pwsh，添加如下命令到 `$PROFILE` 里
 
