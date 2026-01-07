@@ -42,7 +42,7 @@ VSCode 是一个开源的代码编辑器，基于 Web 且有着非常强大的�
 ### 文档编写
 
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) 拼写检查。虽然只检查英文的拼写，但仍然很有用，尤其是在编写文档的时候。
-- [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) 增强了 Markdown 的功能，新增**双链**、**嵌入**、**图谱**等特性，类似 Obsidian，使得可以用 Markdown 打造个人知识库。
+- [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) 增强了 Markdown 的功能，新增 **双链**、**嵌入**、**图谱** 等特性，类似 Obsidian，使得可以用 Markdown 打造个人知识库。
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) 提供实时的 Markdown 静态检查和简单的 Markdown 格式化
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 全面的 Markdown 增强，提供了创建/更新目录、数学公式自动补全、常用快捷键等功能
 - [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable) 增强了 Markdown 的表格功能，包括快速插入行/列、格式化/美化表格、将 CSV/TSV 转为 Markdown 表格等

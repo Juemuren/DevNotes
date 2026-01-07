@@ -8,7 +8,7 @@ Vcpkg 是一个 C/C++ 的包管理器，与 CMake 的集成度很高。
 
 [vcpkg 与其它包管理器的比较](https://learn.microsoft.com/vcpkg/get_started/overview#vcpkg-compared-to-other-package-managers)
 
-`vcpkg` 相比系统包管理器（比如 `apt`、`pacman`）有一些区别。建议与系统包管理器配合使用，因为二者**优势区间**不同。
+`vcpkg` 不同于 **系统包管理器**，建议与之配合使用，因为二者 **优势区间** 不同
 
   1. 优势
     - 项目级别的环境隔离，不影响系统环境，减少了环境冲突的问题

@@ -33,9 +33,9 @@ sequenceDiagram
 如果你掌握了基本的浏览器调试方法，你会发现你并没有接收到上面这张图片，而是接收到了下面的代码，然后在本地完成了渲染
 
 > [!Tip]- 浏览器调试
-> 打开 DevTools 的**源代码**栏，你能在 `top/juemuren.github.io/DevNotes/文档工具/Mermaid` 里找到本页面的原始 HTML，你会看到里面只有 `code` 标签而没有 `svg` 标签；你应该还能在 `unpkg.com/mermaid@xx/dist` 里找到 mermaid 的 JavaScript 实现，它把原始 HTML 中 `code` 标签里的代码渲染为 `svg` 图片并进行了替换
+> 打开 DevTools 的 **源代码** 栏，你能在 `top/juemuren.github.io/DevNotes/文档工具/Mermaid` 里找到本页面的原始 HTML，你会看到里面只有 `code` 标签而没有 `svg` 标签；你应该还能在 `unpkg.com/mermaid@xx/dist` 里找到 mermaid 的 JavaScript 实现，它把原始 HTML 中 `code` 标签里的代码渲染为 `svg` 图片并进行了替换
 >
-> 打开 DevTools 的**元素**栏，你会发现上面这张图里已经没有 `code` 标签了，而是被替换为了 `svg` 标签
+> 打开 DevTools 的 **元素** 栏，你会发现上面这张图里已经没有 `code` 标签了，而是被替换为了 `svg` 标签
 
 ```mmd
 sequenceDiagram
@@ -73,7 +73,7 @@ mermaid 还有 VSCode 拓展 [Mermaid Chart](https://marketplace.visualstudio.co
 - plantUML 图的种类和 Mermaid 不完全一样，但两者都很丰富
 - plantUML 的体验和生态没有 Mermaid 好。plantUML 使用 Java 实现，无法只提供代码让接收者自行渲染
 
-对于最后一点，让**代码在客户端进行渲染**的好处是显而易见的
+对于最后一点，让 **代码在客户端进行渲染** 的好处是显而易见的
 
 - 集成方便。对于 Web 应用，不需要配置后端服务；对于文档，不需要先本地生成图片再进行插入
 - 可自定义。客户端能够对代码进行自定义渲染，这允许实现真正的暗黑模式，而非粗暴地反转图片颜色。[开头的图片在 GitHub 上](https://github.com/Juemuren/DevNotes/blob/main/docs/文档工具/Mermaid.md)就和本网站上的不太一样，尽管代码是相同的。

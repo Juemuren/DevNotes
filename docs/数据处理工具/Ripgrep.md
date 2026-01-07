@@ -59,6 +59,8 @@ rg -F pattern
 rg -C 5 pattern
 # -P 使用 PCRE2 引擎
 rg -P pattern
+# --crlf 使用 CRLF 处理行尾序列
+rg --crlf pattern
 ```
 
 ### 配置文件

@@ -2,7 +2,7 @@
 
 ## 简介
 
-React 是一个 `用于构建 Web 和原生交互界面的库`，不过社区里更喜欢称其为**前端框架**。该框架非常流行，生态很好
+React 是一个 `用于构建 Web 和原生交互界面的库`，不过社区里更喜欢称其为 **前端框架**。该框架非常流行，生态很好
 
 ## 安装
 
@@ -50,7 +50,7 @@ createRoot(document.getElementById('root')).render(
 
 ### 虚拟 DOM 和 Native
 
-React 还有一个重要概念，就是**虚拟 DOM**。真实 DOM 可能很庞大，React 使用更轻量的虚拟 DOM 去模拟，这使得在 React 中操作 DOM 更加快速。当然了，虚拟 DOM 最终还是要映射回真实 DOM 的，因此使用 React 很难比纯 JavaScript 更快。
+React 还有一个重要概念，就是 **虚拟 DOM**。真实 DOM 可能很庞大，React 使用更轻量的虚拟 DOM 去模拟，这使得在 React 中操作 DOM 更加快速。当然了，虚拟 DOM 最终还是要映射回真实 DOM 的，因此使用 React 很难比纯 JavaScript 更快。
 
 不过也正是因为虚拟 DOM，才使得 React 可以通过 **React Native** 开发 Android/iOS 原生应用。其原理就是把虚拟 DOM 映射到原生的 Android/iOS UI，和映射到 HTML DOM 是类似的。
 
