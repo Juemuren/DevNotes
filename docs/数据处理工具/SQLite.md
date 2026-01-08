@@ -224,13 +224,7 @@ SELECT
     SUM(数量) AS 总数
 FROM chips
 WHERE 芯片类型 = '小'
-GROUP BY
-    CASE
-        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
-        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
-        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
-        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
-    END
+GROUP BY 组合
 ORDER BY 总数 DESC;
 
 -- 查询大芯片合并统计
@@ -245,13 +239,7 @@ SELECT
     SUM(数量) AS 总数
 FROM chips
 WHERE 芯片类型 = '大'
-GROUP BY
-    CASE
-        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
-        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
-        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
-        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
-    END
+GROUP BY 组合
 ORDER BY 总数 DESC;
 
 -- 查询紧缺的小芯片
@@ -271,32 +259,26 @@ ORDER BY 数量 DESC;
 
 以上 SQL 语句同样可以保存在 `chip_query.sql` 文件里，通过 `sqlite3 chips.db < chips_query.sql` 反复调用。如果不想一次执行这么多查询，也可以分开保存。
 
-虽说目前已经可以通过修改 `chips.csv` 文件然后重新导入 SQLite 来更新数据，但也可以用 SQL 语句。可以用 `sqlite3 chips.db` 打开数据库文件进行交互式更新，也可以把更新封装为一个脚本，然后通过 `./update.sh <职业> <芯片类型> <增减量>` 使用
+虽说目前已经可以通过修改 `chips.csv` 文件然后重新导入 SQLite 这种方式来更新数据，但也可以使用 SQL 语句。一种方式是先 `sqlite3 chips.db` 打开数据库文件，再进行交互式更新
 
-```sh
-#!/bin/bash
-
-DB="chips.db"
-JOB="$1"
-CHIP_TYPE="$2"
-INCREMENT="$3"
-
-if [ $# -ne 3 ]; then
-    echo "用法: $0 <职业> <芯片类型> <增减量>"
-    echo "示例: $0 重装 小 +1"
-    echo "示例: $0 先锋 大 -2"
-    exit 1
-fi
-
-# 执行更新
-sqlite3 "$DB" "UPDATE chips SET 数量 = 数量 $INCREMENT WHERE 职业 = '$JOB' AND 芯片类型 = '$CHIP_TYPE';"
-
-# 显示结果
-echo "更新完成: $JOB 的 $CHIP_TYPE 芯片 $INCREMENT"
-sqlite3 "$DB" "SELECT * FROM chips WHERE 职业 = '$JOB' AND 芯片类型 = '$CHIP_TYPE';"
+```sql
+-- +1 重装 大 芯片
+UPDATE chips
+SET 数量 = 数量 + 1
+WHERE 职业 = '重装' AND 芯片类型 = '大';
 ```
 
-如果使用 SQL 进行更新，可以再与 `chips.csv` 进行同步
+另一种方式是更新操作封装为一个脚本，使用 `bash`、`python` 等语言都可以。这是用 [just](../命令行工具/Just.md) 的例子，任务写在 `Justfile` 里，使用 `just update <职业> <芯片类型> <增减量>` 执行更新操作
+
+```justfile
+DB := "chips.db"
+
+update job type increment:
+    sqlite3 "{{DB}}" "UPDATE chips SET 数量 = 数量 {{increment}} WHERE 职业 = '{{job}}' AND 芯片类型 = '{{type}}'"
+    sqlite3 "{{DB}}" "SELECT * FROM chips WHERE 职业 = '{{job}}' AND 芯片类型 = '{{type}}'"
+```
+
+用 SQL 进行更新后，可以导出为 `chips.csv` 从而实现同步
 
 ```sh
 sqlite3 -csv chips.db "SELECT * FROM chips" > chips.csv

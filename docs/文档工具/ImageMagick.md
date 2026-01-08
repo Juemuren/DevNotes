@@ -62,11 +62,18 @@ magick input.png -resize 800x600! output.png
 magick input.png -resize 150% output.png
 ```
 
-生成文字图片
+生成图片，可以是纯色的，可以是有文字的，也可以是有图案的
 
 ```sh
-# 图片尺寸 400x300、背景透明；文字居中、白色、大小 48、无偏转；内容为 "Hello World!"，保存到 text.png
-magick -size 400x300 xc:none -gravity center -fill white -pointsize 48 -annotate 0 "Hello World!" text.png
+# 图片尺寸 400x300，纯黑色，保存到 black.png
+magick -size 400x300 xc:black black.png
+# 文字居中、白色、大小 48、无偏转
+# 内容为 "Hello World!"
+magick -size 400x300 xc:none \
+  -gravity center -fill white -pointsize 48 \
+  -annotate 0 "Hello World!" text.png
+# 图案为棋盘格子
+magick -size 400x300 pattern:checkerboard checkerboard.png
 ```
 
 ### 使用 chafa

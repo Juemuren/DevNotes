@@ -47,5 +47,7 @@ bat 集成了分页功能，且支持手册的高亮。也就是说我们可以�
 # 用 bat 读 upx 的手册
 upx --help | bat -p -l man
 # 用 bat 读 fzf 的手册
-fzf --man | groff -man -T ascii | bat -p -l man
+fzf --man | bat -p -l man
+# Windows 可能得用 groff 转换一下 fzf 的输出
+fzf --man | groff -man -T utf8 | bat -p -l man
 ```

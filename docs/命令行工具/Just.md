@@ -158,7 +158,7 @@ year := if `expr 2 + 2` != "5" { datetime("%Y") } else { "1984" }
 foo := if "114514" =~ '[0-9]+' { "match" } else { "mismatch" }
 ```
 
-可以通过 ``` `command` ``` 或 `shell(command)` 使用命令表达式，后者支持传递变量
+可以通过 ``` `command` ``` 或 `shell(command)` 使用命令表达式，后者支持传递变量 `shell(command, var)`
 
 ```justfile
 # 使用 `
@@ -176,23 +176,36 @@ lines := shell('wc -l $1 | cut -d " " -f 1', file)
 - 使用 `set working-directory := 'path'` 修改所有配方的工作目录
 - 使用 `[working-directory]` 属性修改单个配方的工作目录
 
-### [参数](https://just.systems/man/en/recipe-parameters.html)/[变量](https://just.systems/man/en/setting-variables-from-the-command-line.html)
+### [参数](https://just.systems/man/en/recipe-parameters.html)/[变量](https://just.systems/man/en/setting-variables-from-the-command-line.html)/[环境变量](https://just.systems/man/en/getting-and-setting-environment-variables.html)
 
-变量和参数有点类似，可以认为
+参数、变量、环境变量三者有点类似，主要区别为
 
-- 变量是一种有全局作用域的参数
-- 参数是一种只能用于单个配方的局部变量
+|   类型   |      作用域      |       来源        |
+| :------: | :--------------: | :---------------: |
+|   参数   |     单个配方     |     Justfile      |
+|   变量   |     所有配方     |     Justfile      |
+| 环境变量 | 所有配方和子进程 | Justfile 和父进程 |
 
-在配方中用 `{{param}}` 可以获取参数/变量的值
+- 变量和参数只能在 **Justfile** 中定义，而环境变量还可以从 **父进程** 里继承过来
+- 变量和环境变量能用于所有配方，而参数只能用于单个配方
+- 环境变量还会传递到由 `just` 创建的子进程中
 
 对于参数
 
+- 在配方中用 `{{param}}` 获取参数的值
 - 用 `task param:` 定义带参数的配方，运行时用 `just task arg` 为参数设置值
-- 用 `task param="arg"` 让参数具有默认值，运行时可省略为 `just task`
+- 用 `task param="arg":` 让参数具有默认值，运行时可省略为 `just task`
 
 对于变量
 
-- 用 `var := "aaa"` 设置配方变量，该变量可通过 `just var=bbb` 覆盖
+- 在配方中用 `{{param}}` 获取变量的值
+- 用 `var := "aaa"` 设置变量。运行时可通过 `just var=bbb` 覆盖变量值
+
+对于环境变量
+
+- 在配方中用 `${VAR}` 或 `env(VAR)` 获取环境变量的值，后者支持设置默认值 `env(VAR, default)`
+- 用 `export VAR := "aaa"` 设置环境变量，用 `unexport VAR` 取消已有的环境变量
+- 用 `task $VAR="aaa":` 将配方参数同时添加为环境变量
 
 ### [依赖](https://just.systems/man/en/dependencies.html)
 
@@ -202,13 +215,6 @@ Just 可以为配方添加依赖
 - 用 `task: (dep "arg")` 为依赖的参数设置值
 - 用 `task param: (dep param)` 将命令的参数传递给依赖
 - 用 `task: a b c` 添加多个依赖
-
-### [环境变量](https://just.systems/man/en/getting-and-setting-environment-variables.html)
-
-用 `${VAR}` 或 `env(VAR)` 可以获取环境变量的值，还可以在配方中设置环境变量
-
-- 用 `export VAR := "aaa"` 设置环境变量
-- 用 `task $VAR="aaa":` 将配方参数同时添加为环境变量
 
 ### [默认配方](https://just.systems/man/en/the-default-recipe.html)
 
