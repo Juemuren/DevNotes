@@ -97,7 +97,7 @@ Shell 通常都支持使用文件进行配置。不同 Shell 的配置文件可�
 - `command < file` 从文件中读取输入
 
 > [!Note]- Pwsh 的重定向
-> Pwsh 不支持使用 `<` 的重定向。通常可以使用管道 `cat file | command` 进行替代。
+> Pwsh 不支持 `<` 重定向，通常可以使用管道 `cat file | command` 进行替代。
 
 ## 替换 Shell
 

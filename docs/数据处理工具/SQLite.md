@@ -77,10 +77,15 @@ SET email = 'new@example.com'
 WHERE name = 'Bob';
 ```
 
-或者不使用交互界面，直接运行单条 SQL
+或者不使用交互界面，直接命令行里运行
 
 ```sh
+# 运行单条 SQL 语句
 sqlite3 example.db "SELECT * FROM users;"
+# 运行已保存的 SQL 脚本
+sqlite3 example.db < query.sql
+# pwsh 不支持 < 重定向，用管道替代
+cat query.sql | sqlite3 example.db
 ```
 
 ### 转储 SQL
@@ -122,7 +127,7 @@ SELECT * FROM users;
 或者不使用交互界面，直接将查询结果保存为 CSV
 
 ```sh
-sqlite3 -header -csv example.db "SELECT * FROM users" > output.csv
+sqlite3 -csv example.db "SELECT * FROM users" > output.csv
 ```
 
 ### 处理 JSON
@@ -145,3 +150,154 @@ sqlite3 -json example.db "SELECT * FROM users" > output.json
 ```
 
 此外 SQLite 还能够处理 Markdown、HTML 等格式的数据，用法都是类似的
+
+## 示例
+
+我想要统计游戏中的芯片数量，以了解该优先刷取哪个副本。首先准备一个 `chips.csv` 文件
+
+```csv
+职业,芯片类型,数量
+先锋,小,7
+先锋,大,9
+辅助,小,15
+辅助,大,15
+狙击,小,13
+狙击,大,13
+术士,小,8
+术士,大,9
+近卫,小,10
+近卫,大,11
+特种,小,8
+特种,大,10
+重装,小,10
+重装,大,11
+医疗,小,11
+医疗,大,13
+```
+
+然后导入 csv 文件。该这些 SQL 语句和操作可以保存在 `chip_import.sql` 文件里，通过 `sqlite3 < chips_import.sql` 来执行
+
+```sql
+-- 创建表
+CREATE TABLE IF NOT EXISTS chips (
+    职业 TEXT NOT NULL,
+    芯片类型 TEXT NOT NULL,
+    数量 INTEGER NOT NULL,
+    UNIQUE(职业, 芯片类型)
+);
+
+-- 导入 CSV 数据
+.mode csv
+.import chips.csv chips
+.save chips.db
+.quit
+```
+
+接着编写查询。这里结合了一些游戏内的逻辑，包括
+
+- 游戏内的副本可能掉落两种芯片，并且这两种芯片之间可以互相转换，因此需要分组进行查询
+- 游戏中干员精一需要 5 个小芯片，精二需要 8 个大芯片，因此需要筛选出紧缺的芯片
+- 输出降序只是为了方便查看
+
+```sql
+-- 查询小芯片统计
+SELECT *
+FROM chips
+WHERE 芯片类型 = '小'
+ORDER BY 数量 DESC;
+
+-- 查询大芯片统计
+SELECT *
+FROM chips
+WHERE 芯片类型 = '大'
+ORDER BY 数量 DESC;
+
+-- 查询小芯片合并统计
+SELECT
+    CASE
+        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
+        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
+        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
+        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
+    END AS 组合,
+    芯片类型,
+    SUM(数量) AS 总数
+FROM chips
+WHERE 芯片类型 = '小'
+GROUP BY
+    CASE
+        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
+        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
+        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
+        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
+    END
+ORDER BY 总数 DESC;
+
+-- 查询大芯片合并统计
+SELECT
+    CASE
+        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
+        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
+        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
+        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
+    END AS 组合,
+    芯片类型,
+    SUM(数量) AS 总数
+FROM chips
+WHERE 芯片类型 = '大'
+GROUP BY
+    CASE
+        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
+        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
+        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
+        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
+    END
+ORDER BY 总数 DESC;
+
+-- 查询紧缺的小芯片
+SELECT *
+FROM chips
+WHERE
+    芯片类型 = '小' AND 数量 < 5
+ORDER BY 数量 DESC;
+
+-- 查询紧缺的大芯片
+SELECT *
+FROM chips
+WHERE
+    芯片类型 = '大' AND 数量 < 8
+ORDER BY 数量 DESC;
+```
+
+以上 SQL 语句同样可以保存在 `chip_query.sql` 文件里，通过 `sqlite3 chips.db < chips_query.sql` 反复调用。如果不想一次执行这么多查询，也可以分开保存。
+
+虽说目前已经可以通过修改 `chips.csv` 文件然后重新导入 SQLite 来更新数据，但也可以用 SQL 语句。可以用 `sqlite3 chips.db` 打开数据库文件进行交互式更新，也可以把更新封装为一个脚本，然后通过 `./update.sh <职业> <芯片类型> <增减量>` 使用
+
+```sh
+#!/bin/bash
+
+DB="chips.db"
+JOB="$1"
+CHIP_TYPE="$2"
+INCREMENT="$3"
+
+if [ $# -ne 3 ]; then
+    echo "用法: $0 <职业> <芯片类型> <增减量>"
+    echo "示例: $0 重装 小 +1"
+    echo "示例: $0 先锋 大 -2"
+    exit 1
+fi
+
+# 执行更新
+sqlite3 "$DB" "UPDATE chips SET 数量 = 数量 $INCREMENT WHERE 职业 = '$JOB' AND 芯片类型 = '$CHIP_TYPE';"
+
+# 显示结果
+echo "更新完成: $JOB 的 $CHIP_TYPE 芯片 $INCREMENT"
+sqlite3 "$DB" "SELECT * FROM chips WHERE 职业 = '$JOB' AND 芯片类型 = '$CHIP_TYPE';"
+```
+
+如果使用 SQL 进行更新，可以再与 `chips.csv` 进行同步
+
+```sh
+sqlite3 -csv chips.db "SELECT * FROM chips" > chips.csv
+```

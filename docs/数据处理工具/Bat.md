@@ -2,11 +2,11 @@
 
 ## 简介
 
-bat 是一个显示文件内容的工具，类似 cat
+bat 是一个显示文件内容的工具，类似 `cat`
 
 ## 对比
 
-相比 cat，bat 是个更现代的工具
+相比 `cat`，bat 是个更现代的工具
 
 - 支持对大量编程和标记语言进行语法高亮
 - 可以和 git 集成，显示索引的修改
@@ -35,4 +35,17 @@ bat src/*.rs
 bat -A example.md
 # 禁止自动分页
 bat -P example.md
+# 设置语言高亮
+bat --language=cpp example.cpp
+# 设置样式
+bat --style=grid example.md
+```
+
+bat 集成了分页功能，且支持手册的高亮。也就是说我们可以用 bat 来阅读手册
+
+```sh
+# 用 bat 读 upx 的手册
+upx --help | bat -p -l man
+# 用 bat 读 fzf 的手册
+fzf --man | groff -man -T ascii | bat -p -l man
 ```

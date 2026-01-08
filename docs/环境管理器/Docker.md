@@ -31,7 +31,7 @@ Docker 是一个容器工具，而容器是一种非常现代的环境解决方�
 - 更易使用。Docker 需要先启动守护进程；而 Podman 不需要
 
 > [!Note]+ 易用性和用户界面
-> Docker 由于有 `Docker Desktop` 这个桌面应用程序提供 **GUI** 和 `lazydocker` 这个命令行工具提供 **TUI**，而 Podman 目前似乎没有类似的工具，因此使用门槛上也许 Docker 会比 Podman 更低
+> Docker 有 `Docker Desktop` 这个桌面应用程序提供 **GUI** 和 `lazydocker` 这个命令行工具提供 **TUI**，而 Podman 目前只有 `podman-tui` 这个工具提供的 **TUI**，因此使用门槛上也许 Docker 会比 Podman 更低。
 >
 > 但如果只比较原始的 CLI 程序，那么显然还是 Podman 更易用，接下来会详细说明这一点
 

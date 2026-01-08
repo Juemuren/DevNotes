@@ -48,6 +48,17 @@ cat old.json | jq '.key = "value"' > new.json
 cat data.json | jq -f script.jq
 ```
 
+jq 语言是有模块系统的，可以跨文件进行代码复用。只需在文件开头写上
+
+```jq
+# 导入 utils.jq
+include "utils";
+# 导入 utils.jq 但使用别名
+import "utils" as u;
+```
+
+就会自动将 `utils.jq` 作为模块加载进来。如果导入使用了别名，需要借助 `NAME::xxx` 来使用模块。
+
 ## 示例
 
 jq 处理 JSON 数据要比传统的 `awk`/`sed` 方便许多。下面展示一些我自己实际使用 jq 的场景。
@@ -105,4 +116,59 @@ update_description |
 
 ```sh
 jq -f convert-to-both.jq my-243-2-normal.json > my-243-2-both.json
+```
+
+可以借助模块让提高代码的复用性
+
+```jq
+# utils.jq
+def update_description($description):
+  .description = $description;
+
+def update_manufacture($index; $operators):
+  .rooms.manufacture[$index].product = "Originium Shard" |
+  .rooms.manufacture[$index].operators = $operators;
+
+def update_trading($index):
+  .rooms.trading[$index].product = "Orundum";
+
+# both.jq
+include "utils";
+
+update_description("搓玉/卖玉") |
+.plans |= map(
+  update_description("搓玉/卖玉") |
+  if .name == "早班" then
+    update_manufacture(0; ["艾雅法拉", "地灵", "炎熔"]) |
+    update_trading(0)
+  elif .name == "晚班" then
+    update_manufacture(0; ["火神", "泡泡", "褐果"]) |
+    update_trading(0)
+  end
+)
+
+# make.jq
+include "utils";
+
+update_description("搓玉/不卖玉") |
+.plans |= map(
+  update_description("搓玉/不卖玉") |
+  if .name == "早班" then
+    update_manufacture(0; ["艾雅法拉", "地灵", "炎熔"])
+  elif .name == "晚班" then
+    update_manufacture(0; ["火神", "泡泡", "褐果"])
+  end
+)
+# sale.jq
+include "utils";
+
+update_description("不搓玉/卖玉") |
+.plans |= map(
+  update_description("不搓玉/卖玉") |
+  if .name == "早班" then
+    update_trading(0)
+  elif .name == "晚班" then
+    update_trading(0)
+  end
+)
 ```
