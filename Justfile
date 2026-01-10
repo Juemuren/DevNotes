@@ -7,7 +7,7 @@ lint:
 
 check:
     ./scripts/check-alerts.sh
-    ./scripts/check-spaces.sh
+    ./scripts/check-emphasis.sh
     ./scripts/check-links.sh
 
 count sort="":
