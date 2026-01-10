@@ -10,7 +10,7 @@ pandoc 是通用的格式转换工具，也能将 markdown 转为 pptx 格式。
 
 - 内置了多个幻灯片主题
 - 即使导出为 PDF、HTML 也仍然使用幻灯片的样式和排版风格
-- 提供了 VSCode 插件，可显著改善编辑体验
+- 提供了 VSCode 拓展，可显著改善编辑体验
 
 因此针对该特定需求可能 marp 用起来更方便、效果更好
 
@@ -32,4 +32,4 @@ marp example.md --pptx
 marp example.md --pdf
 ```
 
-如果使用 VSCode 的话可以下个 [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) 插件，可以显著提升编辑体验
+如果使用 VSCode 的话可以下个 [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) 拓展，可以显著提升编辑体验

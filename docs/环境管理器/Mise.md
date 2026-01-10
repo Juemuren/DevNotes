@@ -42,7 +42,7 @@ Mise 默认通过修改 *PATH* 切换运行时版本。Mise 还有另一种切�
 
 ### 开发工具
 
-Mise 可以用来管理多种编程语言运行时的不同版本，也可以用来管理本地开发工具的不同版本，但需要借助插件。
+Mise 可以用来管理多种编程语言运行时的不同版本，也可以用来管理本地开发工具的不同版本。
 
 你可以在 [官方文档](https://mise.jdx.dev/core-tools.html#core-tools) 里看到目前 Mise 能够管理的语言运行时，而其余的开发工具可以在 [这里](https://mise.jdx.dev/registry.html#tools) 找到。
 

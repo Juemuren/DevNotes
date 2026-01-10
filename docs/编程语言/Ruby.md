@@ -13,4 +13,4 @@ mise use -g ruby@latest
 
 ### 编辑器集成
 
-VSCode 上的插件 [Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp)
+VSCode 上的拓展 [Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp)

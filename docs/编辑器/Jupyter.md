@@ -25,7 +25,7 @@ Jupyter 使用特殊的 **笔记本** 文件格式，可以将文档、代码等
 - 代码支持使用不同的语言，需要 **安装对应的内核**
 
 > [!Note]+ Jupyter 的发展历史
-> 最早 Jupyter 叫做 `IPython Notebook`，只支持 `python`，这也就是为什么文件拓展名为 `.ipynb`。后来改进了架构，分离了后端和内核，可以支持更多的语言，比如 `Julia` 和 `R`，这便是新名字 `Ju(Julia)pyt(Python)er(R)` 的由来。而现在支持的语言越来越多，甚至连 `C++` 也能支持了（不过目前在 Windows 平台无法使用，且 **VSCode** 的 **C/C++** 插件的 *intelliSense* 会失效）
+> 最早 Jupyter 叫做 `IPython Notebook`，只支持 `python`，这也就是为什么文件拓展名为 `.ipynb`。后来改进了架构，分离了后端和内核，可以支持更多的语言，比如 `Julia` 和 `R`，这便是新名字 `Ju(Julia)pyt(Python)er(R)` 的由来。而现在支持的语言越来越多，甚至连 `C++` 也能支持了（不过目前在 Windows 平台无法使用，且 **VSCode** 的 **C/C++** 拓展的 *intelliSense* 会失效）
 
 Jupyter 的这种笔记本格式可以把代码、文本、图片、公式、图表作为一个复合文档统一展示。别人打开笔记本时可以看到你记录的完整分析过程、所有源代码和全部运行结果，也可以简单地重新运行部分代码看看是否能够复现。
 
@@ -45,8 +45,8 @@ Jupyter 还提供了一些魔法命令，有很多实用的功能，并且支持
 
 Jupyter 为了远程开发和多语言支持而设计了复杂的架构。因此，想要本地使用 Jupyter，不仅要有前端，还要有后端和内核。当然，如果你想进行远程开发的话，那么只需本地有前端就行，后端和内核都可以运行在别的机器上。
 
-- 前端可以直接使用 **浏览器**，此时界面会取决于后端。或者也可以使用支持 Jupyter 的 **编辑器**，比如 `VSCode`（需要下载 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 插件）。
-- 后端可以选择 `jupyterlab` 或 `notebook`，两者都可以通过 `pip` 安装，jupyterlab 可能更好一点。`VSCode` 的插件实现了后端的主要功能，因此可以不额外安装后端。
+- 前端可以直接使用 **浏览器**，此时界面会取决于后端。或者也可以使用支持 Jupyter 的 **编辑器**，比如 `VSCode`（需要下载 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 拓展）。
+- 后端可以选择 `jupyterlab` 或 `notebook`，两者都可以通过 `pip` 安装，jupyterlab 可能更好一点。`VSCode` 的拓展实现了后端的主要功能，因此可以不额外安装后端。
 - 内核有很多种，不同语言自然有不同的内核，一种语言也可能有多种内核。python 的内核一般用 `ipykernel`，通过 `pip install ipykernel` 就可以安装。你可以在 [这里](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) 找到目前能用的所有内核。
 
 ## 使用

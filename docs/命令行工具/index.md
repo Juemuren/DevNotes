@@ -85,14 +85,16 @@
 用于磁盘占用、健康度查询的工具
 
 - duf 磁盘占用分析工具，现代版的 `df`
+- dust 文件占用分析工具，现代版的 `du`
 - smartmontools 用于查看磁盘健康状况的工具
 
 ### 玩具
 
 除了酷炫以外没什么用的东西
 
+- genact 假活动生成器，可以模拟多种开发活动
 - cmatrix 炫酷的屏保，不过只有 Linux 可用
 - lolcat 给输出着上彩虹色
-- cowsay 搞怪版的 echo，会让一只牛顶着对话框
+- cowsay 搞怪版的 `echo`，会让一只牛顶着对话框
 - fortune 随机生成名言，可以和前者结合达成奇妙效果
-- figlet 把输入转为 ASCII 艺术字
+- figlet 把输入文本转为 ASCII 艺术字

@@ -61,7 +61,7 @@ uv add numpy
 
 #### 使用解释器
 
-需要安装插件 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+需要安装拓展 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 新建一个 `test.py` 文件，输入 VSCode 命令 `Python: Select Interpreter`，VSCode 会识别到不同的 Conda 环境，请选择正确的那个解释器
 
@@ -72,15 +72,15 @@ uv add numpy
 
 #### 使用调试器
 
-需要安装插件 [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+需要安装拓展 [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-输入 VSCode 命令 `Debug: Add Configuration`，选择 `Python Debugger` 插件自动生成的配置。
+输入 VSCode 命令 `Debug: Add Configuration`，选择 `Python Debugger` 拓展自动生成的配置。
 
 自动生成了 `launch.json` 文件后，就可以直接点击按钮来调试了。
 
 #### 使用编程笔记本
 
-需要安装插件 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+需要安装拓展 [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 如果需要使用编程笔记本，请确保已经安装了 `ipykernel`。你可以通过 `mamba list` 或 `pip list` 查看是否已经安装。
 

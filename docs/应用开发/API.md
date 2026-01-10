@@ -139,7 +139,7 @@ API 设计方式有很多，在实践中通常会使用 `RESTful` 或 `GraphQL` 
 
 有些时候后端先实现了 API 但前端尚未搭建好，我们可能希望测试一下接口是否正确，但又不想自己写程序或者使用复杂的 `curl` 命令。这时就可以使用一些工具辅助测试接口。
 
-- Rest Client VSCode 插件，通过 .rest 和 .http 文件测试接口
-- httpYac 提供了 CLI 和 VSCode 插件多种形式，同时兼容并拓展了 Rest Client 使用的语法
+- Rest Client 一个 VSCode 拓展，通过 *.rest* 和 *.http* 文件测试接口
+- httpYac 提供了 CLI 和 VSCode 拓展多种形式，同时兼容并拓展了 Rest Client 使用的语法
 - HTTPie 用来发送 HTTP 请求的工具
 - xh 类似 `HTTPie`，不过是用 Rust 写的

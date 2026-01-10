@@ -19,4 +19,4 @@ mamba install r==4.4
 
 ### 编辑器集成
 
-VSCode 上的插件 [R](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r)
+VSCode 上的拓展 [R](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r)

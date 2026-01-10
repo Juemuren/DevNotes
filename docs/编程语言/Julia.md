@@ -26,4 +26,4 @@ mamba install julia==1.10.4
 
 ### 编辑器集成
 
-VSCode 上有 Julia 官方插件 [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)，该插件几乎是开箱即用的，不需要什么额外的设置。
+VSCode 上有 Julia 官方拓展 [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia)，该拓展几乎是开箱即用的，不需要什么额外的设置。

@@ -36,7 +36,7 @@ mise use -g bun
 
 ### 编辑器集成
 
-对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外插件
+对于 JavaScript，VSCode 几乎是开箱即用的，不需要安装任何额外拓展
 
 ## 命令行工具
 

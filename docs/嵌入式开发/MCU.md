@@ -32,4 +32,4 @@ flowchart TD
 
 SDCC 通常用于 8051 MCU 的开发。
 
-由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 插件并不完全支持 SDCC 拓展的语法。虽然可以手动修改 `.vscode/c_cpp_properties.json` 的 `defines` 字段让编辑器识别一些拓展类型，但这只是权宜之计。PlatformIO IDE 会自动更新配置文件，也明确表示了不要手动修改 `.vscode/c_cpp_properties.json` 文件。这个问题的真正解决只有等待 C/C++ 插件正式支持 SDCC 了。
+由于 [vscode-cpptools issues#2499](https://github.com/Microsoft/vscode-cpptools/issues/2499)，目前 VSCode 官方的 C/C++ 拓展并不完全支持 SDCC 拓展的语法。虽然可以手动修改 `.vscode/c_cpp_properties.json` 的 `defines` 字段让编辑器识别一些拓展类型，但这只是权宜之计。PlatformIO IDE 会自动更新配置文件，也明确表示了不要手动修改 `.vscode/c_cpp_properties.json` 文件。这个问题的真正解决只有等待 C/C++ 拓展正式支持 SDCC 了。

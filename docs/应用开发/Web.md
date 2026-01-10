@@ -63,7 +63,7 @@ Web 开发者编写的应用运行在浏览器环境中，因此应该掌握基�
 - `Sources 源代码` 查看源代码以及调试程序
 - `Application 应用程序` 查看存储和后台服务
 
-另外一些浏览器插件也会为 `DevTools` 提供额外的功能。
+另外一些浏览器拓展也会为 `DevTools` 提供额外的功能。
 
 ### HTML/CSS/JavaScript
 

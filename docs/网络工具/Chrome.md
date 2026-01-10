@@ -24,20 +24,20 @@ apt install ./google-chrome-stable_current_amd64.deb
 
 ## 使用
 
-### 浏览器插件
+### 浏览器拓展
 
-Chrome 支持安装插件。大多数插件都可以在 [Chrome 插件商店](https://chromewebstore.google.com/category/extensions) 中获取
+Chrome 支持安装拓展。大多数拓展都可以在 [Chrome 拓展商店](https://chromewebstore.google.com/category/extensions) 中获取
 
-> [!Note]- Microsoft Edge 的插件
-> Microsoft Edge 可以安装 Chrome 插件商店中的插件，同时它还有自己的 [插件商店](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home)。
+> [!Note]- Microsoft Edge 的拓展
+> Microsoft Edge 可以安装 Chrome 拓展商店中的拓展，同时它还有自己的 [拓展商店](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home)。
 
-以下是一些我常用的插件
+以下是一些我常用的拓展
 
 - uBlock Origin 一个高效的网络请求过滤工具，可以自定义规则
 - Vimium 用类似 Vim 的纯键盘操作浏览网页
 - Dark Reader 为每个网站启用暗色模式
 - Tampermonkey 即篡改猴，一个用户脚本管理器。而 [Greasy Fork](https://greasyfork.org/) 是最大的用户脚本分享网站
-- Immersive Translate 即沉浸式翻译，一个翻译器。虽然插件还能免费使用，但项目已经不再开源了，如果介意可以找个替代品
+- Immersive Translate 即沉浸式翻译，一个翻译器。虽然该拓展还能免费使用，但项目已经不再开源了，如果介意可以找个替代品
 
 ### 开发者工具
 

@@ -26,4 +26,4 @@ rustup default stable-msvc
 
 ### 编辑器集成
 
-VSCode 上有 Rust 官方插件 [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)，该插件几乎是开箱即用的，不需要什么额外的设置。
+VSCode 上有 Rust 官方拓展 [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)，该拓展几乎是开箱即用的，不需要什么额外的设置。

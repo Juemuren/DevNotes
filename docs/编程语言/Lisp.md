@@ -43,6 +43,6 @@ sbcl --load quicklisp.lisp
 
 ### 编辑器集成
 
-目前我觉得 VSCode 上最好的 Lisp 插件是 [Common Lisp](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)。该插件是开箱即用的，不过它只提供了语言服务，运行程序还需要使用命令行。
+目前我觉得 VSCode 上最好的 Lisp 拓展是 [Common Lisp](https://marketplace.visualstudio.com/items?itemName=qingpeng.common-lisp)。该拓展是开箱即用的，不过它只提供了语言服务，运行程序还需要使用命令行。
 
-如果想通过点击按钮来运行程序，那么可以再安装 [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) 这个插件。
+如果想通过点击按钮来运行程序，那么可以再安装 [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) 这个拓展。

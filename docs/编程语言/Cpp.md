@@ -82,7 +82,7 @@ scoop shim add vs 'path\to\vs\Common7\Tools\Launch-VsDevShell.ps1' '--' -Arch am
 
 #### 配置智能感知
 
-需要安装插件 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+需要安装拓展 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
 输入 VSCode 命令 `C/C++: Edit Configurations`，调整需要的设置。会自动在 `.vscode/c_cpp_properties.json` 中生成配置文件，当然你也可以手动修改该文件
 
@@ -90,9 +90,9 @@ scoop shim add vs 'path\to\vs\Common7\Tools\Launch-VsDevShell.ps1' '--' -Arch am
 
 #### 配置调试任务
 
-同样需要插件 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+同样需要拓展 [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
-新建一个 `test.c` 或 `test.cpp` 文件，然后输入 VSCode 命令 `C/C++: Add Debug Configuration`，选择 `C/C++` 插件的默认配置模板。然后会在 `.vscode` 目录下自动生成配置文件。
+新建一个 `test.c` 或 `test.cpp` 文件，然后输入 VSCode 命令 `C/C++: Add Debug Configuration`，选择 `C/C++` 拓展的默认配置模板。然后会在 `.vscode` 目录下自动生成配置文件。
 
 自动生成了 `tasks.json` 和 `launch.json` 文件后，就可以直接点击按钮来编译、运行和调试了。
 

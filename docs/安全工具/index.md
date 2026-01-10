@@ -29,7 +29,7 @@
 
 - Amass 使用主动侦察技术进行攻击面网络映射和外部资产发现
 - subfinder 快速的被动子域名枚举工具
-- Wappalyzer 一个浏览器插件，用于识别 Web 应用的技术栈
+- Wappalyzer 一个浏览器拓展，用于识别 Web 应用的技术栈
 - Shodan 搜索互联网连接设备的工具
 - nmap 网络端口扫描
 

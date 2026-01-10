@@ -111,9 +111,9 @@ vcpkg install --triplet=<target-triplet> --host-triplet=<host-triplet>
 
 在版本控制系统中，通常要把 `CMakeUserPresets.json` 文件忽略。因为每个人环境不同，需要编写自己的预设来覆盖一些默认值。
 
-如果使用 VSCode，那么可以下载 [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) 插件。这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。如果找不到自己写的预设，可能需要重启一下 VSCode。
+如果使用 VSCode，那么可以下载 [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) 拓展。这样就可以使用 *GUI*，在面板中选择预设并点击生成按钮来构建项目。如果找不到自己写的预设，可能需要重启一下 VSCode。
 
-如果不使用 VSCode 插件而只使用命令行，那么应该运行如下命令
+如果不使用 VSCode 拓展而只使用命令行，那么应该运行如下命令
 
 ```sh
 # 使用预设

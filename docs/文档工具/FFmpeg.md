@@ -26,7 +26,7 @@ ffmpeg -i input.mp4 -vf "[0:v]setpts=0.5*PTS" output.gif
 # 变为 0.5 倍速
 ffmpeg -i input.mp4 -vf "[0:v]setpts=2*PTS" output.gif
 # 截取 30 秒的后 5 秒
-ffmpeg  -i input.mp4 -ss 00:00:30 -t 5 output.gif
+ffmpeg -i input.mp4 -ss 00:00:30 -t 5 output.gif
 # 左上角添加水印
 ffmpeg -i input.mp4 -vf "drawtext=text='Your Text':x=10:y=10:fontsize=24:fontcolor=white" output-7.gif
 ```
