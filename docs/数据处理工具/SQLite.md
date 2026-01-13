@@ -6,11 +6,17 @@ SQLite 是一个轻量级的关系型数据库，适合在作为命令行工具�
 
 ## 对比
 
-相比于那些 `C-S` 架构的数据库，SQLite 有很多不同的地方
+相比于那些 **客户端 - 服务端** 架构的数据库，SQLite 有很多不同的地方
 
 - 单文件存储。整个数据库内容都存储在一个文件中
 - 零配置。不需要安装、配置数据库服务器，单个程序/库就可以直接使用
 - 访问快。直接访问本地文件，不需要进程间通信/网络通信
+
+`DuckDB` 和 SQLite 有着相同的架构，主要区别是
+
+- SQLite 是 **OLTP（在线事务处理）** 数据库，适合需要高频写入的事务处理场景；而 DuckDB 是 **OLAP（在线分析处理）** 数据库，适合需要数据分析和复杂查询的场景
+- SQLite 是 **行式存储**，而 DuckDB 是 **列式存储**
+- SQLite 生态成熟，而 DuckDB 生态还比较新
 
 ## 安装
 
@@ -198,22 +204,15 @@ CREATE TABLE IF NOT EXISTS chips (
 
 - 游戏内的副本可能掉落两种芯片，并且这两种芯片之间可以互相转换，因此需要分组进行查询
 - 游戏中干员精一需要 5 个小芯片，精二需要 8 个大芯片，因此需要筛选出紧缺的芯片
-- 输出降序只是为了方便查看
 
 ```sql
--- 查询小芯片统计
+-- 查询小芯片
 SELECT *
 FROM chips
 WHERE 芯片类型 = '小'
 ORDER BY 数量 DESC;
 
--- 查询大芯片统计
-SELECT *
-FROM chips
-WHERE 芯片类型 = '大'
-ORDER BY 数量 DESC;
-
--- 查询小芯片合并统计
+-- 查询合并的小芯片
 SELECT
     CASE
         WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
@@ -225,21 +224,6 @@ SELECT
     SUM(数量) AS 总数
 FROM chips
 WHERE 芯片类型 = '小'
-GROUP BY 组合
-ORDER BY 总数 DESC;
-
--- 查询大芯片合并统计
-SELECT
-    CASE
-        WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
-        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
-        WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
-        WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
-    END AS 组合,
-    芯片类型,
-    SUM(数量) AS 总数
-FROM chips
-WHERE 芯片类型 = '大'
 GROUP BY 组合
 ORDER BY 总数 DESC;
 
@@ -250,11 +234,10 @@ WHERE
     芯片类型 = '小' AND 数量 < 5
 ORDER BY 数量 DESC;
 
--- 查询紧缺的大芯片
+-- 对大芯片的查询是类似的
 SELECT *
 FROM chips
-WHERE
-    芯片类型 = '大' AND 数量 < 8
+WHERE 芯片类型 = '大'
 ORDER BY 数量 DESC;
 ```
 
@@ -313,4 +296,39 @@ query:
 update job type increment:
     sqlite3 "{{DB}}" "UPDATE chips SET 数量 = 数量 {{increment}} WHERE 职业 = '{{job}}' AND 芯片类型 = '{{type}}'"
     sqlite3 "{{DB}}" "SELECT * FROM chips WHERE 职业 = '{{job}}' AND 芯片类型 = '{{type}}'"
+```
+
+---
+
+不过对于上述场景，使用 DuckDB 可能更合适。毕竟这里没有高频写入，只需要处理复杂查询，而 DuckDB 就是为数据分析设计的。
+
+Duck 可以根据 CSV 文件自动创建表，因此导入和查询 CSV 文件都非常简单
+
+```sql
+-- 查询所有芯片
+SELECT * FROM chips.csv;
+```
+
+写成一行的脚本就是
+
+```sh
+duckdb -c "SELECT * FROM chips.csv"
+```
+
+或者也可以
+
+```sh
+duckdb chips.csv -c "SELECT * FROM file"
+```
+
+如果使用后一种方法，那么可以把所有查询逻辑保存在一个 SQL 文件里，然后对不同的 CSV 文件应用相同的查询逻辑
+
+比如一下内容保存为 `small_query.sql`，然后可以使用 `duckdb chips.csv -f small_query.sql` 进行查询
+
+```sql
+-- 查询小芯片
+SELECT *
+FROM file
+WHERE 芯片类型 = '小'
+ORDER BY 数量 DESC;
 ```

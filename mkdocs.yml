@@ -69,12 +69,12 @@ nav:
     - Just: 命令行工具/Just.md
     - Prek: 命令行工具/Prek.md
     - Hyperfine: 命令行工具/Hyperfine.md
-    - Fd: 命令行工具/Fd.md
     - Tldr: 命令行工具/Tldr.md
+    - Fd: 命令行工具/Fd.md
+    - Eza: 命令行工具/Eza.md
     - Zoxide: 命令行工具/Zoxide.md
     - Starship: 命令行工具/Starship.md
     - Fastfetch: 命令行工具/Fastfetch.md
-    - Eza: 命令行工具/Eza.md
     - Dotter: 命令行工具/Dotter.md
     - Git: 命令行工具/Git.md
   - 网络工具:
