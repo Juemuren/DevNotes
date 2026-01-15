@@ -1,6 +1,7 @@
 mkdocs
-mkdocs-material
 mkdocs-callouts
+mkdocs-git-revision-date-plugin
+mkdocs-material
 mkdocs-minify-plugin
 mkdocs-open-in-new-tab
-mkdocs-git-revision-date-plugin
+pymdown-extensions
