@@ -208,8 +208,9 @@ PNG 适合需要无损压缩或者透明通道的场合，比如有透明背景�
 
 对于 Markdown、HTML、LaTeX、Typst 这种存储为纯文本的文档，所有文本编辑器都可以对其进行修改。此处不列举这些文本编辑器，详见 [编辑器](../编辑器/index.md) 章节
 
-- LibreOffice 可以认为是开源版的 `Microsoft Office`，包含了 DOCX、PPTX 等格式的编辑器
+- LibreOffice 可以认为是开源版的 `Microsoft Office`，包含了 DOCX、PPTX、PDF 等格式的编辑器
 - Sigil 一个 EPUB 编辑器
+- StirlingPDF 一个 PDF 编辑器
 
 > [!Note]- VSCode 拓展
 > 一些 VSCode 拓展能为文档编辑提供便利，甚至可以拓展的原有格式。因此将其归类到文档编辑工具中
