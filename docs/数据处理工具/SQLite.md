@@ -323,7 +323,7 @@ duckdb chips.csv -c "SELECT * FROM file"
 
 如果使用后一种方法，那么可以把所有查询逻辑保存在一个 SQL 文件里，然后对不同的 CSV 文件应用相同的查询逻辑
 
-比如一下内容保存为 `small_query.sql`，然后可以使用 `duckdb chips.csv -f small_query.sql` 进行查询
+比如将以下内容保存为 `small_query.sql`，然后可以使用 `duckdb chips.csv -f small_query.sql` 进行查询
 
 ```sql
 -- 查询小芯片
