@@ -115,10 +115,10 @@ update_description |
 然后执行转换
 
 ```sh
-jq -f convert-to-both.jq my-243-2-normal.json > my-243-2-both.json
+jq -f both.jq my-243-2-normal.json > my-243-2-both.json
 ```
 
-可以借助模块让提高代码的复用性
+可以借助模块来提高代码的复用性
 
 ```jq
 # utils.jq
@@ -159,6 +159,7 @@ update_description("搓玉/不卖玉") |
     update_manufacture(0; ["火神", "泡泡", "褐果"])
   end
 )
+
 # sale.jq
 include "utils";
 

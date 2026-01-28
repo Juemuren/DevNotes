@@ -73,4 +73,4 @@ React 最大的优势也许就是生态好。有很多基于 React 的库，它�
 - react-query 管理异步查询的前端状态
 - react-redux 使用 redux 进行状态管理
 
-React 本身算是个框架，但同时还衍生出了一些框架的框架，比如 `Next.js` 和 `Expo`
+React 本身算是个框架，但同时还衍生出了一些框架的框架，比如 `Next` 和 `Expo`

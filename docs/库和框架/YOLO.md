@@ -33,7 +33,7 @@ mamba activate pytorch
 
 ### 安装
 
-[官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/) 推荐使用 pip 安装，因此使用如下命令安装
+[官方快速入门手册](https://docs.ultralytics.com/zh/quickstart/) 推荐使用 pip 安装
 
 ```sh
 pip install ultralytics
@@ -205,7 +205,7 @@ example
 
 分别把训练集的图片和标签放入 `images/train` 和 `labels/train` 里，验证集则是 `images/val` 和 `labels/val`。注意图片和标签的文件名必须相同。
 
-然后把 `example` 这个文件夹放入 `datasets` 目录下，并在项目根目录新建一个 `example.yaml` 文件，填写上如下内容：
+然后把 `example` 这个文件夹放入 `datasets` 目录下，并在项目根目录新建一个 `example.yaml` 文件，填写上如下内容
 
 ```yaml
 path: example

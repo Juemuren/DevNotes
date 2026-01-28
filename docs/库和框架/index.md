@@ -17,4 +17,4 @@
 - [API](../应用开发/API.md#框架库工具)
 - [CLI](../应用开发/CLI.md)
 - [GUI](../应用开发/GUI.md)
-- [AI/SC](../人工智能开发/index.md)
+- [AI](../人工智能开发/index.md)
