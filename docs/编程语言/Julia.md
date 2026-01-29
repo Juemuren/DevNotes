@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-我使用 Juliaup + VSCode 搭建开发环境。Juliaup 用于管理运行时版本，有时我也会用 Miniforge。
+我使用 Juliaup + VSCode 搭建开发环境。Juliaup 用于管理运行时版本，VSCode 用于编写代码。也可以使用 Miniforge 获取工具链，这可能更符合科学计算的传统。
 
 ### 获取工具链
 
@@ -18,9 +18,13 @@ scoop install juliaup
 或者使用 Miniforge 获取解释器
 
 ```sh
-# 安装最新版解释器
+# 创建虚拟环境
+mamba create -n julia
+# 激活环境
+mamba activate julia
+# 安装最新版的工具链
 mamba install julia
-# 安装特定版本的解释器
+# 安装特定版本的工具链
 mamba install julia==1.10.4
 ```
 

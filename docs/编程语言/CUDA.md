@@ -4,7 +4,7 @@
 
 搭建 CUDA 开发环境必须得有 NVIDIA 显卡。毕竟程序是跑在 GPU 上的，在搭建环境之前得先确认硬件是否满足条件
 
-目前我使用 Miniforge + VSCode 来搭建开发环境，Miniforge 用于获取工具链，而 VSCode 作为编辑器
+目前我使用 Miniforge + VSCode 来搭建开发环境，Miniforge 用于获取工具链，VSCode 用于编写代码。
 
 ### 获取工具链
 

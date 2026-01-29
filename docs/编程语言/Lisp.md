@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-我使用 Scoop + VSCode 搭建开发环境
+我使用 Scoop + VSCode 搭建开发环境，Scoop 用于获取工具链，VSCode 用于编写代码。
 
 ### 获取工具链
 
@@ -20,8 +20,6 @@ sbcl --load quicklisp.lisp
 ```lisp
 ; 安装包管理器，默认安装到 ~/quicklisp
 (quicklisp-quickstart:install)
-; 可以安装到别的路径，但我使用时总是不成功
-(quicklisp-quickstart:install :path "path/to/quicklisp")
 ; 自动加载 quicklisp
 (ql:add-to-init-file)
 ; 退出解释器

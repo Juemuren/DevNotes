@@ -2,12 +2,16 @@
 
 ## 环境搭建
 
-C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*。我个人更喜欢 GCC。CLANG 在 Windows 上需要配合另外两者使用；而 MSVC 我觉得太重了，即使只安装 *BuildTools* 也占用了很大的空间。
+C++ 有三大编译器 *GCC*、*MSVC*、*CLANG*
+
+- GCC 是 Linux 平台的标准编译器，非常经典和流行，也可以在 macOS/Windows 上使用
+- CLANG 是 macOS 平台的标准编译器，功能最全面、体验最现代，同样可以在 Linux/Windows 上使用
+- MSVC 是 Windows 平台的标准编译器，只能在 Windows 上使用，且不开源，商业使用需注意许可证
 
 > [!Note]- 解释器
 > C++ 其实还有个解释器 Cling，不过不推荐拿这个来搭建环境，也许初学时可以用一用。在 Windows 上该工具可通过 Conda 获取，但似乎不太稳定；建议在 Linux 系统里尝试。
 
-我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。同时我也使用 VS + VSCode 来搭建环境，这个方案支持使用 MSVC/CLANG 编译器。
+我使用 MSYS + VSCode 搭建开发环境。MSYS 用于获取工具链，支持使用 GCC/CLANG 编译器，VSCode 用于编写代码。也可以使用 VS 来获取工具链，这个方案支持使用 MSVC/CLANG 编译器。
 
 ### 安装工具链
 
@@ -33,11 +37,11 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 
 #### VS
 
-很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp，最主要的原因可能是 MSVC 和 GCC 的 ABI 不兼容，导致处理起来非常麻烦，为了省事就只支持 MSVC 了 ~~不过也许还有商业因素在里面~~ 。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
+很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp ~~原因可能是 MSVC 和 GCC 的 ABI 不兼容，或者存在一些商业因素~~ 。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
 
 如果需要安装 VS 的话，建议只安装生成工具，然后使用 VSCode 作为编辑器。在 [下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/) 找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。右侧选项中可以先只保留 `MSVC` 和 `Windows SDK`，到时候缺什么再补什么就行。
 
-VS 为了不污染系统环境，需要进入编译环境后才能使用编译器。我不推荐去修改系统的 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并且配置好了 `Windows Terminal`。不过我个人不太喜欢这些东西
+VS 为了不污染系统环境，需要进入编译环境后才能使用编译器。我不推荐去修改系统的 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并配置好了 `Windows Terminal` 的 profile
 
 可以使用 Scoop 让脚本更易用。命令大概是这样
 

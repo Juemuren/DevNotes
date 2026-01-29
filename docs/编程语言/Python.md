@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-目前我使用 Miniforge + VSCode 搭建开发环境，Miniforge 用于获取工具，顺应人工智能和科学计算的相关传统，而 VSCode 用于编辑代码。同时我也使用 mise/uv + VSCode 来搭建环境，这比较适合 Web 项目。
+目前我使用 Miniforge + VSCode 搭建开发环境，Miniforge 用于获取工具，顺应人工智能和科学计算的相关传统，而 VSCode 用于编辑代码。也可以使用 Mise/Uv 来获取工具链，这可能更适合现代项目。
 
 ### 安装工具链
 
@@ -11,22 +11,26 @@
 如果使用 Miniforge 获取工具链，请先完成 [Miniforge 的安装](../环境管理器/Conda.md)，然后通过如下命令安装解释器和第三方库
 
 ```sh
-# 选定一个解释器的版本
-mamba create -n ml python=3.13
+# 创建虚拟环境
+mamba create -n python
 # 激活环境
-mamba activate ml
+mamba activate python
+# 安装最新版的工具链
+mamba install python
+# 安装特定版本的工具链
+mamba install python==3.13
 # 安装一些第三方库
-mamba install ipykernel numpy matplotlib scikit-learn pandas
+mamba install ipykernel numpy matplotlib pandas
 ```
 
-#### mise/uv
+#### Mise/Uv
 
-如果使用 mise/uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具
+如果使用 Mise/Uv 或类似的工具来获取管理 Python 的运行时版本，则首先应该安装这些工具
 
 - [安装 Mise](../环境管理器/Mise.md#安装)
 - [安装 uv](../包管理器/Uv.md#安装)
 
-对于 mise + uv 这一组合，你还应该进行一些设置使二者配合起来更舒适
+对于 Mise + Uv 这一组合，你还应该进行一些设置使二者配合起来更舒适
 
 ```sh
 # 让 mise 能够支持 .python-version 等文件

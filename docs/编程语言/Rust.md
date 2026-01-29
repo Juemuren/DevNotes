@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-我使用 Rustup + VSCode 搭建开发环境。Rustup 用于管理工具链版本。
+我使用 Rustup + VSCode 搭建开发环境。Rustup 用于管理工具链版本，VSCode 用于编写代码。
 
 ### 获取工具链
 

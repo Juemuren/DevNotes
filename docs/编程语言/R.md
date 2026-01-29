@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-目前我使用 Miniforge + VSCode 来搭建开发环境，Miniforge 用于获取工具链，VSCode 用于编写代码
+目前我使用 Miniforge + VSCode 来搭建开发环境，Miniforge 用于获取工具链，VSCode 用于编写代码。
 
 ### 获取工具链
 

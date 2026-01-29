@@ -2,7 +2,7 @@
 
 ## 环境搭建
 
-我使用 Mise + VSCode 搭建开发环境
+我使用 Mise + VSCode 搭建开发环境，Mise 用于管理工具链，VSCode 用于编写代码。
 
 ### 获取工具链
 
