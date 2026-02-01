@@ -39,7 +39,7 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb
 
 很多工具并不支持 MinGW 编译器，比如 CUDA 和 node-gyp ~~原因可能是 MSVC 和 GCC 的 ABI 不兼容，或者存在一些商业因素~~ 。因此尽管我并不喜欢 MSVC，但有些时候确实不得不使用。
 
-如果需要安装 VS 的话，建议只安装生成工具，然后使用 VSCode 作为编辑器。在 [下载页面](https://visualstudio.microsoft.com/zh-hans/downloads/) 找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。右侧选项中可以先只保留 `MSVC` 和 `Windows SDK`，到时候缺什么再补什么就行。
+如果需要安装 VS 的话，建议只安装生成工具，然后使用 VSCode 作为编辑器。在 [下载页面](https://visualstudio.microsoft.com/downloads/) 找到 `Visual Studio 2022 生成工具`，安装工具时勾选 `使用 C++ 的桌面开发`。右侧选项中可以先只保留 `MSVC` 和 `Windows SDK`，到时候缺什么再补什么就行。
 
 VS 为了不污染系统环境，需要进入编译环境后才能使用编译器。我不推荐去修改系统的 PATH 变量，而是使用官方提供的脚本进入编译环境。这个脚本一般在 VS 安装目录的 `Common7\Tools\Launch-VsDevShell.ps1` 下。当然，除了使用脚本，官方还提供了快捷方式并配置好了 `Windows Terminal` 的 profile
 

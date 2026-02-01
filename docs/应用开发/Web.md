@@ -150,11 +150,11 @@ HTML 也有真正拓展了功能的变种，比如 HTMX/JSX/Vue/Svelte 等。它
 
 ### 更多前端技术
 
-前端开发者总是需要学习新东西，不仅框架、库、工具等升级得很快，就连底层的技术也发展得很快。很多内容无法在这里说清 ~~其实是很多技术我也没深入研究过~~ ，你可以自行研究。对此 [MDN](https://developer.mozilla.org/en-US/) 是一个很好的参考
+前端开发者总是需要学习新东西，不仅框架、库、工具等升级得很快，就连底层的技术也发展得很快。很多内容无法在这里说清 ~~其实是很多技术我也没深入研究过~~，可以自行上 [MDN](https://developer.mozilla.org/en-US/) 学习和参考
 
-- WebAssembly
-- WebSocket
-- WebComponents
+- [WebAssembly](#webassembly)
+- [WebSocket](#websocket)
+- [WebComponents](#webcomponents)
 - WebWorkers
 - WebContainers
 - WebGL
