@@ -73,7 +73,6 @@ scoop cat xxxx | jq '.bin.[]'
 scoop cat coreutils | jq '.bin.[] | sub(".*\\\\"; null)'
 # 如果输出混合了多种类型，进行筛选和预处理
 scoop cat unxutils | jq '.bin.[] | strings | sub(".*\\\\"; null)'
-scoop cat uutils-coreutils | jq '.bin[] | arrays | last'
 # 得到纯净的输出后就可以开始后续处理了
 scoop cat xxx | jq '...' | tr -d '\r' | xargs which
 ```
@@ -85,7 +84,7 @@ scoop cat xxx | jq '...' | tr -d '\r' | xargs which
 首先编写转换脚本
 
 ```jq
-# convert-to-both.jq
+# both.jq
 # 将 不搓玉/不卖玉 转换为 搓玉/卖玉
 
 def update_description:

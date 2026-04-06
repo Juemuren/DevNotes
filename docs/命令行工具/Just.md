@@ -123,7 +123,7 @@ Just 提供了多个设置项，使用 `set name := value` 即可修改默认值
 
 设置可用于修改运行 Shell、改变工作目录等，详细用法请阅读文档。
 
-### [函数](https://just.systems/man/en/functions.html#environment-variables)
+### [函数](https://just.systems/man/en/built-in-functions.html)
 
 Just 提供了许多内置函数，通过 `func()` 即可调用。
 
@@ -236,7 +236,7 @@ Just 可以为配方添加依赖
 
 在配方中可以用 `\` 对较长的表达式、命令等语句进行分行
 
-### [命令回显](https://just.systems/man/en/quiet-recipes.html?highlight=%40echo#quiet-recipes)
+### [命令回显](https://just.systems/man/en/quiet-recipes.html)
 
 默认情况下 Just 会显示每个配方具体运行的命令。有很多种方式进行调整
 
