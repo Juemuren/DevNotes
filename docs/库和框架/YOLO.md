@@ -119,9 +119,9 @@ exit()
 
 #### VSCode
 
-推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了 [相关拓展](https://docs.ultralytics.com/integrations/vscode/)
+推荐使用 *VSCode* 来编写 Python 代码，因为 ~~我喜欢~~ 官方力荐且制作了 [相关扩展](https://docs.ultralytics.com/integrations/vscode/)
 
-可以在 VSCode 中安装 [Ultralytics Snippets](https://marketplace.visualstudio.com/items?itemName=Ultralytics.ultralytics-snippets) 这个拓展。顾名思义，此拓展就是提供了一些代码片段（Snippets），不安装并不影响正常使用。
+可以在 VSCode 中安装 [Ultralytics Snippets](https://marketplace.visualstudio.com/items?itemName=Ultralytics.ultralytics-snippets) 这个扩展。顾名思义，此扩展就是提供了一些代码片段，不安装并不影响正常使用。
 
 ## 使用方法
 

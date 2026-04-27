@@ -225,4 +225,4 @@ scoop install nu
 brew install nushell
 ```
 
-目前 Nushell 的生态还在发展。官方维护的 [awesome-nu](https://github.com/nushell/awesome-nu) 记录了一些好用的 Nushell 工具，包括插件、脚本、编辑器拓展等。
+目前 Nushell 的生态还在发展。官方维护的 [awesome-nu](https://github.com/nushell/awesome-nu) 记录了一些好用的 Nushell 工具，包括插件、脚本、编辑器扩展等。

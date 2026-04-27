@@ -26,10 +26,10 @@ npx create-react-app my-app
 
 React 使用组件，即自定义的 *HTML 标签* 作为基本的代码复用模块。
 
-React 还拓展了 *JavaScript* 的语法，使得我们可以直接在 *JavaScript* 中编写类似 *HTML* 的元素。由于这种语法浏览器无法理解，因此一般会把用到拓展语法的文件后缀改为 `jsx`，表明该文件需要特殊处理。
+React 还扩展了 *JavaScript* 的语法，使得我们可以直接在 *JavaScript* 中编写类似 *HTML* 的元素。由于这种语法浏览器无法理解，因此一般会把用到扩展语法的文件后缀改为 `jsx`，表明该文件需要特殊处理。
 
 ```jsx
-// JSX 拓展语法
+// JSX 扩展语法
 const element = <div>JSX Example</div>;
 
 // 组件

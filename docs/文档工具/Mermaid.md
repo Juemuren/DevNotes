@@ -63,7 +63,7 @@ sequenceDiagram
 
 mermaid 提供了 [CLI 工具](https://github.com/mermaid-js/mermaid-cli)，可以本地完成图片的导出。可以选择 png 或 svg 格式的图片，可以自定义 css 文件，还可以一键把 md 里所有内嵌的 mermaid 导出为图片，并在新输出的 md 文件里引用这些图片。最后一个功能我很喜欢，因为可以配合 pandoc 轻松地让 LLM 生成一个图文并茂的 docx 文档
 
-mermaid 还有 VSCode 拓展 [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart)，提供了语言服务、本地预览和导出等功能。
+mermaid 还有 VSCode 扩展 [Mermaid Chart](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart)，提供了语言服务、本地预览和导出等功能。
 
 ## 对比
 

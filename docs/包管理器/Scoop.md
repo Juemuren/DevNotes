@@ -110,7 +110,7 @@ scoop shim add example 'path\to\script' '--' -arg1 val1 -arg2 val2
 scoop shim add msedge 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 ```
 
-你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有拓展名为 `exe` 和 `ps1` 的 *shim* 才会被列出来。
+你可以使用 `scoop shim list` 列出创建的所有 *shim*。不过很可惜，似乎只有扩展名为 `exe` 和 `ps1` 的 *shim* 才会被列出来。
 
 > [!Tip]- 管理复杂脚本
 > 对于需要多行代码的复杂脚本，不建议使用 Scoop 进行管理。在 **PATH** 中新增一个目录（比如 `~/.local/bin`）并将所有脚本保存到其中会更好。
