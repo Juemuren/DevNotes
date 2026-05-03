@@ -161,7 +161,7 @@ sqlite3 -json example.db "SELECT * FROM users" > output.json
 
 ## 示例
 
-我想要统计游戏中的芯片数量，以了解该优先刷取哪个副本。首先准备一个 `chips.csv` 文件
+我想要统计游戏中的芯片数量，以了解该优先刷取哪个副本。首先需要一个 `chips.csv` 文件
 
 ```csv
 职业,芯片类型,数量
@@ -171,8 +171,8 @@ sqlite3 -json example.db "SELECT * FROM users" > output.json
 辅助,大,15
 狙击,小,13
 狙击,大,13
-术士,小,8
-术士,大,9
+术师,小,8
+术师,大,9
 近卫,小,10
 近卫,大,11
 特种,小,8
@@ -183,7 +183,9 @@ sqlite3 -json example.db "SELECT * FROM users" > output.json
 医疗,大,13
 ```
 
-然后导入 csv 文件。该这些 SQL 语句和操作可以保存在 `chip_import.sql` 文件里，通过 `sqlite3 chips.db < chips_import.sql` 来执行
+该文件可以手写，也可以先用 MAA 的仓库识别功能得到 JSON，然后再编写脚本转为 CSV。脚本语言使用 *python*、*jq* 甚至 *sql* 都行。
+
+有了 CSV 文件后需要将其导入数据库。该这些 SQL 语句和操作可以保存在 `chip_import.sql` 文件里，通过 `sqlite3 chips.db < chips_import.sql` 来执行
 
 ```sql
 -- 创建表
@@ -216,7 +218,7 @@ ORDER BY 数量 DESC;
 SELECT
     CASE
         WHEN 职业 IN ('先锋', '辅助') THEN '先锋 + 辅助'
-        WHEN 职业 IN ('狙击', '术士') THEN '狙击 + 术士'
+        WHEN 职业 IN ('狙击', '术师') THEN '狙击 + 术师'
         WHEN 职业 IN ('近卫', '特种') THEN '近卫 + 特种'
         WHEN 职业 IN ('重装', '医疗') THEN '重装 + 医疗'
     END AS 组合,
@@ -302,7 +304,7 @@ update job type increment:
 
 不过对于上述场景，使用 DuckDB 可能更合适。毕竟这里没有高频写入，只需要处理复杂查询，而 DuckDB 就是为数据分析设计的。
 
-Duck 可以根据 CSV 文件自动创建表，因此导入和查询 CSV 文件都非常简单
+DuckDB 可以根据 CSV 文件自动创建表，因此导入和查询 CSV 文件都非常简单
 
 ```sql
 -- 查询所有芯片
