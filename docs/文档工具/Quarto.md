@@ -4,11 +4,21 @@
 
 Quarto 是个基于 Pandoc 和 Jupyter 构建的开源科技出版系统
 
-Quarto 自创了 qmd 这个 Markdown 扩展格式，并组合了 Pandoc 和 Jupyter。简单地说，当要求渲染时，它会把文档中的代码交给 Jupyter 运行，然后把得到的结果嵌入在文档内；当要求导出时，它会用 pandoc 进行格式转换。Quarto 就这样封装出了易用的接口，并实现了不错的出版效果。
+Quarto 自创了 qmd 这个 Markdown 文件格式，并组合了 Pandoc 和 Jupyter。简单地说，构建时，Quarto 会解析 qmd 并将其中的代码交给 Jupyter 运行，然后把得到的结果保留在一个临时文档内，最后用 Pandoc 对其进行转换。Quarto 就这样封装了易用的接口，并实现了不错的出版效果。
 
 ## 对比
 
-如果对排版没有什么要求，我觉得用 Jupyter 就够了。
+Quarto 将 `qmd` 作为源文件，而 `ipynb`/`html`/`pdf`/`pptx` 等都是构建产物。
+
+相比 Jupyter 直接维护 `ipynb` 文件并用 `nbconvert` 进行转换，Quarto 的做法有很大不同
+
+| 角度     | Quarto                            | Jupyter                      |
+| -------- | --------------------------------- | ---------------------------- |
+| 版本控制 | 好，Markdown 的简单扩展，文件清晰 | 差，JSON 格式，难以直接阅读  |
+| 输出目标 | 好，基于 pandoc                   | 差，基于 nbconvert           |
+| 交互体验 | 差，编辑-运行-渲染流程较长        | 好，可视化即时，适合快速探索 |
+
+总之就是，Quarto 更适合工程项目，Jupyter 更适合个人使用。
 
 ## 安装
 

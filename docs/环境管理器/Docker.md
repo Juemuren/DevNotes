@@ -44,7 +44,7 @@ scoop install docker
 # 将守护进程注册为服务
 dockerd --register-service
 # 启动守护进程
-sasv docker
+sasv dockerd
 # 运行容器
 docker run hello-world
 ```
@@ -67,13 +67,15 @@ podman machine start
 podman run hello
 ```
 
-不需要新打开一个管理员权限的终端，不需要复杂的配置，除了可能的网络问题外即使是第一次使用也基本上不会遇到报错
+不需要新打开一个管理员权限的终端，不需要复杂的配置。除了可能的网络问题外，即使是第一次使用也基本上不会遇到报错
 
 ## 安装
 
 ### Windows
 
-[podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
+>[!Note] Podman 官方文档
+>
+> 本文只介绍 Podman CLI 的安装和使用，更详细的内容可参考 [podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
 
 首先在 Windows 的文件系统里安装 podman
 

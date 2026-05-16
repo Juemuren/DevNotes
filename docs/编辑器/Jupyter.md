@@ -71,14 +71,95 @@ jupyter lab
 
 ### 导出
 
-导出可以使用 `nbconvert` 或 `pandoc`。更推荐使用前者，可以通过 `pip install nbconvert` 来安装。*VSCode* 的导出实际上就使用了 `nbconvert`
+导出可以使用 `nbconvert`，通过 `pip install nbconvert` 安装。*VSCode* 的导出实际上就使用了 `nbconvert`
+
+`nbconvert` 支持导出为多种格式，不过最常用的还是 *HTML* 和 $\LaTeX$。而 *PDF* 可由前者进一步处理得到。
+
+#### HTML
 
 ```sh
 # 将 example.ipynb 导出为 export.html
 jupyter nbconvert example.ipynb --to html --output export
 ```
 
-`nbconvert` 支持导出为 *PDF* 和 *HTML*。不过对于 *PDF*，建议先导出为 *HTML*，再使用浏览器的 *打印* 功能。如果想直接转换为 *PDF*，不管是 `nbconvert` 还是 `pandoc` 都会尝试使用 $\LaTeX$ 进行编译，因此需要安装 $\TeX$ 环境；不仅如此，对于中文字体还需要额外的设置，比较麻烦。
+一些常用的选项
+
+```sh
+# 指定模板
+--template lab
+# 不保留提示符
+--no-prompt
+# 清除输出
+--clear-output
+```
+
+*HTML* 内置的模板只有 `basic`/`lab`/`classic`，可以自定义模板或下载社区里的模板。
+
+之后可以用浏览器的打印功能，将 `html` 文件转为 *PDF*。如果偏爱脚本也可以用无头浏览器来打印
+
+```sh
+chrome --headless \
+  --print-to-pdf="/path/to/file.pdf" \
+  --no-pdf-header-footer \
+  "file:///path/to/file.html"
+```
+
+> [!Warning]- HTML 的排版缺陷
+>
+> `lab` 模板的 HTML 在打印为 PDF 后，会截断非常长的代码行。
+>
+> 并且由于 HTML 不是专为排版设计的标记语言，因此很多时候排版效果并不好。如果比较在意排版，建议使用 LaTeX。
+
+#### LaTeX
+
+```sh
+# 将 example.ipynb 导出为 export.tex
+jupyter nbconvert example.ipynb --to latex --output export
+```
+
+如果原 `ipynb` 文件中有图片输出，则上述命令会创建一个文件夹 `export_files` 来保存图片。
+
+$\LaTeX$ 内置的模板只有 `base`/`article`/`report`，可以自定义模板或下载社区里的模板。
+
+> [!Tip]+ LaTeX 的中文配置和效果改善
+>
+> 由于 LaTeX 不像 HTML 天然支持中文，并且内置的模板不忠于 Jupyter 笔记本的实际渲染效果，因此建议下载社区的模板或自己修改模板。
+>
+> 我目前的做法是魔改 [nb_pdf_template](https://github.com/t-makaro/nb_pdf_template) 模板
+>
+> 1. 首先到 [share/templates/latex_authentic](https://github.com/t-makaro/nb_pdf_template/tree/master/share/templates/latex_authentic) 页面下载 [conf.json](https://github.com/t-makaro/nb_pdf_template/blob/master/share/templates/latex_authentic/conf.json) 和 [index.tex.j2](https://github.com/t-makaro/nb_pdf_template/blob/master/share/templates/latex_authentic/index.tex.j2) 这两个文件。
+> 2. 然后把文件手动复制到对应环境的模板文件夹中。若 Python 环境是用 `miniforge` 安装的，则其具体位置为 `/path/to/miniforge/envs/<env_name>/share/jupyter/nbconvert/templates/<template_name>`，其中 `<template_name>` 为模板名，可以自己命名。
+> 3. 最后修改 `index.tex.j2` 文件，将 `\documentclass[11pt]{article}` 改为 `\documentclass[11pt]{ctexart}`
+> 4. 使用时通过 `--template <template_name>` 选择自定义的模板
+
+之后就是编译 `tex` 文件得到 *PDF*，这要求本机已安装 $\TeX$ 环境
+
+```sh
+xelatex export.tex --quiet
+```
+
+> [!Warning]- LaTeX 的一些问题
+>
+> 原 `ipynb` 中引用的 *SVG* 文件似乎没有被嵌入编译后的 *PDF*。目前我的做法就是手动将 *SVG* 转为 *PNG*，而 `ipynb` 中只引用后者。
+
+用 `nbconvert` 直接将 `ipynb` 转为 *PDF*，其实就是把转为 $\LaTeX$ 和编译 $\LaTeX$ 的步骤结合起来了。
+
+### 导入
+
+除了可以将 `ipynb` 导出为别的格式外，也可以把别的格式转换为 `ipynb` 文件。
+
+最常用的工具就是 `notedown`，可以把 `md` 文件转为 `ipynb` 文件
+
+```sh
+# 将 input.md 转为 output.ipynb
+notedown input.md > output.ipynb
+```
+
+> [!Tip] Quarto
+>
+> `notedown` 的功能较为简单，我只使用它从一个模板 `md` 生成初始 `ipynb` 文件，后续就直接维护 `ipynb` 了。毕竟 `ipynb` 是 JSON 格式的文本文件，维护起来并不麻烦，没必要弄特别复杂的构建脚本；而将 `md` 作为源文件，将 `ipynb` 作为构建产物，则失去了 Jupyter 即时探索的流畅性。
+>
+> 但如果真的对相关做法感兴趣，可以了解一下 [Quarto](../文档工具/Quarto.md) 这个开源的科技出版系统。
 
 ### 命令行
 
