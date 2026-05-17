@@ -36,12 +36,12 @@ mamba install ipykernel numpy matplotlib pandas
 # 让 mise 能够支持 .python-version 等文件
 mise settings add idiomatic_version_file_enable_tools python
 # 让 mise 自动激活 uv 创建的虚拟环境
-mise add settings python.uv_venv_auto true
+mise add settings python.uv_venv_auto source
 # 禁用 uv 自动下载 python 的功能
 echo 'python-downloads = "never"' >> "$env:APPDATA\uv\uv.toml"
 ```
 
-然后，可以运行如下命令，新建目录并安装相应的依赖
+然后，可以运行如下命令，新建项目并安装相应的依赖
 
 ```sh
 # 新建一个使用 python 3.13 的项目

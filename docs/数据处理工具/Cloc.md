@@ -68,18 +68,11 @@ tokei docs
 
 此外还有很多参数
 
-```sh
-# 统计隐藏文件
---hidden
-# 统计忽略文件
---no-ignore
-# 更改输出格式，包括 json/yaml/cbor
---output json
-# 更改排序方式，包括 blanks/code/comments/lines
---sort
-# 仅统计部分语言
---type=Rust,Markdown
-```
+- `--hidden` 统计隐藏文件
+- `--no-ignore` 统计忽略文件
+- `--output` 更改输出格式，包括 json/yaml/cbor
+- `--sort` 更改排序方式，包括 blanks/code/comments/lines
+- `--type=Rust,Markdown` 仅统计部分语言
 
 这是在本项目根目录运行 `tokei .` 的输出 ~~cloc 由于中文问题没有正确的输出~~
 

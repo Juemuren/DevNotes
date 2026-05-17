@@ -84,16 +84,9 @@ jupyter nbconvert example.ipynb --to html --output export
 
 一些常用的选项
 
-```sh
-# 指定模板
---template lab
-# 不保留提示符
---no-prompt
-# 清除输出
---clear-output
-```
-
-*HTML* 内置的模板只有 `basic`/`lab`/`classic`，可以自定义模板或下载社区里的模板。
+- `--template` 指定模板。内置的 *HTML* 模板只有 `basic`/`lab`/`classic`，可以自定义模板或下载社区里的模板。
+- `--no-prompt` 不保留提示符
+- `--clear-output` 清除输出
 
 之后可以用浏览器的打印功能，将 `html` 文件转为 *PDF*。如果偏爱脚本也可以用无头浏览器来打印
 
@@ -155,7 +148,7 @@ xelatex export.tex --quiet
 notedown input.md > output.ipynb
 ```
 
-> [!Tip] Quarto
+> [!Tip]- Quarto
 >
 > `notedown` 的功能较为简单，我只使用它从一个模板 `md` 生成初始 `ipynb` 文件，后续就直接维护 `ipynb` 了。毕竟 `ipynb` 是 JSON 格式的文本文件，维护起来并不麻烦，没必要弄特别复杂的构建脚本；而将 `md` 作为源文件，将 `ipynb` 作为构建产物，则失去了 Jupyter 即时探索的流畅性。
 >

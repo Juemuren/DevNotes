@@ -108,6 +108,7 @@ nav:
   - 环境管理器: 
     - 环境管理器: 环境管理器/index.md
     - Conda: 环境管理器/Conda.md
+    - Pixi: 环境管理器/Pixi.md
     - Mise: 环境管理器/Mise.md
     - MSYS: 环境管理器/MSYS.md
     - WSL: 环境管理器/WSL.md

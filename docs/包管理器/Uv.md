@@ -16,6 +16,8 @@ uv 相比 pip 有很多不同
 ```sh
 # Windows
 scoop install uv
+# Mise
+mise use uv -g
 ```
 
 ## 使用

@@ -15,6 +15,8 @@ pnpm 的 [开发动机](https://pnpm.io/motivation) 以及与 yarn/npm 的 [特�
 ```sh
 # Windows
 scoop install pnpm
+# Mise
+mise pnpm uv -g
 ```
 
 ## 配置
