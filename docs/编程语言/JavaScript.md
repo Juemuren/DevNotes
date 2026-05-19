@@ -40,17 +40,23 @@ mise use -g bun
 
 ## 命令行工具
 
+JavaScript 中专门用于前端/后端开发的框架/库/工具被放到了别的章节。
+
+- [前端](../应用开发/Web.md#框架库工具)
+- [后端](../应用开发/API.md#框架库工具)
+
 ### 包管理器
 
 - npm `nodejs` 的官方包管理器
 - [pnpm](../包管理器/Pnpm.md) 改进的 `npm`，优点是更快和更节省硬盘空间
+- aube 完全用 Rust 写的包管理器
 - ncu 增加了 `npm` 没有的功能。它会检查 `package.json` 文件，然后列出所有可以更新的依赖，也可以加个 `-u` 参数一键更新。不过这个工具只更新 `package.json` 文件，还要重新运行 `npm install` 来安装新版本的依赖
 
 ### 静态检查和格式化
 
 - ESLint 代码静态检查
 - Prettier 格式化
-- Biome ESLint 和 Prettier 的结合体，由于使用 Rust 编写所以速度非常快
+- Biome 可以视为 ESLint 和 Prettier 的结合体，由于使用 Rust 编写所以速度非常快
 
 ### 调试
 
@@ -79,4 +85,4 @@ mise use -g bun
 ### 轻型实用库
 
 - dotenv 加载 .env 文件的
-- lodash 使用 JavaScript 库，让数组、对象等操作更加简单
+- lodash 函数式编程库，让数组、对象等操作更加简单

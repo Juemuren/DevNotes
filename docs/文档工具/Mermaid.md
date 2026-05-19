@@ -37,7 +37,7 @@ sequenceDiagram
 >
 > 打开 DevTools 的 **元素** 栏，你会发现上面这张图里已经没有 `code` 标签了，而是被替换为了 `svg` 标签
 
-```mmd
+```mermaid
 sequenceDiagram
   participant DM as 开发机器
   participant SSG as 静态网站生成器

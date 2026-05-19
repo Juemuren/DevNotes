@@ -105,6 +105,9 @@ nav:
     - Jq: 数据处理工具/Jq.md
     - Yq: 数据处理工具/Yq.md
     - SQLite: 数据处理工具/SQLite.md
+  - 大模型工具:
+    - 大模型工具: 大模型工具/index.md
+    - Ollama: 大模型工具/Ollama.md
   - 环境管理器: 
     - 环境管理器: 环境管理器/index.md
     - Conda: 环境管理器/Conda.md
@@ -152,15 +155,12 @@ nav:
     - GUI: 应用开发/GUI.md
     - CLI: 应用开发/CLI.md
     - API: 应用开发/API.md
-  - 游戏开发:
-    - 游戏开发: 游戏开发/index.md
+    - Game: 应用开发/Game.md
+    - AI: 应用开发/AI.md
   - 嵌入式开发:
     - 嵌入式开发: 嵌入式开发/index.md
     - MCU: 嵌入式开发/MCU.md
     - FPGA: 嵌入式开发/FPGA.md
-  - 人工智能开发:
-    - 人工智能开发: 人工智能开发/index.md
-    - Ollama: 人工智能开发/Ollama.md
 
 extra:
   generator: false

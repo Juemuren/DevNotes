@@ -88,14 +88,7 @@ jupyter nbconvert example.ipynb --to html --output export
 - `--no-prompt` 不保留提示符
 - `--clear-output` 清除输出
 
-之后可以用浏览器的打印功能，将 `html` 文件转为 *PDF*。如果偏爱脚本也可以用无头浏览器来打印
-
-```sh
-chrome --headless \
-  --print-to-pdf="/path/to/file.pdf" \
-  --no-pdf-header-footer \
-  "file:///path/to/file.html"
-```
+之后可以用浏览器的打印功能，将 `html` 文件转为 *PDF*。如果偏爱脚本也可以用 [无头浏览器](../网络工具/Chrome.md#无头模式) 来打印
 
 > [!Warning]- HTML 的排版缺陷
 >
