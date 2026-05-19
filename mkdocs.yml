@@ -82,6 +82,7 @@ nav:
     - Chrome: 网络工具/Chrome.md
   - 安全工具:
     - 安全工具: 安全工具/index.md
+    - Hashcat: 安全工具/Hashcat.md
   - 文档工具:
     - 文档工具: 文档工具/index.md
     - Pandoc: 文档工具/Pandoc.md
@@ -108,6 +109,7 @@ nav:
   - 大模型工具:
     - 大模型工具: 大模型工具/index.md
     - Ollama: 大模型工具/Ollama.md
+    - Codex: 大模型工具/Codex.md
   - 环境管理器: 
     - 环境管理器: 环境管理器/index.md
     - Conda: 环境管理器/Conda.md

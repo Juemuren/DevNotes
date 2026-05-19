@@ -86,7 +86,7 @@
 
 #### 哈希破解
 
-- hashcat 最快的哈希破解工具
+- [hashcat](Hashcat.md) 最快的哈希破解工具
 
 ### Reverse
 

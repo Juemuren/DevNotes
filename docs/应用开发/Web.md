@@ -181,7 +181,7 @@ WebComponents 是 Web 对于组件化的原生支持，由于 WebComponents 在 
 
 WebComponents 支持自定义 HTML 标签，可以把样式、逻辑行为都封装进 HTML 元素里，并允许使用模板和导出，就像大多数组件框架那样。不过由于 WebComponents 由浏览器原生支持，所以可能比那些臃肿的框架效果更好。当然了，如果已经熟悉了别的框架，其实也没必要增加这些学习成本。
 
-## 框架/库/工具
+## 开发资源
 
 部分 JavaScript/TypeScript 框架/库/工具因为更加通用，并非专属于 Web，所以没有列举在这里，你可以阅读 [JavaScript](../编程语言/JavaScript.md) 章节了解更多。
 

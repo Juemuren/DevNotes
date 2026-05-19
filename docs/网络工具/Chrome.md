@@ -74,4 +74,4 @@ chrome --headless --print-to-pdf="$PWD/example.pdf" "https://example.com"
 
 添加参数 `--no-pdf-header-footer` 可以在打印时省略掉页眉和页脚
 
-更多内容请参考[官方文档](https://developer.chrome.com/docs/chromium/headless)
+更多内容请参考 [官方文档](https://developer.chrome.com/docs/chromium/headless)
