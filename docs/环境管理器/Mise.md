@@ -25,12 +25,15 @@ scoop install mise
 
 ### 激活
 
-Mise 的一些功能需要与 Shell 集成（官方说法是激活）后才能使用。你可以阅读 [官方文档](https://mise.jdx.dev/getting-started.html#activate-mise) 了解如何激活 Mise。
+Mise 的一些功能需要与 Shell 集成（官方说法是激活）后才能使用。你可以阅读 [官方文档](https://mise.jdx.dev/getting-started.html#activate-mise) 了解如何激活 Mise
 
-对于 Pwsh，需要往 `$PROFILE` 文件中添加如下命令
-
-```pwsh
+```sh
+# pwsh
 (&mise activate pwsh) | Out-String | Invoke-Expression
+# bash
+eval "$(mise activate bash)"
+# zsh
+eval "$(mise activate zsh)"
 ```
 
 在上述激活方式中，Mise 通过修改 *PATH* 切换运行时版本。Mise 还有另一种切换运行时版本的方式，就是修改 *Shims*，它和修改 *PATH* 的方法略有不同，详细的比对可参考 [官方文档](https://mise.jdx.dev/dev-tools/shims.html#mise-activate-shims)。

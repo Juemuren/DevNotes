@@ -37,7 +37,7 @@ hyperfine -r 20 'command'
 
 ```sh
 # 热启动，测试前先运行 5 次
-hyperfine -W 5 'command'
+hyperfine -w 5 'command'
 # 冷启动，测试前运行先清除缓存，clear-cache 命令因系统而异
 hyperfine -p 'clear-cache' 'command'
 ```

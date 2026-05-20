@@ -21,21 +21,60 @@ Linux 通常自带 **系统包管理器**，Homebrew 与之有一些显著的区
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+## 配置
+
+安装完成后需要修改 Shell 配置文件
+
+```sh
+eval "$(/path/to/brew/bin/brew shellenv)"
+```
+
 ## 使用
 
-几乎所有包管理器的基本使用方法都是差不多的
+### 基本使用
+
+几乎所有包管理器的基本使用方法都差不多
 
 ```sh
 # 安装包
 brew install fzf
-# 查看所有已安装的包
-brew list
-# 查看指定安装的包
-brew list --installed-on-request
 # 更新包
 brew upgrade fzf
 # 卸载包
 brew uninstall fzf
 ```
 
+稍微高级点的用法
+
+```sh
+# 查看所有已安装的包
+brew list
+# 查看指定安装的包
+brew list --installed-on-request
+# 搜索包
+brew search fzf
+# 查看包信息
+brew info fzf
+# 更新包管理器
+brew update
+# 清理过时依赖
+brew autoremove
+# 清理无用的包
+brew cleanup
+# 查看被哪些包依赖
+brew uses zlib --installed
+```
+
+运行 `brew commands` 会显示所有的子命令
+
 更复杂的用法建议参考 [官方参考手册](https://docs.brew.sh/Manpage)
+
+### 排查问题
+
+如果使用时遇到了问题，可以运行
+
+```sh
+brew doctor
+```
+
+然后根据显示的信息修复问题即可
