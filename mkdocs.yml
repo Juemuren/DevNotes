@@ -88,6 +88,7 @@ nav:
     - Pandoc: 文档工具/Pandoc.md
     - Marp: 文档工具/Marp.md
     - Mermaid: 文档工具/Mermaid.md
+    - TikZ: 文档工具/TikZ.md
     - Quarto: 文档工具/Quarto.md
     - Doxygen: 文档工具/Doxygen.md
     - MkDocs: 文档工具/MkDocs.md
