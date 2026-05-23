@@ -14,15 +14,13 @@ miktex<span class=w> </span>packages<span class=w> </span>install<span class=w> 
 <span class=s>  }</span>
 <span class=s>\end{tikzpicture}</span>
 <span class=sb>```</span>
-</code></pre></div> <h2 id=使用>使用<a class=headerlink href=#使用 title="Permanent link">&para;</a></h2> <p>TikZ 通常是嵌入学术论文，并随着其一起编译的。</p> <p>如果只想用 TikZ 做图片，那么可以添加如下代码让它变成独立的文档</p> <div class=highlight><pre><span></span><code><span class=sb>```tikz</span>
-<span class=s>\documentclass[tikz]{standalone}</span>
-<span class=s>\usepackage{tikz}</span>
-<span class=s>\begin{document}</span>
-<span class=s>\begin{tikzpicture}</span>
-<span class=s>% ...</span>
-<span class=s>\end{tikzpicture}</span>
-<span class=s>\end{document}</span>
-<span class=sb>```</span>
+</code></pre></div> <h2 id=使用>使用<a class=headerlink href=#使用 title="Permanent link">&para;</a></h2> <p>TikZ 通常是嵌入学术论文，并随着其一起编译的。</p> <p>如果只想用 TikZ 做图片，那么可以添加如下代码让它变成独立的文档</p> <div class=highlight><pre><span></span><code><span class=k>\documentclass</span><span class=na>[tikz]</span><span class=nb>{</span>standalone<span class=nb>}</span>
+<span class=k>\usepackage</span><span class=nb>{</span>tikz<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>
+<span class=c>% ...</span>
+<span class=k>\end</span><span class=nb>{</span>tikzpicture<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
 </code></pre></div> <p>然后编译该 <code>tex</code> 文件</p> <div class=highlight><pre><span></span><code><span class=c1># 生成 dvi</span>
 latex<span class=w> </span>tikz.tex
 <span class=c1># 转为 svg</span>
