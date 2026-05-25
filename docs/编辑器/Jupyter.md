@@ -172,7 +172,7 @@ jupytext --to notebook notebook.md
 
 如果将 `md`/`py` 作为源文件，而将 `ipynb` 作为构建产物，那么前者确实更好维护，但通常也会失去后者即时探索的流畅性。
 
-至于维护 `md` 更好还是维护 `py` 更好则因人而异。我的一个 `ipynb` 文件原始 JSON 有 2000 多行 ，转为 `md` 和 `py` 后都只剩下了 500 行左右
+至于维护 `md` 更好还是维护 `py` 更好则因人而异。我的一个 `ipynb` 文件原始 JSON 有 2000 多行，转为 `md` 和 `py` 后都只剩下了 500 行左右
 
 - 转为 `py` 后可以直接 `python notebook.py` 运行脚本，但所有的 markdown 内容都写在注释里，编辑器无法高亮
 - 转为 `md` 后所有 python 脚本在代码块里，编辑器能够高亮，但没法通过 `python notebook.md` 直接运行。不过能使用 `jupytext --to notebook --execute notebook.md` 来执行并转换这个 `md` 文件。

@@ -50,6 +50,79 @@ VSCode 扩展 [TikZ in Markdown](https://marketplace.visualstudio.com/items?item
 ```
 ````
 
+### TikZJax
+
+根据 [官网](https://tikzjax.com/) 的说明，对于 HTML 页面，只需在 `<head>` 中添加
+
+```html
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+```
+
+然后 `<body>` 内就可以如下编写 `tikz` 代码了
+
+```html
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+  \end{tikzpicture}
+</script>
+```
+
+而对于 Markdown 博客来说，集成会更加复杂一点。
+
+我使用的 SSG 是 [Hugo](https://gohugo.io/)，用了 [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) 这个主题。我换了个更快的源，且添加了一些样式
+
+```html
+<link rel="stylesheet" type="text/css"
+  href="https://cdn.jsdelivr.net/npm/@drgrice1/tikzjax@1.0.0-beta24/dist/fonts.css"
+>
+<script defer src="https://cdn.jsdelivr.net/npm/@drgrice1/tikzjax@1.0.0-beta24/dist/tikzjax.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll('.tikz');
+    elements.forEach(el => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'tikz-container';
+      el.parentNode.replaceChild(wrapper, el);
+      const script = document.createElement('script');
+      script.type = 'text/tikz';
+      script.textContent = el.textContent.trim();
+      wrapper.appendChild(script);
+    });
+  })
+</script>
+<style>
+.tikz-container {
+  width: fit-content;
+  margin: 1em auto;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+html[data-theme="dark"] .tikz-container svg {
+  filter: invert(1);
+}
+</style>
+```
+
+除此之外还要在 `layouts/partials/extend_head.html` 中添加如下代码
+
+```html
+{{ if .Store.Get "hasTikz" }}
+{{ partial "tikz.html" . }}
+{{ end }}
+```
+
+最后添加 `layouts/_default/_markup/render-codeblock-tikz.html` 文件
+
+```html
+<pre class="tikz">
+  {{ .Inner | htmlEscape | safeHTML }}
+</pre>
+{{ .Page.Store.Set "hasTikz" true }}
+```
+
 ## 使用
 
 TikZ 通常是嵌入学术论文，并随着其一起编译的。
