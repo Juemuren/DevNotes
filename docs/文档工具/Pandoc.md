@@ -148,7 +148,7 @@ pandoc input.md -o output.md --lua-filter="shift-headers.lua"
 pandoc input.md -o output.txt -t plain
 ```
 
->[!Tip]+ 换行问题
+> [!Tip]+ 换行问题
 >
 > 将文本转为文本时，加上 `--wrap=preserve` 选项，以防止 Pandoc 自动换行
 

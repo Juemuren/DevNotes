@@ -78,7 +78,6 @@ yolo predict model=yolo11n.pt source='https://ultralytics.com/images/bus.jpg'
 > # 使用模型 yolo11n.pt 预测当前工作目录下的 example.jpg 图片。
 > yolo predict model=yolo11n.pt source='example.jpg'
 > ```
->
 
 ### 可选项
 

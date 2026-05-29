@@ -56,12 +56,36 @@ wsl uname -a
 
 WSL 本质上是个虚拟机，而虚拟机的网络连接方式略微有点复杂，尤其是在宿主机使用了网络代理工具的情况下。
 
-我目前的解决方案大概如下
+> [!Warning]+ Clash 的问题
+> 在 WSL 里使用 Clash 这类本地代理软件，会遇到 `localhost` 域名映射的问题。解决方法主要有两种
+>
+> 1. 将网络模式设为 `Mirrored`。此时可能产生错误代码 `CreateInstance/CreateVm/ConfigureNetworking/0x8007054f`，在 [WSL issues#12351](https://github.com/microsoft/WSL/issues/12351) 上有很多人讨论这一问题
+> 2. 修改系统代理设置，将代理主机改为局域网地址，而不是 `localhost`/`127.0.0.1` 这类本机地址
 
-1. 尝试更改 WSL Settings，比如网络模式选择 `Mirrored`
-2. 尝试网络代理使用 TUN 模式能不能解决
+我目前的解决方案是使用 Steamcommunity_302。由于我在 WSL 里遇到的网络问题大多和 Git 有关，因此补充了相关配置
 
-> [!Warning]+ Mirrored 模式
-> Mirrored 模式有时无法被设置，并产生错误代码 `CreateInstance/CreateVm/ConfigureNetworking/0x8007054f`。在 [WSL issues#12351](https://github.com/microsoft/WSL/issues/12351) 上有很多人讨论这一问题
+1. 下载 [Steamcommunity_302](https://www.dogfight360.com/blog/?s=Steamcommunity_302)
+2. 复制 SSL 证书到自定义的位置
 
-不过，这些方法偶尔还是会出现问题。目前我找不到完美的解决方案，改善网络环境应该是个最好的选择。
+    ```sh
+    mkdir -p ~/.certs
+    cat /etc/ssl/certs/ca-certificates.crt > ~/.certs/git-ca-bundle.crt
+    ```
+
+3. 追加 Steamcommunity_302 的根证书
+
+    ```sh
+    print "\n# Steamcommunity_302\n" >> ~/.certs/git-ca-bundle.crt # 可选，添加一些说明
+    cat /path/to/Steamcommunity_302/steamcommunityCA.pem >> ~/.certs/git-ca-bundle.crt
+    ```
+
+4. 修改 git 的证书位置
+
+    ```sh
+    git config --global http.sslCAInfo ~/.certs/git-ca-bundle.crt
+    ```
+
+5. 在 Windows 文件系统中运行 Steamcommunity_302，然后 WSL 里就可以正常使用 Git 了
+
+> [!Warning]+ Steamcommunity_302 的问题
+> Steamcommunity_302 并没有开。如果介意，建议还是使用 Clash。

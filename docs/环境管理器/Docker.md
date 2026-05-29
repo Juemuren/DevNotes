@@ -73,7 +73,7 @@ podman run hello
 
 ### Windows
 
->[!Note]- Podman 官方文档
+> [!Note]- Podman 官方文档
 >
 > 本文只介绍 Podman CLI 的安装和使用，更详细的内容可参考 [podman for windows 官方文档](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
 

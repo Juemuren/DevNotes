@@ -71,7 +71,7 @@ VSCode 扩展 [TikZ in Markdown](https://marketplace.visualstudio.com/items?item
 
 而对于 Markdown 博客来说，集成会更加复杂一点。
 
-我使用的 SSG 是 [Hugo](https://gohugo.io/)，用了 [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) 这个主题。我换了个更快的源，且添加了一些样式
+我使用的 SSG 是 [Hugo](https://gohugo.io/)，主题为 [PaperMod](https://github.com/adityatelange/hugo-PaperMod/)。我换了个更快的源，并添加了一些样式以实现居中、横向滚动和自动适配黑暗模式
 
 ```html
 <link rel="stylesheet" type="text/css"
@@ -122,6 +122,18 @@ html[data-theme="dark"] .tikz-container svg {
 </pre>
 {{ .Page.Store.Set "hasTikz" true }}
 ```
+
+现在就可以像 VSCode 扩展一样，在博客中使用 `tikz` 代码块编写图片了
+
+````markdown
+```tikz
+\begin{tikzpicture}
+  % ...
+\end{tikzpicture}
+```
+````
+
+具体效果可以查看我的博客文章 [《音乐的数学原理：从振动弦到现代乐理》](https://juemuren.github.io/blog/posts/math/%E9%9F%B3%E4%B9%90%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/)
 
 ## 使用
 

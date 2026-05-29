@@ -158,7 +158,7 @@ year := if `expr 2 + 2` != "5" { datetime("%Y") } else { "1984" }
 foo := if "114514" =~ '[0-9]+' { "match" } else { "mismatch" }
 ```
 
-可以通过 ``` `command` ``` 或 `shell(command)` 使用命令表达式，后者支持传递变量 `shell(command, var)`
+可以通过 `` `command` `` 或 `shell(command)` 使用命令表达式，后者支持传递变量 `shell(command, var)`
 
 ```justfile
 # 使用 `
