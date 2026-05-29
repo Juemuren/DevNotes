@@ -25,28 +25,28 @@ Web 应用是指一类能够在浏览器中运行的应用。
 
 ```mermaid
 sequenceDiagram
-  participant U as 用户
-  participant B as 浏览器
-  participant S as 服务器
-  
-  Note over U, S: 初次访问
-  U ->> B: 访问应用
-  B ->> S: 自动发起请求
-  S ->> B: 返回页面
-  B ->> U: 提供用户界面
+    participant U as 用户
+    participant B as 浏览器
+    participant S as 服务器
+    
+    Note over U, S: 初次访问
+    U ->> B: 访问应用
+    B ->> S: 自动发起请求
+    S ->> B: 返回页面
+    B ->> U: 提供用户界面
 
-  Note over U, S: 普通操作
-  U ->> B: 普通操作
-  B ->> B: 处理操作
-  B ->> U: 更新界面
+    Note over U, S: 普通操作
+    U ->> B: 普通操作
+    B ->> B: 处理操作
+    B ->> U: 更新界面
 
-  Note over U, S: 特殊操作
-  U ->> B: 特殊操作
-  B ->> B: 开始处理操作
-  B ->> S: 发起请求
-  S ->> B: 返回响应
-  B ->> B: 操作处理完成
-  B ->> U: 更新界面
+    Note over U, S: 特殊操作
+    U ->> B: 特殊操作
+    B ->> B: 开始处理操作
+    B ->> S: 发起请求
+    S ->> B: 返回响应
+    B ->> B: 操作处理完成
+    B ->> U: 更新界面
 ```
 
 ## 主要技术

@@ -8,23 +8,22 @@ API 全称为 `应用程序编程接口`。API 一词含义相当丰富，在本
 
 ```mermaid
 sequenceDiagram
+    participant B as 外部世界
+    participant S as 服务器
+    participant D as 数据库
+    
+    Note over B, D: 简单请求
+    B ->> S: 简单请求
+    S ->> S: 处理请求
+    S ->> B: 返回响应
 
-  participant B as 外部世界
-  participant S as 服务器
-  participant D as 数据库
-  
-  Note over B, D: 简单请求
-  B ->> S: 简单请求
-  S ->> S: 处理请求
-  S ->> B: 返回响应
-
-  Note over B, D: 复杂请求
-  B ->> S: 复杂请求
-  S ->> S: 开始处理请求
-  S ->> D: 发起操作
-  D ->> S: 返回结果
-  S ->> S: 请求处理完成
-  S ->> B: 返回响应
+    Note over B, D: 复杂请求
+    B ->> S: 复杂请求
+    S ->> S: 开始处理请求
+    S ->> D: 发起操作
+    D ->> S: 返回结果
+    S ->> S: 请求处理完成
+    S ->> B: 返回响应
 ```
 
 ## 主要技术
@@ -79,16 +78,15 @@ Web 开发绕不开 **HTML**/**CSS**/**JavaScript**，而 API 开发在这方面
 
 ```mermaid
 sequenceDiagram
+    participant C as 客户端
+    participant S as 服务器
 
-  participant C as 客户端
-  participant S as 服务器
-
-  C ->> C: 将请求序列化
-  C ->> S: 请求
-  S ->> S: 将请求反序列化
-  S ->> S: 将响应序列化
-  S ->> C: 响应
-  C ->> C: 将响应反序列化
+    C ->> C: 将请求序列化
+    C ->> S: 请求
+    S ->> S: 将请求反序列化
+    S ->> S: 将响应序列化
+    S ->> C: 响应
+    C ->> C: 将响应反序列化
 ```
 
 数据编码方式有两种主要的选择
@@ -108,18 +106,17 @@ API 设计方式有很多，在实践中通常会使用 `RESTful` 或 `GraphQL` 
 
 ```mermaid
 sequenceDiagram
+    participant S as 服务器
+    participant D as 数据库
 
-  participant S as 服务器
-  participant D as 数据库
-
-  Note over S, D: 写入数据
-  S ->> S: 将数据编码
-  S ->> D: 写入请求
-  D -->> S: 数据写入成功
-  Note over S, D: 读取数据
-  S ->> D: 读取请求
-  D ->> S: 数据查询结果
-  S ->> S: 将数据解码
+    Note over S, D: 写入数据
+    S ->> S: 将数据编码
+    S ->> D: 写入请求
+    D -->> S: 数据写入成功
+    Note over S, D: 读取数据
+    S ->> D: 读取请求
+    D ->> S: 数据查询结果
+    S ->> S: 将数据解码
 ```
 
 但实际的数据流通常更为复杂，比如引入 **缓存** 和 **消息队列**
@@ -132,33 +129,32 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-  
-  participant C as 客户端
-  participant S as 服务器
-  participant Cache as 缓存数据库
-  participant D as 主数据库
-  
-  Note over C, D: 读取数据（缓存命中）
-  C ->> S: 请求
-  S ->> Cache: 查询缓存
-  Cache ->> S: 缓存数据
-  S ->> C: 响应
-  
-  Note over C, D: 读取数据（缓存未命中）
-  C ->> S: 请求
-  S ->> Cache: 查询缓存
-  Cache -->> S: 缓存未命中
-  S ->> D: 查询数据库
-  D ->> S: 数据库数据
-  S ->> Cache: 设置缓存
-  S ->> C: 响应
-  
-  Note over C, D: 写入数据
-  C ->> S: 请求
-  S ->> D: 更新数据库
-  D -->> S: 数据库更新完成
-  S ->> Cache: 更新缓存
-  S ->> C: 响应
+    participant C as 客户端
+    participant S as 服务器
+    participant Cache as 缓存数据库
+    participant D as 主数据库
+    
+    Note over C, D: 读取数据（缓存命中）
+    C ->> S: 请求
+    S ->> Cache: 查询缓存
+    Cache ->> S: 缓存数据
+    S ->> C: 响应
+    
+    Note over C, D: 读取数据（缓存未命中）
+    C ->> S: 请求
+    S ->> Cache: 查询缓存
+    Cache -->> S: 缓存未命中
+    S ->> D: 查询数据库
+    D ->> S: 数据库数据
+    S ->> Cache: 设置缓存
+    S ->> C: 响应
+    
+    Note over C, D: 写入数据
+    C ->> S: 请求
+    S ->> D: 更新数据库
+    D -->> S: 数据库更新完成
+    S ->> Cache: 更新缓存
+    S ->> C: 响应
 ```
 
 缓存数据库通常有以下特性
@@ -175,25 +171,24 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-  
-  participant C as 客户端
-  participant S as 服务器
-  participant MQ as 消息队列
-  participant W as 工作进程
-  participant D as 数据库
-  
-  C ->> S: 请求
-  S ->> D: 预处理消息
-  D -->> S: 消息预处理完成
-  S ->> MQ: 写入消息
-  MQ -->> S: 消息写入完成
-  S ->> C: 响应
-  
-  Note over MQ, D: 异步处理
-  
-  W ->> MQ: 读取消息
-  W ->> D: 处理消息
-  W -->> MQ: 消息处理完成
+    participant C as 客户端
+    participant S as 服务器
+    participant MQ as 消息队列
+    participant W as 工作进程
+    participant D as 数据库
+    
+    C ->> S: 请求
+    S ->> D: 预处理消息
+    D -->> S: 消息预处理完成
+    S ->> MQ: 写入消息
+    MQ -->> S: 消息写入完成
+    S ->> C: 响应
+    
+    Note over MQ, D: 异步处理
+    
+    W ->> MQ: 读取消息
+    W ->> D: 处理消息
+    W -->> MQ: 消息处理完成
 ```
 
 消息队列通常有以下功能
