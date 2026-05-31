@@ -31,13 +31,24 @@ Chrome 支持安装扩展。大多数扩展都可以在 [Chrome 扩展商店](ht
 > [!Note]- Microsoft Edge 的扩展
 > Microsoft Edge 可以安装 Chrome 扩展商店中的扩展，同时它还有自己的 [扩展商店](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home)。
 
-以下是一些我常用的扩展
+以下是一些我常用的扩展，进行了简单的分类
+
+#### 实用
 
 - uBlock Origin 一个高效的网络请求过滤工具，可以自定义规则
 - Vimium 用类似 Vim 的纯键盘操作浏览网页
-- Dark Reader 为每个网站启用暗色模式
-- Tampermonkey 即篡改猴，一个用户脚本管理器。而 [Greasy Fork](https://greasyfork.org/) 是最大的用户脚本分享网站
-- Immersive Translate 即沉浸式翻译，一个翻译器。虽然该扩展还能免费使用，但项目已经不再开源了，如果介意可以找个替代品
+- Immersive Translate 一个沉浸式翻译器。该项目已不再开源，如果介意可以找个替代品，比如 [简约翻译](https://github.com/fishjar/kiss-translator)
+- Force Copy 用于解除网页的复制限制
+
+#### 美化
+
+- Dark Reader 强制转为暗色模式，可以对不同网站启用不同的方式
+- Tabliss 一个美观的 New Tab 页面，可高度自定义
+
+#### 管理器
+
+- Stylus 一个用户样式管理器，而 [UserStyles.world](https://userstyles.world/) 是最大的用户样式分享网站
+- Tampermonkey 一个用户脚本管理器，而 [Greasy Fork](https://greasyfork.org/) 是最大的用户脚本分享网站
 
 ### 开发者工具
 
