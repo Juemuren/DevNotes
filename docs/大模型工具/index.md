@@ -46,3 +46,7 @@ LLM 运行器通常用于本地调试基于 LLM 的应用，或者离线部署 L
 - [Codex](Codex.md) 由 OpenAI 开发，其 CLI 版本已经开源，且用 Rust 编写
 - OpenCode 其 CLI 版本用 TypeScript 编写
 - Claude Code 由 Anthropic 开发，暂未开源。根据曾泄露的源码推断，其 CLI 版本用 TypeScript 编写
+
+此外还有各种智能体管理器
+
+- CC Switch 一个 All-in-One 的 AI Agent 管理器，支持 Codex/Claude Code/OpenCode 等主流工具，可以管理 `skills`/`prompts`/`sessions`/`mcp` 各种资源，还可以一键切换 Agent 的配置
